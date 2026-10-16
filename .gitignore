@@ -1,0 +1,16 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets and local data
+backend/.env
+backend/uploads/*
+!backend/uploads/.gitkeep
+frontend/.env.local
+
+# Node
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo

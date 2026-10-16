@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div onClick="{{ pet.onOpen }}" style="height:100%;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #F0E4D6;border-radius:18px;overflow:hidden;cursor:pointer;box-shadow:0 1px 2px rgba(32,42,50,.04),0 12px 30px -20px rgba(32,42,50,.28);transition:transform .25s ease, box-shadow .25s ease;font-family:'Plus Jakarta Sans',sans-serif;color:#202A32" style-hover="transform:translateY(-4px);box-shadow:0 2px 4px rgba(32,42,50,.05),0 24px 44px -22px rgba(32,42,50,.38)">
+  <div style="position:relative;aspect-ratio:5/4;background:#F4EADF;overflow:hidden">
+    <img src="{{ pet.thumb }}" alt="{{ pet.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+    <div style="position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:{{ pet.statusBg }};color:{{ pet.statusFg }};font-size:12px;font-weight:700">
+      <span style="width:7px;height:7px;border-radius:50%;background:{{ pet.statusDot }}"></span>{{ pet.statusLabel }}
+    </div>
+    <button onClick="{{ pet.onFav }}" aria-label="Save pet" style="position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.94);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.14);transition:transform .2s" style-hover="transform:scale(1.1)">
+      <span style="font-family:'Material Symbols Rounded';font-size:21px;line-height:1;color:{{ pet.favColor }};font-variation-settings:{{ pet.favVar }}">favorite</span>
+    </button>
+    <sc-if value="{{ pet.reward }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:12px;bottom:12px;padding:5px 10px;border-radius:8px;background:#202A32;color:#FFF9F2;font-size:12px;font-weight:700">{{ pet.reward }}</div>
+    </sc-if>
+  </div>
+  <div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:5px;flex:1">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+      <div style="font-size:18px;font-weight:800;letter-spacing:-.01em">{{ pet.name }}</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#68747D;white-space:nowrap">{{ pet.distLabel }}</div>
+    </div>
+    <div style="font-size:14px;color:#4E5A63;line-height:1.4">{{ pet.meta }}</div>
+    <div style="display:flex;align-items:center;gap:4px;font-size:13px;color:#68747D;margin-top:auto;padding-top:8px">
+      <span style="font-family:'Material Symbols Rounded';font-size:17px;line-height:1">location_on</span>
+      <span>{{ pet.city }} · {{ pet.when }}</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:300,&quot;height&quot;:380},&quot;pet&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}"></script>
+</body>
+</html>

@@ -15,7 +15,6 @@ class Settings(BaseSettings):
     jwt_expire_minutes: int = 60 * 24 * 7
 
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
-    upload_dir: Path = BASE_DIR / "uploads"
     max_upload_mb: int = 10
 
     # Which AI implementation to load. "demo" is the built-in placeholder; point this at

@@ -18,17 +18,21 @@ Model map (matches the labels shown in the UI):
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from pathlib import Path
 
 
 @dataclass(frozen=True)
 class ImageInput:
-    """A photo the model should look at. ``path`` is set for files stored by this server;
-    ``url`` is always set (remote seed photos only have a URL)."""
+    """A photo the model should look at. ``url`` is always set (remote seed photos only have a URL);
+    photos uploaded to this server can also be read as bytes with ``read()``, loaded on first use."""
 
     url: str
-    path: Path | None = None
+    loader: Callable[[], bytes | None] | None = field(default=None, repr=False, compare=False)
+
+    def read(self) -> bytes | None:
+        """The image bytes for photos stored by this server, or None for remote URLs."""
+        return self.loader() if self.loader else None
 
 
 @dataclass(frozen=True)

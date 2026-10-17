@@ -12,6 +12,7 @@ from sqlalchemy import (
     Float,
     ForeignKey,
     Integer,
+    LargeBinary,
     String,
     Text,
     UniqueConstraint,
@@ -260,4 +261,15 @@ class Activity(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
     icon: Mapped[str] = mapped_column(String(40))
     text: Mapped[str] = mapped_column(String(300))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class Upload(Base):
+    """An uploaded photo, stored in the database so every machine sharing it can serve the file."""
+
+    __tablename__ = "uploads"
+
+    name: Mapped[str] = mapped_column(String(64), primary_key=True)  # e.g. "<uuid>.jpg", served at /uploads/<name>
+    content_type: Mapped[str] = mapped_column(String(40), default="image/jpeg")
+    data: Mapped[bytes] = mapped_column(LargeBinary)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)

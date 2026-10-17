@@ -207,6 +207,14 @@ def test_ai_match_by_photo_and_tags(client):
     assert len(a["breeds"]) == 3 and a["quality"][0]["score"] > 0
 
 
+def test_uploaded_photo_is_served_from_the_database(client):
+    url = upload(client)
+    r = client.get(url)
+    assert r.status_code == 200 and r.headers["content-type"] == "image/jpeg"
+    assert Image.open(BytesIO(r.content)).size == (320, 240)
+    assert client.get("/uploads/missing.jpg").status_code == 404
+
+
 def test_upload_rejects_non_images(client):
     r = client.post("/api/uploads", files=[("files", ("x.jpg", b"not an image", "image/jpeg"))])
     assert r.status_code == 422

@@ -1,5 +1,4 @@
 import os
-import tempfile
 from pathlib import Path
 
 # Point the app at TEST_DATABASE_URL before anything reads the settings.
@@ -7,7 +6,6 @@ for _line in (Path(__file__).resolve().parent.parent / ".env").read_text(encodin
     _key, _, _value = _line.partition("=")
     if _key.strip() == "TEST_DATABASE_URL" and _value.strip():
         os.environ["DATABASE_URL"] = _value.strip()
-os.environ["UPLOAD_DIR"] = tempfile.mkdtemp(prefix="pawconnect-test-uploads-")
 
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402

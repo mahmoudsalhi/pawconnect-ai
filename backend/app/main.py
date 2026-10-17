@@ -2,13 +2,11 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles
 
 from .config import get_settings
 from .routers import adoptions, ai, auth, me, pets, shelters, uploads
 
 settings = get_settings()
-settings.upload_dir.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="PawConnect AI", version="1.0.0")
 
@@ -37,10 +35,9 @@ async def validation_error(_: Request, exc: RequestValidationError):
     return JSONResponse(status_code=422, content={"detail": first, "errors": errors})
 
 
-for r in (auth.router, me.router, pets.router, shelters.router, adoptions.router, ai.router, uploads.router):
+for r in (auth.router, me.router, pets.router, shelters.router, adoptions.router, ai.router, uploads.router,
+          uploads.files_router):
     app.include_router(r)
-
-app.mount("/uploads", StaticFiles(directory=settings.upload_dir), name="uploads")
 
 
 @app.get("/api/health")

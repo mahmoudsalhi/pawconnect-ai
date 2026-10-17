@@ -3,16 +3,22 @@ from sqlalchemy.orm import Session, selectinload
 
 from ..ai import get_provider
 from ..ai.base import ImageInput, MatchSubject
-from ..config import get_settings
-from ..models import MatchResult, Pet, PetStatus
+from ..database import SessionLocal
+from ..models import MatchResult, Pet, PetStatus, Upload
 from .notify import log_activity, notify
 
 
 def image_input(url: str) -> ImageInput:
-    """Resolve a photo URL to something a model can read; local uploads also get a file path."""
+    """Resolve a photo URL to something a model can read; uploads can also be read as bytes."""
     if url.startswith("/uploads/"):
-        return ImageInput(url=url, path=get_settings().upload_dir / url.removeprefix("/uploads/"))
+        return ImageInput(url=url, loader=lambda: _upload_bytes(url.removeprefix("/uploads/")))
     return ImageInput(url=url)
+
+
+def _upload_bytes(name: str) -> bytes | None:
+    with SessionLocal() as db:
+        upload = db.get(Upload, name)
+        return upload.data if upload else None
 
 
 def subject_for(pet: Pet) -> MatchSubject:

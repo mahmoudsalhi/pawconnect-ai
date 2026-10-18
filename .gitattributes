@@ -5,3 +5,5 @@
 *.pth binary
 # LightGBM models are saved as text but must be byte-exact: CRLF conversion makes them unloadable.
 *_lgbm.txt -text -diff
+# Shell scripts run on Linux (the VPS): always LF.
+*.sh text eol=lf

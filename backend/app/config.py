@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     # your own provider class (e.g. "app.ai.custom:MyProvider") once the models are ready.
     ai_provider: str = "demo"
 
+    # Age model (ONNX, with its .json config next to it). Relative paths start at the project root.
+    m4_age_model_path: str = "backend/models/m4_age.onnx"
+
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782
     home_lng: float = 10.3247

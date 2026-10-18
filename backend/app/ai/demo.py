@@ -7,6 +7,7 @@ import re
 
 from .base import (
     AdoptionSpeed,
+    AgePrediction,
     AIProvider,
     BreedPrediction,
     ImageInput,
@@ -125,3 +126,7 @@ class DemoProvider(AIProvider):
             tips.append("Add photos with people")
         cls = max(0, min(4, cls - (1 if f.age_group == "young" else 0)))
         return AdoptionSpeed(cls, tips or ["Listing is in good shape"])
+
+    def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
+        # No real guess: "not sure" with 0% so the report form never pre-selects a made-up age.
+        return AgePrediction(group=None, confidence=0)

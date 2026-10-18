@@ -343,11 +343,17 @@ class AnalyzeIn(BaseModel):
     species: str = "Dog"
 
 
+class AgeOut(BaseModel):
+    group: str | None  # "young" | "adult" | "senior", or None = not sure
+    confidence: int
+
+
 class AnalyzeOut(BaseModel):
     model: str
     breeds: list[list]
     quality: list[dict]
     cutout: str | None
+    age: AgeOut | None = None
 
 
 class TagsIn(BaseModel):

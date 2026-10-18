@@ -9,6 +9,8 @@ backend/.env
 backend/uploads/*
 !backend/uploads/.gitkeep
 frontend/.env.local
+backend/models/*.onnx
+backend/models/*.onnx.data
 
 # Node
 frontend/node_modules/

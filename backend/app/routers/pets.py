@@ -162,7 +162,11 @@ def create_report(data: PetCreate, user: CurrentUser, db: DB):
     ]
     db.add(pet)
     db.flush()
-    pet.ref = f"PC-TN-{1000 + pet.id:05d}"
+    # Usually 1000 + id, but older rows can hold numbers that don't follow their id: take the next free one.
+    n = 1000 + pet.id
+    while db.scalar(select(Pet.id).where(Pet.ref == f"PC-TN-{n:05d}")):
+        n += 1
+    pet.ref = f"PC-TN-{n:05d}"
     pet.owner = user
     pool, strong = match_new_report(db, pet)
     log_activity(db, user.id, "campaign" if data.status == "lost" else "volunteer_activism",

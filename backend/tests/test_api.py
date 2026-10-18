@@ -4,6 +4,9 @@ from io import BytesIO
 
 from PIL import Image
 
+from app.database import SessionLocal
+from app.models import Pet
+
 
 def pet_id(client, name):
     items = client.get("/api/pets", params={"q": name, "page_size": 50}).json()["items"]
@@ -164,6 +167,25 @@ def test_publish_found_report_matches_and_notifies(client, newbie):
 
     bad = client.post("/api/pets", json=body | {"contact_phone": "123"}, headers=newbie)
     assert bad.status_code == 422 and "8-digit" in bad.json()["errors"]["contact_phone"]
+
+
+def test_report_number_skips_one_already_taken(client, newbie):
+    body = {
+        "status": "found", "species": "Dog", "color": "Black", "description": "Black dog found near the market.", "photos": [upload(client)], "lat": 36.858, "lng": 10.168,
+        "event_date": "2026-10-15", "contact_name": "Sami Test", "contact_phone": "22 418 903",
+        "contact_email": "sami@example.com",
+    }
+    r = client.post("/api/pets", json=body, headers=newbie)
+    assert r.status_code == 201, r.text
+    first = r.json()["pet"]
+    # An older row already holds the number the next report would get from its id
+    db = SessionLocal()
+    db.get(Pet, first["id"]).ref = f"PC-TN-{1000 + first['id'] + 1:05d}"
+    db.commit()
+    db.close()
+    r = client.post("/api/pets", json=body, headers=newbie)
+    assert r.status_code == 201, r.text
+    assert r.json()["pet"]["ref"] != f"PC-TN-{1000 + first['id'] + 1:05d}"
 
 
 def test_lost_report_requires_name(client, newbie):

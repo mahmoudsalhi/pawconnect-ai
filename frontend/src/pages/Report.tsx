@@ -51,6 +51,10 @@ const LABELS = ['Type', 'Photos', 'Details', 'Location', 'Contact', 'Review']
 type AgeGroup = 'young' | 'adult' | 'senior'
 const AGE_LABEL: Record<AgeGroup, string> = { young: 'Puppy / kitten (under 1 year)', adult: 'Adult (1–7 years)', senior: 'Senior (8+ years)' }
 const AGE_SHORT: Record<AgeGroup, string> = { young: 'Puppy / kitten', adult: 'Adult', senior: 'Senior' }
+const SKIN_CONDITION: Record<string, string> = {
+  dermatitis: 'Dermatitis', fungal_infections: 'Fungal infection', hypersensitivity: 'Allergic reaction',
+  demodicosis: 'Mange (mites)', ringworm: 'Ringworm',
+}
 const SAMPLES: Record<Kind, string> = { lost: '1543466835-00a7907e9de1', found: '1561037404-61cd46aa615b' }
 const CROPS = ['', '?crop=focalpoint&fp-x=.5&fp-y=.4&fp-z=1.7', '?crop=focalpoint&fp-x=.32&fp-y=.55&fp-z=1.4']
 const MAP_CENTER: [number, number] = [36.845, 10.24]
@@ -262,6 +266,8 @@ export default function Report() {
   const breeds = ai?.breeds ?? []
   const topBreed = breeds[0]?.[0]
   const aiAge = r.species !== 'Other' && !analyzing ? ai?.age : null
+  // Skin check is dogs only ("Other" is sent to the API as "Dog", so filter on the form's species).
+  const aiHealth = r.species === 'Dog' ? ai?.health : null
   const breedUsed = r.breedUsed && r.breed === topBreed
   const quality = ai?.quality ?? []
   const avg = quality.length ? Math.round(quality.reduce((s, q) => s + q.score, 0) / quality.length) : 0
@@ -597,6 +603,25 @@ export default function Report() {
                 <BreedBars breeds={breeds} compact />
                 {!breedUsed && topBreed && <button className="btn btn-soft btn-block" style={{ marginTop: 12, height: 40, borderRadius: 10, fontSize: 13 }} onClick={() => set({ breed: topBreed, breedUsed: true })}>Use “{topBreed}” in my report</button>}
               </div>
+              {aiHealth && (
+                <div className="panel" style={{ padding: 18, borderRadius: 20 }}>
+                  <div className="row between" style={{ marginBottom: 12, gap: 8 }}><span style={{ fontSize: 14, fontWeight: 800 }}>Skin check</span><span className="demo-tag">AI · DOGS ONLY</span></div>
+                  {aiHealth.status === 'skin_problem' ? (
+                    <div className="row" style={{ gap: 10, alignItems: 'flex-start', padding: 12, borderRadius: 12, background: '#FBE1D5', color: '#9E3C19', fontSize: 13.5, fontWeight: 700 }}>
+                      <Icon name="warning" size={19} />Possible skin problem: {SKIN_CONDITION[aiHealth.condition ?? ''] ?? 'skin issue'} ({aiHealth.confidence}%)
+                    </div>
+                  ) : aiHealth.status === 'healthy' ? (
+                    <div className="row" style={{ gap: 10, alignItems: 'flex-start', padding: 12, borderRadius: 12, background: 'var(--teal-soft)', color: 'var(--teal-dd)', fontSize: 13.5, fontWeight: 700 }}>
+                      <Icon name="check_circle" size={19} />No visible skin problem detected ({aiHealth.confidence}%)
+                    </div>
+                  ) : (
+                    <div className="row" style={{ gap: 10, alignItems: 'flex-start', padding: 12, borderRadius: 12, background: '#F1F3F2', color: 'var(--body)', fontSize: 13.5, fontWeight: 700 }}>
+                      <Icon name="help" size={19} />The AI can’t judge the skin from these photos. Try a closer, well-lit photo.
+                    </div>
+                  )}
+                  <p style={{ margin: '10px 0 0', fontSize: 12.5, lineHeight: 1.45, color: 'var(--muted)' }}>This is only an indication, not a diagnosis. Please see a vet.</p>
+                </div>
+              )}
               <div className="panel" style={{ padding: 18, borderRadius: 20 }}>
                 <div className="row between" style={{ marginBottom: 12, gap: 8 }}><span style={{ fontSize: 14, fontWeight: 800 }}>Remove background</span><button type="button" role="switch" aria-checked={r.bg} aria-label="Toggle background removal" className={`toggle${r.bg ? ' on' : ''}`} onClick={() => set({ bg: !r.bg })} /></div>
                 <div style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 14, overflow: 'hidden', background: 'repeating-conic-gradient(#ECE5DB 0 25%, #FFFFFF 0 50%) 0 0/16px 16px' }}>

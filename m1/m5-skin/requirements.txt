@@ -1,0 +1,12 @@
+# Training (Colab, GPU)
+torch
+torchvision
+pandas
+scikit-learn
+pillow
+onnx
+onnxscript
+onnxruntime
+
+# Tests only
+pytest

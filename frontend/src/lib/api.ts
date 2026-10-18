@@ -234,6 +234,7 @@ export interface AnalyzeResult {
   quality: { url: string; score: number; tip: string }[]
   cutout: string | null
   age?: { group: 'young' | 'adult' | 'senior' | null; confidence: number } | null
+  health?: { status: 'healthy' | 'skin_problem' | 'unsure'; condition: string | null; confidence: number } | null
 }
 
 export interface MatchRun {

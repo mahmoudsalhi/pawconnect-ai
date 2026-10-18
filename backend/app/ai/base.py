@@ -79,6 +79,13 @@ class AgePrediction:
 
 
 @dataclass(frozen=True)
+class HealthPrediction:
+    status: str  # "healthy" | "skin_problem" | "unsure"
+    condition: str | None  # most likely skin problem when status == "skin_problem"
+    confidence: int  # percent, 0-100
+
+
+@dataclass(frozen=True)
 class MatchSubject:
     """What the matcher knows about one side of a comparison."""
 
@@ -270,3 +277,8 @@ class AIProvider(ABC):
         from .location import predict
 
         return predict(query)
+
+    def predict_health(self, images: list[ImageInput], species: str) -> HealthPrediction | None:
+        """Visible skin problems on a dog's photos. An indication only, never a diagnosis.
+        None means not available (no model, not a dog, or no readable photo)."""
+        return None

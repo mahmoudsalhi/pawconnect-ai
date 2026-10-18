@@ -12,3 +12,6 @@ python-multipart>=0.0.18
 pillow>=11.3
 pytest>=8.3
 httpx>=0.28
+numpy>=2.2
+xgboost>=3.0
+sentence-transformers>=5.0  # M9: pulls in torch (CPU build on Windows)

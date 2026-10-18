@@ -1,0 +1,47 @@
+{
+  "model": "XGBoost multi-class (multi:softprob)",
+  "dataset": "SIMULATED listings from ml/m3_synthetic/experiment.py (not real adoptions)",
+  "assumptions": {
+    "young (under 1 year)": -0.8,
+    "senior (7+ years)": 0.6,
+    "mixed breed": 0.4,
+    "per photo, up to 5": -0.12,
+    "per 10 description words, up to 80": -0.06,
+    "fee per 50 TND": 0.15,
+    "vaccinated": -0.25,
+    "sterilized": -0.1,
+    "long fur": -0.2,
+    "large size": 0.2
+  },
+  "noise": 0.6,
+  "features": [
+    "is_cat",
+    "age_months",
+    "size",
+    "is_female",
+    "is_mixed",
+    "is_domestic",
+    "photo_count",
+    "desc_chars",
+    "desc_words",
+    "health_words",
+    "fee_tnd",
+    "is_free",
+    "vaccinated",
+    "dewormed",
+    "sterilized",
+    "fur_length"
+  ],
+  "cutoffs": [
+    1.018,
+    1.5997,
+    2.3194,
+    3.0811
+  ],
+  "metrics": {
+    "syn_acc": 0.4246,
+    "syn_qwk": 0.6971,
+    "real_acc": 0.198,
+    "real_qwk": 0.1143
+  }
+}

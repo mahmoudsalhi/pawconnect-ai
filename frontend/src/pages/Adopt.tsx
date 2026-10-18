@@ -5,11 +5,10 @@ import { PetModal } from '../components/PetModals'
 import { Empty, Icon, Pills, Skeleton } from '../components/ui'
 import type { Application, Pet } from '../lib/api'
 import { useAuth } from '../lib/auth'
-import { fmtDate, img, SPEED } from '../lib/format'
+import { fmtDate, img, SPEED, speedColor } from '../lib/format'
 import { useInsights, useMyApplications, usePets, useRequireAuth, useShelters } from '../lib/queries'
 
 const U = 'https://images.unsplash.com/photo-'
-const spColor = (i: number) => (i <= 1 ? '#176B63' : i === 2 ? '#C99A2E' : '#C9522B')
 
 export function StageTrack({ app }: { app: Application }) {
   return (
@@ -171,7 +170,7 @@ export default function Adopt() {
         <div className="card" style={{ borderRadius: 28, overflow: 'hidden' }}>
           <div className="wrap-row between" style={{ padding: 'clamp(22px,3vw,36px)', alignItems: 'flex-end', gap: 20, borderBottom: '1px solid var(--line)' }}>
             <div style={{ maxWidth: 620 }}>
-              <div className="wrap-row" style={{ alignItems: 'center', gap: 8, marginBottom: 10 }}><span className="eyebrow teal" style={{ margin: 0 }}>For shelters</span><span className="demo-tag">M3 · XGBOOST · DEMO</span></div>
+              <div className="wrap-row" style={{ alignItems: 'center', gap: 8, marginBottom: 10 }}><span className="eyebrow teal" style={{ margin: 0 }}>For shelters</span><span className="demo-tag">M3 · XGBOOST · PETFINDER</span></div>
               <h2 style={{ margin: '0 0 8px', fontSize: 'clamp(24px,2.4vw,32px)', fontWeight: 800, letterSpacing: '-.03em' }}>Adoption speed insights</h2>
               <p style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--muted)' }}>Predicted time to adoption for each listing, using the PetFinder speed classes. Predictions come from listing features such as age, photo count, description length and fee, and help you decide which profiles to improve first.</p>
             </div>
@@ -191,8 +190,8 @@ export default function Adopt() {
                   <div style={{ minWidth: 0 }}><div style={{ fontSize: 15, fontWeight: 800 }}>{r.name}</div><div style={{ fontSize: 12.5, color: 'var(--muted)' }}>{r.species} · {r.age_label} · listed {r.days_listed} days</div></div>
                 </Link>
                 <div style={{ flex: '1 1 240px', minWidth: 0 }}>
-                  <div className="row between" style={{ fontSize: 13, marginBottom: 6 }}><span style={{ fontWeight: 800, color: spColor(r.speed_class) }}>{SPEED[r.speed_class]}</span><span className="mono muted" style={{ fontSize: 11.5 }}>class {r.speed_class}</span></div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 3 }}>{[0, 1, 2, 3, 4].map((i) => <span key={i} style={{ height: 8, borderRadius: 3, background: i === r.speed_class ? spColor(r.speed_class) : '#EFE6DB' }} />)}</div>
+                  <div className="row between" style={{ fontSize: 13, marginBottom: 6 }}><span style={{ fontWeight: 800, color: speedColor(r.speed_class) }}>{SPEED[r.speed_class]}</span><span className="mono muted" style={{ fontSize: 11.5 }}>class {r.speed_class}</span></div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 3 }}>{[0, 1, 2, 3, 4].map((i) => <span key={i} style={{ height: 8, borderRadius: 3, background: i === r.speed_class ? speedColor(r.speed_class) : '#EFE6DB' }} />)}</div>
                 </div>
                 <div className="wrap-row" style={{ flex: '1.4 1 260px', gap: 6 }}>
                   {r.tips.map((t) => <span key={t} className="row" style={{ gap: 5, padding: '5px 10px', borderRadius: 999, background: 'var(--cream)', border: '1px solid var(--line)', fontSize: 12.5, fontWeight: 600 }}><Icon name="tips_and_updates" size={15} style={{ color: 'var(--rust)' }} />{t}</span>)}

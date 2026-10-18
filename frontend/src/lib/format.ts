@@ -69,3 +69,4 @@ export const firstName = (name: string) => name.split(' ')[0] ?? name
 export const GOVERNORATES = ['Tunis', 'Ariana', 'Ben Arous', 'Manouba', 'Nabeul', 'Sousse', 'Sfax']
 
 export const SPEED = ['Same day', '1–7 days', '8–30 days', '31–90 days', '100+ days']
+export const speedColor = (i: number) => (i <= 1 ? '#176B63' : i === 2 ? '#C99A2E' : '#C9522B')

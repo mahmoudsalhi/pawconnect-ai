@@ -91,6 +91,22 @@ The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic pla
 3. Set `AI_PROVIDER=app.ai.models:PawModels` in `backend/.env` and set `name = "your-model-id"` on the class (it's stored next to cached match scores).
 4. Match scores are cached in the `match_results` table. After changing models, clear it (`TRUNCATE match_results;`) so scores are recomputed.
 
+### Trained models
+
+`app.ai.models:PawModels` holds the models that are trained so far; the rest still use the placeholders.
+
+- **M3 adoption speed** (`app/ai/adoption_speed.py`): XGBoost trained on the Kaggle [PetFinder.my Adoption Prediction](https://www.kaggle.com/competitions/petfinder-adoption-prediction) data (single-animal listings), using only fields a PawConnect listing has: species, age, size, sex, breed (mixed/domestic), fur length, vaccinated / dewormed / spayed-neutered, photo count, description length and health mentions, fee. QWK averaged over 5 rescuer-grouped splits and the other metrics are in `app/ai/weights/m3_adoption_speed.meta.json`. Listing tips are what-if checks: the model is re-run with more photos, a fuller description, health info or no fee, and only changes it predicts would help are shown.
+
+  To retrain, accept the competition rules on Kaggle, put your API token in `~/.kaggle/kaggle.json`, then:
+
+  ```powershell
+  cd backend
+  .\.venv\Scripts\python -m pip install -r requirements-ml.txt
+  .\.venv\Scripts\python -m ml.m3_adoption_speed.train
+  ```
+
+- **M9 compatibility matching** (`/find-match` page, `POST /api/ai/compatibility`): an adopter answers ten questions (home, children, other pets, activity, hours alone, experience, grooming, age, size) plus an optional free-text wish. A trait model (`app/ai/pet_traits.py`) reads each adoption profile and predicts six 1-5 ratings: energy, good with children, apartment-friendly, first-time-owner friendly, good with other dogs, grooming. It is a ridge regression on `all-MiniLM-L6-v2` sentence embeddings, trained on 618 reviewed breeds from Kaggle [Dog Breeds: Traits, Origins & Provenance](https://www.kaggle.com/datasets/jesusic/dog-breeds-traits-origins-provenance) (CC BY 4.0); 5-fold cross-validation results are in `app/ai/weights/m9_traits.meta.json`. `app/ai/compatibility.py` turns the answers and traits into a 0-100 score with reasons; hours alone and living with cats use written rules because the dataset has no such ratings. The data covers dogs only, so cat estimates are less certain. Retrain with `.\.venv\Scripts\python -m ml.m9_compatibility.train` (downloads the dataset and the embedding model on first run).
+
 The seed data includes the design's hand-picked match scores (Mishmish ↔ Ginger 87%, Rex ↔ Kahwa 64%, …) so the demo looks like the design until real models produce their own.
 
 ## Notes for production

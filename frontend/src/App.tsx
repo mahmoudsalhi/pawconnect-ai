@@ -10,6 +10,8 @@ const PetDetail = lazy(() => import('./pages/PetDetail'))
 const Report = lazy(() => import('./pages/Report'))
 const Match = lazy(() => import('./pages/Match'))
 const Adopt = lazy(() => import('./pages/Adopt'))
+const Compat = lazy(() => import('./pages/Compat'))
+const BreedId = lazy(() => import('./pages/BreedId'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Poster = lazy(() => import('./pages/Poster'))
 
@@ -40,6 +42,8 @@ export default function App() {
             <Route path="report" element={<Report />} />
             <Route path="match" element={<Match />} />
             <Route path="adopt" element={<Adopt />} />
+            <Route path="find-match" element={<Compat />} />
+            <Route path="breed-id" element={<BreedId />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path="login" element={<Auth mode="login" />} />

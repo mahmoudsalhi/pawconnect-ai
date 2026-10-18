@@ -6,7 +6,7 @@ import { PetGrid } from '../components/PetCard'
 import { PetModal, type ModalKind } from '../components/PetModals'
 import { BreedBars, Empty, Icon, Skeleton, StatusBadge } from '../components/ui'
 import { api, type Pet } from '../lib/api'
-import { dayTime, fmtDate, fmtKm, img, initials, STATUS_DOT, STATUS_LABEL } from '../lib/format'
+import { dayTime, fmtDate, fmtKm, img, initials, SPEED, speedColor, STATUS_DOT, STATUS_LABEL } from '../lib/format'
 import { useFavorite, usePet, useRequireAuth, useSimilar } from '../lib/queries'
 import { useToast } from '../lib/toast'
 
@@ -101,7 +101,11 @@ export default function PetDetail() {
       /* share sheet dismissed */
     }
   }
-  const attrs: [string, string][] = [['Breed', pet.breed || 'Unknown'], ['Age', pet.age_label], ['Sex', pet.sex], ['Size', pet.size], ['Colour', pet.color], [isAdopt ? 'Vaccinated' : 'Microchip', pet.chip || 'Unknown']]
+  const yesNo = (v: boolean | null) => (v == null ? 'Not stated' : v ? 'Yes' : 'No')
+  const attrs: [string, string][] = [['Breed', pet.breed || 'Unknown'], ['Age', pet.age_label], ['Sex', pet.sex], ['Size', pet.size], ['Colour', pet.color],
+    ...(isAdopt
+      ? ([['Fur', pet.fur_length || 'Not stated'], ['Vaccinated', yesNo(pet.vaccinated)], ['Dewormed', yesNo(pet.dewormed)], [pet.sex === 'Female' ? 'Spayed' : 'Neutered', yesNo(pet.sterilized)]] as [string, string][])
+      : ([['Microchip', pet.chip || 'Unknown']] as [string, string][]))]
 
   return (
     <main className="wrap" style={{ paddingTop: 28, paddingBottom: 88 }}>
@@ -198,13 +202,25 @@ export default function PetDetail() {
             <div className="card" style={{ padding: 18, borderRadius: 18 }}>
               <div className="wrap-row between" style={{ alignItems: 'center', gap: 8, marginBottom: 14 }}>
                 <div className="row" style={{ gap: 8, fontSize: 15, fontWeight: 800 }}><Icon name="auto_awesome" size={20} style={{ color: 'var(--teal)' }} />AI breed estimate</div>
-                <span className="demo-tag" style={{ padding: '3px 7px' }}>DEMO RESULT · M1 BREED CNN</span>
+                <span className="demo-tag" style={{ padding: '3px 7px' }}>M1 · CONVNEXT · OXFORD-IIIT PET</span>
               </div>
               <BreedBars breeds={pet.ai_breeds} />
               <div className="wrap-row" style={{ gap: 8, alignItems: 'center', marginTop: 14 }}>
                 <span style={{ padding: '4px 9px', borderRadius: 999, background: conf.bg, color: conf.color, fontSize: 12, fontWeight: 700 }}>{conf.label}</span>
                 <span style={{ fontSize: 12.5, color: 'var(--muted)', lineHeight: 1.45 }}>Estimated from the photo only. Listed breed: {pet.breed || 'not given'}.</span>
               </div>
+            </div>
+          )}
+
+          {isAdopt && pet.adopt_speed != null && (
+            <div className="card" style={{ padding: 18, borderRadius: 18 }}>
+              <div className="wrap-row between" style={{ alignItems: 'center', gap: 8, marginBottom: 14 }}>
+                <div className="row" style={{ gap: 8, fontSize: 15, fontWeight: 800 }}><Icon name="schedule" size={20} style={{ color: 'var(--teal)' }} />Predicted adoption speed</div>
+                <span className="demo-tag" style={{ padding: '3px 7px' }}>M3 · XGBOOST · PETFINDER</span>
+              </div>
+              <div className="row between" style={{ fontSize: 13, marginBottom: 6 }}><span style={{ fontWeight: 800, color: speedColor(pet.adopt_speed) }}>{SPEED[pet.adopt_speed]}</span><span className="mono muted" style={{ fontSize: 11.5 }}>class {pet.adopt_speed}</span></div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 3 }}>{[0, 1, 2, 3, 4].map((i) => <span key={i} style={{ height: 8, borderRadius: 3, background: i === pet.adopt_speed ? speedColor(i) : '#EFE6DB' }} />)}</div>
+              <div style={{ fontSize: 12.5, color: 'var(--muted)', lineHeight: 1.45, marginTop: 12 }}>Estimated from the listing (age, breed, fur, health details, photos, description and fee), using real adoption outcomes from PetFinder.my.</div>
             </div>
           )}
         </div>

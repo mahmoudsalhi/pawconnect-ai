@@ -42,6 +42,10 @@ def pet_out(pet: Pet, user: User | None = None, favs: set[int] | None = None, or
         traits=pet.traits or [],
         reward=pet.reward,
         fee=pet.fee,
+        vaccinated=pet.vaccinated,
+        dewormed=pet.dewormed,
+        sterilized=pet.sterilized,
+        fur_length=pet.fur_length,
         ai_breeds=pet.ai_breeds or [],
         adopt_speed=pet.adopt_speed,
         # Public listings only show an approximate area.

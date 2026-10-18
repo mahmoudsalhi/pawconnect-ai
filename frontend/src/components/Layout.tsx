@@ -10,6 +10,8 @@ const NAV = [
   { to: '/pets', label: 'Find a Pet' },
   { to: '/report', label: 'Report Lost/Found' },
   { to: '/adopt', label: 'Adoption' },
+  { to: '/find-match', label: 'Find Your Match' },
+  { to: '/breed-id', label: 'Breed ID' },
   { to: '/match', label: 'AI Matching' },
   { to: '/dashboard', label: 'Dashboard' },
 ]

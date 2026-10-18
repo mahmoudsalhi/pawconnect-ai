@@ -5,14 +5,18 @@ from __future__ import annotations
 import hashlib
 import re
 
+from . import compatibility
 from .base import (
     AdoptionSpeed,
     AIProvider,
     BreedPrediction,
+    CompatMatch,
+    CompatPet,
     ImageInput,
     ListingFeatures,
     MatchSubject,
     PhotoQuality,
+    Questionnaire,
     TagSuggestion,
 )
 
@@ -46,6 +50,15 @@ BREEDS = {
 
 QUALITY = [84, 66, 73, 58, 79, 70]
 
+# Placeholder trait reading for M9: (trait, raises it, lowers it)
+TRAIT_WORDS = [
+    ("energy", r"energetic|endless energy|puppy energy|active|playful|loves to run", r"calm|couch|lap cat|relaxed|naps"),
+    ("children_friendly", r"good with (?:kids|children)|great with children|gentle with children", r"no (?:young )?children|adult household"),
+    ("apartment_friendly", r"apartment|small[- ]space|small apartment", r"garden|space to run"),
+    ("novice_owner_friendly", r"house-trained|easy|first-time", r"experienced owner"),
+    ("good_with_other_dogs", r"good with (?:other )?dogs|other dogs", r"only pet|not good with dogs"),
+]
+
 
 def _h(*parts: str) -> int:
     return int.from_bytes(hashlib.sha256("|".join(parts).encode()).digest()[:8], "big")
@@ -68,7 +81,7 @@ def quality_tip(score: int) -> str:
 class DemoProvider(AIProvider):
     name = "demo"
 
-    def predict_breed(self, images: list[ImageInput], species: str) -> list[BreedPrediction]:
+    def predict_breed(self, images: list[ImageInput], species: str, top: int = 3) -> list[BreedPrediction]:
         options = BREEDS.get(species, BREEDS["Dog"])
         pick = options[_h(*(i.url for i in images), species) % len(options)] if images else options[0]
         return [BreedPrediction(label, pct) for label, pct in pick]
@@ -125,3 +138,14 @@ class DemoProvider(AIProvider):
             tips.append("Add photos with people")
         cls = max(0, min(4, cls - (1 if f.age_group == "young" else 0)))
         return AdoptionSpeed(cls, tips or ["Listing is in good shape"])
+
+    def compatibility(self, answers: Questionnaire, pets: list[CompatPet]) -> list[CompatMatch]:
+        traits = []
+        for p in pets:
+            t = {name: 0.5 + 0.35 * bool(re.search(up, p.text, re.I)) - 0.35 * bool(re.search(down, p.text, re.I))
+                 for name, up, down in TRAIT_WORDS}
+            t["grooming"] = {"Long": 0.9, "Medium": 0.5}.get(p.fur_length, 0.2)
+            traits.append(t)
+        wish = _words(answers.ideal)
+        ideal = [(min(1.0, len(wish & _words(p.text)) / 3), "") for p in pets] if wish else None
+        return compatibility.score(answers, pets, traits, ideal)

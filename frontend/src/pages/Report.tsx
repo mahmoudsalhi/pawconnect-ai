@@ -391,7 +391,7 @@ export default function Report() {
                   <div><span className="field-label">Species</span>
                     <Seg value={r.species} onChange={(v) => set({ species: v })} options={opt<Draft['species']>(['Dog', 'Dog'], ['Cat', 'Cat'], ['Other', 'Other'])} /></div>
                   <label className="field" style={{ gridColumn: '1/-1' }}>
-                    <span className="field-label"><span>Breed</span><span className="demo-tag">AI · M1 DEMO</span></span>
+                    <span className="field-label"><span>Breed</span><span className="demo-tag">AI · M1</span></span>
                     <input className="input" value={r.breed} onChange={(e) => set({ breed: e.target.value, breedUsed: false })} placeholder="Type a breed, or leave blank if unsure" />
                     {topBreed && (
                       <div className="wrap-row" style={{ alignItems: 'center', gap: 8, marginTop: 8 }}>

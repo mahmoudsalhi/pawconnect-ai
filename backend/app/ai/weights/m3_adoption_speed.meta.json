@@ -1,0 +1,62 @@
+{
+  "model": "XGBoost multi-class (multi:softprob)",
+  "dataset": "Kaggle petfinder-adoption-prediction train.csv",
+  "trained_on": "2026-10-18",
+  "training_listings": 9514,
+  "best_iteration": 155,
+  "features": [
+    "is_cat",
+    "age_months",
+    "size",
+    "is_female",
+    "is_mixed",
+    "is_domestic",
+    "photo_count",
+    "desc_chars",
+    "desc_words",
+    "health_words",
+    "fee_tnd",
+    "is_free",
+    "vaccinated",
+    "dewormed",
+    "sterilized",
+    "fur_length"
+  ],
+  "cutoffs": [
+    1.847,
+    2.2552,
+    2.3218,
+    2.7002
+  ],
+  "myr_to_tnd": 0.7,
+  "metrics": {
+    "test_listings": 2051,
+    "qwk": 0.3691,
+    "accuracy": 0.3462,
+    "argmax_qwk": 0.3138,
+    "argmax_accuracy": 0.3803,
+    "baseline_accuracy": 0.274,
+    "within_one_class": 0.7314,
+    "qwk_cv_mean": 0.3367,
+    "qwk_cv_std": 0.015,
+    "cv_splits": 5
+  },
+  "feature_importance": {
+    "sterilized": 0.1027,
+    "is_mixed": 0.0898,
+    "is_cat": 0.0866,
+    "age_months": 0.0817,
+    "photo_count": 0.0676,
+    "is_domestic": 0.0628,
+    "size": 0.0604,
+    "fur_length": 0.0581,
+    "health_words": 0.0536,
+    "vaccinated": 0.0515,
+    "fee_tnd": 0.0514,
+    "desc_chars": 0.0491,
+    "desc_words": 0.049,
+    "dewormed": 0.0479,
+    "is_free": 0.045,
+    "is_female": 0.0427
+  }
+}

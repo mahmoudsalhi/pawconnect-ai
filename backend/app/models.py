@@ -110,6 +110,11 @@ class Pet(Base):
     traits: Mapped[list[str]] = mapped_column(JSON, default=list)
     reward: Mapped[str | None] = mapped_column(String(60))
     fee: Mapped[str | None] = mapped_column(String(40))
+    # Adoption listings: health and coat details (None = not stated). Inputs to the M3 model.
+    vaccinated: Mapped[bool | None] = mapped_column(Boolean)
+    dewormed: Mapped[bool | None] = mapped_column(Boolean)
+    sterilized: Mapped[bool | None] = mapped_column(Boolean)
+    fur_length: Mapped[str | None] = mapped_column(String(10))  # Short / Medium / Long
     ai_breeds: Mapped[list[list]] = mapped_column(JSON, default=list)  # [[label, pct], ...]
     adopt_speed: Mapped[int | None] = mapped_column(Integer)  # PetFinder class 0-4
     listing_tips: Mapped[list[str]] = mapped_column(JSON, default=list)

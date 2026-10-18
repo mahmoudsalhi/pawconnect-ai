@@ -13,6 +13,7 @@ Model map (matches the labels shown in the UI):
     M4  suggest_tags        listing text tagging (TF-IDF + SVM, PetFinder text)
     M5  score_photo         photo engagement score (CNN, PetFinder Pawpularity)
     M6  remove_background   background removal (U-Net, Oxford-IIIT Pet)
+    M9  compatibility       pet-owner compatibility from a questionnaire (sentence embeddings + scoring)
 """
 
 from __future__ import annotations
@@ -81,6 +82,54 @@ class ListingFeatures:
     description: str
     fee: str | None
     size: str
+    age_label: str = ""  # free text such as "4 months" or "2 years"
+    sex: str = "Unknown"
+    vaccinated: bool | None = None  # None = not stated
+    dewormed: bool | None = None
+    sterilized: bool | None = None
+    fur_length: str = ""  # "Short", "Medium", "Long" or "" if not stated
+
+
+@dataclass(frozen=True)
+class Questionnaire:
+    """An adopter's answers for compatibility matching (M9)."""
+
+    species: str = "Any"  # Dog, Cat, Any
+    home: str = "apartment"  # apartment, house, house_garden
+    children: str = "none"  # none, older (6+), young (under 6)
+    other_pets: str = "none"  # none, dogs, cats, both
+    activity: str = "moderate"  # relaxed, moderate, active
+    hours_alone: str = "4to8"  # under4, 4to8, over8
+    experience: str = "some"  # first, some, experienced
+    grooming: str = "some"  # minimal, some, happy
+    age: str = "any"  # young, adult, senior, any
+    size: str = "any"  # Small, Medium, Large, any
+    ideal: str = ""  # free text: "describe your ideal pet"
+
+
+@dataclass(frozen=True)
+class CompatPet:
+    """What the matcher knows about one adoptable pet."""
+
+    pet_id: int
+    species: str
+    size: str
+    age_group: str
+    fur_length: str
+    text: str  # description and traits
+
+
+@dataclass(frozen=True)
+class CompatReason:
+    text: str
+    good: bool
+
+
+@dataclass(frozen=True)
+class CompatMatch:
+    pet_id: int
+    score: int  # 0-100
+    reasons: list[CompatReason] = field(default_factory=list)
 
 
 class AIProvider(ABC):
@@ -88,8 +137,8 @@ class AIProvider(ABC):
     name: str = "custom"
 
     @abstractmethod
-    def predict_breed(self, images: list[ImageInput], species: str) -> list[BreedPrediction]:
-        """Top breed guesses, best first (the UI shows the first three)."""
+    def predict_breed(self, images: list[ImageInput], species: str, top: int = 3) -> list[BreedPrediction]:
+        """Top breed guesses, best first. species "Dog"/"Cat" limits guesses to that species, anything else allows both."""
 
     @abstractmethod
     def score_photo(self, image: ImageInput) -> PhotoQuality:
@@ -114,3 +163,8 @@ class AIProvider(ABC):
     @abstractmethod
     def adoption_speed(self, features: ListingFeatures) -> AdoptionSpeed:
         """Predicted adoption speed class and the listing improvements most likely to help."""
+
+    @abstractmethod
+    def compatibility(self, answers: Questionnaire, pets: list[CompatPet]) -> list[CompatMatch]:
+        """M9: compatibility of each pet with an adopter's questionnaire, best first. Pets of an excluded
+        species are left out."""

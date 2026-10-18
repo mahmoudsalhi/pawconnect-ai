@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     # Which AI implementation to load. "demo" is the built-in placeholder; point this at
     # your own provider class (e.g. "app.ai.custom:MyProvider") once the models are ready.
     ai_provider: str = "demo"
+    # Which M3 weights file in app/ai/weights/ to load: the real PetFinder model, or "m3_synthetic"
+    # (the simulated-data experiment from ml/m3_synthetic) for comparison.
+    m3_weights: str = "m3_adoption_speed"
 
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782

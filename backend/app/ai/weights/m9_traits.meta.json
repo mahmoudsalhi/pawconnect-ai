@@ -1,0 +1,98 @@
+{
+  "model": "Ridge regression (alpha=1.0) on sentence-transformers/all-MiniLM-L6-v2 sentence embeddings + size + coat length",
+  "dataset": "Kaggle jesusic/dog-breeds-traits-origins-provenance (CC BY 4.0), reviewed breeds",
+  "trained_on": "2026-10-18",
+  "training_breeds": 618,
+  "traits": [
+    "energy",
+    "children_friendly",
+    "apartment_friendly",
+    "novice_owner_friendly",
+    "good_with_other_dogs",
+    "grooming"
+  ],
+  "cv_folds": 5,
+  "metrics": {
+    "energy": {
+      "mae": 0.418,
+      "baseline_mae": 0.569,
+      "exact_accuracy": 0.684,
+      "baseline_exact_accuracy": 0.511,
+      "within_one": 0.99,
+      "spearman": 0.73
+    },
+    "children_friendly": {
+      "mae": 0.45,
+      "baseline_mae": 0.58,
+      "exact_accuracy": 0.642,
+      "baseline_exact_accuracy": 0.513,
+      "within_one": 0.984,
+      "spearman": 0.548
+    },
+    "apartment_friendly": {
+      "mae": 0.546,
+      "baseline_mae": 1.063,
+      "exact_accuracy": 0.523,
+      "baseline_exact_accuracy": 0.278,
+      "within_one": 0.971,
+      "spearman": 0.787
+    },
+    "novice_owner_friendly": {
+      "mae": 0.543,
+      "baseline_mae": 0.878,
+      "exact_accuracy": 0.537,
+      "baseline_exact_accuracy": 0.35,
+      "within_one": 0.971,
+      "spearman": 0.746
+    },
+    "good_with_other_dogs": {
+      "mae": 0.542,
+      "baseline_mae": 0.636,
+      "exact_accuracy": 0.523,
+      "baseline_exact_accuracy": 0.434,
+      "within_one": 0.977,
+      "spearman": 0.527
+    },
+    "grooming": {
+      "mae": 0.39,
+      "baseline_mae": 0.676,
+      "exact_accuracy": 0.728,
+      "baseline_exact_accuracy": 0.529,
+      "within_one": 0.989,
+      "spearman": 0.767
+    }
+  },
+  "overall": {
+    "mae": 0.482,
+    "baseline_mae": 0.734,
+    "exact_accuracy": 0.606,
+    "baseline_exact_accuracy": 0.436,
+    "within_one": 0.98
+  },
+  "label_range": {
+    "energy": [
+      3.0,
+      5.0
+    ],
+    "children_friendly": [
+      3.0,
+      4.0
+    ],
+    "apartment_friendly": [
+      1.0,
+      4.0
+    ],
+    "novice_owner_friendly": [
+      1.0,
+      4.0
+    ],
+    "good_with_other_dogs": [
+      2.0,
+      4.0
+    ],
+    "grooming": [
+      2.0,
+      3.0
+    ]
+  }
+}

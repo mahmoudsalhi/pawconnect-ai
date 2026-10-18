@@ -1,0 +1,5 @@
+# Extra packages for training the models in ml/ (not needed to run the app)
+-r requirements.txt
+pandas>=2.2
+scikit-learn>=1.6
+kaggle>=1.7

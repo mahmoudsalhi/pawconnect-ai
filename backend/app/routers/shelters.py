@@ -5,6 +5,7 @@ from sqlalchemy.orm import selectinload
 from ..deps import DB
 from ..models import Pet, PetStatus, Shelter
 from ..schemas import InsightRow, ShelterOut, StatsOut
+from ..services.adoption import predict_speed
 from ..services.serialize import days_ago
 
 router = APIRouter(prefix="/api", tags=["shelters"])
@@ -31,12 +32,12 @@ def shelter_insights(slug: str, db: DB):
         select(Pet).where(Pet.shelter_id == shelter.id, Pet.status == PetStatus.adopt, Pet.resolved.is_(False))
         .options(selectinload(Pet.photos))
     ).all()
-    rows = [
-        InsightRow(pet_id=p.id, name=p.name, photo=p.photos[0].url if p.photos else "", species=p.species,
-                   age_label=p.age_label, days_listed=days_ago(p.event_date), speed_class=p.adopt_speed or 0,
-                   tips=p.listing_tips or ["Listing is in good shape"])
-        for p in pets
-    ]
+    rows = []
+    for p in pets:
+        speed = predict_speed(p)
+        rows.append(InsightRow(pet_id=p.id, name=p.name, photo=p.photos[0].url if p.photos else "", species=p.species,
+                               age_label=p.age_label, days_listed=days_ago(p.event_date), speed_class=speed.speed_class,
+                               tips=speed.tips))
     return sorted(rows, key=lambda r: -r.speed_class)
 
 

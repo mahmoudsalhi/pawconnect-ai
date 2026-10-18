@@ -52,8 +52,8 @@ def test_protected_routes_need_a_token(client):
 
 def test_browse_filters_and_counts(client):
     d = client.get("/api/pets").json()
-    assert d["counts"] == {"all": 22, "lost": 5, "found": 8, "adopt": 9}
-    assert d["total"] == 22 and len(d["items"]) == 8 and d["pages"] == 3
+    assert d["counts"] == {"all": 28, "lost": 5, "found": 8, "adopt": 15}
+    assert d["total"] == 28 and len(d["items"]) == 8 and d["pages"] == 4
 
     cats = client.get("/api/pets", params={"species": "Cat", "status": "found"}).json()
     assert cats["total"] == 5 and all(p["species"] == "Cat" for p in cats["items"])
@@ -62,7 +62,7 @@ def test_browse_filters_and_counts(client):
     assert near and all(p["distance_km"] <= 5 for p in near)
     assert [p["distance_km"] for p in near] == sorted(p["distance_km"] for p in near)
 
-    assert client.get("/api/pets", params={"q": "good with kids", "status": "adopt"}).json()["total"] == 2
+    assert client.get("/api/pets", params={"q": "good with kids", "status": "adopt"}).json()["total"] == 4
 
 
 def test_resolved_reports_are_hidden(client):
@@ -181,7 +181,9 @@ def test_shelters_and_insights(client):
     shelters = client.get("/api/shelters").json()
     assert [s["slug"] for s in shelters] == ["carthage", "ariana", "sousse", "sfax"]
     rows = client.get("/api/shelters/carthage/insights").json()
-    assert [r["name"] for r in rows][0] in {"Zitouna", "Rocky"} and rows[-1]["name"] == "Simba"
+    speeds = [r["speed_class"] for r in rows]
+    assert speeds == sorted(speeds, reverse=True) and all(0 <= s <= 4 for s in speeds)
+    assert all(r["tips"] for r in rows)
 
 
 # ---------- AI ----------
@@ -194,6 +196,21 @@ def test_ai_match_uses_cached_scores(client):
     seeded = [(h["pet"]["name"], h["score"]) for h in r["results"] if h["pet"]["ref"] < "PC-TN-01000"]
     assert seeded == [("Ginger", 87), ("Safran", 74), ("Caramel", 63), ("Minou", 58)]
     assert len(r["signature"]) == 48
+
+
+def test_ai_compatibility(client):
+    r = client.post("/api/ai/compatibility", json={"species": "Cat", "home": "apartment", "hours_alone": "over8"}).json()
+    scores = [h["score"] for h in r["results"]]
+    assert r["results"] and all(h["pet"]["species"] == "Cat" for h in r["results"])
+    assert scores == sorted(scores, reverse=True) and all(0 <= s <= 100 for s in scores)
+    assert all(isinstance(x["good"], bool) and x["text"] for h in r["results"] for x in h["reasons"])
+
+    family = client.post("/api/ai/compatibility", json={"children": "young", "activity": "relaxed"}).json()["results"]
+    runner = client.post("/api/ai/compatibility", json={"activity": "active", "home": "house_garden"}).json()["results"]
+    assert family[0]["pet"]["name"] != runner[0]["pet"]["name"]
+
+    bad = client.post("/api/ai/compatibility", json={"home": "castle"})
+    assert bad.status_code == 422
 
 
 def test_ai_match_by_photo_and_tags(client):

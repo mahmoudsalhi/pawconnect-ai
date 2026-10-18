@@ -30,6 +30,7 @@ from .models import (
     User,
 )
 from .security import hash_password
+from .services.adoption import predict_speed
 
 TUNIS = timezone(timedelta(hours=1))
 TODAY = date.today()
@@ -101,33 +102,52 @@ REPORTS = [
 ]
 
 ADOPTABLE = [
-    dict(key="simba", name="Simba", species="Dog", breed="Golden retriever mix", age="1 year", ag="young", sex="Male", size="Large", color="Golden", shelter="carthage", days=15, photo="1552053831-71594a27632d", fee="50 TND", speed=1, traits=["Playful", "Good with kids", "House-trained"],
-         desc="Simba was found as a puppy near Gammarth and has grown into a happy, playful young dog. He loves fetch, knows “sit” and “stay”, and gets along with children and other dogs.",
-         ai=[["Leonberger", 41], ["Great Pyrenees", 22], ["Newfoundland", 13]], tips=["Listing is in good shape"]),
-    dict(key="nala", name="Nala", species="Cat", breed="Persian mix", age="2 years", ag="adult", sex="Female", size="Medium", color="Calico, long hair", shelter="ariana", days=24, photo="1526336024174-e58f5cdd8e13", fee="40 TND", speed=2, traits=["Calm", "Indoor only", "Enjoys brushing"],
-         desc="Nala is a gentle long-haired cat who likes quiet homes and sunny windowsills. She needs daily brushing and would suit an apartment.",
-         ai=[["Persian", 63], ["Ragdoll", 18], ["Birman", 9]], tips=["Add a photo in natural light", "Mention she is litter-trained"]),
-    dict(key="biscuit", name="Biscuit", species="Dog", breed="Golden mix", age="4 months", ag="young", sex="Male", size="Medium", color="Golden", shelter="ariana", days=6, photo="1507146426996-ef05306b995a", fee="50 TND", speed=1, traits=["Puppy energy", "Learning commands", "Good with dogs"],
-         desc="Biscuit is a curious puppy with endless energy. He is learning basic commands and needs a family with time for walks and training.",
-         ai=[["Leonberger", 36], ["Great Pyrenees", 24], ["Newfoundland", 11]], tips=["Listing is in good shape"]),
-    dict(key="zitouna", name="Zitouna", species="Cat", breed="Domestic shorthair", age="3 years", ag="adult", sex="Female", size="Small", color="Silver tabby", shelter="carthage", days=48, photo="1518791841217-8f162f1e1131", fee="30 TND", speed=3, traits=["Gentle", "Lap cat", "Good with cats"],
-         desc="Zitouna (“olive tree”) came to the refuge with her kittens, who have all been adopted. She is a calm lap cat who purrs the moment you sit down.",
-         ai=None, tips=["Add 2 more photos", "Describe her personality in the first line"]),
-    dict(key="bobby", name="Bobby", species="Dog", breed="Pug", age="7 years", ag="senior", sex="Male", size="Small", color="Black", shelter="sousse", days=96, photo="1517849845537-4d257902454a", fee="Free for seniors", speed=4, traits=["Senior", "Couch companion", "Apartment-friendly"],
-         desc="Bobby is a calm senior who snores softly and loves short walks. He needs a ground-floor home or a lift because stairs are hard for him.",
-         ai=[["Pug", 88], ["Boxer", 4], ["Japanese chin", 3]], tips=["Waive or lower the fee", "Add a short video", "Put “apartment-friendly” in the title"]),
-    dict(key="lilou", name="Lilou", species="Cat", breed="Domestic shorthair", age="3 months", ag="young", sex="Female", size="Small", color="Tabby & white", shelter="sfax", days=4, photo="1615789591457-74a63395c990", fee="20 TND", speed=1, traits=["Curious", "Litter-trained", "Vaccinated"],
-         desc="Lilou was rescued from a market stall in Sfax with her two brothers. She is curious, fearless and already uses the litter box.",
-         ai=None, tips=["Listing is in good shape"]),
-    dict(key="fella", name="Fella", species="Cat", breed="Domestic shorthair", age="4 years", ag="adult", sex="Female", size="Medium", color="Black & white", shelter="sousse", days=37, photo="1514888286974-6c03e2ca1dba", fee="30 TND", speed=3, traits=["Independent", "Talkative", "Spayed"],
-         desc="Fella is an independent cat who likes to supervise from a high shelf. She chats when she wants dinner and prefers to be the only cat.",
-         ai=None, tips=["Add more photos", "Mention she is spayed and vaccinated"]),
-    dict(key="rocky", name="Rocky", species="Dog", breed="Labrador mix", age="5 years", ag="adult", sex="Male", size="Large", color="Cream", shelter="carthage", days=61, photo="1537204696486-967f1b7198c8", fee="50 TND", speed=3, traits=["Loyal", "Good on lead", "Needs a garden"],
-         desc="Rocky is a loyal, easy-going dog who walks well on a lead. He would love a home with a garden and someone who enjoys long weekend walks.",
-         ai=[["Great Pyrenees", 34], ["Leonberger", 21], ["American bulldog", 16]], tips=["Add photos with people", "Shorten the description to key facts"]),
-    dict(key="pistache", name="Pistache", species="Dog", breed="Dachshund mix", age="2 years", ag="adult", sex="Female", size="Small", color="Red", shelter="ariana", days=19, photo="1588943211346-0908a1fb0b01", fee="40 TND", speed=2, traits=["Cuddly", "Good with kids", "Small-space friendly"],
-         desc="Pistache is a cuddly little dog who follows you from room to room. She is great with children and happy in a small apartment.",
-         ai=[["Miniature pinscher", 39], ["Chihuahua", 21], ["Basset hound", 14]], tips=["Add a full-body photo"]),
+    dict(key="simba", name="Simba", species="Dog", breed="Golden retriever mix", age="1 year", ag="young", sex="Male", size="Large", color="Golden", shelter="carthage", days=15, photo="1552053831-71594a27632d", fee="50 TND", vacc=True, dew=True, ster=True, fur="Medium", traits=["Playful", "Good with kids", "House-trained"],
+         desc="Simba was found as a puppy near Gammarth and has grown into a happy, playful young dog. He loves fetch, knows “sit” and “stay”, and gets along with children and other dogs. He is fully vaccinated, dewormed and neutered, and walks nicely on a lead. Simba is happiest with an active family who can give him daily walks and a garden to play in. He sleeps through the night in his crate and is fully house-trained.",
+         ai=[["Leonberger", 41], ["Great Pyrenees", 22], ["Newfoundland", 13]]),
+    dict(key="nala", name="Nala", species="Cat", breed="Persian mix", age="2 years", ag="adult", sex="Female", size="Medium", color="Calico, long hair", shelter="ariana", days=24, photo="1526336024174-e58f5cdd8e13", fee="40 TND", vacc=True, dew=None, ster=True, fur="Long", traits=["Calm", "Indoor only", "Enjoys brushing"],
+         desc="Nala is a gentle long-haired cat who likes quiet homes and sunny windowsills. She needs daily brushing and would suit an apartment. She is spayed, vaccinated and microchipped, and uses her litter box without fail. Nala is shy for the first day in a new place, then follows you around and asks for gentle brushing. She has lived calmly with an older cat and would be fine in a home without young children.",
+         ai=[["Persian", 63], ["Ragdoll", 18], ["Birman", 9]]),
+    dict(key="biscuit", name="Biscuit", species="Dog", breed="Golden mix", age="4 months", ag="young", sex="Male", size="Medium", color="Golden", shelter="ariana", days=6, photo="1507146426996-ef05306b995a", fee="50 TND", vacc=True, dew=True, ster=False, fur="Medium", traits=["Puppy energy", "Learning commands", "Good with dogs"],
+         desc="Biscuit is a curious puppy with endless energy. He is learning basic commands and needs a family with time for walks and training. He has had his first two vaccinations and has been dewormed; the shelter covers his neutering when he is old enough. Biscuit already sits for his food, walks on a lead for short distances and sleeps well at night. He would thrive with a family who enjoys training and outdoor play.",
+         ai=[["Leonberger", 36], ["Great Pyrenees", 24], ["Newfoundland", 11]]),
+    dict(key="zitouna", name="Zitouna", species="Cat", breed="Domestic shorthair", age="3 years", ag="adult", sex="Female", size="Small", color="Silver tabby", shelter="carthage", days=48, photo="1518791841217-8f162f1e1131", fee="Free", vacc=True, dew=True, ster=True, fur="Short", traits=["Gentle", "Lap cat", "Good with cats"],
+         desc="Zitouna (“olive tree”) came to the refuge with her kittens, who have all been adopted. She is a calm lap cat who purrs the moment you sit down. She is spayed, vaccinated and dewormed, and uses her litter box reliably. Zitouna is quiet, gentle with visitors and happy in an apartment. She has lived with other cats and would suit a calm home, a first-time cat owner or an older adult looking for company. Her adoption fee is waived.",
+         ai=None),
+    dict(key="bobby", name="Bobby", species="Dog", breed="Pug", age="7 years", ag="senior", sex="Male", size="Small", color="Black", shelter="sousse", days=96, photo="1517849845537-4d257902454a", fee="Free for seniors", vacc=True, dew=None, ster=True, fur="Short", traits=["Senior", "Couch companion", "Apartment-friendly"],
+         desc="Bobby is a calm senior who snores softly and loves short walks. He needs a ground-floor home or a lift because stairs are hard for him. He is neutered, vaccinated and in good health for his age, with a check-up from the shelter vet last month. Bobby is house-trained, quiet indoors and polite with other dogs. He would be a wonderful companion for a retired person or a quiet household.",
+         ai=[["Pug", 88], ["Boxer", 4], ["Japanese chin", 3]]),
+    dict(key="lilou", name="Lilou", species="Cat", breed="Domestic shorthair", age="3 months", ag="young", sex="Female", size="Small", color="Tabby & white", shelter="sfax", days=4, photo="1615789591457-74a63395c990", fee="20 TND", vacc=True, dew=True, ster=False, fur="Short", traits=["Curious", "Litter-trained", "Vaccinated"],
+         desc="Lilou was rescued from a market stall in Sfax with her two brothers. She is curious, fearless and already uses the litter box. She has had her first vaccination and has been dewormed; spaying is included once she is old enough. Lilou plays with toys for hours, then curls up on a lap to sleep. She would suit a family with older children or a home with another young cat.",
+         ai=None),
+    dict(key="fella", name="Fella", species="Cat", breed="Domestic shorthair", age="4 years", ag="adult", sex="Female", size="Medium", color="Black & white", shelter="sousse", days=37, photo="1514888286974-6c03e2ca1dba", fee="Free", vacc=True, dew=None, ster=True, fur="Short", traits=["Independent", "Talkative", "Spayed"],
+         desc="Fella is an independent cat who likes to supervise from a high shelf. She chats when she wants dinner and prefers to be the only cat. She is spayed, vaccinated and microchipped, and is in excellent health. Fella is affectionate on her own terms, sleeps on the end of the bed and uses her litter box perfectly. She would suit an adult household or a quiet apartment where she is the only pet. Her adoption fee is waived.",
+         ai=None),
+    dict(key="rocky", name="Rocky", species="Dog", breed="Labrador mix", age="5 years", ag="adult", sex="Male", size="Large", color="Cream", shelter="carthage", days=61, photo="1537204696486-967f1b7198c8", fee="Free", vacc=True, dew=True, ster=True, fur="Short", traits=["Loyal", "Good on lead", "Needs a garden"],
+         desc="Rocky is a loyal, easy-going dog who walks well on a lead. He would love a home with a garden and someone who enjoys long weekend walks. He is neutered, vaccinated and dewormed, and has never had any health problems at the shelter. Rocky is house-trained, calm indoors and friendly with visitors and older children. He has waited a long time for a family, so his adoption fee is waived.",
+         ai=[["Great Pyrenees", 34], ["Leonberger", 21], ["American bulldog", 16]]),
+    dict(key="pistache", name="Pistache", species="Dog", breed="Dachshund mix", age="2 years", ag="adult", sex="Female", size="Small", color="Red", shelter="ariana", days=19, photo="1588943211346-0908a1fb0b01", fee="40 TND", vacc=True, dew=None, ster=True, fur="Short", traits=["Cuddly", "Good with kids", "Small-space friendly"],
+         desc="Pistache is a cuddly little dog who follows you from room to room. She is great with children and happy in a small apartment. She is spayed, vaccinated and microchipped. Pistache is house-trained, quiet when left alone for a few hours and gentle with cats. She loves short walks and long naps, and would suit an apartment, a family with children or a first-time dog owner.",
+         ai=[["Miniature pinscher", 39], ["Chihuahua", 21], ["Basset hound", 14]]),
+    # Young purebred listings the M3 model predicts will be adopted quickly.
+    dict(key="atlas", name="Atlas", species="Dog", breed="German shepherd", age="4 months", ag="young", sex="Male", size="Large", color="Black & tan", shelter="carthage", days=3, photo="1589941013453-ec89f33b5e95", fee="Free", vacc=True, dew=True, ster=False, fur="Medium", traits=["Smart", "Eager to learn", "Good with kids"],
+         desc="Atlas is a bright German shepherd puppy who learns fast and loves praise. He already sits, comes when called and walks on a lead for short distances. He is vaccinated, dewormed and microchipped, and the shelter covers his neutering when he is old enough. Atlas would thrive with an active family who can keep training him and give him space to run.",
+         ai=[["German shepherd", 91], ["Belgian malinois", 5], ["Leonberger", 2]]),
+    dict(key="miel", name="Miel", species="Dog", breed="Golden retriever", age="3 months", ag="young", sex="Female", size="Large", color="Golden", shelter="carthage", days=2, photo="1591160690555-5debfba289f0", fee="Free", vacc=True, dew=True, ster=False, fur="Medium", traits=["Gentle", "Loves people", "Puppy energy"],
+         desc="Miel is a sweet golden retriever puppy who wants to be wherever people are. She has had her first two vaccinations, has been dewormed and is microchipped; spaying is included once she is old enough. She is nearly house-trained, sleeps through the night and is gentle with children and other dogs. Miel would suit a family with time for walks, play and puppy classes.",
+         ai=[["Golden retriever", 94], ["Labrador retriever", 3], ["Great Pyrenees", 1]]),
+    dict(key="pixel", name="Pixel", species="Dog", breed="Yorkshire terrier", age="3 months", ag="young", sex="Male", size="Small", color="Black & tan", shelter="carthage", days=5, photo="1546527868-ccb7ee7dfa6a", fee="Free", vacc=True, dew=True, ster=False, fur="Long", traits=["Playful", "Apartment-friendly", "Cuddly"],
+         desc="Pixel is a tiny Yorkshire terrier puppy with a big personality. He is vaccinated, dewormed and microchipped, and is learning to use a puppy pad. He plays hard for an hour, then falls asleep on the nearest lap. Pixel is a good size for an apartment and would suit a first-time dog owner, an older adult or a family with gentle children.",
+         ai=[["Yorkshire terrier", 89], ["Silky terrier", 6], ["Chihuahua", 2]]),
+    dict(key="kiwi", name="Kiwi", species="Cat", breed="Domestic shorthair", age="3 months", ag="young", sex="Female", size="Small", color="Brown tabby", shelter="carthage", days=7, photo="1574144611937-0df059b5ef3e", fee="Free", vacc=True, dew=True, ster=False, fur="Short", traits=["Curious", "Litter-trained", "Talkative"],
+         desc="Kiwi is a chatty tabby kitten who greets everyone at the door. She is vaccinated and dewormed, uses her litter box perfectly and spaying is included when she is old enough. She loves feather toys, climbing and curling up next to you in the evening. Kiwi has grown up around other kittens and would be happy in an apartment or a home with another young cat.",
+         ai=[["Egyptian Mau", 38], ["American shorthair", 27], ["Bengal", 12]]),
+    dict(key="storm", name="Storm", species="Dog", breed="Siberian husky", age="6 months", ag="young", sex="Male", size="Large", color="Grey & white", shelter="carthage", days=9, photo="1605568427561-40dd23c2acea", fee="Free", vacc=True, dew=True, ster=True, fur="Medium", traits=["Energetic", "Friendly", "Good with dogs"],
+         desc="Storm is a cheerful young Siberian husky with striking blue eyes and endless energy. He is vaccinated, dewormed, microchipped and neutered. He walks well on a harness, gets along with other dogs and loves meeting new people. Storm needs an active owner who enjoys long walks or runs and a secure garden, and he would make a loyal adventure partner.",
+         ai=[["Siberian husky", 87], ["Alaskan malamute", 9], ["Samoyed", 2]]),
+    dict(key="flocon", name="Flocon", species="Dog", breed="Samoyed", age="5 months", ag="young", sex="Female", size="Large", color="White", shelter="carthage", days=11, photo="1596492784531-6e6eb5ea9993", fee="Free", vacc=True, dew=True, ster=False, fur="Long", traits=["Smiley", "Affectionate", "Good with kids"],
+         desc="Flocon is a fluffy Samoyed puppy with a permanent smile. She is vaccinated, dewormed and microchipped, and spaying is included once she is old enough. She is gentle with children, friendly with other dogs and already house-trained. Flocon enjoys brushing sessions and cool tiled floors, and would suit a family who can give her daily walks and regular grooming.",
+         ai=[["Samoyed", 92], ["Great Pyrenees", 4], ["American Eskimo dog", 2]]),
 ]
 
 MATCHES = {
@@ -201,12 +221,15 @@ def load(db) -> None:
         p = Pet(ref=f"PC-AD-0{1180 + a['days']}", status=PetStatus.adopt, name=a["name"], species=a["species"],
                 breed=a["breed"], age_label=a["age"], age_group=a["ag"], sex=a["sex"], size=a["size"], color=a["color"],
                 chip="Yes", description=a["desc"], tags=a["traits"], traits=a["traits"], fee=a["fee"],
-                ai_breeds=a["ai"] or default_ai, adopt_speed=a["speed"], listing_tips=a["tips"], city=sh.city, gov=sh.gov,
+                vaccinated=a["vacc"], dewormed=a["dew"], sterilized=a["ster"], fur_length=a["fur"],
+                ai_breeds=a["ai"] or default_ai, city=sh.city, gov=sh.gov,
                 lat=sh.lat, lng=sh.lng, event_date=TODAY - timedelta(days=a["days"]), contact_name=sh.name,
                 contact_role="Shelter", contact_email=f"{sh.slug}@example.com", shelter_id=sh.id,
                 owner_id=staff.id if sh.slug == "carthage" else None, views=60 + a["days"] * 4,
                 created_at=at(a["days"], 10, 0))
         p.photos = [PetPhoto(url=u, position=i) for i, u in enumerate(photo_urls(a["photo"]))]
+        speed = predict_speed(p)
+        p.adopt_speed, p.listing_tips = speed.speed_class, speed.tips
         db.add(p)
         pets[a["key"]] = p
 

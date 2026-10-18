@@ -138,6 +138,10 @@ class PetOut(BaseModel):
     traits: list[str]
     reward: str | None
     fee: str | None
+    vaccinated: bool | None
+    dewormed: bool | None
+    sterilized: bool | None
+    fur_length: str | None
     ai_breeds: list[list]
     adopt_speed: int | None
     city: str
@@ -338,6 +342,30 @@ class DashboardOut(BaseModel):
 # ---------- AI ----------
 
 
+class BreedIn(BaseModel):
+    photos: list[str] = Field(min_length=1, max_length=3)
+    species: Literal["Dog", "Cat", "Any"] = "Any"
+
+
+class BreedGuess(BaseModel):
+    label: str
+    confidence: int
+    species: str
+
+
+class BreedOut(BaseModel):
+    model: str
+    predictions: list[BreedGuess]
+
+
+class BreedInfoOut(BaseModel):
+    model: str
+    dataset: str
+    breeds: list[BreedGuess]  # confidence is 0 here; label and species only
+    metrics: dict
+    most_confused: list[dict]
+
+
 class AnalyzeIn(BaseModel):
     photos: list[str] = Field(min_length=1, max_length=6)
     species: str = "Dog"
@@ -367,6 +395,38 @@ class MatchIn(BaseModel):
     area: str = "ennasr"
     radius: int = Field(20, ge=1, le=300)
     threshold: int = Field(50, ge=0, le=95)
+
+
+class CompatIn(BaseModel):
+    """Adopter questionnaire for compatibility matching (M9)."""
+
+    species: Literal["Dog", "Cat", "Any"] = "Any"
+    home: Literal["apartment", "house", "house_garden"] = "apartment"
+    children: Literal["none", "older", "young"] = "none"
+    other_pets: Literal["none", "dogs", "cats", "both"] = "none"
+    activity: Literal["relaxed", "moderate", "active"] = "moderate"
+    hours_alone: Literal["under4", "4to8", "over8"] = "4to8"
+    experience: Literal["first", "some", "experienced"] = "some"
+    grooming: Literal["minimal", "some", "happy"] = "some"
+    age: Literal["young", "adult", "senior", "any"] = "any"
+    size: Literal["Small", "Medium", "Large", "any"] = "any"
+    ideal: str = Field("", max_length=300)
+
+
+class CompatReasonOut(BaseModel):
+    text: str
+    good: bool
+
+
+class CompatHit(BaseModel):
+    pet: PetOut
+    score: int
+    reasons: list[CompatReasonOut]
+
+
+class CompatOut(BaseModel):
+    model: str
+    results: list[CompatHit]
 
 
 class MatchHit(BaseModel):

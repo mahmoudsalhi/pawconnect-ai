@@ -2,6 +2,44 @@
 
 export type PetStatus = 'lost' | 'found' | 'adopt'
 
+export interface Questionnaire {
+  species: 'Dog' | 'Cat' | 'Any'
+  home: 'apartment' | 'house' | 'house_garden'
+  children: 'none' | 'older' | 'young'
+  other_pets: 'none' | 'dogs' | 'cats' | 'both'
+  activity: 'relaxed' | 'moderate' | 'active'
+  hours_alone: 'under4' | '4to8' | 'over8'
+  experience: 'first' | 'some' | 'experienced'
+  grooming: 'minimal' | 'some' | 'happy'
+  age: 'young' | 'adult' | 'senior' | 'any'
+  size: 'Small' | 'Medium' | 'Large' | 'any'
+  ideal: string
+}
+
+export interface BreedGuess {
+  label: string
+  confidence: number
+  species: string
+}
+
+export interface BreedResult {
+  model: string
+  predictions: BreedGuess[]
+}
+
+export interface BreedInfo {
+  model: string
+  dataset: string
+  breeds: BreedGuess[]
+  metrics: { test_photos: number; top1_accuracy: number; top3_accuracy: number; species_accuracy: number; baseline_accuracy: number }
+  most_confused: { count: number; true: string; predicted: string }[]
+}
+
+export interface CompatResult {
+  model: string
+  results: { pet: Pet; score: number; reasons: { text: string; good: boolean }[] }[]
+}
+
 export interface User {
   id: number
   name: string
@@ -46,6 +84,10 @@ export interface Pet {
   traits: string[]
   reward: string | null
   fee: string | null
+  vaccinated: boolean | null
+  dewormed: boolean | null
+  sterilized: boolean | null
+  fur_length: string | null
   ai_breeds: [string, number][]
   adopt_speed: number | null
   city: string

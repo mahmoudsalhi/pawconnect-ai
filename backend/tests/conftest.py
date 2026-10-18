@@ -2,10 +2,16 @@ import os
 from pathlib import Path
 
 # Point the app at TEST_DATABASE_URL before anything reads the settings.
+# An environment variable wins over backend/.env, e.g. TEST_DATABASE_URL=sqlite+pysqlite:///./pawconnect_test.db
 for _line in (Path(__file__).resolve().parent.parent / ".env").read_text(encoding="utf-8").splitlines():
     _key, _, _value = _line.partition("=")
     if _key.strip() == "TEST_DATABASE_URL" and _value.strip():
         os.environ["DATABASE_URL"] = _value.strip()
+if os.environ.get("TEST_DATABASE_URL"):
+    os.environ["DATABASE_URL"] = os.environ["TEST_DATABASE_URL"]
+
+# Tests assume the placeholder models (their seeded scores), whatever AI_PROVIDER says in .env.
+os.environ["AI_PROVIDER"] = "demo"
 
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402

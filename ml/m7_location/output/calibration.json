@@ -1,0 +1,522 @@
+{
+  "params": {
+    "cat_indoor": {
+      "speed_mult": 0.20358146296319682,
+      "detect_mult": 0.797251569733184,
+      "search_floor": 0.15,
+      "relocate_mult": 1.0
+    },
+    "cat_outdoor": {
+      "speed_mult": 1.4284927471652389,
+      "detect_mult": 0.797251569733184,
+      "search_floor": 0.15,
+      "relocate_mult": 1.0
+    },
+    "dog": {
+      "speed_mult": 0.6882222618336264,
+      "detect_mult": 1.0926497114435991,
+      "search_floor": 0.05278604791994199,
+      "relocate_mult": 8.545293912845523
+    }
+  },
+  "averaged_over_iterations": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "targets": {
+    "cat_indoor": {
+      "dist_quantile": 0.75,
+      "dist_m": 137.0
+    },
+    "cat_outdoor": {
+      "dist_quantile": 0.75,
+      "dist_m": 1609.0
+    },
+    "cat": {
+      "found_alive_7d": 0.34
+    },
+    "dog": {
+      "dist_quantile": 0.77,
+      "dist_m": 1609.0,
+      "recovered": 0.71
+    }
+  },
+  "checks": {
+    "cat_all_within_500m": 0.75,
+    "dog_beyond_8km": 0.076,
+    "dog_median_days": 2.0,
+    "cat_found_ever": 0.61
+  },
+  "history": [
+    {
+      "iteration": 0,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 1.0,
+          "detect_mult": 1.0,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.0,
+          "detect_mult": 1.0,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 1.0,
+          "detect_mult": 1.0,
+          "search_floor": 0.1,
+          "relocate_mult": 1.0
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 547.3277894006981,
+        "cat_outdoor_q75_m": 490.87825212642576,
+        "dog_q77_m": 1365.622574961967,
+        "dog_beyond_8km": 0.022821576763485476,
+        "cat_found_alive_7d": 0.32416666666666666,
+        "dog_found_alive": 0.6983333333333334,
+        "dog_median_days": 2.493055555555556
+      }
+    },
+    {
+      "iteration": 1,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.5172818579717866,
+          "detect_mult": 1.0358760756440748,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.9331820449317627,
+          "detect_mult": 1.0358760756440748,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 1.103405676823053,
+          "detect_mult": 1.0196186389161397,
+          "search_floor": 0.07185335625903437,
+          "relocate_mult": 1.9331820449317627
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 328.30934939781,
+        "cat_outdoor_q75_m": 2508.873585013135,
+        "dog_q77_m": 1547.5932819697969,
+        "dog_beyond_8km": 0.0536480686695279,
+        "cat_found_alive_7d": 0.33166666666666667,
+        "dog_found_alive": 0.68,
+        "dog_median_days": 2.996527777777778
+      }
+    },
+    {
+      "iteration": 2,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.3061890372149696,
+          "detect_mult": 1.0551097147535986,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.4808774224341203,
+          "detect_mult": 1.0551097147535986,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 1.1294701012080555,
+          "detect_mult": 1.0715936617158193,
+          "search_floor": 0.03918001431488154,
+          "relocate_mult": 2.38247555327298
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 202.27807627632745,
+        "cat_outdoor_q75_m": 1338.705503007619,
+        "dog_q77_m": 1657.9309460627123,
+        "dog_beyond_8km": 0.04966139954853273,
+        "cat_found_alive_7d": 0.3541666666666667,
+        "dog_found_alive": 0.6216666666666667,
+        "dog_median_days": 1.9722222222222223
+      }
+    },
+    {
+      "iteration": 3,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.24235539319937474,
+          "detect_mult": 1.0233721721615312,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.6536428185718821,
+          "detect_mult": 1.0233721721615312,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 1.109349782788445,
+          "detect_mult": 1.238915754768285,
+          "search_floor": 0.04001066889162106,
+          "relocate_mult": 3.0754256742629416
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 149.6910909846213,
+        "cat_outdoor_q75_m": 2000.082458489316,
+        "dog_q77_m": 2069.2582910187148,
+        "dog_beyond_8km": 0.06378132118451026,
+        "cat_found_alive_7d": 0.35833333333333334,
+        "dog_found_alive": 0.6516666666666666,
+        "dog_median_days": 1.6805555555555556
+      }
+    },
+    {
+      "iteration": 4,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.2298092242588443,
+          "detect_mult": 0.98387580764344,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.45126457730887,
+          "detect_mult": 0.98387580764344,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.9539229704964299,
+          "detect_mult": 1.3639429048895597,
+          "search_floor": 0.05194473016132321,
+          "relocate_mult": 3.4164674259332335
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 140.3164121562746,
+        "cat_outdoor_q75_m": 1825.2050166135155,
+        "dog_q77_m": 1430.9685008491144,
+        "dog_beyond_8km": 0.046511627906976744,
+        "cat_found_alive_7d": 0.4008333333333333,
+        "dog_found_alive": 0.7133333333333334,
+        "dog_median_days": 2.0208333333333335
+      }
+    },
+    {
+      "iteration": 5,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.22653468886370234,
+          "detect_mult": 0.8678026369376697,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.345529516692944,
+          "detect_mult": 0.8678026369376697,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 1.0234553223042966,
+          "detect_mult": 1.3563566247958077,
+          "search_floor": 0.05114353499020451,
+          "relocate_mult": 4.5869976289922665
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 155.49093459444828,
+        "cat_outdoor_q75_m": 1411.4096172163086,
+        "dog_q77_m": 1770.981085485663,
+        "dog_beyond_8km": 0.05732484076433121,
+        "cat_found_alive_7d": 0.39166666666666666,
+        "dog_found_alive": 0.68,
+        "dog_median_days": 1.442419495460746
+      }
+    },
+    {
+      "iteration": 6,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.20996359982242424,
+          "detect_mult": 0.7793678727712339,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.455576422711159,
+          "detect_mult": 0.7793678727712339,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.9662158591350228,
+          "detect_mult": 1.4254968541007533,
+          "search_floor": 0.08350228517860708,
+          "relocate_mult": 5.432640373044619
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 172.5335032928043,
+        "cat_outdoor_q75_m": 1559.3111123911035,
+        "dog_q77_m": 1967.4098839389928,
+        "dog_beyond_8km": 0.06288032454361055,
+        "cat_found_alive_7d": 0.33916666666666667,
+        "dog_found_alive": 0.75,
+        "dog_median_days": 2.0243055555555554
+      }
+    },
+    {
+      "iteration": 7,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.182832031967616,
+          "detect_mult": 0.7807913940072364,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.4832316169599133,
+          "detect_mult": 0.7807913940072364,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.8563886024508318,
+          "detect_mult": 1.331861082517917,
+          "search_floor": 0.08200290802942432,
+          "relocate_mult": 6.086817035520048
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 115.56674452318705,
+        "cat_outdoor_q75_m": 1500.9484907090227,
+        "dog_q77_m": 1917.0631123764592,
+        "dog_beyond_8km": 0.056338028169014086,
+        "cat_found_alive_7d": 0.33416666666666667,
+        "dog_found_alive": 0.7816666666666666,
+        "dog_median_days": 2.4396335966850464
+      }
+    },
+    {
+      "iteration": 8,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.20248128977772675,
+          "detect_mult": 0.7908837200926484,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.546404581942357,
+          "detect_mult": 0.7908837200926484,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.7709436909915423,
+          "detect_mult": 1.1766895800684618,
+          "search_floor": 0.060867762742275976,
+          "relocate_mult": 7.284460911826882
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 157.90088787256371,
+        "cat_outdoor_q75_m": 1858.5623541558427,
+        "dog_q77_m": 1754.3950361750994,
+        "dog_beyond_8km": 0.07337526205450734,
+        "cat_found_alive_7d": 0.315,
+        "dog_found_alive": 0.7433333333333333,
+        "dog_median_days": 2.2534722222222223
+      }
+    },
+    {
+      "iteration": 9,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.18594585237450853,
+          "detect_mult": 0.8366388621842421,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.4182424249616168,
+          "detect_mult": 0.8366388621842421,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.7319473643227458,
+          "detect_mult": 1.1121129528815499,
+          "search_floor": 0.050892527388987495,
+          "relocate_mult": 7.4397059973701545
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 105.37062606727298,
+        "cat_outdoor_q75_m": 1109.697505735903,
+        "dog_q77_m": 1684.4209475702417,
+        "dog_beyond_8km": 0.0408997955010225,
+        "cat_found_alive_7d": 0.37416666666666665,
+        "dog_found_alive": 0.7483333333333333,
+        "dog_median_days": 2.076388888888889
+      }
+    },
+    {
+      "iteration": 10,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.2176642474526365,
+          "detect_mult": 0.7783400624512836,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.7723983340494123,
+          "detect_mult": 0.7783400624512836,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.712103462567337,
+          "detect_mult": 1.0420619009396996,
+          "search_floor": 0.04811006771673942,
+          "relocate_mult": 10.789746639172524
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 141.22138379168547,
+        "cat_outdoor_q75_m": 2705.2888579194487,
+        "dog_q77_m": 2170.5279744672866,
+        "dog_beyond_8km": 0.09032258064516129,
+        "cat_found_alive_7d": 0.32166666666666666,
+        "dog_found_alive": 0.7133333333333334,
+        "dog_median_days": 1.9305555555555554
+      }
+    },
+    {
+      "iteration": 11,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.21373673076788238,
+          "detect_mult": 0.8108573236692908,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.2976774961203459,
+          "detect_mult": 0.8108573236692908,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.5950281216804515,
+          "detect_mult": 1.036265929988704,
+          "search_floor": 0.050729140709031936,
+          "relocate_mult": 9.727956047612365
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 131.43853205390616,
+        "cat_outdoor_q75_m": 741.5788992116995,
+        "dog_q77_m": 1747.4143063440654,
+        "dog_beyond_8km": 0.08924949290060852,
+        "cat_found_alive_7d": 0.3858333333333333,
+        "dog_found_alive": 0.7533333333333333,
+        "dog_median_days": 2.2256944444444446
+      }
+    },
+    {
+      "iteration": 12,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.21911791286201568,
+          "detect_mult": 0.7367461647053747,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 2.065408601831659,
+          "detect_mult": 0.7367461647053747,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.5662830802304043,
+          "detect_mult": 0.9626157121160962,
+          "search_floor": 0.04321198202926598,
+          "relocate_mult": 8.83377433627184
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 155.23248107610945,
+        "cat_outdoor_q75_m": 3821.612657532783,
+        "dog_q77_m": 1524.7206570734622,
+        "dog_beyond_8km": 0.06553911205073996,
+        "cat_found_alive_7d": 0.2808333333333333,
+        "dog_found_alive": 0.695,
+        "dog_median_days": 2.361111111111111
+      }
+    },
+    {
+      "iteration": 13,
+      "params": {
+        "cat_indoor": {
+          "speed_mult": 0.20329217553999168,
+          "detect_mult": 0.8465034610222115,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "cat_outdoor": {
+          "speed_mult": 1.2291124218738645,
+          "detect_mult": 0.8465034610222115,
+          "search_floor": 0.15,
+          "relocate_mult": 1.0
+        },
+        "dog": {
+          "speed_mult": 0.5848615105920725,
+          "detect_mult": 0.9869408215927653,
+          "search_floor": 0.03368794682386885,
+          "relocate_mult": 9.654596422144847
+        }
+      },
+      "observed": {
+        "cat_indoor_q75_m": 130.15218690978026,
+        "cat_outdoor_q75_m": 1273.341089165653,
+        "dog_q77_m": 1668.5569902695934,
+        "dog_beyond_8km": 0.05982905982905983,
+        "cat_found_alive_7d": 0.37416666666666665,
+        "dog_found_alive": 0.6966666666666667,
+        "dog_median_days": 2.416408092360712
+      }
+    }
+  ],
+  "final_correction": {
+    "cat_outdoor.speed_mult": {
+      "to": 1.4284927471652389,
+      "method": "log-log interpolation between two full 24k-case runs",
+      "runs": [
+        [
+          1.246,
+          1106
+        ],
+        [
+          1.545,
+          1995
+        ]
+      ],
+      "elasticity": 2.742603172740005
+    }
+  }
+}

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import date, datetime
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
@@ -58,6 +58,40 @@ class TokenOut(BaseModel):
     access_token: str
     token_type: str = "bearer"
     user: UserOut
+
+
+# ---------- AI face login ----------
+
+FaceImage = Annotated[str, Field(min_length=100, max_length=4_500_000)]  # one base64 JPEG from the webcam
+
+
+class FaceStatusOut(BaseModel):
+    available: bool  # models loaded on this server
+    enrolled: bool
+    created_at: datetime | None = None
+    last_used_at: datetime | None = None
+
+
+class FaceEnrollIn(BaseModel):
+    images: list[FaceImage] = Field(min_length=3, max_length=5)
+    consent: bool
+
+
+class FaceChallengeIn(BaseModel):
+    email: str = Field(max_length=254)
+
+
+class FaceChallengeOut(BaseModel):
+    direction: Literal["left", "right"]  # which way to turn: the person's own left or right
+    state: str
+
+
+class FaceLoginIn(BaseModel):
+    email: str = Field(max_length=254)
+    state: str
+    front: FaceImage
+    turned: list[FaceImage] = Field(min_length=1, max_length=4)
+    remember: bool = True
 
 
 class SettingsIn(BaseModel):
@@ -174,6 +208,33 @@ class SightingOut(ORM):
     created_at: datetime
 
 
+class SearchZoneOut(BaseModel):
+    share: int
+    cells: list[tuple[float, float]]
+
+
+class RecoveryOut(BaseModel):
+    found_alive: float
+    found_alive_at_start: float
+    within_24h: float
+    within_7d: float
+    median_hours_if_found: float | None
+    beyond_horizon: bool
+    horizon_days: int
+    by_lifestyle: dict[str, float] | None = None
+
+
+class LocationOut(BaseModel):
+    model: str
+    hours_missing: float
+    cell_m: float
+    zones: list[SearchZoneOut]
+    peak: tuple[float, float]
+    self_return_share: float
+    missing_inputs: list[str]
+    recovery: RecoveryOut | None = None
+
+
 class PetDetailOut(PetOut):
     sightings: list[SightingOut]
     contact_note: str
@@ -239,6 +300,13 @@ class MessageIn(BaseModel):
     body: str = Field(min_length=5, max_length=2000)
 
 
+class ScamOut(BaseModel):
+    score: float
+    level: Literal["none", "caution", "high"]
+    labels: list[str] = []
+    reasons: list[str] = []
+
+
 class MessageOut(ORM):
     id: int
     pet_id: int
@@ -247,6 +315,7 @@ class MessageOut(ORM):
     read: bool
     sender_name: str
     pet_name: str
+    scam: ScamOut | None = None
 
 
 # ---------- adoption ----------
@@ -371,11 +440,17 @@ class AnalyzeIn(BaseModel):
     species: str = "Dog"
 
 
+class AgeOut(BaseModel):
+    group: str | None  # "young" | "adult" | "senior", or None = not sure
+    confidence: int
+
+
 class AnalyzeOut(BaseModel):
     model: str
     breeds: list[list]
     quality: list[dict]
     cutout: str | None
+    age: AgeOut | None = None
 
 
 class TagsIn(BaseModel):
@@ -441,8 +516,13 @@ class MatchRunOut(BaseModel):
     area_label: str
     area_lat: float
     area_lng: float
-    signature: list[float]
+    signature: list[float]  # first 48 values, for the UI bars
+    signature_dim: int  # full length of the embedding the signature was cut from
     results: list[MatchHit]
+
+
+class AIInfoOut(BaseModel):
+    provider: str  # AIProvider.name: "demo" for placeholder outputs, otherwise the trained model's id
 
 
 class StatsOut(BaseModel):

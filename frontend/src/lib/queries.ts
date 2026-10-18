@@ -3,9 +3,12 @@ import { useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {
   api,
+  type AIInfo,
   type Application,
   type Dashboard,
+  type InboxMessage,
   type InsightRow,
+  type LocationPrediction,
   type Notification,
   type Pet,
   type PetDetail,
@@ -27,12 +30,23 @@ export const usePet = (id: number) =>
 export const useSimilar = (id: number) =>
   useQuery({ queryKey: ['similar', id], queryFn: () => api.get<Pet[]>(`/api/pets/${id}/similar`), enabled: Number.isFinite(id) })
 
+// M7 search zones. Only asked for open lost reports; 4xx/503 answers mean "not available", so no retries.
+export const useLocationPrediction = (id: number, enabled: boolean) =>
+  useQuery({
+    queryKey: ['location', id],
+    queryFn: () => api.get<LocationPrediction>(`/api/ai/location/${id}`),
+    enabled: enabled && Number.isFinite(id),
+    retry: false,
+    staleTime: 30 * 60_000,
+  })
+
 export const useShelters = () => useQuery({ queryKey: ['shelters'], queryFn: () => api.get<Shelter[]>('/api/shelters'), staleTime: 300_000 })
 
 export const useInsights = (slug: string) =>
   useQuery({ queryKey: ['insights', slug], queryFn: () => api.get<InsightRow[]>(`/api/shelters/${slug}/insights`) })
 
 export const useStats = () => useQuery({ queryKey: ['stats'], queryFn: () => api.get<Stats>('/api/stats'), staleTime: 60_000 })
+export const useAIInfo = () => useQuery({ queryKey: ['ai-info'], queryFn: () => api.get<AIInfo>('/api/ai/info'), staleTime: 5 * 60_000 })
 
 export function useDashboard() {
   const { user } = useAuth()
@@ -47,6 +61,11 @@ export function useNotifications() {
     enabled: !!user,
     refetchInterval: 60_000,
   })
+}
+
+export function useMessages() {
+  const { user } = useAuth()
+  return useQuery({ queryKey: ['messages'], queryFn: () => api.get<InboxMessage[]>('/api/me/messages'), enabled: !!user })
 }
 
 export function useMyApplications() {

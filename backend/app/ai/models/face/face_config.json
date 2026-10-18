@@ -1,0 +1,41 @@
+{
+  "detector": "face_detection_yunet_2023mar.onnx",
+  "recognizer": "face_recognition_sface_2021dec.onnx",
+  "match_threshold": 0.3518,
+  "far_target": 0.001,
+  "frontal_max_yaw": 0.15,
+  "turn_min_yaw": 0.25,
+  "same_session_min_similarity": 0.25,
+  "calibrated_at": "2026-10-18T18:00:48+00:00",
+  "lfw": {
+    "pairs": 6000,
+    "images": 7701,
+    "no_face": 8,
+    "auc": 0.9962,
+    "accuracy_10fold": 0.9922,
+    "accuracy_10fold_std": 0.0048,
+    "at_login_threshold": {
+      "threshold": 0.3518,
+      "far": 0.001,
+      "frr": 0.016,
+      "accuracy": 0.9915
+    },
+    "at_sface_paper_threshold": {
+      "threshold": 0.363,
+      "far": 0.001,
+      "frr": 0.01733,
+      "accuracy": 0.9908
+    },
+    "tar": {
+      "far_0.01": 0.9917,
+      "far_0.001": 0.984
+    },
+    "abs_yaw_percentiles": {
+      "p50": 0.089,
+      "p90": 0.227,
+      "p95": 0.282,
+      "p99": 0.425
+    },
+    "yaw_mirror_check": true
+  }
+}

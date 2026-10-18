@@ -1,0 +1,196 @@
+{
+  "model": "M7 lost-pet location",
+  "version": "0.1.0-synthetic",
+  "trained_at": "2026-10-18T17:30:41.964192+00:00",
+  "best_iteration": 348,
+  "features": [
+    "t_hours",
+    "log_t",
+    "dist_m",
+    "log_dist",
+    "dist_per_sqrt_t",
+    "hour_of_day",
+    "month",
+    "temp_c_at_loss",
+    "last_seen_accuracy_m",
+    "home_distance_m",
+    "log_dist_home",
+    "toward_home_cos",
+    "cover",
+    "food",
+    "people",
+    "corridor",
+    "green",
+    "building",
+    "farm",
+    "major",
+    "exposed",
+    "water",
+    "wild",
+    "residential",
+    "commercial",
+    "construction",
+    "cemetery",
+    "vet",
+    "dist_major_m",
+    "cover_200m",
+    "people_200m",
+    "food_200m",
+    "building_200m",
+    "green_200m",
+    "major_crossings",
+    "water_on_line",
+    "nearest_sighting_m",
+    "latest_sighting_m",
+    "sightings_within_300m",
+    "n_sightings_known",
+    "species",
+    "group",
+    "temperament",
+    "age_group",
+    "size",
+    "breed_group",
+    "circumstance",
+    "collar"
+  ],
+  "lattice_m": {
+    "cat": 50.0,
+    "dog": 100.0
+  },
+  "radius_m": {
+    "cat": 4000.0,
+    "dog": 12000.0
+  },
+  "cell_m": 20.0,
+  "training_data": {
+    "rows": 1828640,
+    "queries": 57145,
+    "calibration": {
+      "cat_indoor": {
+        "speed_mult": 0.20358146296319682,
+        "detect_mult": 0.797251569733184,
+        "search_floor": 0.15,
+        "relocate_mult": 1.0
+      },
+      "cat_outdoor": {
+        "speed_mult": 1.4284927471652389,
+        "detect_mult": 0.797251569733184,
+        "search_floor": 0.15,
+        "relocate_mult": 1.0
+      },
+      "dog": {
+        "speed_mult": 0.6882222618336264,
+        "detect_mult": 1.0926497114435991,
+        "search_floor": 0.05278604791994199,
+        "relocate_mult": 8.545293912845523
+      }
+    }
+  },
+  "self_return_rate": {
+    "cat_indoor": {
+      "share": 0.03888888888888889,
+      "median_hours": 194.83
+    },
+    "dog": {
+      "share": 0.04868222259526608,
+      "median_hours": 327.33
+    },
+    "cat_outdoor": {
+      "share": 0.04478437154441577,
+      "median_hours": 150.0
+    }
+  },
+  "notes": "Trained on simulated cases (see README). score = raw tree output + log q(dist); softmax of score over an equal-area lattice = probability per cell.",
+  "test_metrics": [
+    {
+      "variant": "full",
+      "group": "cat_indoor",
+      "cases": 120.0,
+      "median_area_model_km2": 0.0025,
+      "median_area_circle_km2": 0.0066098347,
+      "found_in_0.25km2_model": 0.95,
+      "found_in_0.25km2_circle": 0.9416666667,
+      "found_in_1km2_model": 0.9916666667,
+      "found_in_1km2_circle": 0.9916666667,
+      "top_5pct_cells": 0.9916666667,
+      "in_50pct_zone": 0.5666666667,
+      "in_80pct_zone": 0.8166666667,
+      "in_95pct_zone": 0.9916666667
+    },
+    {
+      "variant": "full",
+      "group": "cat_outdoor",
+      "cases": 120.0,
+      "median_area_model_km2": 0.54,
+      "median_area_circle_km2": 0.7856384331,
+      "found_in_0.25km2_model": 0.3916666667,
+      "found_in_0.25km2_circle": 0.3916666667,
+      "found_in_1km2_model": 0.55,
+      "found_in_1km2_circle": 0.5333333333,
+      "top_5pct_cells": 0.6916666667,
+      "in_50pct_zone": 0.5083333333,
+      "in_80pct_zone": 0.775,
+      "in_95pct_zone": 0.925
+    },
+    {
+      "variant": "full",
+      "group": "dog",
+      "cases": 120.0,
+      "median_area_model_km2": 0.43,
+      "median_area_circle_km2": 0.6987175586,
+      "found_in_0.25km2_model": 0.4166666667,
+      "found_in_0.25km2_circle": 0.3333333333,
+      "found_in_1km2_model": 0.6666666667,
+      "found_in_1km2_circle": 0.5666666667,
+      "top_5pct_cells": 0.8833333333,
+      "in_50pct_zone": 0.5416666667,
+      "in_80pct_zone": 0.8083333333,
+      "in_95pct_zone": 0.9416666667
+    },
+    {
+      "variant": "minimal",
+      "group": "cat_indoor",
+      "cases": 120.0,
+      "median_area_model_km2": 0.005,
+      "median_area_circle_km2": 0.0066098347,
+      "found_in_0.25km2_model": 0.9416666667,
+      "found_in_0.25km2_circle": 0.9416666667,
+      "found_in_1km2_model": 0.9916666667,
+      "found_in_1km2_circle": 0.9916666667,
+      "top_5pct_cells": 0.9916666667,
+      "in_50pct_zone": 0.6916666667,
+      "in_80pct_zone": 0.9666666667,
+      "in_95pct_zone": 0.9916666667
+    },
+    {
+      "variant": "minimal",
+      "group": "cat_outdoor",
+      "cases": 120.0,
+      "median_area_model_km2": 0.63875,
+      "median_area_circle_km2": 0.7856384331,
+      "found_in_0.25km2_model": 0.3833333333,
+      "found_in_0.25km2_circle": 0.3916666667,
+      "found_in_1km2_model": 0.5583333333,
+      "found_in_1km2_circle": 0.5333333333,
+      "top_5pct_cells": 0.675,
+      "in_50pct_zone": 0.1166666667,
+      "in_80pct_zone": 0.45,
+      "in_95pct_zone": 0.8666666667
+    },
+    {
+      "variant": "minimal",
+      "group": "dog",
+      "cases": 120.0,
+      "median_area_model_km2": 0.645,
+      "median_area_circle_km2": 0.6987175586,
+      "found_in_0.25km2_model": 0.3583333333,
+      "found_in_0.25km2_circle": 0.3333333333,
+      "found_in_1km2_model": 0.6,
+      "found_in_1km2_circle": 0.5666666667,
+      "top_5pct_cells": 0.875,
+      "in_50pct_zone": 0.5333333333,
+      "in_80pct_zone": 0.8583333333,
+      "in_95pct_zone": 0.9583333333
+    }
+  ]
+}

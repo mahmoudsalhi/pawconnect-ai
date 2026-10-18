@@ -190,6 +190,25 @@ export interface ActivityItem {
   created_at: string
 }
 
+// M6: scam check on a received message. The message is always delivered; this only adds a warning.
+export interface ScamCheck {
+  score: number
+  level: 'none' | 'caution' | 'high'
+  labels: string[]
+  reasons: string[]
+}
+
+export interface InboxMessage {
+  id: number
+  pet_id: number
+  pet_name: string
+  sender_name: string
+  body: string
+  read: boolean
+  created_at: string
+  scam: ScamCheck | null
+}
+
 export interface MatchItem {
   id: number
   query: Pet
@@ -214,6 +233,7 @@ export interface AnalyzeResult {
   breeds: [string, number][]
   quality: { url: string; score: number; tip: string }[]
   cutout: string | null
+  age?: { group: 'young' | 'adult' | 'senior' | null; confidence: number } | null
 }
 
 export interface MatchRun {
@@ -223,7 +243,12 @@ export interface MatchRun {
   area_lat: number
   area_lng: number
   signature: number[]
+  signature_dim: number
   results: { pet: Pet; score: number; distance_from_area: number }[]
+}
+
+export interface AIInfo {
+  provider: string
 }
 
 export interface Stats {
@@ -232,6 +257,36 @@ export interface Stats {
   adopt: number
   reunited: number
   shelters: number
+}
+
+// M7 search zones for a lost pet (GET /api/ai/location/:id). Bands are exclusive:
+// the 50 band holds the most likely cells adding up to 50%, the 80 band the next ones up to 80%, then 95.
+export interface SearchZone {
+  share: 50 | 80 | 95
+  cells: [number, number][]
+}
+
+// Chances from now on, given the pet hasn't been found yet (M7 recovery outlook).
+export interface RecoveryOutlook {
+  found_alive: number
+  found_alive_at_start: number
+  within_24h: number
+  within_7d: number
+  median_hours_if_found: number | null
+  beyond_horizon: boolean
+  horizon_days: number
+  by_lifestyle: { indoor_only: number; outdoor_access: number } | null
+}
+
+export interface LocationPrediction {
+  model: string
+  hours_missing: number
+  cell_m: number
+  zones: SearchZone[]
+  peak: [number, number]
+  self_return_share: number
+  missing_inputs: string[]
+  recovery: RecoveryOutlook | null
 }
 
 export class ApiError extends Error {

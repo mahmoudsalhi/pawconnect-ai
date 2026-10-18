@@ -24,6 +24,16 @@ class Settings(BaseSettings):
     # (the simulated-data experiment from ml/m3_synthetic) for comparison.
     m3_weights: str = "m3_adoption_speed"
 
+    # Age model (ONNX, with its .json config next to it). Relative paths start at the project root.
+    m4_age_model_path: str = "backend/models/m4_age.onnx"
+
+    # M2 photo-matching service (ml/photo_matching), used by app.ai.models:PawModels.
+    m2_url: str = "http://127.0.0.1:8002"
+    m2_timeout: float = 20.0
+
+    # M7 (lost-pet location): folder with the trained model and map grids, relative to backend/.
+    m7_dir: str = "../ml/m7_location"
+
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782
     home_lng: float = 10.3247

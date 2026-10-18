@@ -1,0 +1,49 @@
+﻿error,id,language,difficulty,labels,template_id,scam_probability,text
+false alarm,B07-057,darija_arabic,hard_negative,legit,T7-HN-ALBUM-LINK,0.766,هاو ألبوم تصاور متاعو هنا [URL]، شوفو وقولي كان هو كلبك قبل ما نتحركو.
+false alarm,B10-056,darija_arabic,hard_negative,legit,T10-HN-EDINAR-REFUND-ADOPT,0.791,رجّعتلك 20 دينار على e-Dinar خاطر التبني ما تمّش، سامحني.
+false alarm,B01-063,darija_arabic,hard_negative,legit,T-HN-WHATSAPP-PREF,0.695,كلمني على الواتساب خير، ما نحلش التطبيق برشا. [PHONE]
+false alarm,B02-063,darija_arabic,hard_negative,legit,T2-HN-SCAM-WARNING,0.514,ردو بالكم، جاوني ناس يقولو عندهم قطوسي ويحبو فلوس قبل. ما تبعثو شي لحد.
+false alarm,B03-065,darija_arabic,hard_negative,legit,T3-HN-VIDEO-LINK,0.721,شوف الفيديو هذا [URL]، هو الكلب؟ ما نحبش نغلط.
+false alarm,B04-063,darija_arabic,hard_negative,legit,T4-HN-PAID-AFTER-THANKS,0.61,بعثتلك 150 دينار على D17 كيف وعدتك، يعيشك على الخير اللي عملتو.
+false alarm,B04-064,darija_arabic,hard_negative,legit,T4-HN-LANDLORD-URGENT,0.562,لقيت الكلب أما مول الدار ما يخلينيش نخليه الليلة. جي فيسع قبل العشرة متاع الليل.
+false alarm,B06-019,darija_latin,hard_negative,legit,T6-HN-NEIGHBOR-CAMERA,0.592,"jari 3andou caméra 3al bab, bech nchoufou l'enregistrement mta3 el bare7 ken ban fih kalbek 🙏📹"
+false alarm,B09-015,darija_latin,hard_negative,legit,T9-HN-REWARD-D17-AFTER,0.548,"Nab3athlek el 150 dt récompense 3al D17 ki yousel 3andek, 3al rawa7a ma famma 7atta 3jla."
+false alarm,B09-018,darija_latin,hard_negative,legit,T9-HN-RECHARGE-THANKS,0.659,"3abbitlek recharge 50 dt 3al telifoun 3la el ta3b elli 3malt m3aya, barakallah fik."
+false alarm,B09-021,darija_latin,hard_negative,legit,T9-HN-EDINAR-REFUND,0.636,"El 3arboun elli 3titni nrajja3houlek 3al e-Dinar taw 3la 5ater ma jitech, sme7li."
+false alarm,B10-017,darija_latin,hard_negative,legit,T10-HN-OWNER-SENDS-FARE,0.763,"Nab3athlek flous el louage 3al D17 bech tnajjem tjib el kalb, 3tini numrouك."
+false alarm,B10-019,darija_latin,hard_negative,legit,T10-HN-PING-5MIN,0.571,"Sonnili 3al WhatsApp ki tkoun 5 d9aye9 b3id, w nenzel nlaqik ta7t."
+false alarm,B01-015,darija_latin,hard_negative,legit,T-HN-WHATSAPP-PREF,0.703,"Aslema, kellemni 3al whatsapp [PHONE] khir, ma n7elch l'app barcha w ma nchouf les notifications."
+false alarm,B03-020,darija_latin,hard_negative,legit,T3-HN-APP-FORM,0.607,"Lazem t3abbi formulaire adoption fel app 9bal el visite, hedhi el procédure mta3 el refuge."
+false alarm,B03-021,darija_latin,hard_negative,legit,T3-HN-VIDEO-LINK,0.514,"Chouf el lien mta3 el vidéo elli sawwartha [URL], howa el kalb hedha? ma n7ebch nghalet."
+false alarm,B05-089,english,hard_negative,legit,T5-HN-REWARD-WARN,0.52,"LOST: Simba, grey cat, El Menzah. 200 DT reward paid in person on return only. I won't send anything upfront, beware of scammers."
+false alarm,B10-038,french,hard_negative,legit,T10-HN-DONATION-RECEIPT,0.68,Le don d'adoption est de 30 DT sur le compte du refuge ; ils vous enverront un reçu par email.
+false alarm,B02-054,french,easy,legit,T2-L-WHERE-ARE-YOU,0.514,Je suis passée à l'adresse mais personne n'a répondu. Je repasse demain ?
+false alarm,B03-048,french,hard_negative,legit,T3-HN-REWARD-NOUPFRONT,0.574,"Récompense 250 DT. Je ne verse rien à l'avance, uniquement en échange de Bobby, devant témoin."
+false alarm,B04-047,french,hard_negative,legit,T4-HN-SHELTER-FULL-APPEAL,0.543,"Notre refuge déborde : plus de 80 chiens pour 40 places. Si vous pensiez adopter, c'est le moment. Frais de 30 DT payés sur place, après rencontre avec l'animal."
+false alarm,B06-078,mixed,hard_negative,legit,T6-HN-REWARD-HANDSHAKE,0.53,"RÉCOMPENSE 200 DT 💰 nkhallsek f idek après la remise SEULEMENT 🙏 ma tab3athli walou 9bal, attention aux arnaqueurs ⚠️"
+false alarm,B01-087,mixed,hard_negative,legit,T-HN-WHATSAPP-PREF,0.874,"Kellemni sur WhatsApp [PHONE], je ne vois pas les notifs mta3 l'app. Sinon réponds ici normal."
+false alarm,B02-093,mixed,easy,legit,T2-L-WHERE-ARE-YOU,0.527,Je suis passé à l'adresse ama ma famma 7ad.
+false alarm,B04-088,mixed,hard_negative,legit,T4-HN-LANDLORD-URGENT,0.53,"Moul el dar ma y7ebch el klab, je ne peux pas le garder cette nuit. Ija avant 21h stp."
+false alarm,B04-089,mixed,hard_negative,legit,T4-HN-SHELTER-FULL-APPEAL,0.656,"Le refuge déborde, 80 klab pour 40 places. Frais d'adoption 30 dt tetkhallas sur place ba3d ma tchouf el kalb."
+false alarm,B07-067,msa_arabic,hard_negative,legit,T7-HN-PHOTO-LINK,0.601,وضعت صورا وفيديو له على هذا الرابط [URL]، تأكد أنه كلبك قبل أن نلتقي.
+false alarm,B02-075,msa_arabic,hard_negative,legit,T2-HN-PHOTO-LINK,0.577,وضعت صورا إضافية للقطة على هذا الرابط [URL]، لاحظ البقعة البيضاء على أنفها.
+false alarm,B03-075,msa_arabic,hard_negative,legit,T3-HN-SHELTER-HOMECHECK,0.532,ملجأ بن عروس: رسوم التبني 35 دينارا تدفع في الملجأ، ونقوم بزيارة منزلية بعد شهر للاطمئنان على الحيوان.
+missed scam,B08-059,darija_arabic,obfuscated,off_platform,T8-PAIR-30,0.248,دي أم على الأنستا برك 🚫 ما نردّش تحت الإعلان
+missed scam,B09-052,darija_arabic,easy,phishing_link,T9-PH-READ-CODE,0.326,باش نأكد إنك المالك، اقرالي الكود اللي باش يوصلك في رسالة في الساعة.
+missed scam,B02-061,darija_arabic,obfuscated,upfront_payment|off_platform,T2-OBF-SPACED-WA-AR,0.486,ك ل م ن ي ع ال و ا ت س ا ب [PHONE] وابعث الفلوس قبل 💵
+missed scam,B06-011,darija_latin,obfuscated,pressure,T6-OBF-PRESSURE-CAPS,0.335,"A5IR FURSA ⏰⏰ JAWEBNI FI 5 D9AYE9 WALA NA3TIH L WA7ED A5OR, 3ANDI BARCHA NES YESTANAW 🔥🔥"
+missed scam,B08-025,darija_latin,easy,off_platform,T8-PAIR-13,0.476,"Viber ken lel details, ma n7ottch chay hna fel annonce."
+missed scam,B09-004,darija_latin,easy,fake_fee|impersonation|pressure,T9-IMP-SYNDIC,0.403,"Ena syndic mta3 l'immeuble, 9attousek 3mel dégât fel 7it, 5allas 40 dt wala n3abbi 3lik plainte."
+missed scam,B10-009,darija_latin,easy,upfront_payment,T10-UP-TRUST-DEPOSIT,0.443,"Ab3athli 3arboun sghir bech na3ref enti jadd, w ba3d na3tik l'adresse mta3 el blasa."
+missed scam,B01-012,darija_latin,obfuscated,upfront_payment|pressure,T-OBF-CAPS-RECHARGE,0.464,SALEM EL KALB 3ANDI !!! KHALLES TLETHIN MILLE RECHARGE ORANGE TAW TAW WALA NSAYBOU FEL CHERE3 ⏰⏰
+missed scam,B02-013,darija_latin,obfuscated,upfront_payment|impersonation|pressure,T2-OBF-BALADIYA,0.461,"ena men el BALADIYA 🚨 kalbek mchedouh, khalles el 5ti!a 9bal ghodwa s'b@7 wala yet9tel"
+missed scam,B04-003,darija_latin,easy,upfront_payment,T4-UP-KIDS-ATTACHED,0.246,"Wildi t3allgou barcha bel 9attous w yebkiw kol ma n9ollhom bech yrawa7. Ken t7eb terja3ou, 3awedhna 3al makla w el litière elli chrinaha, 120 dinar, w ba3d nchoufou."
+missed scam,B10-086,english,easy,fake_fee,T10-FEE-STERIL-BOND,0.464,There's a refundable 35 DT sterilization bond to pay before you can adopt the puppy.
+missed scam,B05-031,french,easy,off_platform,T5-OFF-COMMISSION,0.447,"Ce site prend une commission sur chaque échange. Réglons ça directement entre nous sur WhatsApp, donnez-moi votre numéro."
+missed scam,B09-035,french,easy,fake_fee|pressure,T9-PR-FLIGHT-BOARDING,0.187,"Je dois embarquer, c'est le tout dernier appel, faites le virement maintenant ou je donne le chiot."
+missed scam,B10-034,french,easy,pressure,T10-PR-CROSS-COUNTRY,0.144,"Un autre refuge l'emmène à l'autre bout du pays ce soir, à vous de décider maintenant."
+missed scam,B01-042,french,obfuscated,upfront_payment|pressure,T-OBF-WORDS,0.433,j ai vot chien 🐶 envoyé cent cinquante dinars par d.1.7 avan ce soir ⏳ sinon je le done
+missed scam,B03-041,french,easy,phishing_link,T3-PH-CIN-RIB,0.441,"Merci de m'envoyer une copie de votre CIN et votre RIB, c'est la procédure pour récupérer un animal trouvé."
+missed scam,B04-041,french,easy,upfront_payment|pressure,T4-PR-KNOW-ADDRESS,0.371,Je sais très bien où vous habitez. Payez 150 DT aujourd'hui ou oubliez votre chat.
+missed scam,B05-073,mixed,easy,off_platform,T5-OFF-LOCATION-PIN,0.483,"Je t'envoie la localisation ken 3al WhatsApp, ici ça marche pas, donne-moi ton numéro."
+missed scam,B09-064,msa_arabic,obfuscated,fake_fee|pressure,T9-OBF-POUND,0.463,الـمـحـجـز يـغـلـق بـعـد سـاعـة ⏰ ادفـع رسـم الإفـراج الآن وإلا ضـاع الـكـلـب ‼️

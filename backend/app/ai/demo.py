@@ -8,6 +8,7 @@ import re
 from . import compatibility
 from .base import (
     AdoptionSpeed,
+    AgePrediction,
     AIProvider,
     BreedPrediction,
     CompatMatch,
@@ -17,8 +18,10 @@ from .base import (
     MatchSubject,
     PhotoQuality,
     Questionnaire,
+    ScamAssessment,
     TagSuggestion,
 )
+from .scam import assess as assess_scam
 
 TAG_RULES: list[tuple[re.Pattern[str], str, float]] = [
     (re.compile(r"collar", re.I), "Wears a collar", 0.91),
@@ -149,3 +152,11 @@ class DemoProvider(AIProvider):
         wish = _words(answers.ideal)
         ideal = [(min(1.0, len(wish & _words(p.text)) / 3), "") for p in pets] if wish else None
         return compatibility.score(answers, pets, traits, ideal)
+
+    def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
+        # No real guess: "not sure" with 0% so the report form never pre-selects a made-up age.
+        return AgePrediction(group=None, confidence=0)
+
+    def detect_scam(self, text: str) -> ScamAssessment:
+        # Not a placeholder: the real M6 model (ml/m6). Providers that subclass DemoProvider inherit it.
+        return assess_scam(text)

@@ -1,5 +1,10 @@
-# Extra packages for training the models in ml/ (not needed to run the app)
+# Extra packages, not needed for the core app:
+# - training the models in ml/
+# - M7 (lost-pet location prediction), which runs the model in ml/m7_location. Without scipy and
+#   lightgbm the API answers /api/ai/location/... with 503 and the app hides the search map.
 -r requirements.txt
 pandas>=2.2
 scikit-learn>=1.6
 kaggle>=1.7
+scipy>=1.13
+lightgbm>=4.5

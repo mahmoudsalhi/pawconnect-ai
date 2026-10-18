@@ -41,14 +41,56 @@ function iconFor(p: Pin): L.DivIcon {
   })
 }
 
-function Recenter({ center, zoom, bounds }: { center: [number, number]; zoom: number; bounds?: [number, number][] }) {
+function Recenter({ center, zoom, bounds, maxZoom = 13 }: { center: [number, number]; zoom: number; bounds?: [number, number][]; maxZoom?: number }) {
   const map = useMap()
   const key = bounds?.length ? JSON.stringify(bounds) : `${center[0]},${center[1]},${zoom}`
   useEffect(() => {
-    if (bounds && bounds.length > 1) map.fitBounds(L.latLngBounds(bounds), { padding: [48, 48], maxZoom: 13 })
+    if (bounds && bounds.length > 1) map.fitBounds(L.latLngBounds(bounds), { padding: [48, 48], maxZoom })
     else map.setView(center, zoom)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, map])
+  return null
+}
+
+export type ZoneBand = { cells: [number, number][]; color: string; opacity: number }
+
+// Cells of a regular lattice (cellM metres) painted into one image, one pixel per cell, and laid
+// over the map. Thousands of separate rectangles would be slow and show hairline seams.
+function ZoneCells({ bands, cellM }: { bands: ZoneBand[]; cellM: number }) {
+  const map = useMap()
+  useEffect(() => {
+    const all = bands.flatMap((b) => b.cells)
+    if (!all.length) return
+    const lat0 = all[0][0]
+    const dLat = cellM / 110574
+    const dLng = cellM / (111320 * Math.cos((lat0 * Math.PI) / 180))
+    let minLat = Infinity, maxLat = -Infinity, minLng = Infinity, maxLng = -Infinity
+    for (const [la, ln] of all) {
+      minLat = Math.min(minLat, la); maxLat = Math.max(maxLat, la)
+      minLng = Math.min(minLng, ln); maxLng = Math.max(maxLng, ln)
+    }
+    const w = Math.round((maxLng - minLng) / dLng) + 1
+    const h = Math.round((maxLat - minLat) / dLat) + 1
+    const canvas = document.createElement('canvas')
+    canvas.width = w
+    canvas.height = h
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    for (const band of bands) {
+      ctx.fillStyle = band.color
+      ctx.globalAlpha = band.opacity
+      for (const [la, ln] of band.cells) {
+        ctx.fillRect(Math.round((ln - minLng) / dLng), Math.round((maxLat - la) / dLat), 1, 1)
+      }
+    }
+    const overlay = L.imageOverlay(canvas.toDataURL(), [
+      [minLat - dLat / 2, minLng - dLng / 2],
+      [maxLat + dLat / 2, maxLng + dLng / 2],
+    ], { interactive: false, className: 'zone-overlay' }).addTo(map)
+    return () => {
+      overlay.remove()
+    }
+  }, [bands, cellM, map])
   return null
 }
 
@@ -70,6 +112,10 @@ export function MapView({
   interactive = true,
   border,
   cursor,
+  zones,
+  cellM,
+  fitTo,
+  maxZoom,
   children,
 }: {
   center: [number, number]
@@ -84,9 +130,15 @@ export function MapView({
   interactive?: boolean
   border?: string
   cursor?: string
+  /** Search-zone bands, drawn under the pins. */
+  zones?: ZoneBand[]
+  cellM?: number
+  /** Fit the view to these points (overrides `fit`). */
+  fitTo?: [number, number][]
+  maxZoom?: number
   children?: ReactNode
 }) {
-  const bounds = useMemo(() => (fit ? pins.map((p) => [p.lat, p.lng] as [number, number]) : undefined), [fit, pins])
+  const bounds = useMemo(() => fitTo ?? (fit ? pins.map((p) => [p.lat, p.lng] as [number, number]) : undefined), [fitTo, fit, pins])
   return (
     <div className="map-box" style={{ height, border, cursor }}>
       <MapContainer
@@ -100,7 +152,8 @@ export function MapView({
         style={{ cursor }}
       >
         <TileLayer url={TILES} attribution={ATTRIBUTION} maxZoom={19} />
-        <Recenter center={center} zoom={zoom} bounds={bounds} />
+        <Recenter center={center} zoom={zoom} bounds={bounds} maxZoom={maxZoom} />
+        {zones && cellM && <ZoneCells bands={zones} cellM={cellM} />}
         {onPick && <ClickCatcher onPick={onPick} />}
         {radiusKm !== undefined && (
           <Circle center={center} radius={radiusKm * 1000} pathOptions={{ color: '#176B63', weight: 1.5, dashArray: '6 6', fillColor: '#176B63', fillOpacity: 0.08 }} />

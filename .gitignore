@@ -1,5 +1,6 @@
 # Python
 backend/.venv/
+ml/.venv/
 __pycache__/
 *.pyc
 .pytest_cache/
@@ -9,9 +10,41 @@ backend/.env
 backend/uploads/*
 !backend/uploads/.gitkeep
 frontend/.env.local
+backend/models/*.onnx
+!backend/models/m4_age.onnx
+backend/models/*.onnx.data
 
 # Node
 frontend/node_modules/
 frontend/dist/
 *.tsbuildinfo
 backend/ml/*/data/
+
+# ML: virtualenv and data (rebuilt by ml/adoption_speed/build_dataset.py)
+ml/.venv/
+ml/adoption_speed/data/
+
+# ML: M2 photo matching (trained model, local venv and datasets stay out of git)
+ml/photo_matching/.venv/
+# M2 weights are stored with Git LFS (see .gitattributes)
+!ml/photo_matching/checkpoints/*.pt
+ml/photo_matching/data*/
+ml/photo_matching/mes_chiens/
+
+# Local SQLite databases (dev and tests)
+backend/*.db
+
+# Face login: public benchmark data (LFW) downloaded by ml/face scripts
+ml/face/data/
+
+# Face login models (39 MB): download with  python backend/app/ai/face_engine.py --download
+backend/app/ai/models/face/*.onnx
+
+# M7 dataset generator: environment, OSM downloads and generated data (rebuild with build_dataset.py)
+ml/m7_location/.venv/
+ml/m7_location/data/osm/
+ml/m7_location/data/pbf/
+ml/m7_location/output/*.parquet
+ml/m7_location/output/*.csv
+ml/m7_location/output/build.log
+ml/m7_location/output/train.log

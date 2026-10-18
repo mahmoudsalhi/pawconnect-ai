@@ -1,3 +1,5 @@
+import pytest
+
 from io import BytesIO
 
 from PIL import Image
@@ -113,6 +115,31 @@ def test_message_reaches_owner(client, demo, newbie):
     assert client.post(f"/api/pets/{rex}/messages", json={"body": "hi"}, headers=newbie).status_code == 422
 
 
+# ---------- M6 scam warnings ----------
+
+
+def _inbox_entry(client, headers, body):
+    return next(m for m in client.get("/api/me/messages", headers=headers).json() if m["body"] == body)
+
+
+def test_scam_message_is_delivered_with_a_warning(client, demo, newbie):
+    rex = pet_id(client, "Rex")
+    body = "Lgit kalbek fi Ennasr. Ab3ath 80 dt 3al D17 9bal w njiblek iyah lyoum."
+    assert client.post(f"/api/pets/{rex}/messages", json={"body": body}, headers=newbie).status_code == 201
+
+    scam = _inbox_entry(client, demo, body)["scam"]  # delivered: warn, never block
+    assert scam["level"] == "high" and "upfront_payment" in scam["labels"] and scam["reasons"]
+    notif = next(n for n in client.get("/api/me/notifications", headers=demo).json() if n["title"].startswith("Likely scam"))
+    assert notif["icon"] == "warning" and notif["link"] == "/dashboard/messages"
+
+
+def test_honest_message_with_reward_and_phone_is_not_flagged(client, demo, newbie):
+    rex = pet_id(client, "Rex")
+    body = "I think I found Rex near the port! Call me on 22 345 678. No need for any reward, just glad to help."
+    assert client.post(f"/api/pets/{rex}/messages", json={"body": body}, headers=newbie).status_code == 201
+    assert _inbox_entry(client, demo, body)["scam"]["level"] == "none"
+
+
 # ---------- reports & matching ----------
 
 
@@ -218,7 +245,9 @@ def test_ai_match_by_photo_and_tags(client):
     r = client.post("/api/ai/match", json={"photo": photo, "species": "Dog", "status": "both", "area": "marsa",
                                            "radius": 300, "threshold": 0})
     assert r.status_code == 200 and all(h["pet"]["species"] == "Dog" for h in r.json()["results"])
-    tags = client.post("/api/ai/tags", json={"text": "Very friendly, neutered, wears a blue collar"}).json()
+    assert len(r.json()["signature"]) == 48 and r.json()["signature_dim"] == 128  # demo embeddings are 128-d
+    assert client.get("/api/ai/info").json() == {"provider": "demo"}
+    tags =client.post("/api/ai/tags", json={"text": "Very friendly, neutered, wears a blue collar"}).json()
     assert {t["label"] for t in tags} == {"Friendly", "Neutered / spayed", "Wears a collar"}
     a = client.post("/api/ai/analyze", json={"photos": [photo], "species": "Cat"}).json()
     assert len(a["breeds"]) == 3 and a["quality"][0]["score"] > 0
@@ -252,3 +281,27 @@ def test_owner_can_dismiss_match(client, demo, newbie):
     assert "Choco" not in [h["pet"]["name"] for h in r["results"]]
     dash = client.get("/api/me/dashboard", headers=demo).json()
     assert all(not m["is_new"] for m in dash["matches"])  # running the match marks results as seen
+
+
+def _pet_id(client, name, status):
+    items = client.get("/api/pets", params={"status": status, "page_size": 100}).json()["items"]
+    return next(p["id"] for p in items if p["name"] == name)
+
+
+def test_location_zones_for_open_lost_reports(client):
+    r = client.get(f"/api/ai/location/{_pet_id(client, 'Rex', 'lost')}")
+    if r.status_code == 503:
+        pytest.skip("M7 model or libraries not installed (backend/requirements-ml.txt)")
+    assert r.status_code == 200, r.text
+    d = r.json()
+    assert [z["share"] for z in d["zones"]] == [50, 80, 95]
+    assert all(z["cells"] for z in d["zones"])
+    # Zones stay around La Marsa, where Rex was last seen.
+    lat, lng = d["zones"][0]["cells"][0]
+    assert abs(lat - 36.878) < 0.05 and abs(lng - 10.325) < 0.05
+    assert "how it got lost" in d["missing_inputs"]
+    rec = d["recovery"]
+    assert rec is not None and 0 <= rec["within_24h"] <= rec["within_7d"] <= rec["found_alive"] <= 1
+
+    assert client.get(f"/api/ai/location/{_pet_id(client, 'Kahwa', 'found')}").status_code == 409
+    assert client.get("/api/ai/location/999999").status_code == 404

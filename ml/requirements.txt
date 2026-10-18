@@ -1,0 +1,6 @@
+# Training and evaluation (separate from backend/requirements.txt)
+numpy>=2.1
+pandas>=2.2
+scikit-learn>=1.5
+opencv-python-headless==5.0.0.93  # M6 / face login
+pillow>=11

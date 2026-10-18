@@ -78,11 +78,12 @@ Every AI call goes through one interface: `backend/app/ai/base.py` → `AIProvid
 | Model | Method | Used by |
 | --- | --- | --- |
 | M1 breed CNN | `predict_breed(images, species)` | report wizard, new reports |
-| M2 Siamese matcher | `embed(image)`, `similarity(query, candidate)` | `/api/ai/match`, auto-matching on publish |
+| M2 photo matcher (ArcFace embeddings) | `embed(image)`, `similarity(query, candidate)` | `/api/ai/match`, auto-matching on publish |
 | M3 adoption speed | `adoption_speed(features)` | shelter insights |
 | M4 text tagger | `suggest_tags(text)` | report wizard tags |
 | M5 photo score | `score_photo(image)` | report wizard, stored per photo |
 | M6 segmentation | `remove_background(image)` | report wizard preview (return a cut-out image or `None`) |
+| M7 location | `predict_location(query)` | "Where to search" map on lost pets' pages (`/api/ai/location/{id}`) |
 
 The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic placeholder results. To swap in real models:
 
@@ -107,7 +108,29 @@ The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic pla
 
 - **M9 compatibility matching** (`/find-match` page, `POST /api/ai/compatibility`): an adopter answers ten questions (home, children, other pets, activity, hours alone, experience, grooming, age, size) plus an optional free-text wish. A trait model (`app/ai/pet_traits.py`) reads each adoption profile and predicts six 1-5 ratings: energy, good with children, apartment-friendly, first-time-owner friendly, good with other dogs, grooming. It is a ridge regression on `all-MiniLM-L6-v2` sentence embeddings, trained on 618 reviewed breeds from Kaggle [Dog Breeds: Traits, Origins & Provenance](https://www.kaggle.com/datasets/jesusic/dog-breeds-traits-origins-provenance) (CC BY 4.0); 5-fold cross-validation results are in `app/ai/weights/m9_traits.meta.json`. `app/ai/compatibility.py` turns the answers and traits into a 0-100 score with reasons; hours alone and living with cats use written rules because the dataset has no such ratings. The data covers dogs only, so cat estimates are less certain. Retrain with `.\.venv\Scripts\python -m ml.m9_compatibility.train` (downloads the dataset and the embedding model on first run).
 
+- **M2 photo matching** (`ml/photo_matching/`): see below.
+
+### M2 is already wired in
+
+`backend/app/ai/models.py` (`PawModels`) replaces `embed` and `similarity` with the trained M2 photo matcher; everything else stays a placeholder. The model itself runs as a small service in `ml/photo_matching/` (see its README for training, evaluation and setup).
+
+1. Put the trained model at `ml/photo_matching/checkpoints/m2.pt` and create `ml/photo_matching/.venv` (`pip install -r requirements.txt`).
+2. In `backend/.env` set `AI_PROVIDER=app.ai.models:PawModels` (and `M2_URL` if the service isn't on `http://127.0.0.1:8002`).
+3. Start everything with `dev.ps1` (it also starts the M2 service when the model file exists), then clear the cached scores: `TRUNCATE match_results;`
+4. If the M2 service is down, publishing a report still works (auto-matching is skipped) and `/api/ai/match` answers `503`.
+
 The seed data includes the design's hand-picked match scores (Mishmish ↔ Ginger 87%, Rex ↔ Kahwa 64%, …) so the demo looks like the design until real models produce their own.
+
+## M7: where to search for a lost pet
+
+Lost pets' pages show the chance of being found alive and how long it may take, and search zones (50 / 80 / 95% likely), from the M7 models in `ml/m7_location/` (see its README for the dataset, training and test results). Unlike M1–M6, `AIProvider.predict_location` has a working default: the bundled model.
+
+```powershell
+cd backend
+.\.venv\Scripts\python -m pip install -r requirements-ml.txt   # numpy, scipy, pandas, lightgbm
+```
+
+Without these libraries the endpoint answers 503 and the page simply hides the map. M7 covers Grand Tunis, Sousse, Sfax and Nabeul–Hammamet, for cats and dogs. It is **experimental**: it was trained on simulated cases and should be retrained on real reunions. It loads about 400 MB of map grids into memory on first use.
 
 ## Notes for production
 

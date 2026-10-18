@@ -1,34 +1,45 @@
 import json
+from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, HTTPException, Response, status
 from sqlalchemy import select, update
 from sqlalchemy.orm import selectinload
 
 from ..ai import get_provider
-from ..ai.base import CompatPet, Questionnaire
+from ..ai.base import CompatPet, LocationQuery, ModelUnavailable, Questionnaire
 from ..ai.breed import META_PATH as BREED_META
 from ..ai.compatibility import pet_text
+from ..ai.location import LocationModelUnavailable
 from ..deps import DB, CurrentUser, OptionalUser
 from ..geo import AREAS, km
 from ..models import MatchResult, Pet, PetStatus
-from ..schemas import (AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut, CompatHit, CompatIn,
-                       CompatOut, CompatReasonOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
+from ..schemas import (AgeOut, AIInfoOut, AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut,
+                       CompatHit, CompatIn, CompatOut, CompatReasonOut, LocationOut, MatchHit, MatchIn, MatchRunOut,
+                       TagOut, TagsIn)
 from ..services.matching import image_input, open_reports, scores_for_pet, scores_for_photo
 from ..services.serialize import favorite_ids, pet_out
 
 router = APIRouter(prefix="/api/ai", tags=["ai"])
 
 
+@router.get("/info", response_model=AIInfoOut)
+def ai_info():
+    """Which AI provider is active, so the UI only labels results as demo outputs when they are."""
+    return AIInfoOut(provider=get_provider().name)
+
+
 @router.post("/analyze", response_model=AnalyzeOut)
 def analyze_photos(data: AnalyzeIn):
-    """Breed suggestion (M1), photo quality (M5) and background removal (M6) for report photos."""
+    """Breed suggestion (M1), photo quality (M5), background removal (M6) and age group for report photos."""
     provider = get_provider()
     images = [image_input(u) for u in data.photos]
     breeds = provider.predict_breed(images, data.species)
     quality = [{"url": i.url, **provider.score_photo(i).__dict__} for i in images]
     cutout = provider.remove_background(images[0])
+    age = provider.predict_age(images, data.species)
     return AnalyzeOut(model=provider.name, breeds=[[b.label, b.confidence] for b in breeds], quality=quality,
-                      cutout=cutout.url if cutout else None)
+                      cutout=cutout.url if cutout else None,
+                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None)
 
 
 @router.post("/breed", response_model=BreedOut)
@@ -87,6 +98,39 @@ def suggest_tags(data: TagsIn):
     return [TagOut(label=t.label, confidence=t.confidence) for t in get_provider().suggest_tags(data.text)]
 
 
+# Tunisia is UTC+1 all year (no daylight saving since 2009); report dates and times are local.
+TUNIS = timezone(timedelta(hours=1))
+
+
+@router.get("/location/{pet_id}", response_model=LocationOut)
+def predict_location(pet_id: int, db: DB):
+    """Search zones for an open lost report (M7). Uses the same rounded coordinates as the public listing."""
+    pet = db.get(Pet, pet_id)
+    if not pet:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, "Report not found.")
+    if pet.status != PetStatus.lost or pet.resolved:
+        raise HTTPException(status.HTTP_409_CONFLICT, "Search zones are only available for open lost reports.")
+    hh, _, mm = (pet.event_time or "").partition(":")
+    hour = int(hh) if hh.isdigit() and int(hh) < 24 else None
+    lost_at = datetime.combine(pet.event_date, datetime.min.time(), TUNIS) + timedelta(
+        hours=hour if hour is not None else 12, minutes=int(mm) if mm.isdigit() and hour is not None else 0)
+    hours = max(1.0, (datetime.now(TUNIS) - lost_at).total_seconds() / 3600)
+    query = LocationQuery(species=pet.species.lower(), lat=round(pet.lat, 3), lng=round(pet.lng, 3), hours_missing=hours,
+                          hour_of_day=hour, month=pet.event_date.month, age_group=pet.age_group, size=pet.size,
+                          breed=pet.breed, sex=pet.sex,
+                          microchipped={"yes": True, "no": False}.get((pet.chip or "").strip().lower()))
+    try:
+        pred = get_provider().predict_location(query)
+    except LocationModelUnavailable as e:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, str(e)) from e
+    if pred is None:
+        raise HTTPException(status.HTTP_422_UNPROCESSABLE_CONTENT, "Search zones aren't available for this area or species yet.")
+    return LocationOut(model=pred.model, hours_missing=round(hours, 1), cell_m=pred.cell_m,
+                       zones=[{"share": z.share, "cells": z.cells} for z in pred.zones], peak=pred.peak,
+                       self_return_share=pred.self_return_share, missing_inputs=pred.missing_inputs,
+                       recovery=pred.recovery.__dict__ if pred.recovery else None)
+
+
 @router.post("/match", response_model=MatchRunOut)
 def run_match(data: MatchIn, db: DB, user: OptionalUser):
     """Rank open reports by visual similarity (M2) to a report or an uploaded photo."""
@@ -96,6 +140,14 @@ def run_match(data: MatchIn, db: DB, user: OptionalUser):
     statuses = [PetStatus.found, PetStatus.lost] if data.status == "both" else [PetStatus(data.status)]
     provider = get_provider()
 
+    try:
+        return _run_match(data, db, user, area, statuses, provider)
+    except ModelUnavailable:
+        db.rollback()
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "The photo-matching model is not available right now.")
+
+
+def _run_match(data, db, user, area, statuses, provider):
     if data.pet_id:
         query = db.get(Pet, data.pet_id)
         if not query:
@@ -123,8 +175,9 @@ def run_match(data: MatchIn, db: DB, user: OptionalUser):
         if d <= data.radius:
             hits.append(MatchHit(pet=pet_out(p, user, favs), score=s, distance_from_area=round(d, 2)))
     hits.sort(key=lambda h: -h.score)
+    signature = provider.embed(image_input(signature_src))
     return MatchRunOut(model=provider.name, pool=len(pool), area_label=area["label"], area_lat=area["lat"],
-                       area_lng=area["lng"], signature=provider.embed(image_input(signature_src))[:48], results=hits)
+                       area_lng=area["lng"], signature=signature[:48], signature_dim=len(signature), results=hits)
 
 
 @router.post("/match/{query_id}/dismiss/{candidate_id}", status_code=status.HTTP_204_NO_CONTENT)

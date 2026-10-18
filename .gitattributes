@@ -1,0 +1,11 @@
+# Model weights are binary: never convert line endings or diff them as text.
+*.onnx binary
+*.onnx.data binary
+*.pt binary
+*.pth binary
+# LightGBM models are saved as text but must be byte-exact: CRLF conversion makes them unloadable.
+*_lgbm.txt -text -diff
+# Shell scripts run on Linux (the VPS): always LF.
+*.sh text eol=lf
+# M2 photo-matching checkpoint is stored with Git LFS (~94 MB)
+ml/photo_matching/checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text

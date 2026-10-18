@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { MapView } from '../components/MapView'
 import { PetGrid } from '../components/PetCard'
 import { PetModal, type ModalKind } from '../components/PetModals'
+import { SearchZones } from '../components/SearchZones'
 import { BreedBars, Empty, Icon, Skeleton, StatusBadge } from '../components/ui'
 import { api, type Pet } from '../lib/api'
 import { dayTime, fmtDate, fmtKm, img, initials, SPEED, speedColor, STATUS_DOT, STATUS_LABEL } from '../lib/format'
@@ -267,6 +268,7 @@ export default function PetDetail() {
             <div className="map-overlay map-label">{pet.city} · approx. area</div>
           </MapView>
           <div style={{ fontSize: 13, color: 'var(--muted)', marginTop: 10 }}>Exact addresses are hidden to protect the owner’s privacy.</div>
+          {isLost && !pet.resolved && <SearchZones pet={pet} />}
         </div>
       </div>
 

@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .config import get_settings
-from .routers import adoptions, ai, auth, me, pets, shelters, uploads
+from .routers import adoptions, ai, auth, face, me, pets, shelters, uploads
 
 settings = get_settings()
 
@@ -35,7 +35,7 @@ async def validation_error(_: Request, exc: RequestValidationError):
     return JSONResponse(status_code=422, content={"detail": first, "errors": errors})
 
 
-for r in (auth.router, me.router, pets.router, shelters.router, adoptions.router, ai.router, uploads.router,
+for r in (auth.router, face.router, me.router, pets.router, shelters.router, adoptions.router, ai.router, uploads.router,
           uploads.files_router):
     app.include_router(r)
 

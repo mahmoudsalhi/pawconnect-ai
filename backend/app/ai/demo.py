@@ -18,8 +18,10 @@ from .base import (
     MatchSubject,
     PhotoQuality,
     Questionnaire,
+    ScamAssessment,
     TagSuggestion,
 )
+from .scam import assess as assess_scam
 
 TAG_RULES: list[tuple[re.Pattern[str], str, float]] = [
     (re.compile(r"collar", re.I), "Wears a collar", 0.91),
@@ -154,3 +156,7 @@ class DemoProvider(AIProvider):
     def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
         # No real guess: "not sure" with 0% so the report form never pre-selects a made-up age.
         return AgePrediction(group=None, confidence=0)
+
+    def detect_scam(self, text: str) -> ScamAssessment:
+        # Not a placeholder: the real M6 model (ml/m6). Providers that subclass DemoProvider inherit it.
+        return assess_scam(text)

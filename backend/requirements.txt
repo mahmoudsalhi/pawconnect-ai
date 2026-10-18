@@ -16,3 +16,8 @@ numpy>=2.2
 xgboost>=3.0
 sentence-transformers>=5.0  # M9: pulls in torch (CPU build on Windows)
 onnxruntime>=1.20  # M4 age model
+# M6 scam detector: must match the version that trained app/ai/models/m6_scam.joblib (see its .json)
+scikit-learn==1.9.1
+joblib>=1.4
+# AI face login (YuNet + SFace). Models: python app/ai/face_engine.py --download
+opencv-python-headless==5.0.0.93

@@ -168,8 +168,14 @@ def slug_email(name: str) -> str:
 
 
 def reset(db) -> None:
-    tables = ", ".join(t.name for t in Base.metadata.sorted_tables)
-    db.execute(text(f"TRUNCATE {tables} RESTART IDENTITY CASCADE"))
+    tables = Base.metadata.sorted_tables
+    if db.bind.dialect.name == "sqlite":
+        # No TRUNCATE on SQLite: delete children first and clear the AUTOINCREMENT counters.
+        for t in reversed(tables):
+            db.execute(t.delete())
+        db.execute(text("DELETE FROM sqlite_sequence"))
+    else:
+        db.execute(text(f"TRUNCATE {', '.join(t.name for t in tables)} RESTART IDENTITY CASCADE"))
     db.commit()
 
 

@@ -1,0 +1,101 @@
+﻿id,text,channel,language,is_scam,labels,difficulty,template_id
+B08-001,"Kellemni ken 3al WhatsApp, hna ma njawebch nha2iyan.",message,darija_latin,1,off_platform,easy,T8-PAIR-01
+B08-002,"Kellemni 3al WhatsApp wala hna, kifek t7eb, njaweb fel zouz.",message,darija_latin,0,legit,hard_negative,T8-PAIR-01
+B08-003,"Zidni 3al Telegram barka, el app hedhi ma na3temedch 3liha.",message,darija_latin,1,off_platform,easy,T8-PAIR-02
+B08-004,"Zidni 3al Telegram wala kemmel hna, kefma yji 3lik ashel.",message,darija_latin,0,legit,hard_negative,T8-PAIR-02
+B08-005,"3al Viber ken, hna ma nji 7ata marra w ma nchouf.",message,darija_latin,1,off_platform,easy,T8-PAIR-03
+B08-006,"3al Viber wala hna, ena mawjoud fel zouz, kima t7eb.",message,darija_latin,0,legit,hard_negative,T8-PAIR-03
+B08-007,"3ayetli direct 3al telephone, ma nekteb 7ata 7aja fel app hedhi.",message,darija_latin,1,off_platform,easy,T8-PAIR-04
+B08-008,"3ayetli 3al telephone wala ekteb hna, kifek ashel, njaweb 3al tnin.",message,darija_latin,0,legit,hard_negative,T8-PAIR-04
+B08-009,"DM 3al Insta barka, ma narodch 3la 7ad hna taht l'annonce.",listing,darija_latin,1,off_platform,easy,T8-PAIR-05
+B08-010,"DM 3al Insta wala jaweb taht l'annonce, kima yji 3lik.",listing,darija_latin,0,legit,hard_negative,T8-PAIR-05
+B08-011,"Ab3athli SMS 3al [PHONE], l'app hedhi ma tjinich notifications.",message,darija_latin,1,off_platform,easy,T8-PAIR-06
+B08-012,"Ab3athli SMS 3al [PHONE] wala hna, njaweb fel zouz, win ashel 3lik.",message,darija_latin,0,legit,hard_negative,T8-PAIR-06
+B08-013,"Nkemlou 3al Messenger, hna el chat ma ya5demch mlih 3andi.",message,darija_latin,1,off_platform,easy,T8-PAIR-07
+B08-014,"Nkemlou 3al Messenger wala hna, kefma t7eb, el zouz ya5dmou 3andi.",message,darija_latin,0,legit,hard_negative,T8-PAIR-07
+B08-015,"Ab3athli 3al email [EMAIL], ma nfattachch l'app hedhi abadan.",message,darija_latin,1,off_platform,easy,T8-PAIR-08
+B08-016,"Ab3athli 3al email [EMAIL] wala hna, njaweb mel blasa elli ashel lik.",message,darija_latin,0,legit,hard_negative,T8-PAIR-08
+B08-017,"WH@TSAPP ONLY 🚫 ma narodch hna, el app te5ou commission 3al transaction",listing,darija_latin,1,off_platform,obfuscated,T8-PAIR-09
+B08-018,"whatsapp wala hna 🙂 kifek t7eb, njaweb fel zouz 🐾",listing,darija_latin,0,legit,hard_negative,T8-PAIR-09
+B08-019,T€L€GRAM BARKA ⛔ hna el messages yetfas5ou wa7adhom,message,darija_latin,1,off_platform,obfuscated,T8-PAIR-10
+B08-020,"telegram wala hna, kefma yji 3lik, njaweb 3al tnin ⏳",message,darija_latin,0,legit,hard_negative,T8-PAIR-10
+B08-021,"3ayetli 3al [PHONE], ma nekteb hna 5ater n5dem w ma n7ebch el kteba.",message,darija_latin,1,off_platform,easy,T8-PAIR-11
+B08-022,"3ayetli 3al [PHONE] wala ekteb hna, kima yji, njaweb wa9t ma nfrgh.",message,darija_latin,0,legit,hard_negative,T8-PAIR-11
+B08-023,"3al Insta barka, hna ma n7ebch nkallem 7ata 7ad.",message,darija_latin,1,off_platform,easy,T8-PAIR-12
+B08-024,"3al Insta wala hna, kifek t7eb, njaweb fel zouz bla moushkel.",message,darija_latin,0,legit,hard_negative,T8-PAIR-12
+B08-025,"Viber ken lel details, ma n7ottch chay hna fel annonce.",listing,darija_latin,1,off_platform,easy,T8-PAIR-13
+B08-026,"Viber wala hna lel details, kefma yji 3lik ashel, el zouz behi.",listing,darija_latin,0,legit,hard_negative,T8-PAIR-13
+B08-027,"Nkemlou 3al Signal barka, ma na3temedch 3al app hedhi khater mouch privée.",message,darija_latin,1,off_platform,easy,T8-PAIR-14
+B08-028,"Nkemlou 3al Signal wala hna, kima t7eb, el zouz behi 3andi.",message,darija_latin,0,legit,hard_negative,T8-PAIR-14
+B08-029,"Contactez-moi uniquement sur WhatsApp, je ne répondrai pas ici.",message,french,1,off_platform,easy,T8-PAIR-15
+B08-030,"Contactez-moi sur WhatsApp ou ici, comme vous préférez, je réponds aux deux.",message,french,0,legit,hard_negative,T8-PAIR-15
+B08-031,"Passons sur Telegram seulement, cette appli n'est pas fiable.",message,french,1,off_platform,easy,T8-PAIR-16
+B08-032,"On peut passer sur Telegram ou rester ici, comme vous voulez.",message,french,0,legit,hard_negative,T8-PAIR-16
+B08-033,"Appelez-moi directement, je n'écris pas sur cette appli.",listing,french,1,off_platform,easy,T8-PAIR-17
+B08-034,"Appelez-moi ou écrivez ici, selon ce qui vous arrange le mieux.",listing,french,0,legit,hard_negative,T8-PAIR-17
+B08-035,"Écrivez-moi seulement sur Messenger, je ne vois rien passer ici.",message,french,1,off_platform,easy,T8-PAIR-18
+B08-036,"Écrivez-moi sur Messenger ou ici, je regarde les deux régulièrement.",message,french,0,legit,hard_negative,T8-PAIR-18
+B08-037,"Envoyez tout par email à [EMAIL], je n'ouvre pas l'appli.",message,french,1,off_platform,easy,T8-PAIR-19
+B08-038,"Envoyez par email à [EMAIL] ou répondez ici, comme il vous plaira.",message,french,0,legit,hard_negative,T8-PAIR-19
+B08-039,"DM sur Instagram uniquement, je ne réponds pas sous l'annonce.",listing,french,1,off_platform,easy,T8-PAIR-20
+B08-040,"DM sur Instagram ou commentez ici, l'un ou l'autre me va très bien.",listing,french,0,legit,hard_negative,T8-PAIR-20
+B08-041,SMS SEULEMENT au [PHONE] 📵 je n'ouvre JAMAIS cette appli,message,french,1,off_platform,obfuscated,T8-PAIR-21
+B08-042,"un SMS au [PHONE] ou ici 🙂 comme vous préférez, je réponds",message,french,0,legit,hard_negative,T8-PAIR-21
+B08-043,"Sur Viber seulement, je suis à l'étranger et je ne viens pas ici.",message,french,1,off_platform,easy,T8-PAIR-22
+B08-044,"Sur Viber ou ici, je suis joignable des deux côtés, à votre convenance.",message,french,0,legit,hard_negative,T8-PAIR-22
+B08-045,"Ne répondez pas ici, uniquement WhatsApp, ce chat efface les messages.",message,french,1,off_platform,easy,T8-PAIR-23
+B08-046,"Répondez sur WhatsApp ou ici, les deux me conviennent, à vous de voir.",message,french,0,legit,hard_negative,T8-PAIR-23
+B08-047,كلمني كان على الواتساب، هنا ما نجاوبش خاطر ما يوصلنيش.,message,darija_arabic,1,off_platform,easy,T8-PAIR-24
+B08-048,كلمني على الواتساب ولا هنا، كيف تحب، نجاوب في الزوز.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-24
+B08-049,زيدني على التيليغرام برك، التطبيق هذا ما نثقش فيه.,message,darija_arabic,1,off_platform,easy,T8-PAIR-25
+B08-050,زيدني على التيليغرام ولا كمّل هنا، كيفما يجي عليك.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-25
+B08-051,عيّطلي ديراكت، ما نكتبش في التطبيق هذا.,message,darija_arabic,1,off_platform,easy,T8-PAIR-26
+B08-052,عيّطلي ولا اكتب هنا، كيف يسهل عليك، نجاوب في الطريقتين.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-26
+B08-053,اكتبلي كان على الماسنجر، هنا ما نشوف والو.,listing,darija_arabic,1,off_platform,easy,T8-PAIR-27
+B08-054,اكتبلي على الماسنجر ولا هنا، نشوف في الزوز.,listing,darija_arabic,0,legit,hard_negative,T8-PAIR-27
+B08-055,ابعثلي أس أم أس على [PHONE]، التطبيق ما يجيبنيش نوتيفيكاسيون.,message,darija_arabic,1,off_platform,easy,T8-PAIR-28
+B08-056,ابعثلي أس أم أس على [PHONE] ولا هنا، كيف يسهل عليك نجاوب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-28
+B08-057,على الفايبر برك، هنا ما نجيش خاطر ما نحلّش التطبيق.,message,darija_arabic,1,off_platform,easy,T8-PAIR-29
+B08-058,على الفايبر ولا هنا، أنا موجود في الزوز، كيف تحب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-29
+B08-059,دي أم على الأنستا برك 🚫 ما نردّش تحت الإعلان,listing,darija_arabic,1,off_platform,obfuscated,T8-PAIR-30
+B08-060,دي أم على الأنستا ولا كومنتي هنا 🙂 كيفما يجي عليك,listing,darija_arabic,0,legit,hard_negative,T8-PAIR-30
+B08-061,ابعثلي كلشي على الإيميل [EMAIL]، ما نحلّش التطبيق.,message,darija_arabic,1,off_platform,easy,T8-PAIR-31
+B08-062,ابعثلي على الإيميل [EMAIL] ولا هنا، كيف تحب نجاوب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-31
+B08-063,تواصل معي عبر واتساب فقط، لن أرد هنا.,message,msa_arabic,1,off_platform,easy,T8-PAIR-32
+B08-064,تواصل معي عبر واتساب أو هنا، كما تفضّل، أرد على الاثنين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-32
+B08-065,لننتقل إلى تيليغرام حصرا، هذا التطبيق غير موثوق.,message,msa_arabic,1,off_platform,easy,T8-PAIR-33
+B08-066,يمكننا الانتقال إلى تيليغرام أو البقاء هنا، كما تشاء.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-33
+B08-067,اتصل بي مباشرة، لا أكتب على هذا التطبيق.,message,msa_arabic,1,off_platform,easy,T8-PAIR-34
+B08-068,اتصل بي أو اكتب هنا، حسبما يناسبك، أرد على الطريقتين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-34
+B08-069,أرسل كل شيء إلى البريد [EMAIL]، لا أفتح التطبيق.,listing,msa_arabic,1,off_platform,easy,T8-PAIR-35
+B08-070,أرسل إلى البريد [EMAIL] أو رد هنا، كما يحلو لك.,listing,msa_arabic,0,legit,hard_negative,T8-PAIR-35
+B08-071,راسلني على ماسنجر فقط، لا أرى شيئا هنا.,message,msa_arabic,1,off_platform,easy,T8-PAIR-36
+B08-072,راسلني على ماسنجر أو هنا، أتابع الاثنين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-36
+B08-073,فـايـبـر فـقـط 📵 لا أدخـل هـذا الـتـطـبـيـق أبـدا,message,msa_arabic,1,off_platform,obfuscated,T8-PAIR-37
+B08-074,فايبر أو هنا 🙂 كما تفضّل، أنا متاح على الاثنين,message,msa_arabic,0,legit,hard_negative,T8-PAIR-37
+B08-075,"Kellemni 3al WhatsApp only, je ne réponds pas ici.",message,mixed,1,off_platform,easy,T8-PAIR-38
+B08-076,"Kellemni 3al WhatsApp ou ici, comme tu veux, njaweb fel zouz.",message,mixed,0,legit,hard_negative,T8-PAIR-38
+B08-077,"Passons sur Telegram barka, cette app ma tnajjemch tjini.",message,mixed,1,off_platform,easy,T8-PAIR-39
+B08-078,"Passons sur Telegram wala hna, kima t7eb, les deux ça me va.",message,mixed,0,legit,hard_negative,T8-PAIR-39
+B08-079,"3ayetli direct, je n'écris pas 3al app hedhi.",listing,mixed,1,off_platform,easy,T8-PAIR-40
+B08-080,"3ayetli wala écris ici, kima yji 3lik, njaweb 3al tnin.",listing,mixed,0,legit,hard_negative,T8-PAIR-40
+B08-081,"Écris-moi 3al Messenger seulement, hna ma nchouf walou.",message,mixed,1,off_platform,easy,T8-PAIR-41
+B08-082,"Écris-moi 3al Messenger wala hna, nchouf les deux, à toi de voir.",message,mixed,0,legit,hard_negative,T8-PAIR-41
+B08-083,"DM 3al Insta only, je ne réponds pas hna.",message,mixed,1,off_platform,easy,T8-PAIR-42
+B08-084,"DM 3al Insta wala hna, comme tu préfères, njaweb fel zouz.",message,mixed,0,legit,hard_negative,T8-PAIR-42
+B08-085,"Ab3athli SMS 3al [PHONE], je n'ouvre pas l'app hedhi.",message,mixed,1,off_platform,easy,T8-PAIR-43
+B08-086,"Ab3athli SMS 3al [PHONE] wala hna, kima ashel 3lik, njaweb.",message,mixed,0,legit,hard_negative,T8-PAIR-43
+B08-087,"VIBER ONLY ⛔ ma narodch hna, l'app bug 3andi",message,mixed,1,off_platform,obfuscated,T8-PAIR-44
+B08-088,"viber wala hna 🙂 kifek t7eb, njaweb mel zouz 🐾",message,mixed,0,legit,hard_negative,T8-PAIR-44
+B08-089,"Ab3athli 3al email [EMAIL] seulement, ma nfattachch l'app.",message,mixed,1,off_platform,easy,T8-PAIR-45
+B08-090,"Ab3athli 3al email [EMAIL] wala hna, comme tu veux, njaweb.",message,mixed,0,legit,hard_negative,T8-PAIR-45
+B08-091,"Message me only on WhatsApp, I won't reply here.",message,english,1,off_platform,easy,T8-PAIR-46
+B08-092,"Message me on WhatsApp or here, whichever you prefer, I check both.",message,english,0,legit,hard_negative,T8-PAIR-46
+B08-093,"Let's move to Telegram only, this app isn't reliable.",message,english,1,off_platform,easy,T8-PAIR-47
+B08-094,"We can move to Telegram or stay here, whatever works for you.",message,english,0,legit,hard_negative,T8-PAIR-47
+B08-095,"Just call me, I don't type on this app.",listing,english,1,off_platform,easy,T8-PAIR-48
+B08-096,"Call me or reply here, whatever's easier, I'll answer either way.",listing,english,0,legit,hard_negative,T8-PAIR-48
+B08-097,DM me on IG 0nly 📵 I d0n't answer here anymore,message,english,1,off_platform,obfuscated,T8-PAIR-49
+B08-098,"DM me on IG or here 🙂 whichever suits you, I reply to both",message,english,0,legit,hard_negative,T8-PAIR-49
+B08-099,"Send everything to [EMAIL], I don't open the app.",message,english,1,off_platform,easy,T8-PAIR-50
+B08-100,"Send to [EMAIL] or reply here, whatever you prefer.",message,english,0,legit,hard_negative,T8-PAIR-50

@@ -6,6 +6,7 @@ import {
   type AIInfo,
   type Application,
   type Dashboard,
+  type InboxMessage,
   type InsightRow,
   type Notification,
   type Pet,
@@ -49,6 +50,11 @@ export function useNotifications() {
     enabled: !!user,
     refetchInterval: 60_000,
   })
+}
+
+export function useMessages() {
+  const { user } = useAuth()
+  return useQuery({ queryKey: ['messages'], queryFn: () => api.get<InboxMessage[]>('/api/me/messages'), enabled: !!user })
 }
 
 export function useMyApplications() {

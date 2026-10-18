@@ -1,0 +1,209 @@
+﻿error,id,language,difficulty,labels,template_id,rules_fired,text
+false alarm,B04-015,darija_latin,hard_negative,legit,T4-HN-ID-IN-PERSON,secret_request,"Ki tji te5ou Rex jib m3ak el carnet mta3ou w carte d'identité mte3ek, bech nchoufhom b 3inaya. Ma tab3athli 7ata chay, nchoufhom ki net9ablou."
+false alarm,B04-020,darija_latin,hard_negative,legit,T4-HN-ASK-RIB-TO-PAY-REWARD,secret_request,"Lucky rje3 l dar, a3tini RIB mte3ek wala noumrou D17 bech nab3athlek el récompense elli wa3adt biha."
+false alarm,B07-041,french,hard_negative,legit,T7-HN-VIDEO-LINK,link_lure,Voici une vidéo de lui en train de jouer : [URL]. Confirmez que c'est bien Bobby avant que je me déplace.
+false alarm,B04-048,french,hard_negative,legit,T4-HN-ASK-RIB-TO-PAY-REWARD,secret_request,Bobby est bien rentré. Pouvez-vous m'envoyer votre RIB ou votre numéro D17 pour que je vous verse la récompense promise ?
+missed scam,B05-051,darija_arabic,easy,upfront_payment,T5-UP-COURIER-HALF,,الليفرور يجيبهولك للدار. ابعث نص الفلوس توا، 50 دينار على D17، والنص الآخر كاش للليفرور.
+missed scam,B06-049,darija_arabic,easy,upfront_payment,T6-UP-BUS-TICKET,,لقيت كلبك في صفاقس وأنا ما نجمش نوصل لتونس. فما واحد جاي غدوة، أعطيه 25 دينار تيكاي كار على D17 ويجيبهولك.
+missed scam,B07-049,darija_arabic,easy,off_platform,T7-OFF-CALL-NUMBER,,ما نردش هنا، التطبيق يمسح الرسائل. أعطيني نومروك باش نكلمك على التيليفون ونكملو.
+missed scam,B07-050,darija_arabic,easy,off_platform,T7-OFF-SNAP-LIVE,,زيدني على سناب شات ونوريك الكلب دايريكت، هنا ما نجمش نبعث فيديو.
+missed scam,B08-049,darija_arabic,easy,off_platform,T8-PAIR-25,,زيدني على التيليغرام برك، التطبيق هذا ما نثقش فيه.
+missed scam,B08-051,darija_arabic,easy,off_platform,T8-PAIR-26,,عيّطلي ديراكت، ما نكتبش في التطبيق هذا.
+missed scam,B08-053,darija_arabic,easy,off_platform,T8-PAIR-27,,اكتبلي كان على الماسنجر، هنا ما نشوف والو.
+missed scam,B08-055,darija_arabic,easy,off_platform,T8-PAIR-28,,ابعثلي أس أم أس على [PHONE]، التطبيق ما يجيبنيش نوتيفيكاسيون.
+missed scam,B08-057,darija_arabic,easy,off_platform,T8-PAIR-29,,على الفايبر برك، هنا ما نجيش خاطر ما نحلّش التطبيق.
+missed scam,B08-059,darija_arabic,obfuscated,off_platform,T8-PAIR-30,,دي أم على الأنستا برك 🚫 ما نردّش تحت الإعلان
+missed scam,B08-061,darija_arabic,easy,off_platform,T8-PAIR-31,,ابعثلي كلشي على الإيميل [EMAIL]، ما نحلّش التطبيق.
+missed scam,B09-049,darija_arabic,easy,fake_fee|impersonation,T9-IMP-CARGO,,هاذي مصلحة الكارڤو متاع المطار، قفص الكلب يلزمو 70 دينار مصاريف قبل ما يتسلم.
+missed scam,B09-050,darija_arabic,easy,fake_fee,T9-FEE-STERIL-VOUCHER,,التبني يلزمو بون تعقيم مدفوع مسبقا 45 دينار قبل ما نسلمولك الكلب.
+missed scam,B09-051,darija_arabic,easy,upfront_payment,T9-UP-TAXI-BROKE,,نجي نشوفك أما ابعثلي 20 دينار تاكسي توا على D17، راني مفلس وما عنديش باش نجي.
+missed scam,B09-052,darija_arabic,easy,phishing_link,T9-PH-READ-CODE,,باش نأكد إنك المالك، اقرالي الكود اللي باش يوصلك في رسالة في الساعة.
+missed scam,B09-053,darija_arabic,obfuscated,pressure,T9-PR-AT-DOOR,,تـوا فـمـا 3 عـائـلات عـ الـبـاب 🔥 قـرر فـي 5 دقـايـق وإلا مـشـى الـكـلـب ⏰‼️
+missed scam,B10-050,darija_arabic,easy,phishing_link,T10-PH-EDINAR-PIN,,e-Dinar بعثلك فلوس، أكّد الاستلام بإدخال رمز المحفظة متاعك هنا: [URL]
+missed scam,B10-051,darija_arabic,easy,upfront_payment,T10-UP-GOODFAITH,,ابعثلي مبلغ صغير 20 دينار 'حسن نية' باش نعرف إنك موش تاجر تبيع في الكلاب.
+missed scam,B10-052,darija_arabic,easy,pressure,T10-PR-ALLERGY-RELEASE,,قريبي عندو حساسية، كان ما تجيش اليوم باش تاخذو بش نحلّو في الشارع.
+missed scam,B10-053,darija_arabic,obfuscated,phishing_link|impersonation,T10-OBF-BANK-FRAUD,,الـبـنـك حـجـز تـحـويـل الـمـكـافـأة 💳 أكّـد كـارطـتـك بـاش تـسـتـلـم الـفـلـوس 👉 [URL] ‼️
+missed scam,B01-056,darija_arabic,easy,upfront_payment,T-UP-D17-RETURN,,عسلامة، لقيت كلبك في بن عروس. ابعثلي 60 ألف على D17 ونجيبهولك اليوم.
+missed scam,B01-060,darija_arabic,easy,upfront_payment|pressure,T-PR-OTHER-BUYER,,فما واحد آخر يحب ياخو القطوس. كان ما تبعثش الفلوس الليلة نعطيهولو.
+missed scam,B01-061,darija_arabic,obfuscated,upfront_payment|pressure,T-OBF-SPACED-RECHARGE-AR,,لقيت كلبك 🐕 ابعث ف ل و س ميات ألف ريشارج أوريدو توا ⏰
+missed scam,B03-056,darija_arabic,easy,upfront_payment|fake_fee|impersonation,T3-IMP-TRANSPORTER,,أنا شوفور متاع شركة نقل الحيوانات، كلبك في الدبو متاعنا. خلص 40 دينار مصاريف باش نوصلوهولك.
+missed scam,B03-057,darija_arabic,easy,upfront_payment,T3-UP-FOOD-COST,,شريتلها ماكلة ودوا ب 70 دينار، ابعثهملي على D17 وتوا نجيبها.
+missed scam,B03-059,darija_arabic,easy,fake_fee|pressure,T3-FEE-RESERVE-QUEUE,,فما ثلاثة ناس يستناو، كان تبعثلي العربون 60 دينار توا نخليهولك.
+missed scam,B03-061,darija_arabic,obfuscated,upfront_payment,T3-OBF-TATWEEL,,خـلـص خـمـسـيـن ألـف ريـشـارج و الكلب ليك 🐶‼️
+missed scam,B04-057,darija_arabic,easy,upfront_payment|impersonation|pressure,T4-IMP-SURGERY-NURSE,,أنا الفرملية في الكلينيك، كلبك ضربتو كرهبة وتوا في البلوك. الطبيب ما يعملش العملية كان ما تخلصش 250 دينار توا.
+missed scam,B04-058,darija_arabic,easy,upfront_payment,T4-UP-KIDS-ATTACHED,,صغاري تعلقو بالقطوس ويبكيو. كان تحب ترجعو، رجعلنا فلوس الماكلة 120 دينار وبعد نشوفو.
+missed scam,B04-059,darija_arabic,easy,fake_fee|phishing_link,T4-PH-PRIZE-BASKET,,مبروك، ربحت سلة ماكلة للحيوانات. خلص كان 15 دينار مصاريف التوصيل من اللينك هذا: [URL]
+missed scam,B04-060,darija_arabic,easy,fake_fee|pressure,T4-FEE-PUPPY-CRYING,,الجرو يبكي كل ليلة يستنى فيك 😢 بقى كان 100 دينار متاع التلقيح، ابعثهم اليوم.
+missed scam,B05-003,darija_latin,easy,upfront_payment,T5-UP-COURIER-HALF,,"El livreur yjibhoulek lel dar. Ab3ath nos el flous taw, 50 dt 3al D17, w el nos el e5er cash lel livreur."
+missed scam,B05-004,darija_latin,easy,upfront_payment,T5-UP-REIMBURSE-KID,,"3tit 30 dt lel sghir elli lga el kalb bech ma ykhallihch yemchi, raja3hom li 9bal w njiblek el kalb."
+missed scam,B05-007,darija_latin,easy,fake_fee|impersonation,T5-IMP-VETDB-RECORDS,,"Ena mel clinique vétérinaire, el kalb mte3ek msajjel 3andna bel puce. Bech nraj3oulek el propriété lazem tkhalles 45 dt frais dossier."
+missed scam,B05-008,darija_latin,easy,off_platform,T5-OFF-COMMISSION,,"El app hedhi te5ou commission 3al kol transaction. A7na n3amlou el deal direct 3al WhatsApp, ab3athli numrou w nkemlou ghadi."
+missed scam,B05-010,darija_latin,obfuscated,upfront_payment|pressure,T5-OBF-COURIER-CAPS,,EL LIVREUR WOSEL EL 7OUMA 📦 AB3ATH 4O DT TAW 3AL D-1-7 WALA YRAJA3 EL KALB ⏰⏰‼️
+missed scam,B05-012,darija_latin,easy,off_platform,T5-OFF-TGGROUP,,"Ken t7eb tchouf el 7ayawenet el me9diin lkol, odkhol lel groupe Telegram mte3na, el app hedhi ma tnajjemch tchouf el kol."
+missed scam,B06-001,darija_latin,easy,upfront_payment,T6-UP-BUS-TICKET,,"Lgit kalbek fi Sfax ama ena ma nejjemch nwosel l Tunis. Famma wa7ed jay ghodwa, 3tih 25 dt ticket louage 3al D17 w yjiblek iyah."
+missed scam,B06-003,darija_latin,easy,fake_fee|impersonation|pressure,T6-IMP-VET-EUTHANIZE,,Ena mel clinique. El kalb elli jebou 7ad bech na3mloulou euthanasie ghodwa ken ma yjich moulah. Khalles 60 dt frais release lyoum bech nwa9fou el 3amaliya.
+missed scam,B06-004,darija_latin,easy,fake_fee,T6-FEE-CHIP-TRANSFER,,"Bech el puce titbaddel 3la esmek lazem 30 dt frais transfert 3and el vétérinaire, ab3athhom li taw w nsajjel."
+missed scam,B06-005,darija_latin,easy,off_platform,T6-OFF-CALL-ONLY,,"Ma tektebch hna, 3ayetli direct 3al telephone w 7adher el flous m3ak. Ma n7ebch el kteba fel app."
+missed scam,B06-006,darija_latin,easy,upfront_payment|pressure,T6-UP-WU-COUSIN,,"El kalb 3and 5ouya fel Kef. Ab3ath 100 dt b Western Union 3la esmou taw bech yrkeb el bus, el bus yemchi fi sa3a."
+missed scam,B06-007,darija_latin,easy,upfront_payment|pressure,T6-UP-THREAT-HARM,,El kalb 3andi w rani metnarvez. Ken ma ab3athtech 80 dt el lila ma 3adch tchoufou. Ma t3ayetch lel 7add.
+missed scam,B06-009,darija_latin,easy,fake_fee|impersonation,T6-IMP-NGO-BOND,,"A7na jam3iya mta3 in9adh el 7ayawenet, lel adoption lazem caution 50 dt traja3 ba3d el visite, ab3athha 3al Flouci."
+missed scam,B06-010,darija_latin,obfuscated,phishing_link,T6-OBF-QR-PAY,,scanni el QR 📲 bech tchouf win el kalb w tkhalles el récompense 👉 [URL] 💸
+missed scam,B06-011,darija_latin,obfuscated,pressure,T6-OBF-PRESSURE-CAPS,,"A5IR FURSA ⏰⏰ JAWEBNI FI 5 D9AYE9 WALA NA3TIH L WA7ED A5OR, 3ANDI BARCHA NES YESTANAW 🔥🔥"
+missed scam,B07-002,darija_latin,easy,off_platform,T7-OFF-VOICENOTE,,"Ma n7ebch nekteb, ab3athli vocal 3al WhatsApp [PHONE], hna ma nesma3ch el notifications w ma narodch."
+missed scam,B07-003,darija_latin,easy,off_platform,T7-OFF-WA-GROUP,,"3andi groupe WhatsApp n7ott fih el 7ayawenet el me9diin lkol, odkhol ghadi, hna ma n3awedch nekteb 3la 7ad."
+missed scam,B07-009,darija_latin,easy,upfront_payment,T7-UP-DRIVER-TIP,,"Bech nsaddar driver yjiblek el kalb, 3tih 20 dt pourboire 3al Flouci 9bal ma yet7arrek mel blasa."
+missed scam,B07-010,darija_latin,easy,fake_fee,T7-FEE-GPS-COLLAR,,"Bech tal9a el kalb lazem tfassakh abonnement collier GPS 35 dt, ab3athhom li w nfa33lou 3al esmek."
+missed scam,B07-011,darija_latin,obfuscated,pressure,T7-OBF-LASTCALL,,3ANDI KALBEK 🐶 JAWEBNI FI 3ACHRA D9AYE9 WALA NA3TIH L WA7ED A5OR ⏰⏰ ma 3andich wa9t ❌
+missed scam,B08-001,darija_latin,easy,off_platform,T8-PAIR-01,,"Kellemni ken 3al WhatsApp, hna ma njawebch nha2iyan."
+missed scam,B08-005,darija_latin,easy,off_platform,T8-PAIR-03,,"3al Viber ken, hna ma nji 7ata marra w ma nchouf."
+missed scam,B08-007,darija_latin,easy,off_platform,T8-PAIR-04,,"3ayetli direct 3al telephone, ma nekteb 7ata 7aja fel app hedhi."
+missed scam,B08-011,darija_latin,easy,off_platform,T8-PAIR-06,,"Ab3athli SMS 3al [PHONE], l'app hedhi ma tjinich notifications."
+missed scam,B08-013,darija_latin,easy,off_platform,T8-PAIR-07,,"Nkemlou 3al Messenger, hna el chat ma ya5demch mlih 3andi."
+missed scam,B08-015,darija_latin,easy,off_platform,T8-PAIR-08,,"Ab3athli 3al email [EMAIL], ma nfattachch l'app hedhi abadan."
+missed scam,B08-021,darija_latin,easy,off_platform,T8-PAIR-11,,"3ayetli 3al [PHONE], ma nekteb hna 5ater n5dem w ma n7ebch el kteba."
+missed scam,B08-025,darija_latin,easy,off_platform,T8-PAIR-13,,"Viber ken lel details, ma n7ottch chay hna fel annonce."
+missed scam,B09-001,darija_latin,easy,upfront_payment,T9-UP-PENSION,,"7attit el kalb fi pension 3 lyeli, el facture 60 dt, 5allasni 9bal w njiblek iyah."
+missed scam,B09-002,darija_latin,easy,fake_fee,T9-FEE-HUISSIER,,"L'adoption lazem wra9et engagement m3a timbre 3and l'huissier, 25 dt, 5allas 9bal ma net9ablou."
+missed scam,B09-004,darija_latin,easy,fake_fee|impersonation|pressure,T9-IMP-SYNDIC,,"Ena syndic mta3 l'immeuble, 9attousek 3mel dégât fel 7it, 5allas 40 dt wala n3abbi 3lik plainte."
+missed scam,B09-005,darija_latin,easy,fake_fee|impersonation,T9-IMP-CARGO,,"Hthi maslaht el cargo mta3 el matar, el cage mta3 el kalb lazmha 70 dt frais 9bal ma ytsallem."
+missed scam,B09-006,darija_latin,easy,pressure,T9-PR-AT-DOOR,,"Taw famma 3 3a2ilat 3al bab yestannew, 9arrar fi 5 d9aye9 wala el kalb mcha."
+missed scam,B09-007,darija_latin,easy,upfront_payment,T9-UP-TAXI-BROKE,,"Nji nchoufek ama ab3athli 20 dt taxi taw 3al D17, rani mfalles w ma3andich bech nji."
+missed scam,B09-008,darija_latin,easy,fake_fee|impersonation,T9-FEE-CLUB,,"Bech tadopti lazem t9ayed fel club mta3na mta3 in9adh, 30 dt cotisation 9bal."
+missed scam,B09-010,darija_latin,obfuscated,upfront_payment|pressure,T9-OBF-VAN,,EL CAMION YEMCHI 3AL 12:00 🚐 AB3ATH 5O DT 3ARBOUN 3AL D17 TAW WALA MA YRKEBCH EL KALB ⏰
+missed scam,B09-012,darija_latin,obfuscated,fake_fee,T9-OBF-READER,,l0kit el kalb 🐶 location lecteur puce 15 dt 9bal ma nscanni w n2akdou mte3ek 🐾💸
+missed scam,B10-001,darija_latin,easy,fake_fee,T10-FEE-PET-INSURANCE,,"L'adoption fiha assurance santé mta3 el kalb ijbariya, awwel chhar 20 dt tetkhallas 9bal."
+missed scam,B10-002,darija_latin,easy,upfront_payment,T10-UP-SITTER,,"El pet-sitter elli 7afdhatlek el kalb t7eb 5lass 3 ayem, 45 dt, 9bal ma nsallmhoulek."
+missed scam,B10-003,darija_latin,easy,upfront_payment|pressure,T10-UP-KENNEL-STORAGE,,"El kennel ychadd el frais kol nhar, 50 dt taw w ken ma tkhallesch ghodwa yodrob 3al double."
+missed scam,B10-006,darija_latin,easy,pressure,T10-PR-PUBLIC-LOCATION,,"Ken ma tji fissa3, bech n7ott localisation el kalb public bech ay 7ad yakhdou, 9arrar taw."
+missed scam,B10-007,darija_latin,easy,fake_fee|impersonation,T10-FEE-MATCH,,"El plateforme mta3na te5ou 15 dt frais 'match' bech trabtek bel trouveur, 5allas 9bal."
+missed scam,B10-008,darija_latin,easy,fake_fee,T10-FEE-DEWORM,,Lel adoption lazem certificat vermifuge 15 dt mdfou3 9bal ma na3tiwek el 9attous.
+missed scam,B10-009,darija_latin,easy,upfront_payment,T10-UP-TRUST-DEPOSIT,,"Ab3athli 3arboun sghir bech na3ref enti jadd, w ba3d na3tik l'adresse mta3 el blasa."
+missed scam,B10-011,darija_latin,obfuscated,pressure,T10-OBF-DELETE15,,"NSAKKER L'ANNONCE FI 15 D9I9A ⛔ el screenshot ma yenfa3kech, 5allas taw 🔥"
+missed scam,B01-001,darija_latin,easy,upfront_payment,T-UP-D17-RETURN,,"Aslema, lgit kalbek fi Ennasr 9odem el pharmacie. Ab3ath 80 mille 3al D17 w njiblek iyah lyoum el 3chiya."
+missed scam,B01-002,darija_latin,easy,upfront_payment,T-UP-RECHARGE,,"rani lgit el 9attous el abyedh mta3ek, ama 9bal ma njibou lazem t3abili recharge Ooredoo b 30 dinar, telifouni ma fih chay"
+missed scam,B01-004,darija_latin,easy,off_platform,T-OFF-APPBLOCKS,,"Matjawebnich hna, el app hedhi tbloki. Ab3ath msg 3al [PHONE] whatsapp ken."
+missed scam,B01-007,darija_latin,easy,upfront_payment|pressure,T-PR-OTHER-BUYER,,"Famma wahed e5er y7eb y5ou el kalb. Ken ma tab3athlich el 50 dinar 9bal el 8 mta3 el lil, n3tih lih. Ma3andich wa9t."
+missed scam,B01-012,darija_latin,obfuscated,upfront_payment|pressure,T-OBF-CAPS-RECHARGE,,SALEM EL KALB 3ANDI !!! KHALLES TLETHIN MILLE RECHARGE ORANGE TAW TAW WALA NSAYBOU FEL CHERE3 ⏰⏰
+missed scam,B02-001,darija_latin,easy,off_platform,T2-OFF-VIBER,,"Ma nesta3melch l'app hedhi, a3tini noumrou w nkalmek 3al Viber. Hna ma nrodch 3lik."
+missed scam,B02-002,darija_latin,easy,off_platform,T2-OFF-INSTA,,"Zidni 3al Insta, el compte [URL], tamma tsawer el kalb elli lgitou. Ma tab3athch hna."
+missed scam,B02-008,darija_latin,easy,upfront_payment,T2-UP-HALF,,"Ab3ath nos el flous taw w nos ki tchoufou, 75 dinar 3al Flouci. Sinon ma njich."
+missed scam,B02-009,darija_latin,easy,upfront_payment|pressure,T2-PR-PETSHOP,,"Ken ma tkhallesch fi zouz swaye3 nbi3ou l pet shop, 3andi 7arif yestanna."
+missed scam,B02-013,darija_latin,obfuscated,upfront_payment|impersonation|pressure,T2-OBF-BALADIYA,,"ena men el BALADIYA 🚨 kalbek mchedouh, khalles el 5ti!a 9bal ghodwa s'b@7 wala yet9tel"
+missed scam,B03-003,darija_latin,easy,upfront_payment,T3-UP-FOOD-COST,,"Lgit el 9atta. Chrit lha makla w dwe b 65 dinar, ab3athhom 3al D17 w taw njibha."
+missed scam,B03-004,darija_latin,easy,upfront_payment,T3-UP-FUEL,,"Ya 5ou ena mosta3jel, ab3ath 30 dinar mta3 el essence w nji. Ken ma ab3athtech ma najamch net7arrek."
+missed scam,B03-005,darija_latin,easy,fake_fee|impersonation,T3-IMP-PREMIUM,,"Ena men equipe el support, lazem tkhalles 20 dt abonnement premium bech annonce mte3ek titla3 lel nes lkol."
+missed scam,B03-006,darija_latin,easy,fake_fee|pressure,T3-FEE-RESERVE-QUEUE,,"Ki tab3athli el 3arboun 80 dinar nkhabilek el kalb, famma 3 nes o5rin ystannew."
+missed scam,B03-009,darija_latin,easy,upfront_payment|pressure,T3-PR-GUILT,,"Rod belek, ken ma tkhallesch lyoum el kalb ymout 3andi, ma3andich bech nwakklou. Ab3ath 50 dt 3al D17 w njiblek iyah ghodwa."
+missed scam,B03-010,darija_latin,obfuscated,fake_fee|pressure,T3-OBF-CAPS-DEPOSIT,,3ARBOUN 50 DT TAW W EL CHIOT LIK 🔥🔥 B3D GHODWA YETBA3 ❌
+missed scam,B03-011,darija_latin,obfuscated,fake_fee|impersonation,T3-OBF-ASSOC-SYMBOLS,,khallas el fr@is mta3 el ass0ciation 4-5 dinar w ta5ou el 9atta 😺
+missed scam,B03-012,darija_latin,obfuscated,upfront_payment,T3-OBF-UNDERSCORE,,ab3ath kh_a_m_s_i_n mille 3al fl-ouci w njiblek kalbek 🐶
+missed scam,B04-002,darija_latin,easy,upfront_payment|impersonation|pressure,T4-IMP-SURGERY-NURSE,,"Ena el infirmière fel clinique, kalbek dharbetou karhba w taw fel bloc. El docteur ma ya3melch l'opération ken ma tkhallesch 250 dinar taw b Flouci. Ma3andnach wa9t, kol d9i9a t7seb."
+missed scam,B04-003,darija_latin,easy,upfront_payment,T4-UP-KIDS-ATTACHED,,"Wildi t3allgou barcha bel 9attous w yebkiw kol ma n9ollhom bech yrawa7. Ken t7eb terja3ou, 3awedhna 3al makla w el litière elli chrinaha, 120 dinar, w ba3d nchoufou."
+missed scam,B04-005,darija_latin,easy,fake_fee|impersonation,T4-IMP-RADIO-AD,,"Ena men radio locale, najmou nnadiw 3al kalbek fel 7orra b 40 dt, tkhallshom 9bal w el i3lan yet3adda ghodwa s'bah."
+missed scam,B04-007,darija_latin,easy,fake_fee|phishing_link,T4-PH-CHIP-UNLOCK,,"Scannina el puce mta3 el 9atta, bech ma3loumet moulha tet7all lazem 20 dt hna: [URL]"
+missed scam,B04-008,darija_latin,easy,upfront_payment|pressure,T4-PR-KNOW-ADDRESS,,"Na3ref win teskon. Ken ma tab3athch el 100 dinar lyoum ma3adch tchouf el 9atta mte3ek, w ma t3ayetch lel police."
+missed scam,B04-009,darija_latin,easy,fake_fee|pressure,T4-FEE-PUPPY-CRYING,,"El chiot yebki kol lil yestanna fik ya 3ini 😢 ba9i ken 100 dt mta3 el vaccins, ab3athhom lyoum bech ghodwa yji 3andek."
+missed scam,B04-010,darija_latin,obfuscated,upfront_payment,T4-OBF-SOB-SPACED,,"w@llah ma3andich ch@y, ab3ath 7 a m s i n bech nechri dw@ lel kalb w ghodwa yrawa7 3andek 🙏💔"
+missed scam,B04-011,darija_latin,obfuscated,upfront_payment|pressure,T4-OBF-CAPS-SOB,,OMMI MRIDHA W EL KALB 3ANDI 😭😭 KHALLES MIA W 3ACHRIN TAW 3AL F.L.O.U.C.I
+missed scam,B04-013,darija_latin,obfuscated,fake_fee|impersonation|pressure,T4-OBF-ASSOC-URGENT,,"nwesslek el kalb ki t3addi 4O dt l'@ssoci@tion 9bal, a7na mosta3jlin barcha ⏳"
+missed scam,B05-086,english,easy,off_platform,T5-OFF-SIGNAL-NEWACC,,"My account here is new and limited. Message me on Signal to finish this, I can't send much on this app."
+missed scam,B05-087,english,easy,fake_fee|impersonation,T5-IMP-VETDB-RECORDS,,I'm from the vet clinic; your dog is microchipped to us. To release the ownership records you need to pay a 45 DT file fee.
+missed scam,B07-086,english,easy,off_platform,T7-OFF-COLLEAGUE,,"The person who has your dog is my colleague; contact him directly on WhatsApp [PHONE], he doesn't use this app."
+missed scam,B07-087,english,obfuscated,off_platform,T7-OFF-TG-CHANNEL,,j0in my Teleg@m ch@nnel to see all the f0und pets 👉 [URL] 📵 I d0n't check here anymore
+missed scam,B08-095,english,easy,off_platform,T8-PAIR-48,,"Just call me, I don't type on this app."
+missed scam,B08-097,english,obfuscated,off_platform,T8-PAIR-49,,DM me on IG 0nly 📵 I d0n't answer here anymore
+missed scam,B08-099,english,easy,off_platform,T8-PAIR-50,,"Send everything to [EMAIL], I don't open the app."
+missed scam,B09-086,english,easy,fake_fee|impersonation|pressure,T9-IMP-SYNDIC,,"I'm the building syndic; your cat caused damage to a door, pay 40 DT or I'll file a complaint."
+missed scam,B09-087,english,easy,fake_fee,T9-FEE-CHIP-VOUCHER,,Adoption requires a prepaid microchip-registration voucher of 45 DT before I hand him over.
+missed scam,B10-087,english,easy,fake_fee,T10-FEE-TRAVEL-PERMIT,,A municipal travel-permit stamp of 20 DT must be prepaid before I can hand him over.
+missed scam,B10-088,english,easy,fake_fee|impersonation,T10-IMP-NEW-SHELTER-OWNER,,I'm the shelter's new owner; adoptions from before us need a 25 DT re-validation fee first.
+missed scam,B10-089,english,obfuscated,fake_fee,T10-OBF-ANTIFLEA,,mand@tory anti-par@site treatment before handover 🧴 just 25 DT upfront on D17 ‼️ quick
+missed scam,B04-097,english,easy,upfront_payment|impersonation|pressure,T4-IMP-SURGERY-NURSE,,"I'm the nurse at the clinic. Your dog was hit by a car and is in surgery, the doctor won't operate unless you send 250 DT right now."
+missed scam,B05-031,french,easy,off_platform,T5-OFF-COMMISSION,,"Ce site prend une commission sur chaque échange. Réglons ça directement entre nous sur WhatsApp, donnez-moi votre numéro."
+missed scam,B05-034,french,easy,upfront_payment,T5-UP-REIMBURSE-KID,,"J'ai donné 30 DT à l'enfant qui a trouvé votre chien pour qu'il ne parte pas, remboursez-moi d'abord et je vous l'amène."
+missed scam,B06-032,french,easy,fake_fee|impersonation|pressure,T6-IMP-VET-EUTHANIZE,,Je suis de la clinique. Le chien qu'on nous a confié sera euthanasié demain si personne ne le réclame. Réglez 60 DT de frais de sortie aujourd'hui pour arrêter la procédure.
+missed scam,B06-033,french,easy,fake_fee,T6-FEE-DNA-CERT,,"Pour prouver que le chiot est de race pure, un test ADN et son certificat (45 DT) doivent être réglés d'avance avant l'adoption."
+missed scam,B06-035,french,easy,phishing_link,T6-PH-PAYPAL,,"Versez l'acompte via ce lien PayPal sécurisé, vous serez intégralement remboursé si l'animal ne vous convient pas : [URL]"
+missed scam,B06-036,french,obfuscated,fake_fee|impersonation,T6-IMP-NGO-BOND,,ONG S@UVET@GE 🐾 c@ution de 5O dt (rembours€e après la visite) à v€rser AVANT 👉 [URL] ‼️
+missed scam,B07-031,french,easy,off_platform,T7-OFF-FLAGGED-TG,,"Mon compte ici a été signalé, je ne peux plus répondre sur l'appli. Continuons sur Telegram : [PHONE]"
+missed scam,B07-032,french,easy,off_platform,T7-OFF-FB-PAGE,,"Je poste tous les animaux trouvés sur ma page Facebook, écrivez-moi là-bas, je ne regarde pas l'appli."
+missed scam,B07-033,french,obfuscated,off_platform,T7-OFF-SMS-ONLY,,"j€ n'ouvre JAMAIS cette appli 📵 donnez votr€ num€ro, je vous envoie TOUT par SMS uniquement 📱"
+missed scam,B07-035,french,easy,fake_fee|impersonation,T7-IMP-DOG-TAG-FINE,,La mairie exige une médaille d'identification pour les chiens ; réglez l'amende de 25 DT par e-Dinar pour récupérer le vôtre.
+missed scam,B07-037,french,obfuscated,fake_fee|pressure,T7-OBF-DEPOSIT,,"P@YEZ l'@compte 5O dt MAINTENANT par fl0uci 💸 3 familles attendent le chiot, DERNIÈRE CHANCE ⏰"
+missed scam,B08-033,french,easy,off_platform,T8-PAIR-17,,"Appelez-moi directement, je n'écris pas sur cette appli."
+missed scam,B08-037,french,easy,off_platform,T8-PAIR-19,,"Envoyez tout par email à [EMAIL], je n'ouvre pas l'appli."
+missed scam,B08-041,french,obfuscated,off_platform,T8-PAIR-21,,SMS SEULEMENT au [PHONE] 📵 je n'ouvre JAMAIS cette appli
+missed scam,B09-032,french,easy,fake_fee,T9-FEE-STERIL-VOUCHER,,L'adoption exige un bon de stérilisation prépayé de 45 DT avant que je vous confie le chien.
+missed scam,B09-033,french,easy,phishing_link,T9-PH-INSUR-REIMB,,Vous avez droit à un remboursement d'assurance ; saisissez vos coordonnées pour le percevoir : [URL]
+missed scam,B09-035,french,easy,fake_fee|pressure,T9-PR-FLIGHT-BOARDING,,"Je dois embarquer, c'est le tout dernier appel, faites le virement maintenant ou je donne le chiot."
+missed scam,B10-032,french,easy,fake_fee|impersonation|pressure,T10-IMP-CUSTOMS-OFFICER,,"Agent des douanes : votre chiot importé est retenu, une taxe de 90 DT est due avant sa libération, aujourd'hui."
+missed scam,B10-033,french,easy,phishing_link,T10-PH-SURVEY-UNLOCK,,Répondez à ce court sondage sur le trouveur pour débloquer ses coordonnées : [URL]
+missed scam,B10-034,french,easy,pressure,T10-PR-CROSS-COUNTRY,,"Un autre refuge l'emmène à l'autre bout du pays ce soir, à vous de décider maintenant."
+missed scam,B10-037,french,obfuscated,fake_fee|impersonation|pressure,T10-OBF-SURVIVE-NIGHT,,"le véto dit qu'il ne passera PAS la nuit sans une interv€ntion payante 😱 décidez MAINTENANT, 8O dt"
+missed scam,B01-036,french,easy,upfront_payment,T-UP-FLOUCI,,"Bonjour madame, j'ai retrouvé votre chatte Kahwa à Ariana. Pour couvrir mes frais je vous demande 100 DT par Flouci avant de vous la ramener. Sans paiement je ne me déplace pas."
+missed scam,B01-041,french,easy,upfront_payment|pressure,T-UP-THREAT,,J'ai votre chien. Envoyez 150 DT tout de suite ou vous ne le reverrez jamais. Pas de police.
+missed scam,B01-042,french,obfuscated,upfront_payment|pressure,T-OBF-WORDS,,j ai vot chien 🐶 envoyé cent cinquante dinars par d.1.7 avan ce soir ⏳ sinon je le done
+missed scam,B01-043,french,obfuscated,upfront_payment|fake_fee|off_platform,T-OBF-SYMBOLS,,"Bonjour, pour récupérer votre chat il faut p@yer les fr@is de garde (8O dt) via fl0uci. Merci de ne pas répondre ici, écrivez sur wh@ts@pp [PHONE]"
+missed scam,B02-036,french,easy,off_platform,T2-OFF-TELEGRAM,,"Je préfère ne pas parler ici, l'application lit nos messages. Ajoutez-moi sur Telegram, je vous envoie les photos là-bas."
+missed scam,B02-037,french,easy,phishing_link,T2-PH-RIB-FORM,,"Félicitations, votre animal a été retrouvé ! Pour recevoir l'adresse du refuge, remplissez ce formulaire avec votre RIB : [URL]"
+missed scam,B02-039,french,easy,fake_fee|pressure,T2-FEE-DEPOSIT,,"Bonjour, la chienne est réservée pour vous moyennant un acompte de 70 DT par e-Dinar. Sans acompte je passe au suivant."
+missed scam,B02-040,french,easy,phishing_link,T2-PH-CVV,,"Pour des raisons de sécurité, communiquez-moi les 3 chiffres au dos de votre carte, c'est pour vérifier votre identité avant la remise."
+missed scam,B02-041,french,easy,upfront_payment|fake_fee|impersonation|pressure,T2-IMP-CUSTOMS,,Votre chat est arrivé chez nous par transporteur. Frais de douane et de garde : 180 DT à régler aujourd'hui par mandat minute.
+missed scam,B03-038,french,easy,upfront_payment,T3-UP-REIMBURSE-FIRST,,"J'ai acheté de la nourriture et payé le vétérinaire pour votre chat, soit 95 DT. Remboursez-moi d'abord, ensuite on fixe le rendez-vous."
+missed scam,B03-039,french,easy,fake_fee|pressure,T3-FEE-MIDNIGHT,,"Si vous ne confirmez pas l'adoption avec l'acompte avant minuit, je considère que vous n'êtes pas sérieux et je le donne."
+missed scam,B03-040,french,easy,fake_fee|impersonation|pressure,T3-IMP-POLICE-FINE,,"Je suis policier, votre chien a mordu quelqu'un. Pour éviter une plainte, envoyez 200 DT par D17 aujourd'hui."
+missed scam,B03-042,french,obfuscated,upfront_payment|pressure,T3-OBF-RUDE,,votre chien est la 🐕 mai faut envoyé deux cent dinar avan 😡 sinon tant pis pr vous
+missed scam,B04-037,french,easy,fake_fee|impersonation|pressure,T4-IMP-SHELTER-CLOSING,,"Bonjour, je suis la responsable d'un refuge qui va fermer à la fin du mois. Si personne ne paie les 60 DT de frais d'adoption avant vendredi, nos chiens seront euthanasiés. Paiement uniquement par virement, je vous envoie la photo du chien ensuite."
+missed scam,B04-039,french,easy,upfront_payment|fake_fee|impersonation,T4-IMP-DRONE-SERVICE,,Votre chat a été retrouvé grâce à notre service de recherche par drone. Les frais d'intervention (75 DT) doivent être réglés avant la restitution.
+missed scam,B04-041,french,easy,upfront_payment|pressure,T4-PR-KNOW-ADDRESS,,Je sais très bien où vous habitez. Payez 150 DT aujourd'hui ou oubliez votre chat.
+missed scam,B04-042,french,obfuscated,upfront_payment,T4-OBF-HEARTBREAK,,ça me brise le cœur 💔 mais sans les 9O dt de fr@is vétérin@ires d'@bord je ne peux pas vous le rendre...
+missed scam,B05-071,mixed,easy,off_platform,T5-OFF-SIGNAL-NEWACC,,"Mon compte ici est nouveau w limité, kellemni 3al Signal bech nkamlou, hna ma najjamch nab3ath barcha."
+missed scam,B05-072,mixed,easy,phishing_link|impersonation,T5-PH-DELIVERY-OTP,,"Société de livraison: bech nsallmou el 9attous lazem tconfirmi b el code OTP elli bech yjik fi sms, 3tihouli."
+missed scam,B05-073,mixed,easy,off_platform,T5-OFF-LOCATION-PIN,,"Je t'envoie la localisation ken 3al WhatsApp, ici ça marche pas, donne-moi ton numéro."
+missed scam,B05-076,mixed,obfuscated,upfront_payment|pressure,T5-OBF-UP,,KALBEK 3ANDI 🐶 envoie 8O dt 3AL D17 AVANT sinon nsaybou fel chere3 ⏰‼️
+missed scam,B06-071,mixed,easy,fake_fee,T6-FEE-DNA-CERT,,"Bech tthabet el chiot race pure, test ADN w certificat 45 dt lazem tetkhallas 9bal l'adoption."
+missed scam,B06-075,mixed,obfuscated,fake_fee|pressure,T6-OBF-FAKE-ADOPTER,,"je veux ADOPTER votre chien 🐶 j'envoie un chauffeur, mais d'@bord confirmez avec 2O dt de r€servation 3al D17 ‼️"
+missed scam,B07-071,mixed,easy,off_platform,T7-OFF-MESSENGER-SECURE,,"Nkemlou 3al Messenger, c'est plus sécurisé que cette app, ab3athli ton profil, hna ma n7ebch nekteb."
+missed scam,B07-072,mixed,easy,off_platform,T7-OFF-DELETES,,"El chat hna yemsa7 el messages, passons sur Telegram, 3tini ton numéro, hna ma yetsajjalch chay."
+missed scam,B07-074,mixed,easy,fake_fee,T7-FEE-CONTRACT-STAMP,,"Le chiot est réservé lik, ama 30 dt frais de contrat lazem 9bal b Flouci avant la remise."
+missed scam,B07-075,mixed,easy,upfront_payment|pressure,T7-UP-MEDICINE-FIRST,,"El kalb mridh, envoie 50 dt 3al D17 bech nechri el dwe 9bal ma nsallmou, stp c'est urgent."
+missed scam,B08-079,mixed,easy,off_platform,T8-PAIR-40,,"3ayetli direct, je n'écris pas 3al app hedhi."
+missed scam,B08-085,mixed,easy,off_platform,T8-PAIR-43,,"Ab3athli SMS 3al [PHONE], je n'ouvre pas l'app hedhi."
+missed scam,B09-071,mixed,easy,fake_fee|impersonation,T9-IMP-BEHAVIORIST,,"Ena comportementaliste mandaté par el refuge, l'évaluation 35 dt lazem 9bal ma na3tiwek el kalb."
+missed scam,B09-073,mixed,easy,fake_fee|impersonation,T9-FEE-CLUB,,"Bech tadopti lazem t'inscrire fel club mta3na, 30 dt cotisation 9bal b Flouci."
+missed scam,B10-073,mixed,easy,upfront_payment,T10-UP-SISTER-ACCOUNT,,"El D17 mte3i mahboul, ab3ath l'acompte 3al compte mta3 5ti el lawwel w ba3d nkemlou."
+missed scam,B10-075,mixed,obfuscated,fake_fee|phishing_link,T10-OBF-PHOTO-PROOF,,5alles 1O dt 💸 bech tfakkek les photos HD mta3 proof mta3 el kalb mte3ek 📸 [URL]
+missed scam,B02-081,mixed,easy,off_platform,T2-OFF-INSTA,,"Je réponds pas ici, zidni 3al Instagram [URL] w nab3athlek les photos."
+missed scam,B02-083,mixed,easy,fake_fee|pressure,T2-FEE-DEPOSIT,,"Le chiot est réservé lik, ama lazem acompte 50 dt b Flouci avant ce soir."
+missed scam,B03-081,mixed,easy,upfront_payment|fake_fee|impersonation,T3-IMP-TRANSPORTER,,"Ena chauffeur de la société de transport, votre chien est au dépôt. Khalles 45 dt frais de stockage w nwasslouh."
+missed scam,B03-082,mixed,easy,upfront_payment,T3-UP-REIMBURSE-FIRST,,"Remboursez-moi d'abord el makla w el tbib, 80 dt 3al D17, ba3d on fixe le rdv."
+missed scam,B03-083,mixed,easy,fake_fee|pressure,T3-FEE-RESERVE-QUEUE,,"Il y a 3 personnes qui attendent, ken t7eb el chiot ab3ath l'acompte taw."
+missed scam,B03-085,mixed,obfuscated,fake_fee|pressure,T3-OBF-PREMIUM-CAPS,,PAYEZ 3OCHRIN DT ABONNEMENT PREMIUM SINON ANNONCE MTE3EK TETFASA5 ⛔
+missed scam,B04-082,mixed,easy,upfront_payment|impersonation|pressure,T4-IMP-SURGERY-NURSE,,"Ena infirmière à la clinique, votre chien est au bloc. Le docteur ma ya3melch l'opération sans 250 dt taw b Flouci."
+missed scam,B04-083,mixed,easy,fake_fee|impersonation|pressure,T4-IMP-SHELTER-CLOSING,,"Le refuge bech ysakker fin du mois, ken ma tkhallsouch 60 dt frais d'adoption avant vendredi, les chiens vont être euthanasiés."
+missed scam,B04-085,mixed,obfuscated,fake_fee|pressure,T4-OBF-SPACED-PUPPY,,"le chiot yebki kol lil 😭 ba9i ken c e n t dt pour les vaccins, envoie-les lyoum"
+missed scam,B05-061,msa_arabic,easy,fake_fee|impersonation,T5-FEE-QUARANTINE,,عيادة بيطرية: حيوانك في الحجر الصحي، يجب دفع 80 دينارا رسوم الحجر قبل استلامه.
+missed scam,B05-063,msa_arabic,easy,upfront_payment,T5-UP-ESCROW-DEPOSIT,,لإثبات جديتك، حوّل 50 دينارا كعربون عبر حوالة بريدية، يُسترجع عند التسليم.
+missed scam,B06-063,msa_arabic,easy,fake_fee|impersonation,T6-FEE-INSURANCE-ACTIVATE,,لتفعيل تأمين الحيوان المجاني الذي ربحته، يجب دفع 25 دينارا رسوم تفعيل أولا.
+missed scam,B06-064,msa_arabic,obfuscated,phishing_link,T6-OBF-QR-PAY,,سـكـان الـرمـز 📲 لـرؤيـة مـكـان كـلـبـك ودفـع الـمـكـافـأة 👉 [URL] 💸 بـسـرعـة
+missed scam,B07-061,msa_arabic,easy,off_platform,T7-OFF-ABROAD-VIBER,,لا أرد هنا، أنا خارج البلاد. تواصل معي على فايبر فقط لإتمام الأمر: [PHONE]
+missed scam,B07-062,msa_arabic,easy,fake_fee,T7-FEE-OWNERSHIP-TRANSFER,,لنقل ملكية الكلب إلى اسمك يلزم 35 دينارا رسوم أوراق تُدفع مسبقا ثم نسجّلها.
+missed scam,B08-063,msa_arabic,easy,off_platform,T8-PAIR-32,,تواصل معي عبر واتساب فقط، لن أرد هنا.
+missed scam,B08-067,msa_arabic,easy,off_platform,T8-PAIR-34,,اتصل بي مباشرة، لا أكتب على هذا التطبيق.
+missed scam,B08-069,msa_arabic,easy,off_platform,T8-PAIR-35,,أرسل كل شيء إلى البريد [EMAIL]، لا أفتح التطبيق.
+missed scam,B08-071,msa_arabic,easy,off_platform,T8-PAIR-36,,راسلني على ماسنجر فقط، لا أرى شيئا هنا.
+missed scam,B08-073,msa_arabic,obfuscated,off_platform,T8-PAIR-37,,فـايـبـر فـقـط 📵 لا أدخـل هـذا الـتـطـبـيـق أبـدا
+missed scam,B09-061,msa_arabic,easy,fake_fee|impersonation,T9-IMP-MUNIVET,,خدمات البيطرة البلدية: إعادة فحص السعار إلزامية بـ30 دينارا قبل تسليم الكلب.
+missed scam,B09-062,msa_arabic,easy,fake_fee,T9-FEE-HUISSIER,,يتطلب التبني ورقة التزام موثقة برسم طابع 25 دينارا لدى العدل، تُدفع أولا.
+missed scam,B09-064,msa_arabic,obfuscated,fake_fee|pressure,T9-OBF-POUND,,الـمـحـجـز يـغـلـق بـعـد سـاعـة ⏰ ادفـع رسـم الإفـراج الآن وإلا ضـاع الـكـلـب ‼️
+missed scam,B10-061,msa_arabic,easy,fake_fee|impersonation,T10-IMP-TV-SHOW,,برنامج تلفزيوني عن الحيوانات المفقودة؛ سنعرض كلبك مقابل مساهمة رمزية قدرها 30 دينارا تُدفع أولا.
+missed scam,B10-062,msa_arabic,easy,phishing_link,T10-PH-NEW-DEVICE,,تم الدخول إلى حسابك من جهاز جديد، يرجى تأكيد هويتك عبر الرابط حالا: [URL]
+missed scam,B10-063,msa_arabic,easy,fake_fee|impersonation,T10-IMP-INSURANCE-AGENT,,أنا وكيل تأمين حيوانك؛ ادفع مبلغ التحمّل 35 دينارا كي نُفرج عن مطالبة التعويض.
+missed scam,B10-064,msa_arabic,obfuscated,fake_fee|pressure,T10-OBF-BIDDING,,شـخـص عـرض مـبـلـغـا أكـبـر عـلـى الـجـرو 🔥 طـابـق الـعـرض بـعـربـون الآن وإلا تـركـتـه لـه ⏰
+missed scam,B01-071,msa_arabic,easy,upfront_payment,T-UP-MANDAT-AR,,وجدت قطتك قرب محطة المترو في تونس. يرجى تحويل 100 دينار عبر الحوالة البريدية قبل التسليم لتغطية المصاريف.
+missed scam,B01-074,msa_arabic,obfuscated,upfront_payment|pressure,T-OBF-WORDS-AR,,أرسل خمسين دينارا فورا عـبـر ديـ17 وإلا لن ترى كلبك مجددا ‼️
+missed scam,B02-073,msa_arabic,easy,fake_fee|pressure,T2-FEE-DEPOSIT,,الجرو محجوز لك مقابل عربون 60 دينارا يرسل اليوم، وإلا سيعطى لشخص آخر.
+missed scam,B03-071,msa_arabic,easy,upfront_payment|fake_fee|impersonation,T3-IMP-TRANSPORTER,,أنا سائق شركة نقل الحيوانات. وصل كلبك إلى المستودع، ادفع 50 دينارا رسوم التخزين ليتم توصيله.
+missed scam,B03-074,msa_arabic,obfuscated,fake_fee|pressure,T3-OBF-TATWEEL,,ادفـع الـعـربـون الآن 💰 خـمـسـة و أربـعـون دينارا و الجرو لك 🔥
+missed scam,B04-071,msa_arabic,easy,upfront_payment,T4-UP-UNEMPLOYED-PLEA,,سيدتي، أكتب إليك بقلب مثقل. وجدت كلبتك مصابة على الطريق واعتنيت بها على حسابي، وأنا عاطل عن العمل منذ أشهر. أرجو أن ترسلي 80 دينارا قبل أن أعيدها إليك.
+missed scam,B04-074,msa_arabic,obfuscated,upfront_payment,T4-OBF-TATWEEL-HEART,,قـلـبـي يـتـقـطـع 💔 لـكـن بـدون تـسـعـيـن ديـنـارا مـسـبـقـا لا أسـتـطـيـع إعـادتـه

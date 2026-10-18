@@ -1,0 +1,1000 @@
+id,batch,text,channel,language,is_scam,labels,difficulty,template_id,group,fold
+B05-001,B05,"Ma nchoufch les messages hna, DM 3al Instagram mte3i barka, hna ma narodch 3la 7ad.",message,darija_latin,1,off_platform,easy,T5-OFF-IG-DM,G333,1
+B05-002,B05,"7attit video mta3 el kalb elli lgitou 3al TikTok mte3i, net3arfou ghadi, ma tektebch hna khater ma nod5olch l'app.",message,darija_latin,1,off_platform,easy,T5-OFF-TIKTOK,G337,2
+B05-003,B05,"El livreur yjibhoulek lel dar. Ab3ath nos el flous taw, 50 dt 3al D17, w el nos el e5er cash lel livreur.",message,darija_latin,1,upfront_payment,easy,T5-UP-COURIER-HALF,G342,0
+B05-004,B05,"3tit 30 dt lel sghir elli lga el kalb bech ma ykhallihch yemchi, raja3hom li 9bal w njiblek el kalb.",message,darija_latin,1,upfront_payment,easy,T5-UP-REIMBURSE-KID,G344,1
+B05-005,B05,3melt concours bech el nes t3awenni nlawej 3al kalbek asra3. Sawwet w d5el b compte mte3ek hna: [URL],message,darija_latin,1,phishing_link,easy,T5-PH-CONTEST-VOTE,G338,3
+B05-006,B05,"9bal ma njiblek el 9attous 7emmamtou w 3meltlou toilettage 3and el 7alle9. El frais 35 dt, ab3athhom 3al Flouci.",message,darija_latin,1,fake_fee,easy,T5-FEE-GROOMING,G294,1
+B05-007,B05,"Ena mel clinique vétérinaire, el kalb mte3ek msajjel 3andna bel puce. Bech nraj3oulek el propriété lazem tkhalles 45 dt frais dossier.",message,darija_latin,1,fake_fee|impersonation,easy,T5-IMP-VETDB-RECORDS,G308,0
+B05-008,B05,"El app hedhi te5ou commission 3al kol transaction. A7na n3amlou el deal direct 3al WhatsApp, ab3athli numrou w nkemlou ghadi.",message,darija_latin,1,off_platform,easy,T5-OFF-COMMISSION,G331,2
+B05-009,B05,k e l l e m n i 3 a l w@tsapp [PHONE] b@rk@ 🚫 hna ma n7ebch nkteb w ma narodch,message,darija_latin,1,off_platform,obfuscated,T5-OBF-OFF-SPACED,G328,1
+B05-010,B05,EL LIVREUR WOSEL EL 7OUMA 📦 AB3ATH 4O DT TAW 3AL D-1-7 WALA YRAJA3 EL KALB ⏰⏰‼️,message,darija_latin,1,upfront_payment|pressure,obfuscated,T5-OBF-COURIER-CAPS,G324,0
+B05-011,B05,frais puç€ 3O dt 9bal ma n3tik el 9att0us 🐱💸 ab3ath 3al fl0uci w taw njibhoulek,message,darija_latin,1,fake_fee,obfuscated,T5-OBF-CHIP-LEET,G323,4
+B05-012,B05,"Ken t7eb tchouf el 7ayawenet el me9diin lkol, odkhol lel groupe Telegram mte3na, el app hedhi ma tnajjemch tchouf el kol.",listing,darija_latin,1,off_platform,easy,T5-OFF-TGGROUP,G336,3
+B05-013,B05,"A3tini numrou 3al WhatsApp n7eb nab3athlek tsawer, ama tnajem tjaweb hna zeda, kifek t7eb.",message,darija_latin,0,legit,hard_negative,T5-HN-WHATSAPP-PHOTOS,G306,2
+B05-014,B05,"Na3ti 200 dt récompense. Ken t7eb n7ottha 3and wa7ed ne3rfouh lkoull bech tetrasa7, w nkhallsek ki nchouf el kalb.",listing,darija_latin,0,legit,hard_negative,T5-HN-REWARD-TRUSTEE,G302,1
+B05-015,B05,"Nejjem nkabbou 3andi chwaya 7atta tahez barnamej mte3ek w tji te5ou, 3andi blasa. Ma n7ebch 7aja.",message,darija_latin,0,legit,hard_negative,T5-HN-FOSTER,G296,2
+B05-016,B05,"9ATTOUS TROUVÉ!!! 9RIB EL MARKET MTA3 ENNASR, 3ANDOU COLLIER A7MAR 🐱🐱 MOULAH YKALLEMNI FISSA3 📞",listing,darija_latin,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-017,B05,"Ena tbib bitri, lel nes elli lgaw 7ayawen dhaye3: nejjem nchoufou b la fulus w na3mlou check-up 9bal el remise, jibouh lel clinique mta3 Ariana.",listing,darija_latin,0,legit,hard_negative,T5-HN-VET-FREE,G305,1
+B05-018,B05,"URGENT!!! kalbi 3andou diabète w lazmou piqûre kol nhar, ken chaftouh BRABI 3ayytouli 📞📞📞",message,darija_latin,0,legit,hard_negative,T5-HN-MEDS-CAPS,G298,2
+B05-019,B05,"Net9ablou 9oddem el délégation mta3 Ariana, famma caméras w nes, khir lina ezzouz.",message,darija_latin,0,legit,hard_negative,T5-HN-MEET-DELEG,G299,4
+B05-020,B05,"m3rc! 3la l'aide, na3ti r3compense 15O dt ki yrja3 Bobby l dar, n5allsek f idek ki nchoufou 🙏",message,darija_latin,0,legit,hard_negative,T5-HN-REWARD-LEET,G301,2
+B05-021,B05,"9bal ma n3tik el kalb lazem tjibli taswira 9dima m3ah wala el carnet, bech net2aked, sme7li barcha nes tkadheb.",message,darija_latin,0,legit,hard_negative,T5-HN-VERIFY-PHOTO,G304,0
+B05-022,B05,3andek chkoun yheb ykabbi 9tout sghar? lgithom w ma nejjemch nkabbihom lkol wa7di.,listing,darija_latin,0,legit,easy,T5-L-KITTENS-FOSTER,G314,3
+B05-023,B05,YE3AYCHEK BARCHA!!! KAHWA RJA3 LEL DAR 😭❤️🙏 MA NENSECH FADHLEK ABADAN,message,darija_latin,0,legit,easy,T5-L-THANKS-CAPS,G030,0
+B05-024,B05,El 9attous m3allem 3al litière? 3andi 9tout o5rin fel dar w n7eb nchouf ken yetfahmou.,message,darija_latin,0,legit,easy,T5-L-LITTER,G315,3
+B05-025,B05,chftou lbare7 fi ennasr 9rib el 7anout yjri barcha ma 9dertech nal7a9ou kan mte3ek lawej ghadi,message,darija_latin,0,legit,easy,T5-L-SIGHTING-NOPUNCT,G321,1
+B05-026,B05,"Bech njib cage m3aya ki nji ne5ou el 9attous nhar el sebt, 3andi karhba.",message,darija_latin,0,legit,easy,T5-L-CARRIER,G311,3
+B05-027,B05,"a d o p t i o n 🐶 kalb sghir mrigel y7eb el 3a2ila, vacciné w m3allem, fi La Marsa, chkoun y7ebou",listing,darija_latin,0,legit,easy,T5-L-ADOPT-SPACED,G310,0
+B05-028,B05,"ma nejjemch nji lyoum, t7assalt fel 5edma. ghodwa el 3chiya yabbehi lik?",message,darija_latin,0,legit,easy,T5-L-RESCHED,G318,1
+B05-029,B05,kelb tah fi sousse 🐕🐕 lgitou 9rib el plage 3andou poil asmar w collier zra9 moulah brabi yrod 3liya 🙏🙏🙏,listing,darija_latin,0,legit,easy,T5-L-FOUND-EMOJI,G313,1
+B05-030,B05,"Ena jarek, chouft l'affiche mta3 kalbek 3al 7it, bech n3awnek nlawej fel 7ouma w n9ollek ken chfet 7aja.",message,darija_latin,0,legit,easy,T5-L-NEIGHBOR,G317,0
+B05-031,B05,"Ce site prend une commission sur chaque échange. Réglons ça directement entre nous sur WhatsApp, donnez-moi votre numéro.",message,french,1,off_platform,easy,T5-OFF-COMMISSION,G331,2
+B05-032,B05,Chatons British shorthair à réserver. Des frais de réservation de 70 DT (garde à la chatterie) sont à régler d'avance par virement pour bloquer le chaton à votre nom.,listing,french,1,fake_fee,easy,T5-FEE-BOOKING-CATTERY,G292,2
+B05-033,B05,Votre animal est couvert par notre assurance partenaire. Remplissez le formulaire de restitution avec votre RIB et vos identifiants bancaires : [URL],message,french,1,phishing_link|impersonation,easy,T5-PH-INSURANCE,G341,1
+B05-034,B05,"J'ai donné 30 DT à l'enfant qui a trouvé votre chien pour qu'il ne parte pas, remboursez-moi d'abord et je vous l'amène.",message,french,1,upfront_payment,easy,T5-UP-REIMBURSE-KID,G344,1
+B05-035,B05,Mon avion décolle dans 3 heures et je dois placer le chiot avant. Versez l'acompte de 60 DT maintenant par e-Dinar ou je le confie à quelqu'un d'autre.,message,french,1,fake_fee|pressure,easy,T5-FEE-FLIGHT-DEPOSIT,G293,4
+B05-036,B05,Société First Delivery : un colis vivant à votre nom est en attente au dépôt. Frais de stockage 50 DT à régler avant la livraison.,message,french,1,fake_fee|impersonation,easy,T5-IMP-DELIVERY-CO,G307,2
+B05-037,B05,"répondez PAS ici 🚫 j€ ne v0is rien, écrivez-moi SEULEMENT sur t€l€gram 👉 [URL] et pr3parez l'@rgent",message,french,1,off_platform,obfuscated,T5-OBF-OFF-MSG,G327,1
+B05-038,B05,"CLINIQUE VÉTO 🚨 votre chat est en qu@r@ntaine, fr@is de 8O dt à régler AVANT de le récupérer ‼️‼️",message,french,1,fake_fee|impersonation,obfuscated,T5-FEE-QUARANTINE,G295,3
+B05-039,B05,"Perdu Mishmish, chat gris, El Menzah. Récompense 200 DT remise en mains propres après le retour uniquement. Je ne verse rien à l'avance, méfiez-vous des arnaques.",listing,french,0,legit,hard_negative,T5-HN-REWARD-WARN,G303,0
+B05-040,B05,"Je peux l'héberger quelques jours le temps que vous rentriez de voyage, sans frais, j'ai de la place chez moi.",message,french,0,legit,hard_negative,T5-HN-FOSTER,G296,2
+B05-041,B05,"CHIEN TROUVÉ 🐶🐶 près de la fac à MANOUBA, mâle beige, très gentil, APPELEZ VITE, son maître doit le chercher 🙏",listing,french,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-042,B05,"Vétérinaire à Ariana : pour toute personne ayant trouvé un animal égaré, je propose un examen gratuit avant la remise, aucun frais. Amenez-le à la clinique.",listing,french,0,legit,hard_negative,T5-HN-VET-FREE,G305,1
+B05-043,B05,"URGENT il prend un traitement pour le cœur, SANS ça il peut mourir, si vous le voyez APPELEZ-MOI tout de suite 📞📞📞",message,french,0,legit,hard_negative,T5-HN-MEDS-CAPS,G298,2
+B05-044,B05,"MERCI MERCI MERCI 😭❤️ Bobby est rentré grâce à vous, vous êtes quelqu'un de formidable 🙏🙏",message,french,0,legit,easy,T5-L-THANKS-CAPS,G030,0
+B05-045,B05,"Je viendrai avec une caisse de transport samedi matin, vers 10h ça vous va ?",message,french,0,legit,easy,T5-L-CARRIER,G311,3
+B05-046,B05,chienne a adopter 2 ans sterilisee tres calme cherche famille avec jardin a sousse appelez si interesse,listing,french,0,legit,easy,T5-L-ADOPT-NOPUNCT,G309,0
+B05-047,B05,"Avant d'adopter, pourriez-vous me dire s'il a des antécédents médicaux ou un traitement en cours ?",message,french,0,legit,easy,T5-L-MEDHIST,G316,3
+B05-048,B05,je crois l'avoir vu hier soir vers le lac 🐕 il courait vers la station il avait l'air en forme 🙏,message,french,0,legit,easy,T5-L-SIGHTING-EMOJI,G320,1
+B05-049,B05,باش تشوف الحيوانات الكل اللي تلقاو، أدخل للڤروب فيسبوك متاعنا وسجّل دخولك من هنا: [URL]. ما تعتمدش على التطبيق.,listing,darija_arabic,1,off_platform|phishing_link,easy,T5-OFF-FBGROUP,G332,3
+B05-050,B05,شركة التوصيل: عندنا طرد حي باسمك في الدبو، مصاريف التخزين 50 دينار تتخلص قبل التوصيل.,message,darija_arabic,1,fake_fee|impersonation,easy,T5-IMP-DELIVERY-CO,G307,2
+B05-051,B05,الليفرور يجيبهولك للدار. ابعث نص الفلوس توا، 50 دينار على D17، والنص الآخر كاش للليفرور.,message,darija_arabic,1,upfront_payment,easy,T5-UP-COURIER-HALF,G342,0
+B05-052,B05,عملت مسابقة باش الناس تعاوني نلوج على كلبك أسرع. صوّت وأدخل بالكونط متاعك هنا: [URL],message,darija_arabic,1,phishing_link,easy,T5-PH-CONTEST-VOTE,G338,3
+B05-053,B05,كـلـمـنـي كـان عـلـى الـتـيـلـيـڤـرام 👉 [URL] الـتـطـبـيـق هـذا مـا نـردش فـيـه 🚫,message,darija_arabic,1,off_platform,obfuscated,T5-OBF-OFF-TATWEEL,G329,3
+B05-054,B05,نجم نكبيه عندي أيام حتى ترجع من السفر وتجي تاخذو، بلاش، عندي بلاصة.,message,darija_arabic,0,legit,hard_negative,T5-HN-FOSTER,G296,2
+B05-055,B05,كلب ضاع!! 🐕🐕 لقيتو قريب المحطة في صفاقس، ذكر أسمر، صاحبو يكلمني بسرعة 🙏🙏,listing,darija_arabic,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-056,B05,قبل ما نعطيك القطوسة لازم تثبتلي إنها متاعك، ابعثلي تصويرة قديمة معاها، سامحني برشا ناس تكذب.,message,darija_arabic,0,legit,hard_negative,T5-HN-VERIFY-PHOTO,G304,0
+B05-057,B05,عاجل!! القطوسة عندها دوا كل يوم، كان شفتوها كلموني فيسع برجوك 📞📞,message,darija_arabic,0,legit,hard_negative,T5-HN-MEDS-CAPS,G298,2
+B05-058,B05,نجيب قفص معايا كي نجي ناخذ القطوس نهار السبت.,message,darija_arabic,0,legit,easy,T5-L-CARRIER,G311,3
+B05-059,B05,يعيشكم 😭❤️ رجع مشمش للدار، شكرا برشا 🙏🙏🙏,message,darija_arabic,0,legit,easy,T5-L-THANKS-EMOJI,G030,0
+B05-060,B05,قبل التبني، عندو أمراض ولا دوا يلزمو ياخذو؟,message,darija_arabic,0,legit,easy,T5-L-MEDHIST,G316,3
+B05-061,B05,عيادة بيطرية: حيوانك في الحجر الصحي، يجب دفع 80 دينارا رسوم الحجر قبل استلامه.,message,msa_arabic,1,fake_fee|impersonation,easy,T5-FEE-QUARANTINE,G295,3
+B05-062,B05,لرؤية الحيوانات المفقودة قربك، حمّل تطبيقنا من هذا الرابط وسجّل دخولك ببياناتك المصرفية: [URL],message,msa_arabic,1,phishing_link,easy,T5-PH-DOWNLOAD-APP,G340,4
+B05-063,B05,لإثبات جديتك، حوّل 50 دينارا كعربون عبر حوالة بريدية، يُسترجع عند التسليم.,message,msa_arabic,1,upfront_payment,easy,T5-UP-ESCROW-DEPOSIT,G343,4
+B05-064,B05,جـمـعـيـة الـرفـق بـالـحـيـوان 🐾 تـبـرّع بـ1O ديـنـار لإطـعـام الـكـلاب وأدخـل بـطـاقـتـك هـنـا [URL] ‼️,message,msa_arabic,1,phishing_link|impersonation,obfuscated,T5-OBF-DONATION,G325,1
+B05-065,B05,مكافأة 200 دينار تسلّم يدا بيد بعد عودة القط فقط، لا أدفع شيئا مقدما.,listing,msa_arabic,0,legit,hard_negative,T5-HN-REWARD-AFTER,G300,0
+B05-066,B05,كلب مفقود!! 🐕 عُثر عليه قرب الجامعة في أريانة، ذكر بني، صاحبه يتصل بسرعة 🙏🙏,listing,msa_arabic,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-067,B05,طبيب بيطري في أريانة: لكل من وجد حيوانا ضالا، أقدّم فحصا مجانيا قبل التسليم دون أي رسوم. أحضروه إلى العيادة.,listing,msa_arabic,0,legit,hard_negative,T5-HN-VET-FREE,G305,1
+B05-068,B05,قبل التبني، هل لديه أمراض أو علاجات حالية ينبغي أن أعرفها؟,message,msa_arabic,0,legit,easy,T5-L-MEDHIST,G316,3
+B05-069,B05,شكرا جزيلا 😭❤️ عاد القط إلى البيت بفضلكم 🙏🙏🙏,message,msa_arabic,0,legit,easy,T5-L-THANKS-EMOJI,G030,0
+B05-070,B05,سأحضر قفصا معي عندما آتي لأخذ القطة يوم السبت 🐱🙏,message,msa_arabic,0,legit,easy,T5-L-CARRIER,G311,3
+B05-071,B05,"Mon compte ici est nouveau w limité, kellemni 3al Signal bech nkamlou, hna ma najjamch nab3ath barcha.",message,mixed,1,off_platform,easy,T5-OFF-SIGNAL-NEWACC,G335,3
+B05-072,B05,"Société de livraison: bech nsallmou el 9attous lazem tconfirmi b el code OTP elli bech yjik fi sms, 3tihouli.",message,mixed,1,phishing_link|impersonation,easy,T5-PH-DELIVERY-OTP,G339,1
+B05-073,B05,"Je t'envoie la localisation ken 3al WhatsApp, ici ça marche pas, donne-moi ton numéro.",message,mixed,1,off_platform,easy,T5-OFF-LOCATION-PIN,G334,4
+B05-074,B05,"9bal el remise 7emmemt el kalb 3and el toiletteur, les frais 35 dt ab3athhom 3al Flouci avant.",message,mixed,1,fake_fee,easy,T5-FEE-GROOMING,G294,1
+B05-075,B05,répond PAS ici 🚫 @joute-moi 3al insta [URL] w n3tik localis@tion ghadi 📍📍,message,mixed,1,off_platform,obfuscated,T5-OBF-OFF,G326,4
+B05-076,B05,KALBEK 3ANDI 🐶 envoie 8O dt 3AL D17 AVANT sinon nsaybou fel chere3 ⏰‼️,message,mixed,1,upfront_payment|pressure,obfuscated,T5-OBF-UP,G330,2
+B05-077,B05,"Donne-moi ton numéro WhatsApp bech nab3athlek les photos, mais tu peux répondre ici aussi, kifek t7eb.",message,mixed,0,legit,hard_negative,T5-HN-WHATSAPP-PHOTOS,G306,2
+B05-078,B05,"CHAT TROUVÉ 🐱🐱 9rib el Carrefour à La Marsa, collier rouge, APPELEZ, son maître doit le chercher 🙏",listing,mixed,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-079,B05,"Nejjem nkabbou 3andi quelques jours le temps que tu rentres de voyage, sans frais, 3andi place.",message,mixed,0,legit,hard_negative,T5-HN-FOSTER,G296,2
+B05-080,B05,"URGENT!! 3andou un traitement pour le cœur, SANS ça il peut mourir, ken chaftouh APPELEZ 📞📞",message,mixed,0,legit,hard_negative,T5-HN-MEDS-CAPS,G298,2
+B05-081,B05,"MERCI 😭❤️ Kahwa rja3 lel dar grâce à vous, y3aychkom 🙏🙏",message,mixed,0,legit,easy,T5-L-THANKS,G322,3
+B05-082,B05,"Nji b une cage samedi matin, vers 10h 3andek ça va?",message,mixed,0,legit,easy,T5-L-CARRIER,G311,3
+B05-083,B05,a d o p t i o n 🐶 kalb mrigel 2 ans stérilisé cherche famille avec jardin fi Sousse,listing,mixed,0,legit,easy,T5-L-ADOPT-SPACED,G310,0
+B05-084,B05,"Avant d'adopter, 3andou des antécédents médicaux wala un traitement en cours?",message,mixed,0,legit,easy,T5-L-MEDHIST,G316,3
+B05-085,B05,"je crois l'avoir vu lbare7 vers le lac 🐕 yjri lel station, il avait l'air bien 🙏",message,mixed,0,legit,easy,T5-L-SIGHTING,G319,3
+B05-086,B05,"My account here is new and limited. Message me on Signal to finish this, I can't send much on this app.",message,english,1,off_platform,easy,T5-OFF-SIGNAL-NEWACC,G335,3
+B05-087,B05,I'm from the vet clinic; your dog is microchipped to us. To release the ownership records you need to pay a 45 DT file fee.,message,english,1,fake_fee|impersonation,easy,T5-IMP-VETDB-RECORDS,G308,0
+B05-088,B05,SEE l0st pets near y0u 🐾 d0wnl0ad 0ur @pp here 👉 [URL] & l0gin with y0ur b@nk det@ils ‼️,message,english,1,phishing_link,obfuscated,T5-PH-DOWNLOAD-APP,G340,4
+B05-089,B05,"LOST: Simba, grey cat, El Menzah. 200 DT reward paid in person on return only. I won't send anything upfront, beware of scammers.",listing,english,0,legit,hard_negative,T5-HN-REWARD-WARN,G303,0
+B05-090,B05,"DOG FOUND 🐶🐶 near the university in Manouba, beige male, very sweet, CALL the owner asap 🙏",listing,english,0,legit,hard_negative,T5-HN-FOUND-CAPS,G297,4
+B05-091,B05,"I can foster him for a few days until you're back from your trip, no charge, I have room.",message,english,0,legit,hard_negative,T5-HN-FOSTER,G296,2
+B05-092,B05,"URGENT he's on heart medication, WITHOUT it he could die, if you see him CALL ME right away 📞📞📞",message,english,0,legit,hard_negative,T5-HN-MEDS-CAPS,G298,2
+B05-093,B05,"Vet in Ariana: for anyone who has found a stray, I offer a free check-up before handover, no fees at all. Bring it to the clinic.",listing,english,0,legit,hard_negative,T5-HN-VET-FREE,G305,1
+B05-094,B05,"THANK YOU SO MUCH 😭❤️ Bobby is home thanks to you, you're amazing 🙏🙏",message,english,0,legit,easy,T5-L-THANKS-CAPS,G030,0
+B05-095,B05,I'll bring a carrier when I come to get the cat on Saturday morning.,message,english,0,legit,easy,T5-L-CARRIER,G311,3
+B05-096,B05,dog for adoption 2 years old neutered very calm looking for a family with a garden in sousse call if interested,listing,english,0,legit,easy,T5-L-ADOPT-NOPUNCT,G309,0
+B05-097,B05,"Before adopting, could you tell me if he has any medical history or current treatment?",message,english,0,legit,easy,T5-L-MEDHIST,G316,3
+B05-098,B05,think i saw him last night near the lake 🐕 running toward the station he looked ok 🙏,message,english,0,legit,easy,T5-L-SIGHTING-EMOJI,G320,1
+B05-099,B05,"We're a quiet family with a big garden and no other pets, we'd love to meet her.",message,english,0,legit,easy,T5-L-FAMILY-INTRO,G312,1
+B05-100,B05,"CAT FOUND 🐱🐱🐱 near the pharmacy in Ennasr, blue collar, very friendly, owner please reach out 🙏🙏",listing,english,0,legit,easy,T5-L-FOUND-EMOJI,G313,1
+B06-001,B06,"Lgit kalbek fi Sfax ama ena ma nejjemch nwosel l Tunis. Famma wa7ed jay ghodwa, 3tih 25 dt ticket louage 3al D17 w yjiblek iyah.",message,darija_latin,1,upfront_payment,easy,T6-UP-BUS-TICKET,G410,3
+B06-002,B06,3andek message jdid mel trouveur mta3 kalbek. A9rah w d5el b compte mte3ek hna bech tchoufou: [URL],message,darija_latin,1,phishing_link,easy,T6-PH-FAKE-NOTIF,G406,2
+B06-003,B06,Ena mel clinique. El kalb elli jebou 7ad bech na3mloulou euthanasie ghodwa ken ma yjich moulah. Khalles 60 dt frais release lyoum bech nwa9fou el 3amaliya.,message,darija_latin,1,fake_fee|impersonation|pressure,easy,T6-IMP-VET-EUTHANIZE,G367,1
+B06-004,B06,"Bech el puce titbaddel 3la esmek lazem 30 dt frais transfert 3and el vétérinaire, ab3athhom li taw w nsajjel.",message,darija_latin,1,fake_fee,easy,T6-FEE-CHIP-TRANSFER,G345,2
+B06-005,B06,"Ma tektebch hna, 3ayetli direct 3al telephone w 7adher el flous m3ak. Ma n7ebch el kteba fel app.",message,darija_latin,1,off_platform,easy,T6-OFF-CALL-ONLY,G404,1
+B06-006,B06,"El kalb 3and 5ouya fel Kef. Ab3ath 100 dt b Western Union 3la esmou taw bech yrkeb el bus, el bus yemchi fi sa3a.",message,darija_latin,1,upfront_payment|pressure,easy,T6-UP-WU-COUSIN,G415,0
+B06-007,B06,El kalb 3andi w rani metnarvez. Ken ma ab3athtech 80 dt el lila ma 3adch tchoufou. Ma t3ayetch lel 7add.,message,darija_latin,1,upfront_payment|pressure,easy,T6-UP-THREAT-HARM,G414,2
+B06-008,B06,"Lel kalb race lazem passeport vétérinaire 40 dt bech tnajem t5ou, ab3athhom 9bal b virement.",message,darija_latin,1,fake_fee,easy,T6-FEE-PASSPORT,G349,2
+B06-009,B06,"A7na jam3iya mta3 in9adh el 7ayawenet, lel adoption lazem caution 50 dt traja3 ba3d el visite, ab3athha 3al Flouci.",message,darija_latin,1,fake_fee|impersonation,easy,T6-IMP-NGO-BOND,G366,4
+B06-010,B06,scanni el QR 📲 bech tchouf win el kalb w tkhalles el récompense 👉 [URL] 💸,message,darija_latin,1,phishing_link,obfuscated,T6-OBF-QR-PAY,G402,2
+B06-011,B06,"A5IR FURSA ⏰⏰ JAWEBNI FI 5 D9AYE9 WALA NA3TIH L WA7ED A5OR, 3ANDI BARCHA NES YESTANAW 🔥🔥",message,darija_latin,1,pressure,obfuscated,T6-OBF-PRESSURE-CAPS,G401,0
+B06-012,B06,ab3athli c0de recharge 0redoo b 5O dt 📱 9bal ma njib el 9att0us 🐱 taw taw ⏰,message,darija_latin,1,upfront_payment,obfuscated,T6-OBF-RECHARGE-CODE,G403,0
+B06-013,B06,"5ouya jay men Sfax nhar el jem3a, ynajem yjiblek el 9attous, net9ablou fel ma7atta mta3 el louage. Ma n7ebou chay, ken yji 3andou dar mlih.",message,darija_latin,0,legit,hard_negative,T6-HN-RELATIVE-TRANSPORT,G357,1
+B06-014,B06,"9bal ma net7arrek n7eb na3mlou appel vidéo bech nchouf el kalb w net2aked elli howa Rex, sme7li.",message,darija_latin,0,legit,hard_negative,T6-HN-VIDEO-VERIFY,G364,4
+B06-015,B06,"A3tini numéro el clinique w ena nkhallas el facture direct m3ahom, ma n7ebch n7ottha 3lik.",message,darija_latin,0,legit,hard_negative,T6-HN-OWNER-PAYS-VET,G356,3
+B06-016,B06,"Na3ti récompense 150 dt, ama ba3d ma net2aked elli howa kalbi b 3alama fi widhnou. Ma nkhallas chay 9bal.",message,darija_latin,0,legit,hard_negative,T6-HN-REWARD-PROOF,G359,4
+B06-017,B06,"RODOU BALKOM ⚠️ el kalb yet5alla3 w ynajem ya3dh ki yji 7ad ghrib, ken chceftouh ma t9arbouch, 3ayettouli 📞",listing,darija_latin,0,legit,hard_negative,T6-HN-SCARED-BITES,G361,4
+B06-018,B06,"Nejjem n5alli el 9attous 3and el tbib mta3 el 7ouma 7atta tji te5ou, ghadi yet3alej w fi aman.",message,darija_latin,0,legit,hard_negative,T6-HN-DROP-AT-VET,G352,4
+B06-019,B06,"jari 3andou caméra 3al bab, bech nchoufou l'enregistrement mta3 el bare7 ken ban fih kalbek 🙏📹",message,darija_latin,0,legit,hard_negative,T6-HN-NEIGHBOR-CAMERA,G355,3
+B06-020,B06,"Na3ti el récompense 200 dt f idek ki net9ablou, w nzidek 9ima 3al taxi elli khsartou. Ma tab3athli walou 9bal.",message,darija_latin,0,legit,hard_negative,T6-HN-REWARD-TAXI-AFTER,G360,2
+B06-021,B06,"El adoption fiha frais? w chnowa yghatti, vaccin wala stérilisation? n7eb nfhem 9bal ma nji.",message,darija_latin,0,legit,easy,T6-L-ADOPT-FEE-Q,G371,1
+B06-022,B06,"LAZEM NSAKKER L'ANNONCE 🎉 l9it kalbi wa7di fel 7ouma el bare7, y3aychkom lkol 🙏❤️",message,darija_latin,0,legit,easy,T6-L-RESOLVED-SELF,G386,0
+B06-023,B06,El kalb yekel croquettes mta3 chnowa? w 9addech fel nhar? bech nhadher 9bal ma yji 3andi.,message,darija_latin,0,legit,easy,T6-L-DIET-Q,G375,1
+B06-024,B06,"KALB MJARAH 🐕 lgitou 3al autoroute 9rib Ben Arous, sa9ou ydmi, hezztou lel tbib, moulah brabi ykallemni 🙏🙏",listing,darija_latin,0,legit,easy,T6-L-FOUND-INJURED,G378,1
+B06-025,B06,"3abbit el formulaire mta3 l'adoption fel app, chneya el 5otwa elli ba3d?",message,darija_latin,0,legit,easy,T6-L-APPLY-PROCESS,G373,0
+B06-026,B06,"Famma 3 9tout fel 7ouma mta3na ychweharou, chkoun yheb y3awen fel stérilisation? n9assmou el masrouf.",listing,darija_latin,0,legit,easy,T6-L-STRAY-TNR,G392,0
+B06-027,B06,RODOU BALKOM 😤 wa7ed talabni flous 3al D17 w 9alli 3andou kalbi. Block w signalement! Ma tkhallsou 7ad 9bal ma tchoufou el kalb ❌,listing,darija_latin,0,legit,easy,T6-L-WARN-SCAMMER,G397,1
+B06-028,B06,"Jib m3ak carnet de vaccination mta3 el kalb ki tji, w ena njib el papiers mta3 l'adoption.",message,darija_latin,0,legit,easy,T6-L-BRING-CARNET,G374,4
+B06-029,B06,"El chta barcha el lila, 5ayef 3al kalbi barra, ken chceftouh da5louh 3andkom brabi w kalmouni.",message,darija_latin,0,legit,easy,T6-L-WEATHER-WORRY,G398,1
+B06-030,B06,Kifek taw? mazel ma l9itouch el kalb? rani n9alleb m3ak men b3id w n7eb na3ref ken famma jdid.,message,darija_latin,0,legit,easy,T6-L-STATUS-CHECK,G391,2
+B06-031,B06,"Je vous envoie 300 DT pour le chien par virement, mais c'est parti en 400 par erreur. Renvoyez-moi 100 DT par D17 avant la livraison.",message,french,1,upfront_payment,easy,T6-UP-OVERPAY,G411,4
+B06-032,B06,Je suis de la clinique. Le chien qu'on nous a confié sera euthanasié demain si personne ne le réclame. Réglez 60 DT de frais de sortie aujourd'hui pour arrêter la procédure.,message,french,1,fake_fee|impersonation|pressure,easy,T6-IMP-VET-EUTHANIZE,G367,1
+B06-033,B06,"Pour prouver que le chiot est de race pure, un test ADN et son certificat (45 DT) doivent être réglés d'avance avant l'adoption.",listing,french,1,fake_fee,easy,T6-FEE-DNA-CERT,G347,4
+B06-034,B06,"Le transporteur vous appellera pour 20 DT de frais à la réception, mais réglez d'abord 30 DT de dossier par e-Dinar pour lancer l'envoi.",message,french,1,fake_fee|impersonation,easy,T6-FEE-COD,G346,0
+B06-035,B06,"Versez l'acompte via ce lien PayPal sécurisé, vous serez intégralement remboursé si l'animal ne vous convient pas : [URL]",message,french,1,phishing_link,easy,T6-PH-PAYPAL,G408,0
+B06-036,B06,ONG S@UVET@GE 🐾 c@ution de 5O dt (rembours€e après la visite) à v€rser AVANT 👉 [URL] ‼️,message,french,1,fake_fee|impersonation,obfuscated,T6-IMP-NGO-BOND,G366,4
+B06-037,B06,chien de race ✅ p@sseport vét€rinaire 4O dt à régler AVANT la remise 📄📦 livr@ison rapide,listing,french,1,fake_fee,obfuscated,T6-FEE-PASSPORT,G349,2
+B06-038,B06,"Mon frère vient de Sfax vendredi, il peut vous amener le chat, on se retrouve à la station de louage. On ne veut rien, juste un bon foyer pour lui.",message,french,0,legit,hard_negative,T6-HN-RELATIVE-TRANSPORT,G357,1
+B06-039,B06,"Donnez-moi le numéro de la clinique, je réglerai la facture directement avec eux, ce n'est pas à vous d'avancer quoi que ce soit.",message,french,0,legit,hard_negative,T6-HN-OWNER-PAYS-VET,G356,3
+B06-040,B06,"J'ai vu votre annonce, je vous ramène le chien ce soir. Gardez votre récompense, je ne veux rien, content qu'il rentre chez lui.",message,french,0,legit,hard_negative,T6-HN-FINDER-REFUSES-REWARD,G353,2
+B06-041,B06,"Si vous venez de loin, je peux vous rembourser le taxi à la remise. Ne payez surtout rien avant de m'avoir vu avec le chat.",message,french,0,legit,hard_negative,T6-HN-TRANSPORT-REFUND,G362,3
+B06-042,B06,"Journée adoption dimanche au parc du Belvédère : chats et chiens à adopter, frais réglés sur place après rencontre. Venez nombreux !",listing,french,0,legit,easy,T6-L-ADOPT-EVENT,G370,3
+B06-043,B06,"Un grand merci, Mishmish est de retour à la maison, je n'oublierai jamais votre gentillesse.",message,french,0,legit,easy,T6-L-THANKS,G393,3
+B06-044,B06,"Trouvé chien blessé à la patte près de l'autoroute de Hammamet, emmené chez le vétérinaire. Son maître peut me contacter.",listing,french,0,legit,easy,T6-L-FOUND-INJURED,G378,1
+B06-045,B06,"Je peux vous envoyer des photos de ma maison et de mon jardin pour le dossier d'adoption, dites-moi ce qu'il vous faut.",message,french,0,legit,easy,T6-L-HOME-PHOTOS,G380,3
+B06-046,B06,"Perdu chat noir très craintif à Ennasr, ne le poursuivez pas, il fuit. Prévenez-moi et je viendrai avec sa couverture.",listing,french,0,legit,easy,T6-L-LOST-TIMID,G383,0
+B06-047,B06,je peux CONDUIRE pour vous aider à chercher ce week-end 🚗 j'ai le temps et je connais bien le coin 🙏,message,french,0,legit,easy,T6-L-OFFER-DRIVE,G384,2
+B06-048,B06,"Petites nouvelles : le chaton adopté chez vous s'habitue très bien, il dort déjà avec les enfants 🐱❤️",message,french,0,legit,easy,T6-L-UPDATE-SETTLING,G395,3
+B06-049,B06,لقيت كلبك في صفاقس وأنا ما نجمش نوصل لتونس. فما واحد جاي غدوة، أعطيه 25 دينار تيكاي كار على D17 ويجيبهولك.,message,darija_arabic,1,upfront_payment,easy,T6-UP-BUS-TICKET,G410,3
+B06-050,B06,الليفرور باش يكلمك على 20 دينار كي يوصل، أما خلص أولا 30 دينار ملف عبر e-Dinar باش نطلقو الإرسال.,message,darija_arabic,1,fake_fee|impersonation,easy,T6-FEE-COD,G346,0
+B06-051,B06,أنا من ملجأ خاص، باش تزور وتشوف الكلب قبل التبني لازم 20 دينار معلوم زيارة تتخلص مسبقا.,message,darija_arabic,1,fake_fee|impersonation,easy,T6-IMP-VISIT-FEE,G368,2
+B06-052,B06,أنقذت كلبك من كلاب الشارع وتجرح. إذا تحب نرجعهولك ابعث 70 دينار مصاريف الإنقاذ والدوا قبل، وقته حرج.,message,darija_arabic,1,upfront_payment|pressure,easy,T6-UP-STREET-RESCUE,G412,4
+B06-053,B06,ابعثلي ك و د ريـشـارج أوريـدو بـ 5O ديـنـار 📱 قـبـل مـا نـجـيـب الـقـطـوس 🐱⏰,message,darija_arabic,1,upfront_payment,obfuscated,T6-OBF-RECHARGE-CODE,G403,0
+B06-054,B06,قبل ما نتحرك نحب نعملو مكالمة فيديو باش نشوف الكلب ونتأكد إنو ركس، سامحني.,message,darija_arabic,0,legit,hard_negative,T6-HN-VIDEO-VERIFY,G364,4
+B06-055,B06,كي تجي تاخذ الكلب جيب معاك الكارني متاع التلقيح وبطاقتك، نحب نتأكد قبل ما نسلمهولك.,message,darija_arabic,0,legit,hard_negative,T6-HN-BRING-PAPERS,G350,2
+B06-056,B06,ضاع ركس!! 🐕 مكافأة 150 دينار تتسلم باليد بعد ما نلقاه فقط 🙏 ما نخلص حتى حاجة قبل ❌,listing,darija_arabic,0,legit,hard_negative,T6-HN-REWARD-HANDSHAKE,G358,2
+B06-057,B06,القطوسة اللي باش نتبناها تخاف من الصغار؟ عندي زوز صغار في الدار ونحب نطمئن.,message,darija_arabic,0,legit,easy,T6-L-SHY-KIDS-Q,G389,4
+B06-058,B06,نشرت إعلانك في ڤروب الحومة متاعنا في الفيسبوك، إن شاء الله حد يلقاه ويكلمك.,listing,darija_arabic,0,legit,easy,T6-L-SHARE-GROUP,G388,0
+B06-059,B06,لقينا جرو صغير وحدو قرب الجامع في المنزه، نظيف وجائع، صاحبو يكلمنا.,listing,darija_arabic,0,legit,easy,T6-L-FOUND-PUPPY,G379,4
+B06-060,B06,باش نلوج الليلة في الحومة بالكشاف، كان حد يحب يعاون يكلمني.,message,darija_arabic,0,legit,easy,T6-L-SEARCH-NIGHT,G387,1
+B06-061,B06,قاعدة بيانات الرقائق الوطنية: كلبك مسجّل لدينا، ولتحديث بيانات المالك ادفع 30 دينارا رسوم تحديث.,message,msa_arabic,1,fake_fee|impersonation,easy,T6-IMP-CHIP-DB,G365,4
+B06-062,B06,أُلغي إعلانك بالخطأ ولك تعويض قدره 40 دينارا، أدخل بيانات حسابك عبر الرابط لاستلامه: [URL],message,msa_arabic,1,phishing_link|impersonation,easy,T6-PH-REFUND-FORM,G409,0
+B06-063,B06,لتفعيل تأمين الحيوان المجاني الذي ربحته، يجب دفع 25 دينارا رسوم تفعيل أولا.,message,msa_arabic,1,fake_fee|impersonation,easy,T6-FEE-INSURANCE-ACTIVATE,G348,2
+B06-064,B06,سـكـان الـرمـز 📲 لـرؤيـة مـكـان كـلـبـك ودفـع الـمـكـافـأة 👉 [URL] 💸 بـسـرعـة,message,msa_arabic,1,phishing_link,obfuscated,T6-OBF-QR-PAY,G402,2
+B06-065,B06,عثرت على كلبك وأخذته إلى البيطري، فوجدنا أنه مرقّم إلكترونيا والعيادة تحاول الوصول إلى صاحبه. لا أريد أي مقابل.,message,msa_arabic,0,legit,hard_negative,T6-HN-CHIP-VET-LEGIT,G351,0
+B06-066,B06,الكلب الآن في عيادة بيطرية آمنة على نفقتي حتى تأتي لأخذه، لا داعي للعجلة.,message,msa_arabic,0,legit,hard_negative,T6-HN-DROP-AT-VET,G352,4
+B06-067,B06,يمكنني إيواؤه أياما حتى تعود من سفرك دون أي مقابل، لدي مكان في البيت.,message,msa_arabic,0,legit,hard_negative,T6-HN-FOSTER,G296,2
+B06-068,B06,ما هي خطوات التبني لديكم؟ وهل تجرون زيارة منزلية؟,message,msa_arabic,0,legit,easy,T6-L-ADOPT-PROCESS-Q,G372,0
+B06-069,B06,هل الكلب مدرّب على قضاء حاجته خارج المنزل؟ وهل يتوافق مع الأطفال الصغار؟,message,msa_arabic,0,legit,easy,T6-L-HOUSETRAINED-Q,G381,3
+B06-070,B06,عُثر على كلب بطوق أزرق قرب حديقة الحبيب ثامر في تونس، صاحبه يتواصل معي.,listing,msa_arabic,0,legit,easy,T6-L-FOUND-COLLAR,G377,1
+B06-071,B06,"Bech tthabet el chiot race pure, test ADN w certificat 45 dt lazem tetkhallas 9bal l'adoption.",message,mixed,1,fake_fee,easy,T6-FEE-DNA-CERT,G347,4
+B06-072,B06,"Ma tektebch hna, n5adem b WhatsApp Business, el app hedhi tbloki 3andi. Écris-moi là-bas seulement 👉 [PHONE]",message,mixed,1,off_platform,easy,T6-OFF-WA-BUSINESS,G405,0
+B06-073,B06,"El taxi lazem nkhallsou 9bal bech yji ye5ou el kalb w yjibhoulek, ab3athli 25 dt 3al D17 taw.",message,mixed,1,upfront_payment,easy,T6-UP-TAXI-ADVANCE,G413,2
+B06-074,B06,"Bech nab3athlek la localisation exacte mta3 el kalb, clique w connecte-toi hna b Facebook: [URL]",message,mixed,1,phishing_link,easy,T6-PH-LOCATION-LOGIN,G407,3
+B06-075,B06,"je veux ADOPTER votre chien 🐶 j'envoie un chauffeur, mais d'@bord confirmez avec 2O dt de r€servation 3al D17 ‼️",message,mixed,1,fake_fee|pressure,obfuscated,T6-OBF-FAKE-ADOPTER,G399,3
+B06-076,B06,"répond PAS ici 🚫 DM 3al insta [URL] barka, hna ma nchouf walou 📵",message,mixed,1,off_platform,obfuscated,T6-OBF-OFF-INSTA,G400,4
+B06-077,B06,"Net9ablou devant le poste de police de La Marsa pour la remise, 3andhom caméras, c'est plus sûr pour nous deux.",message,mixed,0,legit,hard_negative,T6-HN-MEET-POLICE,G354,3
+B06-078,B06,"RÉCOMPENSE 200 DT 💰 nkhallsek f idek après la remise SEULEMENT 🙏 ma tab3athli walou 9bal, attention aux arnaqueurs ⚠️",listing,mixed,0,legit,hard_negative,T6-HN-REWARD-HANDSHAKE,G358,2
+B06-079,B06,"Nejjem nkabbou 3andi le temps que tu reviennes de voyage, sans frais, 3andi jardin w place.",message,mixed,0,legit,hard_negative,T6-HN-FOSTER,G296,2
+B06-080,B06,"Décris-moi son collier w une marque particulière 9bal ma net9ablou, barcha nes ya99lou fi klab mouch mte3hom.",message,mixed,0,legit,hard_negative,T6-HN-VERIFY-COLLAR,G363,3
+B06-081,B06,"Journée adoption dimanche au parc 3al Belvédère, 9tout w klab lel tabanni, les frais sur place ba3d el rencontre. Ijaw!",listing,mixed,0,legit,easy,T6-L-ADOPT-EVENT,G370,3
+B06-082,B06,"3andi une cage-trappe pour les chats craintifs, nejjem n3irhalek bech te5ou Kahwa, 9olli waqtech t7eb.",message,mixed,0,legit,easy,T6-L-LEND-TRAP,G382,4
+B06-083,B06,3andkom chroot lel adoption? lazem jardin wala appartement ça va aussi pour le chat?,message,mixed,0,legit,easy,T6-L-ADOPT-COND-Q,G369,3
+B06-084,B06,je crois l'avoir vu lbare7 9rib el stade 🐕 yjri barcha ma 9dertech nal7a9ou 🙏,message,mixed,0,legit,easy,T6-L-SIGHTING,G390,2
+B06-085,B06,"sorry pour aujourd'hui, t7assalt fel 5edma. demain 3chiya ça marche pour venir voir le chiot?",message,mixed,0,legit,easy,T6-L-RESCHEDULE,G385,2
+B06-086,B06,"I'll send 300 DT for the dog by transfer, but it went through as 400 by mistake. Please send 100 DT back on D17 before delivery.",message,english,1,upfront_payment,easy,T6-UP-OVERPAY,G411,4
+B06-087,B06,You have a new message from the person who found your dog. Read it and log in here to see it: [URL],message,english,1,phishing_link,easy,T6-PH-FAKE-NOTIF,G406,2
+B06-088,B06,"Don't message here, I use WhatsApp Business and this app's chat is buggy for me. Text me there only 👉 [PHONE]",message,english,1,off_platform,easy,T6-OFF-WA-BUSINESS,G405,0
+B06-089,B06,"Y0ur pet is c0vered 🐾 cl@im y0ur 200 DT now, just p@y the 15 DT @ctiv@tion fee first 👉 [URL] ‼️",message,english,1,fake_fee|impersonation,obfuscated,T6-FEE-INSURANCE-ACTIVATE,G348,2
+B06-090,B06,I found your dog and took him to the vet; turns out he's microchipped and the clinic is trying to reach the owner. I don't want anything for it.,message,english,0,legit,hard_negative,T6-HN-CHIP-VET-LEGIT,G351,0
+B06-091,B06,"Saw your post, I'll bring your cat over this evening. Keep your reward, I don't want anything, just glad she's going home.",message,english,0,legit,hard_negative,T6-HN-FINDER-REFUSES-REWARD,G353,2
+B06-092,B06,"Let's meet in front of the police station in La Marsa for the handover, there are cameras, safer for both of us.",message,english,0,legit,hard_negative,T6-HN-MEET-POLICE,G354,3
+B06-093,B06,"THANK YOU SO MUCH 😭❤️ Simba is home safe thanks to you, you're wonderful 🙏🙏",message,english,0,legit,easy,T6-L-THANKS,G393,3
+B06-094,B06,"What food is he used to, and does he have any allergies? I'd like to have everything ready before he arrives.",message,english,0,legit,easy,T6-L-FOOD-ALLERGY-Q,G376,3
+B06-095,B06,"Found a dog with a blue collar near Habib Thameur park in Tunis, safe with me, owner please reach out.",listing,english,0,legit,easy,T6-L-FOUND-COLLAR,G377,1
+B06-096,B06,think i saw him near the stadium last night 🐕 he ran off before i could catch him but he looked ok 🙏,message,english,0,legit,easy,T6-L-SIGHTING,G390,2
+B06-097,B06,"We're a calm family with a fenced garden and no other pets, we'd love to come and meet her.",message,english,0,legit,easy,T6-L-HOME-INTRO,G312,1
+B06-098,B06,"I'm driving from Sousse to Tunis this Saturday, happy to bring her partway if that helps, no charge.",message,english,0,legit,easy,T6-L-TRANSPORT-OFFER,G394,1
+B06-099,B06,"Lost: shy black cat in Ennasr, please don't chase him, he bolts. Call me and I'll come with his blanket.",listing,english,0,legit,easy,T6-L-LOST-TIMID,G383,0
+B06-100,B06,Could you share his vaccination record before I adopt? Just want to know what he's had.,message,english,0,legit,easy,T6-L-VAX-RECORD-Q,G396,1
+B07-001,B07,"Bech nwarrik el trouveur mta3 kalbek, l'app te5ou commission. 3tini numrou w nkemlou 3al WhatsApp barka, hna ma narodch.",message,darija_latin,1,off_platform,easy,T7-OFF-APP-CHARGE,G476,4
+B07-002,B07,"Ma n7ebch nekteb, ab3athli vocal 3al WhatsApp [PHONE], hna ma nesma3ch el notifications w ma narodch.",message,darija_latin,1,off_platform,easy,T7-OFF-VOICENOTE,G487,0
+B07-003,B07,"3andi groupe WhatsApp n7ott fih el 7ayawenet el me9diin lkol, odkhol ghadi, hna ma n3awedch nekteb 3la 7ad.",listing,darija_latin,1,off_platform,easy,T7-OFF-WA-GROUP,G488,4
+B07-004,B07,"w@tsapp only 🚫 l'app mte3i ma ta7elch, 3ayetli 3al [PHONE] barka w ma tektebch hna ⛔",message,darija_latin,1,off_platform,obfuscated,T7-OFF-APP-BROKEN,G475,0
+B07-005,B07,"El kalb mridh chwaya, ab3athli 50 dt 3al D17 bech nechri dwe 9bal ma nnajem nsallmhoulek, ma3andich.",message,darija_latin,1,upfront_payment,easy,T7-UP-MEDICINE-FIRST,G493,0
+B07-006,B07,Rba7t forfait vétérinaire majjani! Bech ta5dou 7ot numéro el carte w el code hna: [URL],message,darija_latin,1,phishing_link,easy,T7-PH-VET-VOUCHER,G490,1
+B07-007,B07,"Suivi el livraison mta3 el kalb mte3ek, d5el b compte bech tchouf win wsel: [URL]",message,darija_latin,1,phishing_link,easy,T7-PH-TRACK-DELIVERY,G489,3
+B07-008,B07,"Bech nthabet elli enti jadd, ab3athli el récompense 50 dt 3al D17 9bal w taw njiblek el kalb.",message,darija_latin,1,upfront_payment,easy,T7-UP-REWARD-ADVANCE,G494,2
+B07-009,B07,"Bech nsaddar driver yjiblek el kalb, 3tih 20 dt pourboire 3al Flouci 9bal ma yet7arrek mel blasa.",message,darija_latin,1,upfront_payment,easy,T7-UP-DRIVER-TIP,G491,3
+B07-010,B07,"Bech tal9a el kalb lazem tfassakh abonnement collier GPS 35 dt, ab3athhom li w nfa33lou 3al esmek.",message,darija_latin,1,fake_fee,easy,T7-FEE-GPS-COLLAR,G417,2
+B07-011,B07,3ANDI KALBEK 🐶 JAWEBNI FI 3ACHRA D9AYE9 WALA NA3TIH L WA7ED A5OR ⏰⏰ ma 3andich wa9t ❌,message,darija_latin,1,pressure,obfuscated,T7-OBF-LASTCALL,G472,4
+B07-012,B07,ab3ath 7 a m s i n dinar 3al mand@t minute 9bal 💸 w ba3d njiblek el 9att0us 🐱 el3ajel,message,darija_latin,1,upfront_payment,obfuscated,T7-OBF-MANDAT,G473,0
+B07-013,B07,"Ab3athtlek el 150 dt 3al D17 kima wa3adt, y3aychek barcha 3la Rex, wsalou?",message,darija_latin,0,legit,hard_negative,T7-HN-PAID-D17,G429,4
+B07-014,B07,"Ab3athli localisation 3al WhatsApp wala hna kima t7eb, w njik ne5ou el kalb.",message,darija_latin,0,legit,hard_negative,T7-HN-LOC-OR-HERE,G207,4
+B07-015,B07,"El frais mta3 l'adoption 30 dt tetkhallsou fel refuge nhar tjiw, ma nab3thou 7ata chay 9bal.",listing,darija_latin,0,legit,hard_negative,T7-HN-FEE-ONSITE,G425,4
+B07-016,B07,"Ab3athtlek tsawer el kalb 3al WhatsApp, chouf w 9olli ken howa mte3ek 9bal ma net9ablou.",message,darija_latin,0,legit,hard_negative,T7-HN-PHOTO-WHATSAPP,G434,0
+B07-017,B07,"Ki tjibhouli nkhallsek el taxi w nzidek chwaya 3al ta3b, b D17 wala cash kima t7eb.",message,darija_latin,0,legit,hard_negative,T7-HN-TAXI-AFTER,G441,2
+B07-018,B07,"Ba3d ma rje3 el kalb, 3abbitlek recharge 20 dt 3al telifoun kima 9otli, merci barcha 3lik.",message,darija_latin,0,legit,hard_negative,T7-HN-RECHARGE-AFTER,G436,1
+B07-019,B07,"Hatha numéro D17 mte3i, ki t7eb tab3ath el récompense ba3d ma tchouf el kalb mte3ek sa7i7.",message,darija_latin,0,legit,hard_negative,T7-HN-MY-D17,G428,1
+B07-020,B07,"Net9ablou fel délégation, w nkhallsek el récompense 3al Flouci ki n5ou el kalb f idi.",message,darija_latin,0,legit,hard_negative,T7-HN-FLOUCI-HANDOVER,G426,0
+B07-021,B07,"n7eb nchouf el kalb 📹 a3mel appel vidéo 3al WhatsApp wala hna, w ba3d net9ablou 🙏",message,darija_latin,0,legit,hard_negative,T7-HN-VIDEOCALL-WA,G444,2
+B07-022,B07,El kalb yetfahem m3a klab o5rin? 3andi wa7ed fel dar w n7eb nchouf 9bal.,message,darija_latin,0,legit,easy,T7-L-OTHERDOG,G460,4
+B07-023,B07,"Lgit kalb sghir asmar bla collier fi Ben Arous 9rib el market, taw 3andi, moulah ykallemni.",listing,darija_latin,0,legit,easy,T7-L-FOUND-NOCOLLAR,G451,2
+B07-024,B07,"3andi panier w couverture zayed, ken 7ad y7tajhom lel 9tout el sghar na3tihom b la fulus.",message,darija_latin,0,legit,easy,T7-L-DONATE-BED,G449,4
+B07-025,B07,"Chouft l'affiche mta3 kalbek 3and el tbib, rani n7eb n3awen, win chaftouh akher marra?",message,darija_latin,0,legit,easy,T7-L-SAW-POSTER,G463,4
+B07-026,B07,El kalb yesta3mel barcha energie? 3andi appartement w n5af ma ykafihch el fadha.,message,darija_latin,0,legit,easy,T7-L-ENERGY-Q,G450,3
+B07-027,B07,"Yjaweb 3la esmou Bobby, ken chceftouh 9arbou bel 3a9el w 3aytoulou, ma tjriwch 3lih.",listing,darija_latin,0,legit,easy,T7-L-NAME-APPROACH,G456,2
+B07-028,B07,"Behi, net9ablou ghodwa 10h 9oddem el jem3a mta3 Ariana, nji b karhba zar9a.",message,darija_latin,0,legit,easy,T7-L-MEET-TIME,G455,3
+B07-029,B07,5dha el vaccin contre la rage? n7eb n3abbi dossier l'adoption kamel.,message,darija_latin,0,legit,easy,T7-L-RABIES-Q,G462,0
+B07-030,B07,"Rani mazilt n9alleb 3lih kol 3chiya fel 7ouma, ma t9atch l'amal, nchallah nal9awh.",message,darija_latin,0,legit,easy,T7-L-STILL-SEARCHING,G466,3
+B07-031,B07,"Mon compte ici a été signalé, je ne peux plus répondre sur l'appli. Continuons sur Telegram : [PHONE]",message,french,1,off_platform,easy,T7-OFF-FLAGGED-TG,G482,2
+B07-032,B07,"Je poste tous les animaux trouvés sur ma page Facebook, écrivez-moi là-bas, je ne regarde pas l'appli.",listing,french,1,off_platform,easy,T7-OFF-FB-PAGE,G481,0
+B07-033,B07,"j€ n'ouvre JAMAIS cette appli 📵 donnez votr€ num€ro, je vous envoie TOUT par SMS uniquement 📱",message,french,1,off_platform,obfuscated,T7-OFF-SMS-ONLY,G484,1
+B07-034,B07,"Je suis loin, envoyez 40 DT d'essence par D17 d'abord et je prends la route pour vous amener le chien.",message,french,1,upfront_payment,easy,T7-UP-FUEL-FAR,G492,0
+B07-035,B07,La mairie exige une médaille d'identification pour les chiens ; réglez l'amende de 25 DT par e-Dinar pour récupérer le vôtre.,message,french,1,fake_fee|impersonation,easy,T7-IMP-DOG-TAG-FINE,G445,0
+B07-036,B07,"Pour l'adoption, 30 DT de frais de contrat et de timbre sont à régler d'avance par Flouci avant la remise.",message,french,1,fake_fee,easy,T7-FEE-CONTRACT-STAMP,G416,3
+B07-037,B07,"P@YEZ l'@compte 5O dt MAINTENANT par fl0uci 💸 3 familles attendent le chiot, DERNIÈRE CHANCE ⏰",message,french,1,fake_fee|pressure,obfuscated,T7-OBF-DEPOSIT,G471,1
+B07-038,B07,"Je vous ai envoyé les 200 DT par D17 comme promis, merci encore d'avoir ramené Luna saine et sauve.",message,french,0,legit,hard_negative,T7-HN-PAID-PROMISE,G432,3
+B07-039,B07,"Je vous envoie les photos sur WhatsApp ou ici, comme vous préférez, mon numéro est [PHONE].",message,french,0,legit,hard_negative,T7-HN-PHOTOS-WA,G435,4
+B07-040,B07,"Les frais d'adoption (40 DT) se règlent au refuge le jour de la visite, rien à l'avance.",listing,french,0,legit,hard_negative,T7-HN-FEE-ONSITE,G425,4
+B07-041,B07,Voici une vidéo de lui en train de jouer : [URL]. Confirmez que c'est bien Bobby avant que je me déplace.,message,french,0,legit,hard_negative,T7-HN-VIDEO-LINK,G442,2
+B07-042,B07,"Dès que vous me le rendez, je vous règle la récompense par e-Dinar ou en espèces, comme vous voulez.",message,french,0,legit,hard_negative,T7-HN-EDINAR-AFTER,G424,2
+B07-043,B07,Est-ce qu'elle s'entend avec les enfants en bas âge ? On en a deux à la maison.,message,french,0,legit,easy,T7-L-KIDS-Q,G454,2
+B07-044,B07,"Trouvé un chat tigré sans collier près du marché de Nabeul, je le garde au chaud en attendant son maître.",listing,french,0,legit,easy,T7-L-FOUND-TABBY,G452,0
+B07-045,B07,"Je vois sur l'annonce que c'est résolu, quelle bonne nouvelle, félicitations à vous !",message,french,0,legit,easy,T7-L-CONGRATS,G448,3
+B07-046,B07,Pourriez-vous décrire son caractère ? Plutôt calme ou joueur ? J'ai des personnes âgées chez moi.,message,french,0,legit,easy,T7-L-TEMPER,G467,3
+B07-047,B07,"Je passe devant le parc chaque matin pour courir, je garderai l'œil ouvert pour votre chienne.",message,french,0,legit,easy,T7-L-WILL-WATCH,G470,0
+B07-048,B07,"Désolée, ce n'est pas lui, la tache sur le poitrail est différente de votre photo.",message,french,0,legit,easy,T7-L-NOT-MINE,G458,2
+B07-049,B07,ما نردش هنا، التطبيق يمسح الرسائل. أعطيني نومروك باش نكلمك على التيليفون ونكملو.,message,darija_arabic,1,off_platform,easy,T7-OFF-CALL-NUMBER,G477,1
+B07-050,B07,زيدني على سناب شات ونوريك الكلب دايريكت، هنا ما نجمش نبعث فيديو.,message,darija_arabic,1,off_platform,easy,T7-OFF-SNAP-LIVE,G485,2
+B07-051,B07,الملجأ يطلب 25 دينار متاع الماكلة اللي كلاها الكلب، لازم تخلصهم قبل ما تجي تاخذو.,message,darija_arabic,1,fake_fee,easy,T7-FEE-SHELTER-FOOD,G419,1
+B07-052,B07,قبل التبني لازم تخلص 30 دينار متاع شهادة التلقيح، ابعثهم وبعد نسلمولك الكلب.,message,darija_arabic,1,fake_fee,easy,T7-FEE-VACCINE-PROOF,G420,3
+B07-053,B07,خـلـص 3O ديـنـار عـربـون عـ الـفـلـوسـي 💸 قـبـل ⏰ وإلا نـعـطـيـه لآخـر ❌,message,darija_arabic,1,fake_fee|pressure,obfuscated,T7-OBF-DEPOSIT,G471,1
+B07-054,B07,خلصتك المكافأة بحوالة بريدية كيف اتفقنا، يعيشك على اللي عملتو مع مشمش.,message,darija_arabic,0,legit,hard_negative,T7-HN-PAID-MANDAT,G431,1
+B07-055,B07,ابعثلي اللوكاليزاسيون على الواتساب ولا هنا كيف تحب، ونجي ناخذو.,message,darija_arabic,0,legit,hard_negative,T7-HN-LOC-OR-HERE,G207,4
+B07-056,B07,كان خلصت الطبيب، نقسمو المصروف كي نتقابلو، نعطيك نصفو باليد ولا على D17.,message,darija_arabic,0,legit,hard_negative,T7-HN-SPLIT-VET,G440,4
+B07-057,B07,هاو ألبوم تصاور متاعو هنا [URL]، شوفو وقولي كان هو كلبك قبل ما نتحركو.,message,darija_arabic,0,legit,hard_negative,T7-HN-ALBUM-LINK,G421,3
+B07-058,B07,لقينا جرو صغير قرب الجامع في المنزه، نظيف وجائع، صاحبو يكلمنا نهار كامل.,listing,darija_arabic,0,legit,easy,T7-L-FOUND-PUPPY,G379,4
+B07-059,B07,القطوسة تخاف من الكلاب؟ عندي كلب هادي في الدار ونحب نطمئن.,message,darija_arabic,0,legit,easy,T7-L-OTHERPET,G461,3
+B07-060,B07,راني نلوج عليه كل عشية في الحومة، ما تقطعش الأمل، إن شاء الله نلقاوه.,message,darija_arabic,0,legit,easy,T7-L-SEARCHING,G464,2
+B07-061,B07,لا أرد هنا، أنا خارج البلاد. تواصل معي على فايبر فقط لإتمام الأمر: [PHONE],message,msa_arabic,1,off_platform,easy,T7-OFF-ABROAD-VIBER,G474,1
+B07-062,B07,لنقل ملكية الكلب إلى اسمك يلزم 35 دينارا رسوم أوراق تُدفع مسبقا ثم نسجّلها.,message,msa_arabic,1,fake_fee,easy,T7-FEE-OWNERSHIP-TRANSFER,G418,0
+B07-063,B07,محتجز البلدية: كلبك عندنا، ادفع 40 دينارا رسوم الإفراج قبل أن نسلّمه إليك.,message,msa_arabic,1,fake_fee|impersonation,easy,T7-IMP-POUND-RELEASE,G446,2
+B07-064,B07,تـتـبّـع تـسـلـيـم حـيـوانـك مـن هـنـا 📦 سـجّـل دخـولـك بـبـيـانـاتـك 👉 [URL] ‼️,message,msa_arabic,1,phishing_link,obfuscated,T7-PH-TRACK-DELIVERY,G489,3
+B07-065,B07,حوّلت لك المكافأة 200 دينار عبر e-Dinar كما اتفقنا، شكرا لإعادتك سيمبا إلى المنزل.,message,msa_arabic,0,legit,hard_negative,T7-HN-REWARD-SENT,G439,3
+B07-066,B07,سأرسل لك المكافأة عبر D17 بعد أن تعيد الكلب، أرسل لي رقم هاتفك في ذلك الوقت.,message,msa_arabic,0,legit,hard_negative,T7-HN-D17-AFTER,G423,4
+B07-067,B07,وضعت صورا وفيديو له على هذا الرابط [URL]، تأكد أنه كلبك قبل أن نلتقي.,message,msa_arabic,0,legit,hard_negative,T7-HN-PHOTO-LINK,G433,2
+B07-068,B07,هل القطة معقمة؟ وكم عمرها تقريبا؟ أرغب في استكمال ملف التبني.,message,msa_arabic,0,legit,easy,T7-L-NEUTER-AGE-Q,G457,0
+B07-069,B07,عُثر على كلب بني قرب الحديقة في المنستير، بصحة جيدة، صاحبه يتواصل معي.,listing,msa_arabic,0,legit,easy,T7-L-FOUND-BROWN,G101,3
+B07-070,B07,سأواصل البحث في منطقتي كل مساء، لا تفقد الأمل.,message,msa_arabic,0,legit,easy,T7-L-KEEP-LOOKING,G453,2
+B07-071,B07,"Nkemlou 3al Messenger, c'est plus sécurisé que cette app, ab3athli ton profil, hna ma n7ebch nekteb.",message,mixed,1,off_platform,easy,T7-OFF-MESSENGER-SECURE,G483,4
+B07-072,B07,"El chat hna yemsa7 el messages, passons sur Telegram, 3tini ton numéro, hna ma yetsajjalch chay.",message,mixed,1,off_platform,easy,T7-OFF-DELETES,G479,4
+B07-073,B07,"commente ken 3al post mta3i 3al Facebook 👉 [URL] hna ma nchouf walou 📵, écris là-bas SEULEMENT",message,mixed,1,off_platform,obfuscated,T7-OFF-FB-COMMENT,G480,2
+B07-074,B07,"Le chiot est réservé lik, ama 30 dt frais de contrat lazem 9bal b Flouci avant la remise.",message,mixed,1,fake_fee,easy,T7-FEE-CONTRACT-STAMP,G416,3
+B07-075,B07,"El kalb mridh, envoie 50 dt 3al D17 bech nechri el dwe 9bal ma nsallmou, stp c'est urgent.",message,mixed,1,upfront_payment|pressure,easy,T7-UP-MEDICINE-FIRST,G493,0
+B07-076,B07,"g@gné 🎁 un forfait véto GRATUIT, entre numéro carte + code ici bech ta5dou 👉 [URL] ‼️",message,mixed,1,phishing_link,obfuscated,T7-PH-VET-VOUCHER,G490,1
+B07-077,B07,"3tittek el récompense 150 dt 3al Flouci kima wa3adt, merci 3la Kahwa, 7amdoullah rja3 🙏",message,mixed,0,legit,hard_negative,T7-HN-PAID-FLOUCI,G430,4
+B07-078,B07,"Nraddlek flous el makla elli chritha 3al D17 ki net9ablou, wala cash kima t7eb, ma t5ammemch.",message,mixed,0,legit,hard_negative,T7-HN-REIMBURSE-FOOD,G437,2
+B07-079,B07,Nab3athlek une petite vidéo 3al WhatsApp bech t2aked elli howa el kalb mte3ek 9bal ma nji.,message,mixed,0,legit,hard_negative,T7-HN-VIDEO-WA,G443,3
+B07-080,B07,"3ayetli 3al [PHONE] wala jaweb hna bech nnasa9ou el rendez-vous, kifek ashel 3lik.",message,mixed,0,legit,hard_negative,T7-HN-CALL-TO-ARRANGE,G422,2
+B07-081,B07,"Nkhallsek l'essence 3al D17 wala cash ki tjibhouli, comme tu veux, ma t5ammemch 3al flous.",message,mixed,0,legit,hard_negative,T7-HN-FUEL-AFTER,G427,3
+B07-082,B07,Il s'entend avec les chats? 3andi 9attous hadi fel dar.,message,mixed,0,legit,easy,T7-L-OTHERCAT,G459,1
+B07-083,B07,"Trouvé kalb sghir noir fi Le Kram, collier vert, moulah ykallemni, rani 7adher nraddou.",listing,mixed,0,legit,easy,T7-L-FOUND-BLACK,G021,2
+B07-084,B07,Je peux venir le voir samedi? 3andi jardin kbir w famille calme.,message,mixed,0,legit,easy,T7-L-VISIT-SAT,G468,0
+B07-085,B07,Najem nji m3a sa7bi ki nji nchouf el kalb lel adoption? howa 3andou tajreba m3a el klab.,message,mixed,0,legit,easy,T7-L-BRING-FRIEND,G447,2
+B07-086,B07,"The person who has your dog is my colleague; contact him directly on WhatsApp [PHONE], he doesn't use this app.",message,english,1,off_platform,easy,T7-OFF-COLLEAGUE,G478,3
+B07-087,B07,j0in my Teleg@m ch@nnel to see all the f0und pets 👉 [URL] 📵 I d0n't check here anymore,listing,english,1,off_platform,obfuscated,T7-OFF-TG-CHANNEL,G486,3
+B07-088,B07,"I'm far away, send 40 DT for fuel on D17 first and I'll drive over to bring you the dog.",message,english,1,upfront_payment,easy,T7-UP-FUEL-FAR,G492,0
+B07-089,B07,"To transfer his microchip to your name there's a 35 DT paperwork fee, send it first and I'll register it.",message,english,1,fake_fee,easy,T7-FEE-OWNERSHIP-TRANSFER,G418,0
+B07-090,B07,"Sent you the 150 DT on D17 as promised, thank you so much for bringing Rex back home.",message,english,0,legit,hard_negative,T7-HN-PAID-D17,G429,4
+B07-091,B07,"I'll send the photos on WhatsApp or right here, whichever you prefer, my number is [PHONE].",message,english,0,legit,hard_negative,T7-HN-PHOTOS-WA,G435,4
+B07-092,B07,Here's a video of her in my garden: [URL]. Tell me if it's really Nala before you come over.,message,english,0,legit,hard_negative,T7-HN-PHOTO-LINK,G433,2
+B07-093,B07,"Happy to send the reward by D17 the moment you hand her over, just share your number with me.",message,english,0,legit,hard_negative,T7-HN-REWARD-ON-RETURN,G438,1
+B07-094,B07,Is he good with other dogs? I already have a calm older one at home.,message,english,0,legit,easy,T7-L-OTHERDOG,G460,4
+B07-095,B07,"Found a brown dog with no collar near the park in Monastir, he's safe with me, owner reach out.",listing,english,0,legit,easy,T7-L-FOUND-BROWN,G101,3
+B07-096,B07,Could you describe her temperament? Calm or playful? We have elderly parents at home.,message,english,0,legit,easy,T7-L-TEMPER,G467,3
+B07-097,B07,"I jog past the stadium every morning, I'll keep an eye out for your cat.",message,english,0,legit,easy,T7-L-WILL-WATCH,G470,0
+B07-098,B07,"Is she spayed, and has she had her shots? I'd like to complete the adoption file.",message,english,0,legit,easy,T7-L-SPAY-SHOTS,G465,0
+B07-099,B07,Can I come see him this weekend? We have a fenced garden and no other pets.,message,english,0,legit,easy,T7-L-VISIT-WEEKEND,G469,4
+B07-100,B07,"Sorry, false alarm, it's not him, the marking on the ear is different from your photo.",message,english,0,legit,easy,T7-L-NOT-MINE,G458,2
+B08-001,B08,"Kellemni ken 3al WhatsApp, hna ma njawebch nha2iyan.",message,darija_latin,1,off_platform,easy,T8-PAIR-01,G495,1
+B08-002,B08,"Kellemni 3al WhatsApp wala hna, kifek t7eb, njaweb fel zouz.",message,darija_latin,0,legit,hard_negative,T8-PAIR-01,G495,1
+B08-003,B08,"Zidni 3al Telegram barka, el app hedhi ma na3temedch 3liha.",message,darija_latin,1,off_platform,easy,T8-PAIR-02,G496,2
+B08-004,B08,"Zidni 3al Telegram wala kemmel hna, kefma yji 3lik ashel.",message,darija_latin,0,legit,hard_negative,T8-PAIR-02,G496,2
+B08-005,B08,"3al Viber ken, hna ma nji 7ata marra w ma nchouf.",message,darija_latin,1,off_platform,easy,T8-PAIR-03,G497,4
+B08-006,B08,"3al Viber wala hna, ena mawjoud fel zouz, kima t7eb.",message,darija_latin,0,legit,hard_negative,T8-PAIR-03,G497,4
+B08-007,B08,"3ayetli direct 3al telephone, ma nekteb 7ata 7aja fel app hedhi.",message,darija_latin,1,off_platform,easy,T8-PAIR-04,G498,1
+B08-008,B08,"3ayetli 3al telephone wala ekteb hna, kifek ashel, njaweb 3al tnin.",message,darija_latin,0,legit,hard_negative,T8-PAIR-04,G498,1
+B08-009,B08,"DM 3al Insta barka, ma narodch 3la 7ad hna taht l'annonce.",listing,darija_latin,1,off_platform,easy,T8-PAIR-05,G499,4
+B08-010,B08,"DM 3al Insta wala jaweb taht l'annonce, kima yji 3lik.",listing,darija_latin,0,legit,hard_negative,T8-PAIR-05,G499,4
+B08-011,B08,"Ab3athli SMS 3al [PHONE], l'app hedhi ma tjinich notifications.",message,darija_latin,1,off_platform,easy,T8-PAIR-06,G500,3
+B08-012,B08,"Ab3athli SMS 3al [PHONE] wala hna, njaweb fel zouz, win ashel 3lik.",message,darija_latin,0,legit,hard_negative,T8-PAIR-06,G500,3
+B08-013,B08,"Nkemlou 3al Messenger, hna el chat ma ya5demch mlih 3andi.",message,darija_latin,1,off_platform,easy,T8-PAIR-07,G501,0
+B08-014,B08,"Nkemlou 3al Messenger wala hna, kefma t7eb, el zouz ya5dmou 3andi.",message,darija_latin,0,legit,hard_negative,T8-PAIR-07,G501,0
+B08-015,B08,"Ab3athli 3al email [EMAIL], ma nfattachch l'app hedhi abadan.",message,darija_latin,1,off_platform,easy,T8-PAIR-08,G502,2
+B08-016,B08,"Ab3athli 3al email [EMAIL] wala hna, njaweb mel blasa elli ashel lik.",message,darija_latin,0,legit,hard_negative,T8-PAIR-08,G502,2
+B08-017,B08,"WH@TSAPP ONLY 🚫 ma narodch hna, el app te5ou commission 3al transaction",listing,darija_latin,1,off_platform,obfuscated,T8-PAIR-09,G495,1
+B08-018,B08,"whatsapp wala hna 🙂 kifek t7eb, njaweb fel zouz 🐾",listing,darija_latin,0,legit,hard_negative,T8-PAIR-09,G495,1
+B08-019,B08,T€L€GRAM BARKA ⛔ hna el messages yetfas5ou wa7adhom,message,darija_latin,1,off_platform,obfuscated,T8-PAIR-10,G503,1
+B08-020,B08,"telegram wala hna, kefma yji 3lik, njaweb 3al tnin ⏳",message,darija_latin,0,legit,hard_negative,T8-PAIR-10,G503,1
+B08-021,B08,"3ayetli 3al [PHONE], ma nekteb hna 5ater n5dem w ma n7ebch el kteba.",message,darija_latin,1,off_platform,easy,T8-PAIR-11,G504,3
+B08-022,B08,"3ayetli 3al [PHONE] wala ekteb hna, kima yji, njaweb wa9t ma nfrgh.",message,darija_latin,0,legit,hard_negative,T8-PAIR-11,G504,3
+B08-023,B08,"3al Insta barka, hna ma n7ebch nkallem 7ata 7ad.",message,darija_latin,1,off_platform,easy,T8-PAIR-12,G505,1
+B08-024,B08,"3al Insta wala hna, kifek t7eb, njaweb fel zouz bla moushkel.",message,darija_latin,0,legit,hard_negative,T8-PAIR-12,G505,1
+B08-025,B08,"Viber ken lel details, ma n7ottch chay hna fel annonce.",listing,darija_latin,1,off_platform,easy,T8-PAIR-13,G506,3
+B08-026,B08,"Viber wala hna lel details, kefma yji 3lik ashel, el zouz behi.",listing,darija_latin,0,legit,hard_negative,T8-PAIR-13,G506,3
+B08-027,B08,"Nkemlou 3al Signal barka, ma na3temedch 3al app hedhi khater mouch privée.",message,darija_latin,1,off_platform,easy,T8-PAIR-14,G507,2
+B08-028,B08,"Nkemlou 3al Signal wala hna, kima t7eb, el zouz behi 3andi.",message,darija_latin,0,legit,hard_negative,T8-PAIR-14,G507,2
+B08-029,B08,"Contactez-moi uniquement sur WhatsApp, je ne répondrai pas ici.",message,french,1,off_platform,easy,T8-PAIR-15,G508,4
+B08-030,B08,"Contactez-moi sur WhatsApp ou ici, comme vous préférez, je réponds aux deux.",message,french,0,legit,hard_negative,T8-PAIR-15,G508,4
+B08-031,B08,"Passons sur Telegram seulement, cette appli n'est pas fiable.",message,french,1,off_platform,easy,T8-PAIR-16,G509,0
+B08-032,B08,"On peut passer sur Telegram ou rester ici, comme vous voulez.",message,french,0,legit,hard_negative,T8-PAIR-16,G509,0
+B08-033,B08,"Appelez-moi directement, je n'écris pas sur cette appli.",listing,french,1,off_platform,easy,T8-PAIR-17,G510,2
+B08-034,B08,"Appelez-moi ou écrivez ici, selon ce qui vous arrange le mieux.",listing,french,0,legit,hard_negative,T8-PAIR-17,G510,2
+B08-035,B08,"Écrivez-moi seulement sur Messenger, je ne vois rien passer ici.",message,french,1,off_platform,easy,T8-PAIR-18,G511,3
+B08-036,B08,"Écrivez-moi sur Messenger ou ici, je regarde les deux régulièrement.",message,french,0,legit,hard_negative,T8-PAIR-18,G511,3
+B08-037,B08,"Envoyez tout par email à [EMAIL], je n'ouvre pas l'appli.",message,french,1,off_platform,easy,T8-PAIR-19,G512,2
+B08-038,B08,"Envoyez par email à [EMAIL] ou répondez ici, comme il vous plaira.",message,french,0,legit,hard_negative,T8-PAIR-19,G512,2
+B08-039,B08,"DM sur Instagram uniquement, je ne réponds pas sous l'annonce.",listing,french,1,off_platform,easy,T8-PAIR-20,G513,3
+B08-040,B08,"DM sur Instagram ou commentez ici, l'un ou l'autre me va très bien.",listing,french,0,legit,hard_negative,T8-PAIR-20,G513,3
+B08-041,B08,SMS SEULEMENT au [PHONE] 📵 je n'ouvre JAMAIS cette appli,message,french,1,off_platform,obfuscated,T8-PAIR-21,G514,0
+B08-042,B08,"un SMS au [PHONE] ou ici 🙂 comme vous préférez, je réponds",message,french,0,legit,hard_negative,T8-PAIR-21,G514,0
+B08-043,B08,"Sur Viber seulement, je suis à l'étranger et je ne viens pas ici.",message,french,1,off_platform,easy,T8-PAIR-22,G515,0
+B08-044,B08,"Sur Viber ou ici, je suis joignable des deux côtés, à votre convenance.",message,french,0,legit,hard_negative,T8-PAIR-22,G515,0
+B08-045,B08,"Ne répondez pas ici, uniquement WhatsApp, ce chat efface les messages.",message,french,1,off_platform,easy,T8-PAIR-23,G516,0
+B08-046,B08,"Répondez sur WhatsApp ou ici, les deux me conviennent, à vous de voir.",message,french,0,legit,hard_negative,T8-PAIR-23,G516,0
+B08-047,B08,كلمني كان على الواتساب، هنا ما نجاوبش خاطر ما يوصلنيش.,message,darija_arabic,1,off_platform,easy,T8-PAIR-24,G517,1
+B08-048,B08,كلمني على الواتساب ولا هنا، كيف تحب، نجاوب في الزوز.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-24,G517,1
+B08-049,B08,زيدني على التيليغرام برك، التطبيق هذا ما نثقش فيه.,message,darija_arabic,1,off_platform,easy,T8-PAIR-25,G518,0
+B08-050,B08,زيدني على التيليغرام ولا كمّل هنا، كيفما يجي عليك.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-25,G518,0
+B08-051,B08,عيّطلي ديراكت، ما نكتبش في التطبيق هذا.,message,darija_arabic,1,off_platform,easy,T8-PAIR-26,G519,4
+B08-052,B08,عيّطلي ولا اكتب هنا، كيف يسهل عليك، نجاوب في الطريقتين.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-26,G519,4
+B08-053,B08,اكتبلي كان على الماسنجر، هنا ما نشوف والو.,listing,darija_arabic,1,off_platform,easy,T8-PAIR-27,G520,3
+B08-054,B08,اكتبلي على الماسنجر ولا هنا، نشوف في الزوز.,listing,darija_arabic,0,legit,hard_negative,T8-PAIR-27,G520,3
+B08-055,B08,ابعثلي أس أم أس على [PHONE]، التطبيق ما يجيبنيش نوتيفيكاسيون.,message,darija_arabic,1,off_platform,easy,T8-PAIR-28,G521,2
+B08-056,B08,ابعثلي أس أم أس على [PHONE] ولا هنا، كيف يسهل عليك نجاوب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-28,G521,2
+B08-057,B08,على الفايبر برك، هنا ما نجيش خاطر ما نحلّش التطبيق.,message,darija_arabic,1,off_platform,easy,T8-PAIR-29,G522,4
+B08-058,B08,على الفايبر ولا هنا، أنا موجود في الزوز، كيف تحب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-29,G522,4
+B08-059,B08,دي أم على الأنستا برك 🚫 ما نردّش تحت الإعلان,listing,darija_arabic,1,off_platform,obfuscated,T8-PAIR-30,G523,1
+B08-060,B08,دي أم على الأنستا ولا كومنتي هنا 🙂 كيفما يجي عليك,listing,darija_arabic,0,legit,hard_negative,T8-PAIR-30,G523,1
+B08-061,B08,ابعثلي كلشي على الإيميل [EMAIL]، ما نحلّش التطبيق.,message,darija_arabic,1,off_platform,easy,T8-PAIR-31,G524,1
+B08-062,B08,ابعثلي على الإيميل [EMAIL] ولا هنا، كيف تحب نجاوب.,message,darija_arabic,0,legit,hard_negative,T8-PAIR-31,G524,1
+B08-063,B08,تواصل معي عبر واتساب فقط، لن أرد هنا.,message,msa_arabic,1,off_platform,easy,T8-PAIR-32,G525,4
+B08-064,B08,تواصل معي عبر واتساب أو هنا، كما تفضّل، أرد على الاثنين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-32,G525,4
+B08-065,B08,لننتقل إلى تيليغرام حصرا، هذا التطبيق غير موثوق.,message,msa_arabic,1,off_platform,easy,T8-PAIR-33,G526,2
+B08-066,B08,يمكننا الانتقال إلى تيليغرام أو البقاء هنا، كما تشاء.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-33,G526,2
+B08-067,B08,اتصل بي مباشرة، لا أكتب على هذا التطبيق.,message,msa_arabic,1,off_platform,easy,T8-PAIR-34,G527,0
+B08-068,B08,اتصل بي أو اكتب هنا، حسبما يناسبك، أرد على الطريقتين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-34,G527,0
+B08-069,B08,أرسل كل شيء إلى البريد [EMAIL]، لا أفتح التطبيق.,listing,msa_arabic,1,off_platform,easy,T8-PAIR-35,G528,2
+B08-070,B08,أرسل إلى البريد [EMAIL] أو رد هنا، كما يحلو لك.,listing,msa_arabic,0,legit,hard_negative,T8-PAIR-35,G528,2
+B08-071,B08,راسلني على ماسنجر فقط، لا أرى شيئا هنا.,message,msa_arabic,1,off_platform,easy,T8-PAIR-36,G529,0
+B08-072,B08,راسلني على ماسنجر أو هنا، أتابع الاثنين.,message,msa_arabic,0,legit,hard_negative,T8-PAIR-36,G529,0
+B08-073,B08,فـايـبـر فـقـط 📵 لا أدخـل هـذا الـتـطـبـيـق أبـدا,message,msa_arabic,1,off_platform,obfuscated,T8-PAIR-37,G530,3
+B08-074,B08,فايبر أو هنا 🙂 كما تفضّل، أنا متاح على الاثنين,message,msa_arabic,0,legit,hard_negative,T8-PAIR-37,G530,3
+B08-075,B08,"Kellemni 3al WhatsApp only, je ne réponds pas ici.",message,mixed,1,off_platform,easy,T8-PAIR-38,G531,3
+B08-076,B08,"Kellemni 3al WhatsApp ou ici, comme tu veux, njaweb fel zouz.",message,mixed,0,legit,hard_negative,T8-PAIR-38,G531,3
+B08-077,B08,"Passons sur Telegram barka, cette app ma tnajjemch tjini.",message,mixed,1,off_platform,easy,T8-PAIR-39,G532,3
+B08-078,B08,"Passons sur Telegram wala hna, kima t7eb, les deux ça me va.",message,mixed,0,legit,hard_negative,T8-PAIR-39,G532,3
+B08-079,B08,"3ayetli direct, je n'écris pas 3al app hedhi.",listing,mixed,1,off_platform,easy,T8-PAIR-40,G533,1
+B08-080,B08,"3ayetli wala écris ici, kima yji 3lik, njaweb 3al tnin.",listing,mixed,0,legit,hard_negative,T8-PAIR-40,G533,1
+B08-081,B08,"Écris-moi 3al Messenger seulement, hna ma nchouf walou.",message,mixed,1,off_platform,easy,T8-PAIR-41,G534,4
+B08-082,B08,"Écris-moi 3al Messenger wala hna, nchouf les deux, à toi de voir.",message,mixed,0,legit,hard_negative,T8-PAIR-41,G534,4
+B08-083,B08,"DM 3al Insta only, je ne réponds pas hna.",message,mixed,1,off_platform,easy,T8-PAIR-42,G535,4
+B08-084,B08,"DM 3al Insta wala hna, comme tu préfères, njaweb fel zouz.",message,mixed,0,legit,hard_negative,T8-PAIR-42,G535,4
+B08-085,B08,"Ab3athli SMS 3al [PHONE], je n'ouvre pas l'app hedhi.",message,mixed,1,off_platform,easy,T8-PAIR-43,G536,4
+B08-086,B08,"Ab3athli SMS 3al [PHONE] wala hna, kima ashel 3lik, njaweb.",message,mixed,0,legit,hard_negative,T8-PAIR-43,G536,4
+B08-087,B08,"VIBER ONLY ⛔ ma narodch hna, l'app bug 3andi",message,mixed,1,off_platform,obfuscated,T8-PAIR-44,G495,1
+B08-088,B08,"viber wala hna 🙂 kifek t7eb, njaweb mel zouz 🐾",message,mixed,0,legit,hard_negative,T8-PAIR-44,G495,1
+B08-089,B08,"Ab3athli 3al email [EMAIL] seulement, ma nfattachch l'app.",message,mixed,1,off_platform,easy,T8-PAIR-45,G537,2
+B08-090,B08,"Ab3athli 3al email [EMAIL] wala hna, comme tu veux, njaweb.",message,mixed,0,legit,hard_negative,T8-PAIR-45,G537,2
+B08-091,B08,"Message me only on WhatsApp, I won't reply here.",message,english,1,off_platform,easy,T8-PAIR-46,G538,0
+B08-092,B08,"Message me on WhatsApp or here, whichever you prefer, I check both.",message,english,0,legit,hard_negative,T8-PAIR-46,G538,0
+B08-093,B08,"Let's move to Telegram only, this app isn't reliable.",message,english,1,off_platform,easy,T8-PAIR-47,G539,3
+B08-094,B08,"We can move to Telegram or stay here, whatever works for you.",message,english,0,legit,hard_negative,T8-PAIR-47,G539,3
+B08-095,B08,"Just call me, I don't type on this app.",listing,english,1,off_platform,easy,T8-PAIR-48,G540,2
+B08-096,B08,"Call me or reply here, whatever's easier, I'll answer either way.",listing,english,0,legit,hard_negative,T8-PAIR-48,G540,2
+B08-097,B08,DM me on IG 0nly 📵 I d0n't answer here anymore,message,english,1,off_platform,obfuscated,T8-PAIR-49,G541,4
+B08-098,B08,"DM me on IG or here 🙂 whichever suits you, I reply to both",message,english,0,legit,hard_negative,T8-PAIR-49,G541,4
+B08-099,B08,"Send everything to [EMAIL], I don't open the app.",message,english,1,off_platform,easy,T8-PAIR-50,G542,0
+B08-100,B08,"Send to [EMAIL] or reply here, whatever you prefer.",message,english,0,legit,hard_negative,T8-PAIR-50,G542,0
+B09-001,B09,"7attit el kalb fi pension 3 lyeli, el facture 60 dt, 5allasni 9bal w njiblek iyah.",message,darija_latin,1,upfront_payment,easy,T9-UP-PENSION,G615,2
+B09-002,B09,"L'adoption lazem wra9et engagement m3a timbre 3and l'huissier, 25 dt, 5allas 9bal ma net9ablou.",message,darija_latin,1,fake_fee,easy,T9-FEE-HUISSIER,G545,1
+B09-003,B09,Confirmi el trouveur mta3 kalbek 3al page confiance mta3na w a3mel login hna: [URL],message,darija_latin,1,phishing_link,easy,T9-PH-TRUST-PAGE,G611,1
+B09-004,B09,"Ena syndic mta3 l'immeuble, 9attousek 3mel dégât fel 7it, 5allas 40 dt wala n3abbi 3lik plainte.",message,darija_latin,1,fake_fee|impersonation|pressure,easy,T9-IMP-SYNDIC,G574,0
+B09-005,B09,"Hthi maslaht el cargo mta3 el matar, el cage mta3 el kalb lazmha 70 dt frais 9bal ma ytsallem.",message,darija_latin,1,fake_fee|impersonation,easy,T9-IMP-CARGO,G572,1
+B09-006,B09,"Taw famma 3 3a2ilat 3al bab yestannew, 9arrar fi 5 d9aye9 wala el kalb mcha.",message,darija_latin,1,pressure,easy,T9-PR-AT-DOOR,G612,2
+B09-007,B09,"Nji nchoufek ama ab3athli 20 dt taxi taw 3al D17, rani mfalles w ma3andich bech nji.",message,darija_latin,1,upfront_payment,easy,T9-UP-TAXI-BROKE,G616,3
+B09-008,B09,"Bech tadopti lazem t9ayed fel club mta3na mta3 in9adh, 30 dt cotisation 9bal.",message,darija_latin,1,fake_fee|impersonation,easy,T9-FEE-CLUB,G544,3
+B09-009,B09,Télécharger carnet el vaccination mta3 el kalb ba3d ma ta3mel login hna: [URL],message,darija_latin,1,phishing_link,easy,T9-PH-CERT-DOWNLOAD,G608,1
+B09-010,B09,EL CAMION YEMCHI 3AL 12:00 🚐 AB3ATH 5O DT 3ARBOUN 3AL D17 TAW WALA MA YRKEBCH EL KALB ⏰,message,darija_latin,1,upfront_payment|pressure,obfuscated,T9-OBF-VAN,G606,1
+B09-011,B09,ena l'@dmin jdid 🛠️ confirmi compte mte3ek b 1O dt v€rification sinon yetsaker ⛔ [URL],message,darija_latin,1,phishing_link|impersonation,obfuscated,T9-OBF-ADMIN,G601,0
+B09-012,B09,l0kit el kalb 🐶 location lecteur puce 15 dt 9bal ma nscanni w n2akdou mte3ek 🐾💸,message,darija_latin,1,fake_fee,obfuscated,T9-OBF-READER,G604,0
+B09-013,B09,"Taw 3abbitlek les photos mta3 el kalb 3al WhatsApp, chouf w 9olli ken howa.",message,darija_latin,0,legit,hard_negative,T9-HN-SENT-WA,G565,3
+B09-014,B09,"L'app t9ila 3andi barcha, hatha numrou [PHONE], a3mel appel manqué w nrajja3lek.",message,darija_latin,0,legit,hard_negative,T9-HN-APP-SLOW,G547,3
+B09-015,B09,"Nab3athlek el 150 dt récompense 3al D17 ki yousel 3andek, 3al rawa7a ma famma 7atta 3jla.",message,darija_latin,0,legit,hard_negative,T9-HN-REWARD-D17-AFTER,G559,2
+B09-016,B09,"El tbib 7at carnet el vaccinations mta3ou hna [URL], tnajjem tchoufou 9bal ma net9ablou.",message,darija_latin,0,legit,hard_negative,T9-HN-VET-PAGE,G566,1
+B09-017,B09,"7fadht numrou mte3ek, ki nkoun 9rib el blasa nsonnilek 3al WhatsApp w nji.",message,darija_latin,0,legit,hard_negative,T9-HN-SAVED-NUMBER,G563,2
+B09-018,B09,"3abbitlek recharge 50 dt 3al telifoun 3la el ta3b elli 3malt m3aya, barakallah fik.",message,darija_latin,0,legit,hard_negative,T9-HN-RECHARGE-THANKS,G557,3
+B09-019,B09,"Hatha el pin mta3 Google Maps win chceftou [URL], 9rib el 7ad9a mta3 Bardo.",message,darija_latin,0,legit,hard_negative,T9-HN-MAPS-PIN,G555,0
+B09-020,B09,"Ab3athtlek vocal 3al WhatsApp fih el détails lkol 3al blasa, asma3ou w 9olli.",message,darija_latin,0,legit,hard_negative,T9-HN-VOICENOTE-SENT,G569,3
+B09-021,B09,"El 3arboun elli 3titni nrajja3houlek 3al e-Dinar taw 3la 5ater ma jitech, sme7li.",message,darija_latin,0,legit,hard_negative,T9-HN-EDINAR-REFUND,G551,3
+B09-022,B09,El kalb yetfahem m3a 9tout? 3andi 9attous kbir hadi fel dar.,message,darija_latin,0,legit,easy,T9-L-WITHCATS,G600,4
+B09-023,B09,"Lgit 9attous abyadh 3inih khodhr fi Bardo 9rib el station, taw 3andi fel dar.",listing,darija_latin,0,legit,easy,T9-L-FOUND-BARDO,G579,4
+B09-024,B09,"N7eb nji nchouf el kalb 9bal ma nqarrar 3al adoption, waqtech tnajjem?",message,darija_latin,0,legit,easy,T9-L-VISIT,G597,2
+B09-025,B09,"Y3aychek barcha, el kalb rja3 lel dar, nsaker l'annonce taw.",message,darija_latin,0,legit,easy,T9-L-THANKS-CLOSE,G595,4
+B09-026,B09,"Daya3 kalbi Simba, berger asmar, fi Menzah 6, ken chceftouh brabi kalmouni.",listing,darija_latin,0,legit,easy,T9-L-LOST-SIMBA,G586,3
+B09-027,B09,Chnowa yekel el kalb? w 9addech fel nhar? bech nhadher 9bal ma yji 3andi.,message,darija_latin,0,legit,easy,T9-L-FOOD-Q,G578,0
+B09-028,B09,"Chceft kalb yechbehlou yjri 9rib el stade el bare7, ma 9dertch nal7a9ou.",message,darija_latin,0,legit,easy,T9-L-SIGHTING-STADE,G593,1
+B09-029,B09,"Ma tfadda3ch, barcha klab yrawhou wa7adhom ba3d chwaya ayem, nchallah.",message,darija_latin,0,legit,easy,T9-L-REASSURE,G589,3
+B09-030,B09,"Ena sakn fel 7ouma, ken t7eb n3awnek nlawej 3lih ba3d el 5edma fel 3chiya.",message,darija_latin,0,legit,easy,T9-L-HELP-SEARCH,G584,4
+B09-031,B09,"J'ai dû le mettre en pension trois nuits, 60 DT ; réglez d'abord et je vous le ramène.",message,french,1,upfront_payment,easy,T9-UP-PENSION,G615,2
+B09-032,B09,L'adoption exige un bon de stérilisation prépayé de 45 DT avant que je vous confie le chien.,message,french,1,fake_fee,easy,T9-FEE-STERIL-VOUCHER,G546,0
+B09-033,B09,Vous avez droit à un remboursement d'assurance ; saisissez vos coordonnées pour le percevoir : [URL],message,french,1,phishing_link,easy,T9-PH-INSUR-REIMB,G609,3
+B09-034,B09,"Je suis le comportementaliste mandaté par le refuge ; l'évaluation, 35 DT, est à régler avant la remise.",message,french,1,fake_fee|impersonation,easy,T9-IMP-BEHAVIORIST,G571,1
+B09-035,B09,"Je dois embarquer, c'est le tout dernier appel, faites le virement maintenant ou je donne le chiot.",message,french,1,fake_fee|pressure,easy,T9-PR-FLIGHT-BOARDING,G613,4
+B09-036,B09,SERVICES VÉTO MUNICIPAUX 🚨 re-test rage OBLIGATOIRE 3O dt AVANT la remise ‼️ réglez par e-Din@r,message,french,1,fake_fee|impersonation,obfuscated,T9-IMP-MUNIVET,G573,1
+B09-037,B09,votre @lerte perdu doit être V€RIFIÉE 📧 cliquez et confirmez votre em@il 👉 [URL],message,french,1,phishing_link,obfuscated,T9-PH-ALERT-VERIFY,G607,3
+B09-038,B09,"Je viens de déposer les photos sur votre WhatsApp, regardez si c'est bien le vôtre.",message,french,0,legit,hard_negative,T9-HN-SENT-WA,G565,3
+B09-039,B09,"L'appli rame beaucoup chez moi, voici mon numéro [PHONE], un bip et je vous rappelle.",message,french,0,legit,hard_negative,T9-HN-APP-SLOW,G547,3
+B09-040,B09,"Je vous réglerai la récompense par e-Dinar dès son retour, sans aucun empressement.",message,french,0,legit,hard_negative,T9-HN-REWARD-EDINAR,G560,0
+B09-041,B09,"Le vétérinaire a mis son carnet de santé en ligne ici [URL], vous pouvez le consulter.",message,french,0,legit,hard_negative,T9-HN-VET-PAGE,G566,1
+B09-042,B09,"Donnez-moi le WhatsApp de la clinique, je réglerai la facture directement avec eux.",message,french,0,legit,hard_negative,T9-HN-CLINIC-WA,G549,2
+B09-043,B09,Convient-il à un appartement ? Je n'ai pas de jardin mais je le promène matin et soir.,message,french,0,legit,easy,T9-L-APARTMENT-Q,G575,2
+B09-044,B09,"Trouvé un chaton roux près de la gare de Sousse, je le garde au chaud en attendant son maître.",listing,french,0,legit,easy,T9-L-FOUND-SOUSSE,G581,0
+B09-045,B09,"Je vois que l'annonce est marquée résolue, quelle joie, bravo à vous !",message,french,0,legit,easy,T9-L-CONGRATS,G577,1
+B09-046,B09,A-t-il été vermifugé récemment ? Je veux préparer sa litière et sa gamelle avant.,message,french,0,legit,easy,T9-L-HEALTH-Q,G583,4
+B09-047,B09,"Je crois avoir aperçu votre chienne ce matin vers le lac, elle filait très vite.",message,french,0,legit,easy,T9-L-SIGHTING-LAC,G592,4
+B09-048,B09,"Désolé, finalement ce n'est pas le mien, les pattes blanches ne correspondent pas.",message,french,0,legit,easy,T9-L-NOTMINE-PAWS,G588,1
+B09-049,B09,هاذي مصلحة الكارڤو متاع المطار، قفص الكلب يلزمو 70 دينار مصاريف قبل ما يتسلم.,message,darija_arabic,1,fake_fee|impersonation,easy,T9-IMP-CARGO,G572,1
+B09-050,B09,التبني يلزمو بون تعقيم مدفوع مسبقا 45 دينار قبل ما نسلمولك الكلب.,message,darija_arabic,1,fake_fee,easy,T9-FEE-STERIL-VOUCHER,G546,0
+B09-051,B09,نجي نشوفك أما ابعثلي 20 دينار تاكسي توا على D17، راني مفلس وما عنديش باش نجي.,message,darija_arabic,1,upfront_payment,easy,T9-UP-TAXI-BROKE,G616,3
+B09-052,B09,باش نأكد إنك المالك، اقرالي الكود اللي باش يوصلك في رسالة في الساعة.,message,darija_arabic,1,phishing_link,easy,T9-PH-READ-CODE,G610,3
+B09-053,B09,تـوا فـمـا 3 عـائـلات عـ الـبـاب 🔥 قـرر فـي 5 دقـايـق وإلا مـشـى الـكـلـب ⏰‼️,message,darija_arabic,1,pressure,obfuscated,T9-PR-AT-DOOR,G612,2
+B09-054,B09,بعثتلك فيديو قصير للكلب على الواتساب، شوفو وطمني كان هو كلبك.,message,darija_arabic,0,legit,hard_negative,T9-HN-VIDEO-WA,G567,1
+B09-055,B09,عطيتك نومروي باش نبقاو على تواصل، كي نلقى جديد على الكلب نكلمك.,message,darija_arabic,0,legit,hard_negative,T9-HN-GAVE-NUMBER,G553,3
+B09-056,B09,نبعثلك المكافأة بمانداه منيت كي يرجع الكلب لداره، ما فماش عجلة.,message,darija_arabic,0,legit,hard_negative,T9-HN-REWARD-MANDAT,G562,2
+B09-057,B09,جمعية الحي عندها صفحة فيها تصاور الكلاب الملقية [URL]، شوف غادي كان فيه كلبك.,listing,darija_arabic,0,legit,hard_negative,T9-HN-ASSOC-PAGE,G548,0
+B09-058,B09,لقينا قطوسة صغيرة قرب الجامع في المرسى، نظيفة وجائعة، صاحبها يكلمنا.,listing,darija_arabic,0,legit,easy,T9-L-FOUND-MARSA,G379,4
+B09-059,B09,الكلب يتفاهم مع الصغار؟ عندي زوز صغار في الدار ونحب نطمئن.,message,darija_arabic,0,legit,easy,T9-L-KIDS-Q,G585,4
+B09-060,B09,راني نلوج عليه كل نهار في الحومة، ما نقطعش الأمل، إن شاء الله نلقاه.,message,darija_arabic,0,legit,easy,T9-L-SEARCH,G464,2
+B09-061,B09,خدمات البيطرة البلدية: إعادة فحص السعار إلزامية بـ30 دينارا قبل تسليم الكلب.,message,msa_arabic,1,fake_fee|impersonation,easy,T9-IMP-MUNIVET,G573,1
+B09-062,B09,يتطلب التبني ورقة التزام موثقة برسم طابع 25 دينارا لدى العدل، تُدفع أولا.,message,msa_arabic,1,fake_fee,easy,T9-FEE-HUISSIER,G545,1
+B09-063,B09,لك حق في تعويض تأميني، أدخل بياناتك لاستلامه عبر هذا الرابط: [URL],message,msa_arabic,1,phishing_link,easy,T9-PH-INSUR-REIMB,G609,3
+B09-064,B09,الـمـحـجـز يـغـلـق بـعـد سـاعـة ⏰ ادفـع رسـم الإفـراج الآن وإلا ضـاع الـكـلـب ‼️,message,msa_arabic,1,fake_fee|pressure,obfuscated,T9-OBF-POUND,G603,0
+B09-065,B09,سأسوّي لك المكافأة عبر e-Dinar فور عودته إلى البيت، دون أي استعجال.,message,msa_arabic,0,legit,hard_negative,T9-HN-REWARD-EDINAR,G560,0
+B09-066,B09,سجّلت لك رسالة صوتية على واتساب فيها كل تفاصيل المكان، استمع إليها.,message,msa_arabic,0,legit,hard_negative,T9-HN-VOICE-WA,G568,3
+B09-067,B09,موقع جمعية الحي يعرض صور الكلاب التي عُثر عليها هنا [URL]، تصفّحه.,listing,msa_arabic,0,legit,hard_negative,T9-HN-ASSOC-PAGE,G548,0
+B09-068,B09,هل القط معقم؟ وهل تلقى تطعيماته؟ أريد استكمال ملف التبني.,message,msa_arabic,0,legit,easy,T9-L-NEUTER-Q,G587,4
+B09-069,B09,عُثر على كلب أبيض قرب الحديقة في صفاقس، بصحة جيدة، صاحبه يتواصل معي.,listing,msa_arabic,0,legit,easy,T9-L-FOUND-SFAX,G101,3
+B09-070,B09,شكرا لكم، عاد الكلب إلى البيت سالما، يمكن إغلاق الإعلان الآن.,message,msa_arabic,0,legit,easy,T9-L-THANKS-RETURNED,G123,4
+B09-071,B09,"Ena comportementaliste mandaté par el refuge, l'évaluation 35 dt lazem 9bal ma na3tiwek el kalb.",message,mixed,1,fake_fee|impersonation,easy,T9-IMP-BEHAVIORIST,G571,1
+B09-072,B09,"Lazem nkhallas el gardien mta3 el parking elli l9ah, 25 dt, ab3athhom 3al D17 9bal.",message,mixed,1,upfront_payment,easy,T9-UP-PARKING-GUARD,G614,4
+B09-073,B09,"Bech tadopti lazem t'inscrire fel club mta3na, 30 dt cotisation 9bal b Flouci.",message,mixed,1,fake_fee|impersonation,easy,T9-FEE-CLUB,G544,3
+B09-074,B09,"Confirmi el trouveur 3al page confiance, connecte-toi hna bech tchouf: [URL]",message,mixed,1,phishing_link,easy,T9-PH-TRUST-PAGE,G611,1
+B09-075,B09,BATTERIE 2% 🔋 ab3ath el virement FISSA3 9bal ma yet9ta3 el signal ⏰‼️,message,mixed,1,pressure,obfuscated,T9-OBF-BATTERY,G602,3
+B09-076,B09,r€clame ton rembours€ment 💸 entre carte + code hna 👉 [URL] ‼️ el3ajel,message,mixed,1,phishing_link,obfuscated,T9-OBF-REIMB,G605,3
+B09-077,B09,"Je t'ai envoyé une capture 3al WhatsApp avec sa marque distinctive, regarde-la.",message,mixed,0,legit,hard_negative,T9-HN-SCREENSHOT-WA,G564,0
+B09-078,B09,"3tittek numrou fel message privé, 7fdhou, nsonnilek direct ki nousel lel blasa.",message,mixed,0,legit,hard_negative,T9-HN-PRIVATE-NUMBER,G556,4
+B09-079,B09,"Nab3athlek el récompense 3al Flouci ki yousel el kalb lel dar, 3al rawa7a.",message,mixed,0,legit,hard_negative,T9-HN-REWARD-FLOUCI,G561,1
+B09-080,B09,Voici le lien de la page Facebook du refuge avec toutes ses photos [URL].,message,mixed,0,legit,hard_negative,T9-HN-FB-PHOTOS,G552,0
+B09-081,B09,"7attitlek la localisation 3al WhatsApp, c'est juste à côté du café mta3 La Marsa.",message,mixed,0,legit,hard_negative,T9-HN-LOC-SENT,G554,0
+B09-082,B09,3andkom besoin de jardin lel adoption? n7eb nadopti ama 3andi appartement kbir.,message,mixed,0,legit,easy,T9-L-GARDEN-Q,G582,0
+B09-083,B09,"Trouvé kalb sghir noir fi l'Ariana, collier rouge, moulah ykallemni, rani nraddou.",listing,mixed,0,legit,easy,T9-L-FOUND-ARIANA,G021,2
+B09-084,B09,"Chceftou yjri 9rib el Carrefour el bare7, il avait l'air en forme.",message,mixed,0,legit,easy,T9-L-SIGHTING-CARREFOUR,G591,0
+B09-085,B09,"Sorry ma njemtech nji lyoum, demain soir ça marche pour venir le voir?",message,mixed,0,legit,easy,T9-L-RESCHED,G590,1
+B09-086,B09,"I'm the building syndic; your cat caused damage to a door, pay 40 DT or I'll file a complaint.",message,english,1,fake_fee|impersonation|pressure,easy,T9-IMP-SYNDIC,G574,0
+B09-087,B09,Adoption requires a prepaid microchip-registration voucher of 45 DT before I hand him over.,message,english,1,fake_fee,easy,T9-FEE-CHIP-VOUCHER,G543,3
+B09-088,B09,"I had to pay the parking guard who caught him, 25 DT, send it first on D17 and I'll bring him.",message,english,1,upfront_payment,easy,T9-UP-PARKING-GUARD,G614,4
+B09-089,B09,verify y0ur l0st-pet @lert 📧 click and confirm your em@il here 👉 [URL] ‼️,message,english,1,phishing_link,obfuscated,T9-PH-ALERT-VERIFY,G607,3
+B09-090,B09,I dropped a short clip of her on your WhatsApp so you can be sure it's Nala.,message,english,0,legit,hard_negative,T9-HN-CLIP-WA,G550,1
+B09-091,B09,Saved your number; I'll text you the second I spot him near the market.,message,english,0,legit,hard_negative,T9-HN-WILL-TEXT,G570,2
+B09-092,B09,"I'll send the 150 DT reward on D17 as soon as he's back with you, no rush at all.",message,english,0,legit,hard_negative,T9-HN-REWARD-D17-AFTER,G559,2
+B09-093,B09,"Here's the rescue's page with all the found animals [URL], he might be listed on it.",listing,english,0,legit,hard_negative,T9-HN-RESCUE-PAGE,G558,1
+B09-094,B09,Is he okay with cats? We have a senior cat who's pretty mellow.,message,english,0,legit,easy,T9-L-CATS-SENIOR,G576,2
+B09-095,B09,"Found a small white dog near the Monastir marina, he's with me and well fed.",listing,english,0,legit,easy,T9-L-FOUND-MONASTIR,G580,3
+B09-096,B09,How is she with strangers? We get a lot of visitors at home.,message,english,0,legit,easy,T9-L-STRANGERS-Q,G594,0
+B09-097,B09,"I walk by the park every night, I'll keep an eye out and shout if I see her.",message,english,0,legit,easy,T9-L-WATCH,G599,0
+B09-098,B09,Could we come to meet him Saturday afternoon? We'd bring the kids along.,message,english,0,legit,easy,T9-L-VISIT-SAT,G598,1
+B09-099,B09,"Sorry, false alarm, the tail is a different colour from the one in your photo.",message,english,0,legit,easy,T9-L-NOTMINE-TAIL,G107,4
+B09-100,B09,"So relieved, Rex is back home safe, you can take the listing down. Thank you!",message,english,0,legit,easy,T9-L-THANKS-RELIEVED,G596,1
+B10-001,B10,"L'adoption fiha assurance santé mta3 el kalb ijbariya, awwel chhar 20 dt tetkhallas 9bal.",message,darija_latin,1,fake_fee,easy,T10-FEE-PET-INSURANCE,G055,3
+B10-002,B10,"El pet-sitter elli 7afdhatlek el kalb t7eb 5lass 3 ayem, 45 dt, 9bal ma nsallmhoulek.",message,darija_latin,1,upfront_payment,easy,T10-UP-SITTER,G150,1
+B10-003,B10,"El kennel ychadd el frais kol nhar, 50 dt taw w ken ma tkhallesch ghodwa yodrob 3al double.",message,darija_latin,1,upfront_payment|pressure,easy,T10-UP-KENNEL-STORAGE,G148,1
+B10-004,B10,"Enti متاق fi post 3al kalb elli lgit, d5el b compte bech tchouf chkoun 3allmek: [URL]",message,darija_latin,1,phishing_link,easy,T10-PH-TAGGED,G142,3
+B10-005,B10,El chauffeur louage ma yaddi el colis ken enti tkhalles compte mte3ou 30 dt 9bal el safar.,message,darija_latin,1,upfront_payment,easy,T10-UP-DRIVER-ACCOUNT,G146,2
+B10-006,B10,"Ken ma tji fissa3, bech n7ott localisation el kalb public bech ay 7ad yakhdou, 9arrar taw.",message,darija_latin,1,pressure,easy,T10-PR-PUBLIC-LOCATION,G145,1
+B10-007,B10,"El plateforme mta3na te5ou 15 dt frais 'match' bech trabtek bel trouveur, 5allas 9bal.",message,darija_latin,1,fake_fee|impersonation,easy,T10-FEE-MATCH,G054,0
+B10-008,B10,Lel adoption lazem certificat vermifuge 15 dt mdfou3 9bal ma na3tiwek el 9attous.,message,darija_latin,1,fake_fee,easy,T10-FEE-DEWORM,G052,2
+B10-009,B10,"Ab3athli 3arboun sghir bech na3ref enti jadd, w ba3d na3tik l'adresse mta3 el blasa.",message,darija_latin,1,upfront_payment,easy,T10-UP-TRUST-DEPOSIT,G151,1
+B10-010,B10,3andek 5O dt crédit fel wallet PawC0nnect 💳 d5el carte bech ta5dhhom 👉 [URL] ⏰,message,darija_latin,1,phishing_link,obfuscated,T10-OBF-WALLET,G136,4
+B10-011,B10,"NSAKKER L'ANNONCE FI 15 D9I9A ⛔ el screenshot ma yenfa3kech, 5allas taw 🔥",message,darija_latin,1,pressure,obfuscated,T10-OBF-DELETE15,G132,2
+B10-012,B10,ashel 7aja USDT 🪙 ab3ath ma y3adel 5O dt 3al wallet hedha 9bal w taw njiblek el kalb,message,darija_latin,1,upfront_payment,obfuscated,T10-OBF-CRYPTO,G131,3
+B10-013,B10,"5allit el récompense 3and sa7b el 9ahwa fel 7ouma, te5oudha ki tjib el kalb, numrou [PHONE].",message,darija_latin,0,legit,hard_negative,T10-HN-CAFE-REWARD,G060,1
+B10-014,B10,"Facture el tbib 30 dt, nkhallasha fel clinique ki net9ablou, ma 3andekch 3lech t9la9.",message,darija_latin,0,legit,hard_negative,T10-HN-VET-ONSITE,G083,1
+B10-015,B10,"7attit taswiret el kalb fel groupe Facebook mta3 el 7ouma, hatha el lien [URL].",message,darija_latin,0,legit,hard_negative,T10-HN-FB-GROUP-LINK,G071,1
+B10-016,B10,"Numrou mte3i maktoub 3al collier mta3ou, 3ayetli wa9t ma t7eb.",listing,darija_latin,0,legit,hard_negative,T10-HN-COLLAR-NUMBER,G063,2
+B10-017,B10,"Nab3athlek flous el louage 3al D17 bech tnajjem tjib el kalb, 3tini numrouك.",message,darija_latin,0,legit,hard_negative,T10-HN-OWNER-SENDS-FARE,G076,2
+B10-018,B10,Hatha dossier Google Drive fih carnet el santé w les factures lkol [URL].,message,darija_latin,0,legit,hard_negative,T10-HN-DRIVE-RECORDS,G067,2
+B10-019,B10,"Sonnili 3al WhatsApp ki tkoun 5 d9aye9 b3id, w nenzel nlaqik ta7t.",message,darija_latin,0,legit,hard_negative,T10-HN-PING-5MIN,G077,4
+B10-020,B10,El kalb yjbed fel laisse? nemchi bih el s'bah bekri.,message,darija_latin,0,legit,easy,T10-L-LEASH-Q,G104,4
+B10-021,B10,"Lgit 9attous rmadi 3inih sfar fi Ennasr 9rib el 7anout, taw 3andi.",listing,darija_latin,0,legit,easy,T10-L-FOUND-ENNASR,G099,1
+B10-022,B10,"Daya3et 9atti fi La Marsa 9rib el plage, bayda b nokta 9ahla 3al dhahr.",listing,darija_latin,0,legit,easy,T10-L-LOST-MARSA,G106,2
+B10-023,B10,"Chceftou el bare7 fel souk, kan yjri bin el 7wanet, ma 9dertch nchedou.",message,darija_latin,0,legit,easy,T10-L-SIGHTING-SOUK,G117,1
+B10-024,B10,"Y3aychek, rja3 el kalb lel dar, barakallah fik.",message,darija_latin,0,legit,easy,T10-L-THANKS-SHORT,G121,0
+B10-025,B10,Nnajem nji nchoufou fel weekend? ena 5edma fel semaine.,message,darija_latin,0,legit,easy,T10-L-VISIT-WEEKEND,G127,2
+B10-026,B10,"Ma t9atch l'amal, famma klab rja3o ba3d chhar, kaml el ba7th.",message,darija_latin,0,legit,easy,T10-L-REASSURE2,G110,4
+B10-027,B10,9addech 3omrou? w khtan wala le? bech na3ref ken yناسبني.,message,darija_latin,0,legit,easy,T10-L-AGE-Q,G093,3
+B10-028,B10,"Sme7li mouch howa, el mte3i 3andou wedhnou m9atta3a chwaya.",message,darija_latin,0,legit,easy,T10-L-NOTMINE-EAR,G108,4
+B10-029,B10,El kalb mazel disponible? 3andi jneina w sghar y7ebou el 7ayawenet.,message,darija_latin,0,legit,easy,T10-L-ADOPT-INQ,G091,1
+B10-030,B10,Chkoun yheb ykabbi 9attous sghir chhar 7atta nlawjoulou 3a2ila? ena ma najjamch.,listing,darija_latin,0,legit,easy,T10-L-FOSTER-ASK,G097,1
+B10-031,B10,Un test sanguin FIV/FeLV est exigé avant de prendre le chat ; réglez les 40 DT d'analyse à l'avance.,message,french,1,fake_fee,easy,T10-FEE-FIV-SCREEN,G053,3
+B10-032,B10,"Agent des douanes : votre chiot importé est retenu, une taxe de 90 DT est due avant sa libération, aujourd'hui.",message,french,1,fake_fee|impersonation|pressure,easy,T10-IMP-CUSTOMS-OFFICER,G084,1
+B10-033,B10,Répondez à ce court sondage sur le trouveur pour débloquer ses coordonnées : [URL],message,french,1,phishing_link,easy,T10-PH-SURVEY-UNLOCK,G141,0
+B10-034,B10,"Un autre refuge l'emmène à l'autre bout du pays ce soir, à vous de décider maintenant.",message,french,1,pressure,easy,T10-PR-CROSS-COUNTRY,G144,3
+B10-035,B10,Je suis l'avocat du véritable propriétaire ; réglez une indemnité de restitution de 60 DT avant la remise.,message,french,1,upfront_payment|impersonation,easy,T10-IMP-LAWYER,G086,3
+B10-036,B10,TUNISIE TÉLÉC0M 📡 vérifiez pour réclamer votre récompense SMS perdu-trouvé 👉 [URL] ‼️,message,french,1,phishing_link|impersonation,obfuscated,T10-IMP-TELECOM,G089,4
+B10-037,B10,"le véto dit qu'il ne passera PAS la nuit sans une interv€ntion payante 😱 décidez MAINTENANT, 8O dt",message,french,1,fake_fee|impersonation|pressure,obfuscated,T10-OBF-SURVIVE-NIGHT,G134,1
+B10-038,B10,Le don d'adoption est de 30 DT sur le compte du refuge ; ils vous enverront un reçu par email.,message,french,0,legit,hard_negative,T10-HN-DONATION-RECEIPT,G066,1
+B10-039,B10,"Je vous rembourserai le taxi aller-retour quand vous viendrez, gardez juste le reçu.",message,french,0,legit,hard_negative,T10-HN-TAXI-BOTHWAYS,G082,1
+B10-040,B10,"Je vous ai mis les photos dans votre email [EMAIL], pensez à vérifier les spams.",message,french,0,legit,hard_negative,T10-HN-EMAIL-PHOTOS,G069,0
+B10-041,B10,C'est mon cousin qui vous remettra la récompense en liquide au point de rencontre.,message,french,0,legit,hard_negative,T10-HN-COUSIN-CASH,G064,4
+B10-042,B10,Voici la position Google Maps de la clinique pour qu'on s'y retrouve [URL].,message,french,0,legit,hard_negative,T10-HN-MAPS-CLINIC,G074,0
+B10-043,B10,A-t-il reçu tous ses vaccins ? Je veux prévoir le rappel avec mon vétérinaire.,message,french,0,legit,easy,T10-L-VACCINES-Q,G124,0
+B10-044,B10,"Trouvé un chien beige au Bardo, près de la station de métro, je l'ai mis à l'abri.",listing,french,0,legit,easy,T10-L-FOUND-BARDO,G098,4
+B10-045,B10,"Je vois que c'est résolu, tant mieux, bravo et merci d'avoir tenu au courant !",message,french,0,legit,easy,T10-L-CONGRATS2,G095,4
+B10-046,B10,"Je crois l'avoir vu près du port de Sfax ce matin, il reniflait les filets.",message,french,0,legit,easy,T10-L-SIGHTING-PORT,G116,4
+B10-047,B10,"Désolée, ce n'est pas la mienne, la mienne est bien plus petite que sur la photo.",message,french,0,legit,easy,T10-L-NOTMINE-SIZE,G109,2
+B10-048,B10,"Je donne ma chatte, je pars étudier à l'étranger, uniquement à une famille sérieuse, visite d'abord.",listing,french,0,legit,easy,T10-L-REHOME-STUDY,G111,0
+B10-049,B10,السجل الوطني للحيوانات: كلبك لازم يتسجّل من جديد، 40 دينار رسوم تحديث تتخلص قبل.,message,darija_arabic,1,fake_fee|impersonation,easy,T10-IMP-NATIONAL-REGISTRY,G087,1
+B10-050,B10,e-Dinar بعثلك فلوس، أكّد الاستلام بإدخال رمز المحفظة متاعك هنا: [URL],message,darija_arabic,1,phishing_link,easy,T10-PH-EDINAR-PIN,G137,0
+B10-051,B10,ابعثلي مبلغ صغير 20 دينار 'حسن نية' باش نعرف إنك موش تاجر تبيع في الكلاب.,message,darija_arabic,1,upfront_payment,easy,T10-UP-GOODFAITH,G147,0
+B10-052,B10,قريبي عندو حساسية، كان ما تجيش اليوم باش تاخذو بش نحلّو في الشارع.,message,darija_arabic,1,pressure,easy,T10-PR-ALLERGY-RELEASE,G143,3
+B10-053,B10,الـبـنـك حـجـز تـحـويـل الـمـكـافـأة 💳 أكّـد كـارطـتـك بـاش تـسـتـلـم الـفـلـوس 👉 [URL] ‼️,message,darija_arabic,1,phishing_link|impersonation,obfuscated,T10-OBF-BANK-FRAUD,G129,0
+B10-054,B10,حطيت المكافأة 150 دينار في ظرف، كلّمني على [PHONE] كي تقرب ونجيبهالك.,message,darija_arabic,0,legit,hard_negative,T10-HN-ENVELOPE-REWARD,G070,1
+B10-055,B10,عطيني نومروك باش الملجأ يعيطلك ويحدّد معاك موعد الزيارة.,message,darija_arabic,0,legit,hard_negative,T10-HN-NUMBER-FOR-SHELTER,G075,1
+B10-056,B10,رجّعتلك 20 دينار على e-Dinar خاطر التبني ما تمّش، سامحني.,message,darija_arabic,0,legit,hard_negative,T10-HN-EDINAR-REFUND-ADOPT,G068,0
+B10-057,B10,لقينا جرو صغير قرب المحطة في باردو، نظيف، صاحبو يكلمنا.,listing,darija_arabic,0,legit,easy,T10-L-FOUND-PUPPY-BARDO,G102,2
+B10-058,B10,القطوسة مدرّبة على الليتيار؟ عندي دار صغيرة.,message,darija_arabic,0,legit,easy,T10-L-LITTER-Q,G105,0
+B10-059,B10,راني نلوج عليه في الحومة كل عشية، إن شاء الله نلقاه قريب.,message,darija_arabic,0,legit,easy,T10-L-SEARCH2,G113,1
+B10-060,B10,يعيشكم، رجعت القطوسة للدار، نسكّر الإعلان.,message,darija_arabic,0,legit,easy,T10-L-THANKS2,G122,3
+B10-061,B10,برنامج تلفزيوني عن الحيوانات المفقودة؛ سنعرض كلبك مقابل مساهمة رمزية قدرها 30 دينارا تُدفع أولا.,message,msa_arabic,1,fake_fee|impersonation,easy,T10-IMP-TV-SHOW,G090,1
+B10-062,B10,تم الدخول إلى حسابك من جهاز جديد، يرجى تأكيد هويتك عبر الرابط حالا: [URL],message,msa_arabic,1,phishing_link,easy,T10-PH-NEW-DEVICE,G140,2
+B10-063,B10,أنا وكيل تأمين حيوانك؛ ادفع مبلغ التحمّل 35 دينارا كي نُفرج عن مطالبة التعويض.,message,msa_arabic,1,fake_fee|impersonation,easy,T10-IMP-INSURANCE-AGENT,G085,3
+B10-064,B10,شـخـص عـرض مـبـلـغـا أكـبـر عـلـى الـجـرو 🔥 طـابـق الـعـرض بـعـربـون الآن وإلا تـركـتـه لـه ⏰,message,msa_arabic,1,fake_fee|pressure,obfuscated,T10-OBF-BIDDING,G130,2
+B10-065,B10,سأعيد لك العربون إلى حسابك (RIB) بعد الزيارة مباشرة، لا تقلق بشأن ذلك.,message,msa_arabic,0,legit,hard_negative,T10-HN-RIB-REFUND,G081,4
+B10-066,B10,يعرض موقع الجمعية رسوم التبني وكلها تُدفع في المقر يوم الزيارة: [URL],listing,msa_arabic,0,legit,hard_negative,T10-HN-ASSOC-FEES-SITE,G059,3
+B10-067,B10,كيف هو طبعه؟ هادئ أم كثير الحركة؟ عندي أطفال صغار.,message,msa_arabic,0,legit,easy,T10-L-TEMPER-Q,G118,0
+B10-068,B10,عُثر على كلب بني قرب الحديقة في نابل، بصحة جيدة، صاحبه يتواصل معي.,listing,msa_arabic,0,legit,easy,T10-L-FOUND-NABEUL,G101,3
+B10-069,B10,أرغب في زيارة القط قبل اتخاذ القرار، متى يناسبك؟,message,msa_arabic,0,legit,easy,T10-L-VISIT-REQ,G125,0
+B10-070,B10,شكرا جزيلا، عاد الكلب إلى البيت بأمان، يمكن إغلاق الإعلان.,message,msa_arabic,0,legit,easy,T10-L-THANKS3,G123,4
+B10-071,B10,"Location d'un traceur GPS 30 dt bech nwasslou en sécurité, ab3ath el caution 9bal.",message,mixed,1,fake_fee,easy,T10-FEE-TRACKER-RENTAL,G057,2
+B10-072,B10,"Ton annonce qualifie pour un boost gratuit, connecte-toi avec Google bech tfa33lou: [URL]",message,mixed,1,phishing_link,easy,T10-PH-FREE-BOOST,G139,3
+B10-073,B10,"El D17 mte3i mahboul, ab3ath l'acompte 3al compte mta3 5ti el lawwel w ba3d nkemlou.",message,mixed,1,upfront_payment,easy,T10-UP-SISTER-ACCOUNT,G149,1
+B10-074,B10,"Paye dans cette app escrow 3al lien hedha, el flous yetfakkou ki tconfirmi: [URL]",message,mixed,1,upfront_payment|phishing_link,easy,T10-PH-ESCROW-APP,G138,3
+B10-075,B10,5alles 1O dt 💸 bech tfakkek les photos HD mta3 proof mta3 el kalb mte3ek 📸 [URL],message,mixed,1,fake_fee|phishing_link,obfuscated,T10-OBF-PHOTO-PROOF,G133,3
+B10-076,B10,"badge VÉRIFIÉ 🛡️ pour les trouveurs, entre tes infos hna bech ta5dhou 👉 [URL] ‼️",message,mixed,1,phishing_link,obfuscated,T10-OBF-VERIFIED-BADGE,G135,2
+B10-077,B10,"3ayetli 3al fixe [PHONE], ma3andich data mobile lyoum, njaweb normal.",message,mixed,0,legit,hard_negative,T10-HN-LANDLINE,G073,2
+B10-078,B10,"La récompense 200 dt cash à la remise, wala 3al D17 ba3d ken t7eb hakka, kifek ashel.",message,mixed,0,legit,hard_negative,T10-HN-REWARD-CASH-D17,G079,1
+B10-079,B10,"El scan mta3 el puce 3and el tbib 3liya ena, ma tkhallas walou, c'est pour vérifier.",message,mixed,0,legit,hard_negative,T10-HN-CHIP-ON-ME,G062,0
+B10-080,B10,"Nraddlek el crédit telephone 3la les appels lkol, 9olli chnowa l'opérateur mte3ek.",message,mixed,0,legit,hard_negative,T10-HN-REIMBURSE-CREDIT,G078,2
+B10-081,B10,Il convient à un appartement? 3andi balcon kbir mais pas de jardin.,message,mixed,0,legit,easy,T10-L-APARTMENT-Q2,G094,4
+B10-082,B10,"Trouvé 9attous noir fi Le Kram, collier bleu délavé, moulah ykallemni brabi.",listing,mixed,0,legit,easy,T10-L-FOUND-KRAM,G100,4
+B10-083,B10,"Chceftou 9rib Lac 2 el bare7, il courait vers les berges, ma 9dertch nal7a9ou.",message,mixed,0,legit,easy,T10-L-SIGHTING-LAC2,G115,2
+B10-084,B10,"Sorry, 5edma lyoum, on peut décaler la visite à demain après-midi?",message,mixed,0,legit,easy,T10-L-RESCHEDULE2,G112,2
+B10-085,B10,"Merci pour l'annonce, n7eb nadopti el 9attous el sghir, il est toujours là?",message,mixed,0,legit,easy,T10-L-ADOPT-INQ2,G092,4
+B10-086,B10,There's a refundable 35 DT sterilization bond to pay before you can adopt the puppy.,message,english,1,fake_fee,easy,T10-FEE-STERIL-BOND,G056,4
+B10-087,B10,A municipal travel-permit stamp of 20 DT must be prepaid before I can hand him over.,message,english,1,fake_fee,easy,T10-FEE-TRAVEL-PERMIT,G058,0
+B10-088,B10,I'm the shelter's new owner; adoptions from before us need a 25 DT re-validation fee first.,message,english,1,fake_fee|impersonation,easy,T10-IMP-NEW-SHELTER-OWNER,G088,4
+B10-089,B10,mand@tory anti-par@site treatment before handover 🧴 just 25 DT upfront on D17 ‼️ quick,message,english,1,fake_fee,obfuscated,T10-OBF-ANTIFLEA,G128,1
+B10-090,B10,"The shelter takes the adoption fee by card at the desk, so bring your bank card on the day.",message,english,0,legit,hard_negative,T10-HN-CARD-ONSITE,G061,2
+B10-091,B10,"You scan the shelter's donation QR at the front desk when you come to adopt, nothing before.",message,english,0,legit,hard_negative,T10-HN-DONATION-QR,G065,1
+B10-092,B10,"The finder asked for nothing; I'm giving a 100 DT reward on D17 after he's home, my own choice.",message,english,0,legit,hard_negative,T10-HN-REWARD-MYCHOICE,G080,1
+B10-093,B10,I sent you a friend request so I can share the live video of him in my yard.,message,english,0,legit,hard_negative,T10-HN-FRIEND-VIDEO,G072,2
+B10-094,B10,"How's his energy level? We live in a flat but walk a lot, morning and evening.",message,english,0,legit,easy,T10-L-ENERGY-Q,G096,1
+B10-095,B10,"Found a small white dog near the Sousse corniche, he's with me, well fed and calm.",listing,english,0,legit,easy,T10-L-FOUND-SOUSSE,G103,3
+B10-096,B10,What's her temperament like with strangers? We host guests fairly often.,message,english,0,legit,easy,T10-L-TEMPER-STRANGERS,G119,0
+B10-097,B10,"I think I saw him on the beach near the old port this morning, chasing gulls.",message,english,0,legit,easy,T10-L-SIGHTING-BEACH,G114,4
+B10-098,B10,"Sorry, false alarm, the collar colour is different from the one in your photo.",message,english,0,legit,easy,T10-L-NOTMINE-COLLAR,G107,4
+B10-099,B10,Could we come by on Sunday to meet him? The whole family would love to.,message,english,0,legit,easy,T10-L-VISIT-SUNDAY,G126,0
+B10-100,B10,"So happy, she's back home safe and sound, you can close the listing now. Thank you!",message,english,0,legit,easy,T10-L-THANKS-HOME,G120,2
+B01-001,B01,"Aslema, lgit kalbek fi Ennasr 9odem el pharmacie. Ab3ath 80 mille 3al D17 w njiblek iyah lyoum el 3chiya.",message,darija_latin,1,upfront_payment,easy,T-UP-D17-RETURN,G046,3
+B01-002,B01,"rani lgit el 9attous el abyedh mta3ek, ama 9bal ma njibou lazem t3abili recharge Ooredoo b 30 dinar, telifouni ma fih chay",message,darija_latin,1,upfront_payment,easy,T-UP-RECHARGE,G049,0
+B01-003,B01,"Kalb malinois 4 chhar lel adoption, gratuit. Ama el transport mel Sfax lel Tunis 3al hsebkom: 60 dt tab3athhom 9bal b mandat minute w nab3athlkom el kalb fel louage.",listing,darija_latin,1,fake_fee,easy,T-FEE-LOUAGE,G002,3
+B01-004,B01,"Matjawebnich hna, el app hedhi tbloki. Ab3ath msg 3al [PHONE] whatsapp ken.",message,darija_latin,1,off_platform,easy,T-OFF-APPBLOCKS,G040,0
+B01-005,B01,"Salem, ena men equipe PawConnect. Compte mta3ek bech yetsaker ken ma tconfirmich el annonce mel lien hedha: [URL]",message,darija_latin,1,phishing_link|impersonation|pressure,easy,T-PH-PAWCONNECT-CLOSE,G043,4
+B01-006,B01,"Ena docteur bitri fel Kram, jabouli kalbek mjarah w dawitou. Lazem tkhalles 120 dinar facture 9bal ma t3addi te5ou, ab3athhom b Flouci.",message,darija_latin,1,upfront_payment|impersonation,easy,T-IMP-VET-BILL,G016,2
+B01-007,B01,"Famma wahed e5er y7eb y5ou el kalb. Ken ma tab3athlich el 50 dinar 9bal el 8 mta3 el lil, n3tih lih. Ma3andich wa9t.",message,darija_latin,1,upfront_payment|pressure,easy,T-PR-OTHER-BUYER,G045,1
+B01-008,B01,"Ab3athli taswira mta3 carte d'identité mte3ek w el code eli bech yjik fi sms, bech nthabet elli inti moula el 9atta.",message,darija_latin,1,phishing_link,easy,T-PH-CIN-SMSCODE,G042,4
+B01-009,B01,"Chiots berger allemand lel adoption. Frais vaccin w puce 150 dt, tetkhallas 9bal b virement w nab3athlek el chiot. Ma najamch na3ti l'adresse.",listing,darija_latin,1,fake_fee,easy,T-FEE-VACCIN-NOADDRESS,G004,4
+B01-010,B01,lgit kalbek 🐕 ab3ath f l o u s 9bal 💰 7 0 dinar 3al D-1-7 w taw njiblek,message,darija_latin,1,upfront_payment,obfuscated,T-OBF-SPACED-D17,G034,2
+B01-011,B01,"kellemni 3al w@tsap barka, hna ma nrodch. num: [PHONE] w ab3ath el mi@ dinar 9bal",message,darija_latin,1,upfront_payment|off_platform,obfuscated,T-OBF-WATSAP-MIA,G037,4
+B01-012,B01,SALEM EL KALB 3ANDI !!! KHALLES TLETHIN MILLE RECHARGE ORANGE TAW TAW WALA NSAYBOU FEL CHERE3 ⏰⏰,message,darija_latin,1,upfront_payment|pressure,obfuscated,T-OBF-CAPS-RECHARGE,G032,3
+B01-013,B01,verifi el annonce mta3ek 3al l!en hedha 👉 [URL] sinon tetfasa5 fi 24h,message,darija_latin,1,phishing_link|pressure,obfuscated,T-OBF-LINK-24H,G033,4
+B01-014,B01,"Daya3 kalbi Rex, malinois, fel Ariana nhar el sebt. Récompense 200 dinar lel li yjibhouli. Kellmouni [PHONE].",listing,darija_latin,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-015,B01,"Aslema, kellemni 3al whatsapp [PHONE] khir, ma n7elch l'app barcha w ma nchouf les notifications.",message,darija_latin,0,legit,hard_negative,T-HN-WHATSAPP-PREF,G013,0
+B01-016,B01,"Refuge Ariana: 9tates w klab lel adoption. Frais adoption 40 dt, fihom vaccin w puce w stérilisation, tetkhallas fel refuge nhar tjiw t5ou. Ma nab3thou 7ata animal 9bal ma nchoufoukom.",listing,darija_latin,0,legit,hard_negative,T-HN-SHELTER-FEE-ONSITE,G011,2
+B01-017,B01,"Lgit 9attous kif mta3ek fi La Marsa. Net9ablou 9oddem el poste mta3 el police wala fel Carrefour, khir lina zouz.",message,darija_latin,0,legit,hard_negative,T-HN-MEET-PUBLIC,G006,3
+B01-018,B01,"Rani hezztou lel tbib 5ater kan mjarah fi sa9ou. Ma t5af chay, el facture ena nkhallasha, ken t7eb terja3hali ba3d ki net9ablou mouch moushkla.",message,darija_latin,0,legit,hard_negative,T-HN-FINDER-PAID-VET,G005,0
+B01-019,B01,"Ena moul Lucky, 3andi el carnet de santé w tsawer m3ah. Na3tik 150 dinar ki yrja3 l dari, kima ktebt fel annonce.",message,darija_latin,0,legit,hard_negative,T-HN-REWARD-AFTER,G008,1
+B01-020,B01,"Lazem nchouf taswira mta3 el collier 9bal, bech net2aked elli howa kalbek. Sme7li, famma barcha nes tkadheb.",message,darija_latin,0,legit,hard_negative,T-HN-VERIFY-OWNER,G012,3
+B01-021,B01,"Ghodwa nsafer l Sfax lel 9raya, ken ma najamch nchoufek lyoum net9ablou nhar el sebt ki narja3.",message,darija_latin,0,legit,hard_negative,T-HN-REAL-DEADLINE,G007,4
+B01-022,B01,"Ena bénévole fel jam3iya mta3 el 7ayawenet fi Sousse, 3andna kalb yechbeh l mte3ek. Ija chouftou fel local, l'adresse fel page mta3na.",message,darija_latin,0,legit,hard_negative,T-HN-SHELTER-CLAIM-NOASK,G010,1
+B01-023,B01,"Aslema, el kalb mazel disponible? Ena men Ben Arous w 3andi jneina kbira.",message,darija_latin,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-024,B01,"Daya3et 9atti Minou, rmadiya b 3inin khodhr, fel Kram 9rib el gare. Ken chaftouha brabi kellmouni.",listing,darija_latin,0,legit,easy,T-L-LOST-CAT,G024,2
+B01-025,B01,"Chaftou el bareh yjri fi charre3 el Habib Bourguiba fi Nabeul, ma najamtech nchedou sorry 😔",message,darija_latin,0,legit,easy,T-L-SIGHTING,G029,0
+B01-026,B01,"Y3aychek barcha!! Kahwa rje3et lel dar, ma nensech fadhlek 🙏",message,darija_latin,0,legit,easy,T-L-THANKS,G030,0
+B01-027,B01,9addech 3omrou el kalb? W m3allem 3al pipi wala le?,message,darija_latin,0,legit,easy,T-L-QUESTIONS,G027,2
+B01-028,B01,"Lgina kalb sghir abyedh fi Manouba 9rib el lycée. 3andou collier a7mar. Taw 3andna fel dar, moulah ykallemna.",listing,darija_latin,0,legit,easy,T-L-FOUND-DOG,G021,2
+B01-029,B01,"behi net9ablou ghodwa 10h s'bah, ena nji b karhba bidha.",message,darija_latin,0,legit,easy,T-L-CONFIRM-MEET,G018,4
+B01-030,B01,el 9atta tekel croquettes wala makla mta3 dar? bech nhadher 9bal ma tji,message,darija_latin,0,legit,easy,T-L-FOOD-Q,G019,3
+B01-031,B01,"sme7li ghalte, mouch hiya el 9atta mte3i, mte3i 3andha tabba 9ahla fi wedhnha",message,darija_latin,0,legit,easy,T-L-NOT-MINE,G026,0
+B01-032,B01,N7eb nadopti Simba. Najem nji nchoufou nhar el a7ad m3a wildi?,message,darija_latin,0,legit,easy,T-L-VISIT-REQUEST,G031,0
+B01-033,B01,"Kalb asmar mtawel tah fi Ennasr 2 men jem3a, ma3andouch collier. Ken mte3ek ab3athli taswira bech net2aked.",listing,darija_latin,0,legit,easy,T-L-FOUND-NOCOLLAR,G022,2
+B01-034,B01,"sa7a, l'annonce mazelet active? ena bech nemchi n9alleb 3lih fi Sousse lyoum",message,darija_latin,0,legit,easy,T-L-HELP-SEARCH,G023,3
+B01-035,B01,"Ena wled 7ouma mta3ek, chouft l'affiche mta3 kalbek 3al 7it. Ken nchouf chay nkalmek.",message,darija_latin,0,legit,easy,T-L-NEIGHBOR,G025,1
+B01-036,B01,"Bonjour madame, j'ai retrouvé votre chatte Kahwa à Ariana. Pour couvrir mes frais je vous demande 100 DT par Flouci avant de vous la ramener. Sans paiement je ne me déplace pas.",message,french,1,upfront_payment,easy,T-UP-FLOUCI,G047,2
+B01-037,B01,"Magnifiques chatons persans à adopter. Adoption gratuite, seuls les frais de dossier et de livraison (90 DT) sont à régler à l'avance par e-Dinar. Livraison partout en Tunisie.",listing,french,1,fake_fee,easy,T-FEE-EDINAR-DELIVERY,G001,4
+B01-038,B01,"Bonsoir, je suis agent de la fourrière municipale de Tunis. Votre chien a été saisi. Réglez l'amende de 200 DT par mandat minute avant demain midi, sinon il sera euthanasié.",message,french,1,upfront_payment|impersonation|pressure,easy,T-IMP-FOURRIERE,G014,4
+B01-039,B01,"Je ne réponds pas sur ce site, trop de faux profils. Contactez-moi uniquement par email : [EMAIL].",message,french,1,off_platform,easy,T-OFF-EMAIL,G041,2
+B01-040,B01,"Votre annonce a été signalée. Pour éviter sa suppression, connectez-vous et confirmez vos coordonnées bancaires ici : [URL]",message,french,1,phishing_link|pressure,easy,T-PH-SIGNALEE,G044,3
+B01-041,B01,J'ai votre chien. Envoyez 150 DT tout de suite ou vous ne le reverrez jamais. Pas de police.,message,french,1,upfront_payment|pressure,easy,T-UP-THREAT,G050,4
+B01-042,B01,j ai vot chien 🐶 envoyé cent cinquante dinars par d.1.7 avan ce soir ⏳ sinon je le done,message,french,1,upfront_payment|pressure,obfuscated,T-OBF-WORDS,G038,4
+B01-043,B01,"Bonjour, pour récupérer votre chat il faut p@yer les fr@is de garde (8O dt) via fl0uci. Merci de ne pas répondre ici, écrivez sur wh@ts@pp [PHONE]",message,french,1,upfront_payment|fake_fee|off_platform,obfuscated,T-OBF-SYMBOLS,G036,2
+B01-044,B01,"PERDU : Bobby, petit chien blanc, Le Kram, collier bleu. Récompense de 300 DT à la personne qui le ramène. Merci de m'appeler au [PHONE].",listing,french,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-045,B01,"Association de protection animale de Sousse. Frais d'adoption : 50 DT (vaccins, vermifuge, puce). Payables sur place, le jour de l'adoption, après visite et entretien.",listing,french,0,legit,hard_negative,T-HN-SHELTER-FEE-ONSITE,G011,2
+B01-046,B01,"Je vous ai mis mon numéro WhatsApp [PHONE] car je ne reçois pas toujours les notifications de l'application. Vous pouvez aussi répondre ici, pas de souci.",message,french,0,legit,hard_negative,T-HN-WHATSAPP-PREF,G013,0
+B01-047,B01,"Je préfère qu'on se voie dans un lieu public, par exemple au café devant la station TGM de La Marsa, samedi 11h. Vous apportez le carnet de vaccination ?",message,french,0,legit,hard_negative,T-HN-MEET-PUBLIC,G006,3
+B01-048,B01,"Je l'ai emmené chez le vétérinaire, il avait une patte blessée. Ne vous inquiétez pas pour la facture, si vous voulez me rembourser on verra ça quand je vous le rends.",message,french,0,legit,hard_negative,T-HN-FINDER-PAID-VET,G005,0
+B01-049,B01,"Bonjour, le chaton est-il toujours disponible ? Nous habitons Nabeul, on a déjà un chat très calme.",message,french,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-050,B01,"Trouvé chat roux castré, très gentil, près du marché central de Sfax. Je le garde au chaud en attendant son propriétaire.",listing,french,0,legit,easy,T-L-FOUND-CAT,G020,2
+B01-051,B01,"merci merci merci !!! Simba est rentré, il dort déjà sur le canapé 😭❤️",message,french,0,legit,easy,T-L-THANKS,G030,0
+B01-052,B01,Il s'entend avec les enfants ? On a deux petits de 4 et 7 ans.,message,french,0,legit,easy,T2-L-TEMPER-Q,G177,3
+B01-053,B01,"Je crois l'avoir vu hier soir vers la Manouba, près de la pharmacie de nuit. Il boitait un peu.",message,french,0,legit,easy,T-L-SIGHTING,G029,0
+B01-054,B01,"Désolée, fausse alerte, ce n'était pas lui, la tache sur le dos est différente.",message,french,0,legit,easy,T-L-NOT-MINE,G026,0
+B01-055,B01,"Je donne ma chienne Lucky, 5 ans, stérilisée, cause déménagement à l'étranger. Uniquement à une famille avec jardin. Visite obligatoire avant.",listing,french,0,legit,easy,T-L-REHOME,G028,3
+B01-056,B01,عسلامة، لقيت كلبك في بن عروس. ابعثلي 60 ألف على D17 ونجيبهولك اليوم.,message,darija_arabic,1,upfront_payment,easy,T-UP-D17-RETURN,G046,3
+B01-057,B01,قطاطس للتبني ببلاش، أما لازمك تخلص 70 دينار مصاريف التلقيح قبل، ومنبعد نبعثوهالك في الكار.,listing,darija_arabic,1,fake_fee,easy,T-FEE-VACCIN-BUS,G003,2
+B01-058,B01,ما تجاوبنيش هنا، كلمني كان على الواتساب [PHONE]، التطبيق هذا ما نثقش فيه.,message,darija_arabic,1,off_platform,easy,T-OFF-APPBLOCKS,G040,0
+B01-059,B01,أنا من جمعية الرفق بالحيوان، كلبك عندنا. لازم تخلص 80 دينار معلوم تسجيل قبل ما تجي تاخذو.,message,darija_arabic,1,upfront_payment|fake_fee|impersonation,easy,T-IMP-SHELTER-FEE,G015,2
+B01-060,B01,فما واحد آخر يحب ياخو القطوس. كان ما تبعثش الفلوس الليلة نعطيهولو.,message,darija_arabic,1,upfront_payment|pressure,easy,T-PR-OTHER-BUYER,G045,1
+B01-061,B01,لقيت كلبك 🐕 ابعث ف ل و س ميات ألف ريشارج أوريدو توا ⏰,message,darija_arabic,1,upfront_payment|pressure,obfuscated,T-OBF-SPACED-RECHARGE-AR,G035,2
+B01-062,B01,ضاع كلبي ركس في أريانة. مكافأة 200 دينار للي يلقاه ويرجعهولي. كلموني [PHONE],listing,darija_arabic,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-063,B01,كلمني على الواتساب خير، ما نحلش التطبيق برشا. [PHONE],message,darija_arabic,0,legit,hard_negative,T-HN-WHATSAPP-PREF,G013,0
+B01-064,B01,معلوم التبني في الجمعية 30 دينار، فيه التلقيح ودوا الدود، تخلصوه غادي نهار تجيو تاخذوه.,message,darija_arabic,0,legit,hard_negative,T-HN-SHELTER-FEE-ONSITE,G011,2
+B01-065,B01,نتقابلو قدام مركز الشرطة في النصر، خير لينا الزوز.,message,darija_arabic,0,legit,hard_negative,T-HN-MEET-PUBLIC,G006,3
+B01-066,B01,القطوس مازال موجود للتبني؟ أنا من سوسة.,message,darija_arabic,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-067,B01,لقينا قطوسة صفراء قرب الجامع في المرسى، فيها طوق أزرق. موجودة عندنا.,listing,darija_arabic,0,legit,easy,T-L-FOUND-CAT,G020,2
+B01-068,B01,يعيشك برشا، مشمش رجع للدار 🙏,message,darija_arabic,0,legit,easy,T-L-THANKS,G030,0
+B01-069,B01,شفتو البارح يجري في الكرم قرب المحطة، ما نجمتش نشدو.,message,darija_arabic,0,legit,easy,T-L-SIGHTING,G029,0
+B01-070,B01,الكلب يتفاهم مع القطاطس؟ عندي زوز في الدار.,message,darija_arabic,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B01-071,B01,وجدت قطتك قرب محطة المترو في تونس. يرجى تحويل 100 دينار عبر الحوالة البريدية قبل التسليم لتغطية المصاريف.,message,msa_arabic,1,upfront_payment,easy,T-UP-MANDAT-AR,G048,1
+B01-072,B01,نحن إدارة منصة PawConnect. تم تعليق حسابك، يرجى إدخال بيانات بطاقتك البنكية عبر الرابط التالي لإعادة التفعيل: [URL],message,msa_arabic,1,phishing_link|impersonation,easy,T-PH-PAWCONNECT-CLOSE,G043,4
+B01-073,B01,جراء للتبني مجانا. رسوم الشحن والتطعيم 120 دينارا تدفع مسبقا بتحويل بنكي، ويصلك الجرو إلى باب منزلك.,listing,msa_arabic,1,fake_fee,easy,T-FEE-EDINAR-DELIVERY,G001,4
+B01-074,B01,أرسل خمسين دينارا فورا عـبـر ديـ17 وإلا لن ترى كلبك مجددا ‼️,message,msa_arabic,1,upfront_payment|pressure,obfuscated,T-OBF-WORDS-AR,G039,3
+B01-075,B01,مفقود: قط رمادي اسمه مينو في سوسة. مكافأة 150 دينارا لمن يعيده، تدفع عند استلامه.,listing,msa_arabic,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-076,B01,أخذته إلى الطبيب البيطري لأنه كان مصابا. لا تقلق بشأن الفاتورة، يمكنك أن تعيدها لي عند اللقاء إن أردت.,message,msa_arabic,0,legit,hard_negative,T-HN-FINDER-PAID-VET,G005,0
+B01-077,B01,هل ما زال الكلب متاحا للتبني؟ أسكن في نابل ولدي حديقة.,message,msa_arabic,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-078,B01,عثرنا على كلب صغير بني اللون في منوبة قرب المعهد. يمكن لصاحبه التواصل معنا.,listing,msa_arabic,0,legit,easy,T-L-FOUND-DOG,G021,2
+B01-079,B01,شكرا جزيلا لكم، عادت القطة إلى البيت سالمة.,message,msa_arabic,0,legit,easy,T-L-THANKS,G030,0
+B01-080,B01,هل القطة معقمة؟ وكم عمرها تقريبا؟,message,msa_arabic,0,legit,easy,T-L-QUESTIONS,G027,2
+B01-081,B01,"Bonjour, lgit kalbek à La Marsa. Envoyez-moi 70 DT 3al D17 avant, w ba3d nramenehoulek.",message,mixed,1,upfront_payment,easy,T-UP-D17-RETURN,G046,3
+B01-082,B01,"Chatons siamois lel adoption gratuite, ama frais de vaccination 80 dt à payer 9bal b e-Dinar. Livraison partout.",listing,mixed,1,fake_fee,easy,T-FEE-EDINAR-DELIVERY,G001,4
+B01-083,B01,"Ena men l'association de protection animale de Tunis, votre chat est chez nous. Lazem tkhalles les frais d'inscription 50 dt avant ce soir sinon on le transfère.",message,mixed,1,upfront_payment|fake_fee|impersonation|pressure,easy,T-IMP-SHELTER-FEE,G015,2
+B01-084,B01,"sl 🙂 ma tjawebnich hna stp, ab3ath 3al wh@tsapp [PHONE] w ab3ath 6O dt 9bal",message,mixed,1,upfront_payment|off_platform,obfuscated,T-OBF-WATSAP-MIA,G037,4
+B01-085,B01,Confirmi l annonce mta3ek ici 👉 [URL] ‼️ sinon tetsaker dans 1 heure,message,mixed,1,phishing_link|pressure,obfuscated,T-OBF-LINK-24H,G033,4
+B01-086,B01,"Perdu Kahwa, chat marron, fi Ennasr. Récompense 100 DT lel li yjibhouli, nkhallsek ki nchoufha.",listing,mixed,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-087,B01,"Kellemni sur WhatsApp [PHONE], je ne vois pas les notifs mta3 l'app. Sinon réponds ici normal.",message,mixed,0,legit,hard_negative,T-HN-WHATSAPP-PREF,G013,0
+B01-088,B01,"Net9ablou devant le Monoprix de l'Ariana samedi, c'est plus sûr pour nous deux. Jib m3ak tsawer mta3ou.",message,mixed,0,legit,hard_negative,T-HN-MEET-PUBLIC,G006,3
+B01-089,B01,"Les frais d'adoption fel refuge 30 dt, ça couvre el vaccin. Tkhallsou sur place ki tjiw.",message,mixed,0,legit,hard_negative,T-HN-SHELTER-FEE-ONSITE,G011,2
+B01-090,B01,"Merci pour l'annonce, n7eb nadopti Rex, il est toujours disponible ?",message,mixed,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-091,B01,"Chfetou hier près du marché de Ben Arous, il avait l'air bien.",message,mixed,0,legit,easy,T-L-SIGHTING,G029,0
+B01-092,B01,"Y3aychek, Bobby est rentré à la maison !! 🥹",message,mixed,0,legit,easy,T-L-THANKS,G030,0
+B01-093,B01,"Trouvé kalb sghir noir fi Le Kram, collier vert. Moulah ykallemni.",listing,mixed,0,legit,easy,T-L-FOUND-DOG,G021,2
+B01-094,B01,Il est vacciné? W 3andou carnet?,message,mixed,0,legit,easy,T-L-QUESTIONS,G027,2
+B01-095,B01,"Désolé, mouch howa, el mte3i 3andou tache blanche.",message,mixed,0,legit,easy,T-L-NOT-MINE,G026,0
+B01-096,B01,"Hi, I found your dog near the beach in Sousse. Send 100 DT by bank transfer first and I'll drive him to you.",message,english,1,upfront_payment,easy,T-UP-TRANSFER-DRIVE,G051,3
+B01-097,B01,"Shelter adoption team here. Your application is approved, just pay the 60 DT processing fee upfront by bank transfer and we'll deliver the puppy.",message,english,1,fake_fee|impersonation,easy,T-IMP-SHELTER-FEE,G015,2
+B01-098,B01,"LOST: Lucky, black cat with a white chest, Ennasr. 200 DT reward to whoever brings her home, paid on return.",listing,english,0,legit,hard_negative,T-HN-REWARD-OWNER,G009,1
+B01-099,B01,Is the kitten still available? I live in La Marsa and work from home.,message,english,0,legit,easy,T-L-ADOPT-INQUIRY,G017,3
+B01-100,B01,"Saw a dog matching your post near the Sfax medina this morning, he went toward the port.",message,english,0,legit,easy,T-L-SIGHTING,G029,0
+B02-001,B02,"Ma nesta3melch l'app hedhi, a3tini noumrou w nkalmek 3al Viber. Hna ma nrodch 3lik.",message,darija_latin,1,off_platform,easy,T2-OFF-VIBER,G193,4
+B02-002,B02,"Zidni 3al Insta, el compte [URL], tamma tsawer el kalb elli lgitou. Ma tab3athch hna.",message,darija_latin,1,off_platform,easy,T2-OFF-INSTA,G191,0
+B02-003,B02,"3abbi el formulaire hedha bech tetsajjel lel récompense w tchouf el kalb: [URL] , lazem t7ot numéro el carte.",message,darija_latin,1,phishing_link,easy,T2-PH-FORM-CARD,G196,2
+B02-004,B02,"Taw jak code fi sms men PawConnect, ab3athouli bech nconfirmi elli enti moula el 9atta.",message,darija_latin,1,phishing_link,easy,T2-PH-OTP,G197,4
+B02-005,B02,"Ena moderateur fel PawConnect, annonce mte3ek fiha mochkla. Ab3athli el mot de passe mta3ek bech nsala7ha.",message,darija_latin,1,phishing_link|impersonation,easy,T2-IMP-MODERATOR,G166,1
+B02-006,B02,"Ena flic fel markez mta3 Ben Arous, kalbek 3andna. Lazem tkhalles 100 dinar khtiya 3al D17 9bal ma tji.",message,darija_latin,1,upfront_payment|impersonation,easy,T2-IMP-POLICE,G167,1
+B02-007,B02,"Bech nab3athlek el chiot, lazem 40 dt mta3 el 9afas mta3 el transport 9bal. Bla 9afas ma yrakbouhch fel louage.",message,darija_latin,1,fake_fee,easy,T2-FEE-CAGE,G152,1
+B02-008,B02,"Ab3ath nos el flous taw w nos ki tchoufou, 75 dinar 3al Flouci. Sinon ma njich.",message,darija_latin,1,upfront_payment,easy,T2-UP-HALF,G200,1
+B02-009,B02,"Ken ma tkhallesch fi zouz swaye3 nbi3ou l pet shop, 3andi 7arif yestanna.",message,darija_latin,1,upfront_payment|pressure,easy,T2-PR-PETSHOP,G199,4
+B02-010,B02,Kellemni 3al T.e.l.e.g.r.a.m [URL] b@rka 🙏 hna el msg ma ywosslouch,message,darija_latin,1,off_platform,obfuscated,T2-OBF-TELEGRAM,G189,1
+B02-011,B02,lgit el 9atta 🐱 3abbi hna bech tchouf tsawerha 👉 [URL] w d5el b compte facebook mte3ek,message,darija_latin,1,phishing_link,obfuscated,T2-OBF-FB-LOGIN,G183,0
+B02-012,B02,ab3ath 3ochrin w khamsa mille recharge Telecom 9bal w 3ochrin mille ba3d ma tchoufou 💸,message,darija_latin,1,upfront_payment,obfuscated,T2-OBF-RECHARGE-WORDS,G186,4
+B02-013,B02,"ena men el BALADIYA 🚨 kalbek mchedouh, khalles el 5ti!a 9bal ghodwa s'b@7 wala yet9tel",message,darija_latin,1,upfront_payment|impersonation|pressure,obfuscated,T2-OBF-BALADIYA,G181,4
+B02-014,B02,"A3tini noumrou nkalmek, el internet 3andi tkassar w ma najamch nab3ath msg barcha.",message,darija_latin,0,legit,hard_negative,T2-HN-ASK-NUMBER,G154,2
+B02-015,B02,"7attit tsawer okhra mta3 Simba fel Insta mte3i [URL], ken t7eb tchouf wejhou mlih.",message,darija_latin,0,legit,hard_negative,T2-HN-PHOTO-LINK,G159,0
+B02-016,B02,"Ena tbib fel clinique vétérinaire fel Manouba, jabouli 9attous mjarah yechbeh l mte3ek. Ynajem moulah yji ye5ou bel carnet mta3ou.",message,darija_latin,0,legit,hard_negative,T2-HN-VET-CLAIM,G162,3
+B02-017,B02,"Rodou balkom, jetni messages men nes t9oul 3andhom kalbi w t7eb flous 3al D17. Ma tab3thou chay l7ad 9bal ma tchoufou el kalb.",listing,darija_latin,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-018,B02,"Mouch 7ajti bel flous, n7eb ken yerja3 l darou. Win najem nla9ak?",message,darija_latin,0,legit,hard_negative,T2-HN-NO-MONEY,G157,1
+B02-019,B02,"Na3ti 100 dinar lel li y3tini ma3loma s7i7a, nkhallsou ba3d ma net2aked.",listing,darija_latin,0,legit,hard_negative,T2-HN-INFO-REWARD,G156,4
+B02-020,B02,"Ena bech nkhallas el taxi ki tjibhouli, ma t5amemch fel flous.",message,darija_latin,0,legit,hard_negative,T2-HN-OWNER-PAYS-TAXI,G158,3
+B02-021,B02,"3ajel brabi, 3andou dwe lazem yechrbou kol nhar, ken chfetou kellemni fissa3.",message,darija_latin,0,legit,hard_negative,T2-HN-URGENT-MEDS,G161,4
+B02-022,B02,El jam3iya tlawej 3la croquettes w couvertures lel klab. Ken t7eb t3awen jib m3ak lel local nhar el sebt.,listing,darija_latin,0,legit,hard_negative,T2-HN-DONATION-ITEMS,G155,1
+B02-023,B02,"9attous a7mar sghir lel adoption fi Sousse, m3allem 3al litière w y7eb el sghar.",listing,darija_latin,0,legit,easy,T2-L-ADOPT-LISTING,G168,3
+B02-024,B02,Chnowa el race mta3ou? Yechbeh malinois wala berger?,message,darija_latin,0,legit,easy,T2-L-BREED-Q,G170,1
+B02-025,B02,"Ena fel Kram, ken t7eb n3awnek nwazza3 l'affiche fel 7ouma.",message,darija_latin,0,legit,easy,T2-L-HELP-POSTERS,G173,4
+B02-026,B02,"Jit l'adresse elli 3titni ama ma l9itch 7ad, win enti?",message,darija_latin,0,legit,easy,T2-L-WHERE-ARE-YOU,G180,2
+B02-027,B02,Kahwa hedya? ma t3addhech el sghar?,message,darija_latin,0,legit,easy,T2-L-TEMPER-Q,G177,3
+B02-028,B02,"Daya3 kalb sghir asfar esmou Bobby fi Ennasr 1, lebes collier fih noumrou. Rodou balkom 3lih.",listing,darija_latin,0,legit,easy,T2-L-LOST-DOG,G175,3
+B02-029,B02,"Chfet 9atta tchbah l mte3ek fel parking mta3 Carrefour La Marsa, ama hrabet ki 9rebt.",message,darija_latin,0,legit,easy,T2-L-SIGHTING-PARKING,G176,3
+B02-030,B02,"Merci 3al partage, ken fama jdid 9olli.",message,darija_latin,0,legit,easy,T2-L-THANKS-SHARE,G178,0
+B02-031,B02,"Ena 9a3ed nwakel fih fel 7ouma, ama ma najamtech nchedou, yetkhalla3 barcha.",message,darija_latin,0,legit,easy,T2-L-FEEDING-STRAY,G172,0
+B02-032,B02,Fel weekend najem nji nchouf el 9attous? ena 5edma fel semaine,message,darija_latin,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B02-033,B02,"L'annonce t9oul resolved, mabrouk 3likom 😍",message,darija_latin,0,legit,easy,T2-L-CONGRATS,G171,4
+B02-034,B02,9addech 3omrou bel chhar? w 5dha el vaccin wala mazel?,message,darija_latin,0,legit,easy,T-L-QUESTIONS,G027,2
+B02-035,B02,"Ena mrabbiya 9tates 3andi tajrba, najem nadopti zouz m3a ba3dhom?",message,darija_latin,0,legit,easy,T2-L-ADOPT-TWO,G169,2
+B02-036,B02,"Je préfère ne pas parler ici, l'application lit nos messages. Ajoutez-moi sur Telegram, je vous envoie les photos là-bas.",message,french,1,off_platform,easy,T2-OFF-TELEGRAM,G192,0
+B02-037,B02,"Félicitations, votre animal a été retrouvé ! Pour recevoir l'adresse du refuge, remplissez ce formulaire avec votre RIB : [URL]",message,french,1,phishing_link,easy,T2-PH-RIB-FORM,G198,4
+B02-038,B02,Service vétérinaire du ministère : votre chien n'est pas enregistré. Payez 85 DT de frais d'identification avant vendredi via [URL],message,french,1,fake_fee|phishing_link|impersonation|pressure,easy,T2-IMP-MINISTRY,G165,4
+B02-039,B02,"Bonjour, la chienne est réservée pour vous moyennant un acompte de 70 DT par e-Dinar. Sans acompte je passe au suivant.",message,french,1,fake_fee|pressure,easy,T2-FEE-DEPOSIT,G153,1
+B02-040,B02,"Pour des raisons de sécurité, communiquez-moi les 3 chiffres au dos de votre carte, c'est pour vérifier votre identité avant la remise.",message,french,1,phishing_link,easy,T2-PH-CVV,G195,1
+B02-041,B02,Votre chat est arrivé chez nous par transporteur. Frais de douane et de garde : 180 DT à régler aujourd'hui par mandat minute.,message,french,1,upfront_payment|fake_fee|impersonation|pressure,easy,T2-IMP-CUSTOMS,G164,3
+B02-042,B02,"Écrivez-moi sur Messenger svp, ici ça marche pas 🙃 m e s s e n g e r : [URL] et envoyez le c@sh avant 💶",message,french,1,upfront_payment|off_platform,obfuscated,T2-OBF-MESSENGER,G184,2
+B02-043,B02,VOTRE ANNONCE EXPIRE DANS 1H ⚠️ REACTIVEZ ICI ➡️ [URL] (gratuit),message,french,1,phishing_link|pressure,obfuscated,T2-OBF-EXPIRE-CAPS,G182,3
+B02-044,B02,"Les photos en meilleure qualité sont sur mon album : [URL]. Regardez la tache sur l'oreille gauche, c'est son signe distinctif.",message,french,0,legit,hard_negative,T2-HN-PHOTO-LINK,G159,0
+B02-045,B02,"Attention : plusieurs personnes m'ont demandé de l'argent en prétendant avoir Minou. Je ne paierai qu'à la remise, en main propre.",listing,french,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-046,B02,"Donnez-moi votre numéro, je vous appelle ce soir, c'est plus simple que d'écrire.",message,french,0,legit,hard_negative,T2-HN-ASK-NUMBER,G154,2
+B02-047,B02,Je suis la vétérinaire de la clinique d'Ennasr. Un chat tigré correspondant à votre annonce nous a été déposé. Passez avec une photo de lui pour le récupérer.,message,french,0,legit,hard_negative,T2-HN-VET-CLAIM,G162,3
+B02-048,B02,"Je vous rembourse l'essence et le temps perdu dès que vous me ramenez Rex, promis.",message,french,0,legit,hard_negative,T2-HN-OWNER-PAYS-TAXI,G158,3
+B02-049,B02,"Chienne croisée, 2 ans, très douce, à adopter à Ben Arous. Elle est stérilisée et vaccinée.",listing,french,0,legit,easy,T2-L-ADOPT-LISTING,G168,3
+B02-050,B02,"Bonjour, à quelle heure je peux passer voir le chiot demain ?",message,french,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B02-051,B02,Je peux imprimer des affiches et les coller dans le quartier si ça aide.,message,french,0,legit,easy,T2-L-HELP-POSTERS,G173,4
+B02-052,B02,"Perdu chat noir aux yeux jaunes, quartier El Menzah, il a peur des inconnus. Ne le poursuivez pas, appelez-moi.",listing,french,0,legit,easy,T2-L-LOST-CAT,G174,3
+B02-053,B02,Est-ce qu'il tire en laisse ? Je promène tôt le matin.,message,french,0,legit,easy,T2-L-TEMPER-Q,G177,3
+B02-054,B02,Je suis passée à l'adresse mais personne n'a répondu. Je repasse demain ?,message,french,0,legit,easy,T2-L-WHERE-ARE-YOU,G180,2
+B02-055,B02,"Bonne nouvelle, je vois que l'annonce est marquée résolue. Contente pour vous !",message,french,0,legit,easy,T2-L-CONGRATS,G171,4
+B02-056,B02,ما نجاوبش هنا، زيدني على التيليغرام نبعثلك التصاور غادي.,message,darija_arabic,1,off_platform,easy,T2-OFF-TELEGRAM,G192,0
+B02-057,B02,عمّر الفورمولار هذا باش ياصلك عنوان الكلب: [URL]، لازم تحط نومرو الكارطة.,message,darija_arabic,1,phishing_link,easy,T2-PH-FORM-CARD,G196,2
+B02-058,B02,توا يجيك كود في ميساج، ابعثهولي باش نثبت إللي إنت مولاه.,message,darija_arabic,1,phishing_link,easy,T2-PH-OTP,G197,4
+B02-059,B02,أنا من البلدية، كلبك محجوز عندنا. خلص 90 دينار خطية بمندا قبل غدوة وإلا ما عادش تلقاه.,message,darija_arabic,1,upfront_payment|impersonation|pressure,easy,T2-IMP-BALADIYA,G163,3
+B02-060,B02,باش نبعثلك القطوسة لازمك تخلص 35 دينار متاع القفص قبل.,message,darija_arabic,1,fake_fee,easy,T2-FEE-CAGE,G152,1
+B02-061,B02,ك ل م ن ي ع ال و ا ت س ا ب [PHONE] وابعث الفلوس قبل 💵,message,darija_arabic,1,upfront_payment|off_platform,obfuscated,T2-OBF-SPACED-WA-AR,G187,0
+B02-062,B02,عطيني نومروك نكلمك، الأنترنات عندي ضعيفة.,message,darija_arabic,0,legit,hard_negative,T2-HN-ASK-NUMBER,G154,2
+B02-063,B02,ردو بالكم، جاوني ناس يقولو عندهم قطوسي ويحبو فلوس قبل. ما تبعثو شي لحد.,listing,darija_arabic,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-064,B02,موش حاجتي بالفلوس، نحب كان يرجع لدارو.,message,darija_arabic,0,legit,hard_negative,T2-HN-NO-MONEY,G157,1
+B02-065,B02,نخلصلك التاكسي كي تجيبهولي، ما تخممش.,message,darija_arabic,0,legit,hard_negative,T2-HN-OWNER-PAYS-TAXI,G158,3
+B02-066,B02,قطوسة صغيرة للتبني في نابل، تحب الصغار ونظيفة.,listing,darija_arabic,0,legit,easy,T2-L-ADOPT-LISTING,G168,3
+B02-067,B02,شنوة السلالة متاعو؟,message,darija_arabic,0,legit,easy,T2-L-BREED-Q,G170,1
+B02-068,B02,مشيت للعنوان أما ما لقيت حد، وينك؟,message,darija_arabic,0,legit,easy,T2-L-WHERE-ARE-YOU,G180,2
+B02-069,B02,نحب نجي نشوفو نهار الأحد، ينجم؟,message,darija_arabic,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B02-070,B02,مبروك، رجع الكلب 😍,message,darija_arabic,0,legit,easy,T2-L-CONGRATS,G171,4
+B02-071,B02,لا أستخدم هذا التطبيق، تواصل معي حصرا عبر تيليغرام لإتمام عملية التبني.,message,msa_arabic,1,off_platform,easy,T2-OFF-TELEGRAM,G192,0
+B02-072,B02,تهانينا، تم العثور على حيوانك. لاستلام العنوان املأ الاستمارة وأدخل رقم حسابك البنكي: [URL],message,msa_arabic,1,phishing_link,easy,T2-PH-RIB-FORM,G198,4
+B02-073,B02,الجرو محجوز لك مقابل عربون 60 دينارا يرسل اليوم، وإلا سيعطى لشخص آخر.,message,msa_arabic,1,fake_fee|pressure,easy,T2-FEE-DEPOSIT,G153,1
+B02-074,B02,حـسـابـك سـيـغـلـق ⚠️ أكّـد بـيـانـاتـك هـنـا [URL],message,msa_arabic,1,phishing_link|pressure,obfuscated,T2-OBF-TATWEEL-AR,G188,1
+B02-075,B02,وضعت صورا إضافية للقطة على هذا الرابط [URL]، لاحظ البقعة البيضاء على أنفها.,message,msa_arabic,0,legit,hard_negative,T2-HN-PHOTO-LINK,G159,0
+B02-076,B02,تحذير: تلقيت رسائل من أشخاص يطلبون المال مقابل كلبي. لن أدفع إلا عند الاستلام.,listing,msa_arabic,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-077,B02,قط صغير للتبني في صفاقس، ملقح ونظيف.,listing,msa_arabic,0,legit,easy,T2-L-ADOPT-LISTING,G168,3
+B02-078,B02,متى يمكنني زيارة الكلب؟,message,msa_arabic,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B02-079,B02,هل يمكنني المساعدة في نشر الإعلان في الحي؟,message,msa_arabic,0,legit,easy,T2-L-HELP-POSTERS,G173,4
+B02-080,B02,هل هو هادئ مع الأطفال؟,message,msa_arabic,0,legit,easy,T2-L-TEMPER-Q,G177,3
+B02-081,B02,"Je réponds pas ici, zidni 3al Instagram [URL] w nab3athlek les photos.",message,mixed,1,off_platform,easy,T2-OFF-INSTA,G191,0
+B02-082,B02,"Votre compte PawConnect bech yetbloka, cliquez ici w d5el el mot de passe: [URL]",message,mixed,1,phishing_link|pressure,easy,T2-PH-ACCOUNT-BLOCK,G194,2
+B02-083,B02,"Le chiot est réservé lik, ama lazem acompte 50 dt b Flouci avant ce soir.",message,mixed,1,fake_fee|pressure,easy,T2-FEE-DEPOSIT,G153,1
+B02-084,B02,ab3athli le c0de que tu as reçu par s.m.s 📲 bech nconfirmi,message,mixed,1,phishing_link,obfuscated,T2-OBF-OTP,G185,0
+B02-085,B02,"w@tsapp only stp 🙏 ici ma nchoufch, w ab3ath l @rgent avant",message,mixed,1,upfront_payment|off_platform,obfuscated,T2-OBF-WA,G190,0
+B02-086,B02,"A3tini ton numéro nkalmek ce soir, plus simple.",message,mixed,0,legit,hard_negative,T2-HN-ASK-NUMBER,G154,2
+B02-087,B02,"Attention, des gens t7eb flous en disant qu'ils ont mon chat. Ma tab3thou chay 9bal.",listing,mixed,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-088,B02,"Ena véto à Ennasr, 3andna un chat tigré kif mte3ek. Jib photo mta3ou w ta5ou.",message,mixed,0,legit,hard_negative,T2-HN-VET-CLAIM,G162,3
+B02-089,B02,"J'ai mis d'autres photos ici [URL], chouf el tache sur l'oreille.",message,mixed,0,legit,hard_negative,T2-HN-PHOTO-LINK,G159,0
+B02-090,B02,"Chaton à adopter fi La Marsa, propre w y7eb el sghar.",listing,mixed,0,legit,easy,T2-L-ADOPT-LISTING,G168,3
+B02-091,B02,C'est quoi la race? malinois wala berger?,message,mixed,0,legit,easy,T2-L-BREED-Q,G170,1
+B02-092,B02,Najem nji samedi le voir?,message,mixed,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B02-093,B02,Je suis passé à l'adresse ama ma famma 7ad.,message,mixed,0,legit,easy,T2-L-WHERE-ARE-YOU,G180,2
+B02-094,B02,"Mabrouk, l'annonce est résolue 😍",message,mixed,0,legit,easy,T2-L-CONGRATS,G171,4
+B02-095,B02,Najem n3awnek ncolli des affiches fel quartier.,message,mixed,0,legit,easy,T2-L-HELP-POSTERS,G173,4
+B02-096,B02,"I don't use this app much. Message me only on Telegram, I'll send the adoption details there.",message,english,1,off_platform,easy,T2-OFF-TELEGRAM,G192,0
+B02-097,B02,Your listing will be removed in 2 hours unless you verify your account here: [URL],message,english,1,phishing_link|pressure,easy,T2-PH-ACCOUNT-BLOCK,G194,2
+B02-098,B02,Heads up: someone messaged me claiming to have Lucky and asked for money first. I'll only pay when I have her back.,listing,english,0,legit,hard_negative,T2-HN-SCAM-WARNING,G160,2
+B02-099,B02,What breed is he? He looks like a malinois mix.,message,english,0,legit,easy,T2-L-BREED-Q,G170,1
+B02-100,B02,Can I come see her on Sunday afternoon?,message,english,0,legit,easy,T2-L-WEEKEND-VISIT,G179,0
+B03-001,B03,"Klab husky sghar lel adoption men 3and mrabbi fi Sousse. Ma n7ebch nbi3hom ama lazem assurance 60 dt w papiers 40 dt, tetkhallsou 9bal b virement. Nab3athhom b société transport, ma najamch nchoufkom 5ater na5dem barcha.",listing,darija_latin,1,fake_fee,easy,T3-FEE-HUSKY-INSURANCE,G202,0
+B03-003,B03,"Lgit el 9atta. Chrit lha makla w dwe b 65 dinar, ab3athhom 3al D17 w taw njibha.",message,darija_latin,1,upfront_payment,easy,T3-UP-FOOD-COST,G244,2
+B03-004,B03,"Ya 5ou ena mosta3jel, ab3ath 30 dinar mta3 el essence w nji. Ken ma ab3athtech ma najamch net7arrek.",message,darija_latin,1,upfront_payment,easy,T3-UP-FUEL,G245,4
+B03-005,B03,"Ena men equipe el support, lazem tkhalles 20 dt abonnement premium bech annonce mte3ek titla3 lel nes lkol.",message,darija_latin,1,fake_fee|impersonation,easy,T3-IMP-PREMIUM,G215,2
+B03-006,B03,"Ki tab3athli el 3arboun 80 dinar nkhabilek el kalb, famma 3 nes o5rin ystannew.",message,darija_latin,1,fake_fee|pressure,easy,T3-FEE-RESERVE-QUEUE,G204,0
+B03-007,B03,Ab3athli taswira mta3 el carte bancaire mel zouz jihet bech nab3athlek el récompense mta3 el site.,message,darija_latin,1,phishing_link,easy,T3-PH-CARD-BOTHSIDES,G241,3
+B03-008,B03,"Ma tkallemnich hna, 3andi compte facebook w nwasslek el msg ghadi: [URL]",message,darija_latin,1,off_platform,easy,T3-OFF-FACEBOOK,G240,4
+B03-009,B03,"Rod belek, ken ma tkhallesch lyoum el kalb ymout 3andi, ma3andich bech nwakklou. Ab3ath 50 dt 3al D17 w njiblek iyah ghodwa.",message,darija_latin,1,upfront_payment|pressure,easy,T3-PR-GUILT,G243,4
+B03-010,B03,3ARBOUN 50 DT TAW W EL CHIOT LIK 🔥🔥 B3D GHODWA YETBA3 ❌,message,darija_latin,1,fake_fee|pressure,obfuscated,T3-OBF-CAPS-DEPOSIT,G232,3
+B03-011,B03,khallas el fr@is mta3 el ass0ciation 4-5 dinar w ta5ou el 9atta 😺,message,darija_latin,1,fake_fee|impersonation,obfuscated,T3-OBF-ASSOC-SYMBOLS,G231,4
+B03-012,B03,ab3ath kh_a_m_s_i_n mille 3al fl-ouci w njiblek kalbek 🐶,message,darija_latin,1,upfront_payment,obfuscated,T3-OBF-UNDERSCORE,G239,0
+B03-013,B03,d5el lel l1en hedha w 7ot el code mta3 el carte bech tchouf tsawer el kalb 👇 [URL],message,darija_latin,1,phishing_link,obfuscated,T3-OBF-L1EN,G234,1
+B03-014,B03,"Daya3 kalbi Kahwa, labrador 9ahwi, fi Sfax 9rib el stade. Na3ti récompense 300 dinar, ama ma nkhallas 7ata 7ad 9bal ma nchouf el kalb b 3inaya.",listing,darija_latin,0,legit,hard_negative,T3-HN-REWARD-NOUPFRONT,G210,1
+B03-015,B03,"Refuge Ennasr: el adoption b 25 dt, w el famille tet3arref m3a el kalb 9bal. Fama visite lel dar ba3d chhar.",listing,darija_latin,0,legit,hard_negative,T3-HN-SHELTER-HOMECHECK,G211,4
+B03-016,B03,"Ena el tbib elli dawa el 9atta mta3kom. Ma tkhallsou 7ata chay, ken t7ebbou tjiw te5douha fel 3chiya.",message,darija_latin,0,legit,hard_negative,T3-HN-VET-NOFEE,G212,2
+B03-017,B03,"N7eb nkhallsek el facture mta3 el tbib elli khallastha, 9addech kanet? nkhallsek ki net9ablou.",message,darija_latin,0,legit,hard_negative,T3-HN-OWNER-OFFERS-VET,G208,1
+B03-018,B03,"Ena msafer ghodwa l Fransa, ken t7eb te5ou el 9attous lazem tji lyoum wala ghodwa s'bah. Mouch 7aja flous.",message,darija_latin,0,legit,hard_negative,T3-HN-REAL-DEADLINE-REHOME,G209,0
+B03-019,B03,"Ab3athli localisation mta3ek 3al WhatsApp wala hna kima t7eb, bech nji.",message,darija_latin,0,legit,hard_negative,T3-HN-LOCATION,G207,4
+B03-020,B03,"Lazem t3abbi formulaire adoption fel app 9bal el visite, hedhi el procédure mta3 el refuge.",message,darija_latin,0,legit,hard_negative,T3-HN-APP-FORM,G205,3
+B03-021,B03,"Chouf el lien mta3 el vidéo elli sawwartha [URL], howa el kalb hedha? ma n7ebch nghalet.",message,darija_latin,0,legit,hard_negative,T3-HN-VIDEO-LINK,G213,4
+B03-022,B03,"Ena n5dem fel baladiya, chafna kalb kif mte3ek fel fourrière. Ma famma 7ata frais, ija bel carnet mta3ou.",message,darija_latin,0,legit,hard_negative,T3-HN-BALADIYA-NOFEE,G206,0
+B03-023,B03,Lgit 9atta bayda b 3inin zor9 fi Le Kram 9rib el 7ammem. Ma3andhech collier.,listing,darija_latin,0,legit,easy,T3-L-FOUND-WHITECAT,G222,3
+B03-024,B03,"Behi, ena fi tri9i, 10 d9aye9 w nousel.",message,darija_latin,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-025,B03,Kifech taw? mazel ma l9itouch?,message,darija_latin,0,legit,easy,T3-L-STATUS-Q,G230,4
+B03-026,B03,El 9attous y5af mel klab? 3andi kalb sghir fel dar.,message,darija_latin,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B03-027,B03,"Kalb sghir lel adoption, mrigel w vacciné, fi Manouba. N7eb famille t7ebou.",listing,darija_latin,0,legit,easy,T3-L-ADOPT-SMALLDOG,G218,0
+B03-028,B03,"Sorry ma najamtech nji el bareh, t7assalt fel 5edma. Lyoum el 3chiya behi?",message,darija_latin,0,legit,easy,T3-L-RESCHEDULE,G228,3
+B03-029,B03,"Nchallah tal9ah, rani nchouf fel 7ouma kol nhar.",message,darija_latin,0,legit,easy,T3-L-ENCOURAGE,G220,1
+B03-030,B03,Fama tsawer okhrin? n7eb nchouf wejhou,message,darija_latin,0,legit,easy,T3-L-MORE-PHOTOS-Q,G224,4
+B03-031,B03,"Ena men Nabeul, chfet barcha 9tates fel bled ama mouch kif el wasf mta3ek",message,darija_latin,0,legit,easy,T3-L-NOT-MATCH,G225,3
+B03-032,B03,"Rje3 Lucky el7amdoullah, mchina bih lel tbib bech yetfakded.",message,darija_latin,0,legit,easy,T3-L-RETURNED-VET,G229,2
+B03-033,B03,El 9atta toukhrej bara wala dima fel dar?,message,darija_latin,0,legit,easy,T3-L-INDOOR-Q,G223,2
+B03-034,B03,Najem nsakker l'annonce taw? rje3 el kalb,message,darija_latin,0,legit,easy,T3-L-CLOSE-LISTING,G219,0
+B03-035,B03,"a7na 3ayla sghira w 3andna jneina, n7ebbou kalb ykoun 5fif",message,darija_latin,0,legit,easy,T3-L-FAMILY-INTRO,G221,4
+B03-036,B03,"Chiots Bichon maltais à donner contre bons soins. Je suis actuellement en mission à l'étranger, les chiots sont chez un transitaire. Seuls les frais de transport et d'assurance (130 DT) sont à votre charge, réglables par mandat minute avant expédition. Contact par mail uniquement : [EMAIL].",listing,french,1,fake_fee|off_platform,easy,T3-FEE-ABROAD-MISSION,G201,0
+B03-037,B03,"Bonjour, ici le service client de PawConnect. Pour maintenir votre annonce en ligne, un paiement de 25 DT est requis via ce lien sécurisé : [URL]",message,french,1,fake_fee|phishing_link|impersonation,easy,T3-IMP-SUPPORT-PAYMENT,G216,1
+B03-038,B03,"J'ai acheté de la nourriture et payé le vétérinaire pour votre chat, soit 95 DT. Remboursez-moi d'abord, ensuite on fixe le rendez-vous.",message,french,1,upfront_payment,easy,T3-UP-REIMBURSE-FIRST,G246,1
+B03-039,B03,"Si vous ne confirmez pas l'adoption avec l'acompte avant minuit, je considère que vous n'êtes pas sérieux et je le donne.",message,french,1,fake_fee|pressure,easy,T3-FEE-MIDNIGHT,G203,3
+B03-040,B03,"Je suis policier, votre chien a mordu quelqu'un. Pour éviter une plainte, envoyez 200 DT par D17 aujourd'hui.",message,french,1,fake_fee|impersonation|pressure,easy,T3-IMP-POLICE-FINE,G214,4
+B03-041,B03,"Merci de m'envoyer une copie de votre CIN et votre RIB, c'est la procédure pour récupérer un animal trouvé.",message,french,1,phishing_link,easy,T3-PH-CIN-RIB,G242,3
+B03-042,B03,votre chien est la 🐕 mai faut envoyé deux cent dinar avan 😡 sinon tant pis pr vous,message,french,1,upfront_payment|pressure,obfuscated,T3-OBF-RUDE,G236,4
+B03-043,B03,a d o p t i o n gratuite ✅ juste 6O dt de fr@is de puc€ à payer avant 📦 livraison rapide,listing,french,1,fake_fee,obfuscated,T3-OBF-SPACED-ADOPT,G237,4
+B03-044,B03,"Refuge de Ben Arous : frais d'adoption 35 DT, payés au refuge. Une visite de votre domicile est prévue un mois après l'adoption pour s'assurer que tout se passe bien.",listing,french,0,legit,hard_negative,T3-HN-SHELTER-HOMECHECK,G211,4
+B03-045,B03,Je tiens à vous rembourser les frais de vétérinaire que vous avez avancés pour Mishmish. Combien ça a coûté ? Je vous paie quand on se voit.,message,french,0,legit,hard_negative,T3-HN-OWNER-OFFERS-VET,G208,1
+B03-046,B03,"Je déménage à Sfax dimanche, si personne ne le prend avant je devrai le confier au refuge. Je ne demande rien, juste une bonne famille.",message,french,0,legit,hard_negative,T3-HN-REAL-DEADLINE-REHOME,G209,0
+B03-047,B03,Voici une vidéo de lui prise ce matin : [URL]. Dites-moi si c'est bien Rex avant que je me déplace.,message,french,0,legit,hard_negative,T3-HN-VIDEO-LINK,G213,4
+B03-048,B03,"Récompense 250 DT. Je ne verse rien à l'avance, uniquement en échange de Bobby, devant témoin.",listing,french,0,legit,hard_negative,T3-HN-REWARD-NOUPFRONT,G210,1
+B03-049,B03,"J'arrive dans dix minutes, je suis en voiture grise.",message,french,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-050,B03,Toujours pas de nouvelles ? Je continue de chercher autour du lac.,message,french,0,legit,easy,T3-L-STATUS-Q,G230,4
+B03-051,B03,Est-ce qu'elle accepte les autres chats ? J'en ai déjà un de 3 ans.,message,french,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B03-052,B03,"Chat blanc trouvé à Nabeul, yeux bleus, probablement sourd, très affectueux.",listing,french,0,legit,easy,T3-L-FOUND-WHITECAT,G222,3
+B03-053,B03,"Désolé pour hier, imprévu au travail. On peut décaler à ce soir ?",message,french,0,legit,easy,T3-L-RESCHEDULE,G228,3
+B03-054,B03,Auriez-vous d'autres photos de face ?,message,french,0,legit,easy,T3-L-MORE-PHOTOS-Q,G224,4
+B03-055,B03,"Courage, je partage l'annonce dans le groupe du quartier.",message,french,0,legit,easy,T3-L-ENCOURAGE,G220,1
+B03-056,B03,أنا شوفور متاع شركة نقل الحيوانات، كلبك في الدبو متاعنا. خلص 40 دينار مصاريف باش نوصلوهولك.,message,darija_arabic,1,upfront_payment|fake_fee|impersonation,easy,T3-IMP-TRANSPORTER,G217,4
+B03-057,B03,شريتلها ماكلة ودوا ب 70 دينار، ابعثهملي على D17 وتوا نجيبها.,message,darija_arabic,1,upfront_payment,easy,T3-UP-FOOD-COST,G244,2
+B03-058,B03,ما تكلمنيش هنا، عندي كونط فيسبوك ابعثلي غادي: [URL],message,darija_arabic,1,off_platform,easy,T3-OFF-FACEBOOK,G240,4
+B03-059,B03,فما ثلاثة ناس يستناو، كان تبعثلي العربون 60 دينار توا نخليهولك.,message,darija_arabic,1,fake_fee|pressure,easy,T3-FEE-RESERVE-QUEUE,G204,0
+B03-060,B03,ابعثلي تصويرة الكارطة البنكية من الجيهتين باش نبعثلك الريكومبونس.,message,darija_arabic,1,phishing_link,easy,T3-PH-CARD-BOTHSIDES,G241,3
+B03-061,B03,خـلـص خـمـسـيـن ألـف ريـشـارج و الكلب ليك 🐶‼️,message,darija_arabic,1,upfront_payment,obfuscated,T3-OBF-TATWEEL,G238,1
+B03-062,B03,ضاع كلبي قهوة في صفاقس. مكافأة 300 دينار، أما ما نخلص حتى حد قبل ما نشوف الكلب بعينيا.,listing,darija_arabic,0,legit,hard_negative,T3-HN-REWARD-NOUPFRONT,G210,1
+B03-063,B03,نحب نخلصلك الفاتورة متاع الطبيب، قداش جات؟ نعطيهالك كي نتقابلو.,message,darija_arabic,0,legit,hard_negative,T3-HN-OWNER-OFFERS-VET,G208,1
+B03-064,B03,ابعثلي اللوكاليزاسيون متاعك على الواتساب ولا هنا كيف تحب.,message,darija_arabic,0,legit,hard_negative,T3-HN-LOCATION,G207,4
+B03-065,B03,شوف الفيديو هذا [URL]، هو الكلب؟ ما نحبش نغلط.,message,darija_arabic,0,legit,hard_negative,T3-HN-VIDEO-LINK,G213,4
+B03-066,B03,هاني في الثنية، عشرة دقايق ونوصل.,message,darija_arabic,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-067,B03,القطوس يخاف من الكلاب؟ عندي كلب صغير.,message,darija_arabic,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B03-068,B03,لقينا قطوسة بيضاء عينيها زرق في الكرم، ما فيهاش طوق.,listing,darija_arabic,0,legit,easy,T3-L-FOUND-WHITECAT,G222,3
+B03-069,B03,سامحني ما نجمتش نجي البارح، اليوم العشية يصلح؟,message,darija_arabic,0,legit,easy,T3-L-RESCHEDULE,G228,3
+B03-070,B03,إن شاء الله تلقاه، راني نلوج في الحومة كل يوم.,message,darija_arabic,0,legit,easy,T3-L-ENCOURAGE,G220,1
+B03-071,B03,أنا سائق شركة نقل الحيوانات. وصل كلبك إلى المستودع، ادفع 50 دينارا رسوم التخزين ليتم توصيله.,message,msa_arabic,1,upfront_payment|fake_fee|impersonation,easy,T3-IMP-TRANSPORTER,G217,4
+B03-072,B03,أرسل نسخة من بطاقة التعريف ورقم حسابك البنكي، هذا إجراء ضروري لاسترجاع الحيوان.,message,msa_arabic,1,phishing_link,easy,T3-PH-CIN-RIB,G242,3
+B03-073,B03,اشتريت له طعاما ودواء بثمانين دينارا، أرسلها أولا ثم نحدد موعدا.,message,msa_arabic,1,upfront_payment,easy,T3-UP-REIMBURSE-FIRST,G246,1
+B03-074,B03,ادفـع الـعـربـون الآن 💰 خـمـسـة و أربـعـون دينارا و الجرو لك 🔥,message,msa_arabic,1,fake_fee|pressure,obfuscated,T3-OBF-TATWEEL,G238,1
+B03-075,B03,ملجأ بن عروس: رسوم التبني 35 دينارا تدفع في الملجأ، ونقوم بزيارة منزلية بعد شهر للاطمئنان على الحيوان.,listing,msa_arabic,0,legit,hard_negative,T3-HN-SHELTER-HOMECHECK,G211,4
+B03-076,B03,سأنتقل إلى صفاقس يوم الأحد، إن لم يأخذه أحد سأسلمه للملجأ. لا أطلب أي مقابل.,message,msa_arabic,0,legit,hard_negative,T3-HN-REAL-DEADLINE-REHOME,G209,0
+B03-077,B03,أنا في الطريق، سأصل خلال عشر دقائق.,message,msa_arabic,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-078,B03,هل تتعايش القطة مع قطط أخرى؟,message,msa_arabic,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B03-079,B03,هل لديك صور أخرى من الأمام؟,message,msa_arabic,0,legit,easy,T3-L-MORE-PHOTOS-Q,G224,4
+B03-080,B03,عاد الكلب والحمد لله، أخذناه إلى الطبيب للفحص.,message,msa_arabic,0,legit,easy,T3-L-RETURNED-VET,G229,2
+B03-081,B03,"Ena chauffeur de la société de transport, votre chien est au dépôt. Khalles 45 dt frais de stockage w nwasslouh.",message,mixed,1,upfront_payment|fake_fee|impersonation,easy,T3-IMP-TRANSPORTER,G217,4
+B03-082,B03,"Remboursez-moi d'abord el makla w el tbib, 80 dt 3al D17, ba3d on fixe le rdv.",message,mixed,1,upfront_payment,easy,T3-UP-REIMBURSE-FIRST,G246,1
+B03-083,B03,"Il y a 3 personnes qui attendent, ken t7eb el chiot ab3ath l'acompte taw.",message,mixed,1,fake_fee|pressure,easy,T3-FEE-RESERVE-QUEUE,G204,0
+B03-084,B03,envoi la ph0to de ta c@rte bancaire recto verso bech nab3athlek el récompense 🎁,message,mixed,1,phishing_link,obfuscated,T3-OBF-CARD,G233,4
+B03-085,B03,PAYEZ 3OCHRIN DT ABONNEMENT PREMIUM SINON ANNONCE MTE3EK TETFASA5 ⛔,message,mixed,1,fake_fee|pressure,obfuscated,T3-OBF-PREMIUM-CAPS,G235,3
+B03-086,B03,"Récompense 300 DT pour Kahwa, ama ma nkhallas 7ad avant de la voir.",listing,mixed,0,legit,hard_negative,T3-HN-REWARD-NOUPFRONT,G210,1
+B03-087,B03,"N7eb nremboursi el facture mta3 el véto, c'était combien? nkhallsek ki net9ablou.",message,mixed,0,legit,hard_negative,T3-HN-OWNER-OFFERS-VET,G208,1
+B03-088,B03,"Ab3athli ta localisation sur WhatsApp wala hna, comme tu veux.",message,mixed,0,legit,hard_negative,T3-HN-LOCATION,G207,4
+B03-089,B03,"Lazem t3abbi le formulaire d'adoption fel app avant la visite, c'est la procédure du refuge.",message,mixed,0,legit,hard_negative,T3-HN-APP-FORM,G205,3
+B03-090,B03,"J'arrive, 10 minutes w nousel.",message,mixed,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-091,B03,Elle s'entend avec les chats? 3andi wa7ed.,message,mixed,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B03-092,B03,"Sorry pour hier, t7assalt fel 5edma. Ce soir behi?",message,mixed,0,legit,easy,T3-L-RESCHEDULE,G228,3
+B03-093,B03,Fama d'autres photos de face?,message,mixed,0,legit,easy,T3-L-MORE-PHOTOS-Q,G224,4
+B03-094,B03,"Chaton blanc trouvé fi Nabeul, yeux bleus, très gentil.",listing,mixed,0,legit,easy,T3-L-FOUND-WHITECAT,G222,3
+B03-095,B03,"Lucky rje3, on l'a emmené chez le véto pour un check-up.",message,mixed,0,legit,easy,T3-L-RETURNED-VET,G229,2
+B03-096,B03,"I bought food and vet meds for your cat, 90 DT total. Send it on D17 first, then we set a time.",message,english,1,upfront_payment,easy,T3-UP-REIMBURSE-FIRST,G246,1
+B03-097,B03,PawConnect billing: your listing needs a 25 DT premium fee to stay visible. Pay here: [URL],message,english,1,fake_fee|phishing_link|impersonation,easy,T3-IMP-SUPPORT-PAYMENT,G216,1
+B03-098,B03,"Shelter adoption fee is 35 DT, paid at the shelter, and we do a home visit a month later just to check everything's fine.",message,english,0,legit,hard_negative,T3-HN-SHELTER-HOMECHECK,G211,4
+B03-099,B03,"On my way, about ten minutes.",message,english,0,legit,easy,T3-L-ON-MY-WAY,G226,4
+B03-100,B03,Does she get along with other cats?,message,english,0,legit,easy,T3-L-OTHER-PET-Q,G227,1
+B04-001,B04,"Salem khouya, sme7li ama ena fi 7ala sa3ba barcha. Lgit kalbek fi Manouba w 3andi tlata ayem nwakel fih men flous el dwe mta3 ommi. Ommi mridha w ma3andich bech nechri el dwe mte3ha. Ken t7eb kalbek yerja3, ab3athli 90 dinar 3al D17 9bal w nji bih ghodwa, wallahi ma nkadhebch.",message,darija_latin,1,upfront_payment,easy,T4-UP-SICK-MOTHER,G290,2
+B04-002,B04,"Ena el infirmière fel clinique, kalbek dharbetou karhba w taw fel bloc. El docteur ma ya3melch l'opération ken ma tkhallesch 250 dinar taw b Flouci. Ma3andnach wa9t, kol d9i9a t7seb.",message,darija_latin,1,upfront_payment|impersonation|pressure,easy,T4-IMP-SURGERY-NURSE,G262,3
+B04-003,B04,"Wildi t3allgou barcha bel 9attous w yebkiw kol ma n9ollhom bech yrawa7. Ken t7eb terja3ou, 3awedhna 3al makla w el litière elli chrinaha, 120 dinar, w ba3d nchoufou.",message,darija_latin,1,upfront_payment,easy,T4-UP-KIDS-ATTACHED,G289,2
+B04-004,B04,"Ena détective mta3 el 7ayawenet, na3ref nlawej w nal9a ay kalb fi 48 sa3a. Garanti 100%. Khalles 120 dt 9bal 3al D17 w nebda el 5edma lyoum, el flous ma traja3ch.",message,darija_latin,1,fake_fee,easy,T4-FEE-PET-DETECTIVE,G248,2
+B04-005,B04,"Ena men radio locale, najmou nnadiw 3al kalbek fel 7orra b 40 dt, tkhallshom 9bal w el i3lan yet3adda ghodwa s'bah.",message,darija_latin,1,fake_fee|impersonation,easy,T4-IMP-RADIO-AD,G260,2
+B04-006,B04,Mabrouk! Rba7t panier croquettes men PawConnect 5ater t7eb el 7ayawenet. Khalles ken 15 dt frais livraison mel lien hedha: [URL],message,darija_latin,1,fake_fee|phishing_link|impersonation,easy,T4-PH-PRIZE-BASKET,G286,0
+B04-007,B04,"Scannina el puce mta3 el 9atta, bech ma3loumet moulha tet7all lazem 20 dt hna: [URL]",message,darija_latin,1,fake_fee|phishing_link,easy,T4-PH-CHIP-UNLOCK,G285,0
+B04-008,B04,"Na3ref win teskon. Ken ma tab3athch el 100 dinar lyoum ma3adch tchouf el 9atta mte3ek, w ma t3ayetch lel police.",message,darija_latin,1,upfront_payment|pressure,easy,T4-PR-KNOW-ADDRESS,G288,4
+B04-009,B04,"El chiot yebki kol lil yestanna fik ya 3ini 😢 ba9i ken 100 dt mta3 el vaccins, ab3athhom lyoum bech ghodwa yji 3andek.",message,darija_latin,1,fake_fee|pressure,easy,T4-FEE-PUPPY-CRYING,G249,2
+B04-010,B04,"w@llah ma3andich ch@y, ab3ath 7 a m s i n bech nechri dw@ lel kalb w ghodwa yrawa7 3andek 🙏💔",message,darija_latin,1,upfront_payment,obfuscated,T4-OBF-SOB-SPACED,G280,0
+B04-011,B04,OMMI MRIDHA W EL KALB 3ANDI 😭😭 KHALLES MIA W 3ACHRIN TAW 3AL F.L.O.U.C.I,message,darija_latin,1,upfront_payment|pressure,obfuscated,T4-OBF-CAPS-SOB,G277,1
+B04-012,B04,chouf el gps mta3 el puce 👉 l o c a t e - p e t [URL] d5el b compte el bank bech tchouf win howa,message,darija_latin,1,phishing_link,obfuscated,T4-OBF-GPS-CHIP,G278,0
+B04-013,B04,"nwesslek el kalb ki t3addi 4O dt l'@ssoci@tion 9bal, a7na mosta3jlin barcha ⏳",message,darija_latin,1,fake_fee|impersonation|pressure,obfuscated,T4-OBF-ASSOC-URGENT,G276,2
+B04-014,B04,"3 jem3at w ana ma nor9odch. Mishmish 9attousti 3omrha 12 sna, kbira w ma t3arefch tdabber rasha bara. Ken chaftouha, ma t5afouch menha, hiya t7eb el nes. Na3ti 200 dinar lel li yjibhali, nkhallsou b idi ki nchoufha. Brabi share.",listing,darija_latin,0,legit,hard_negative,T4-HN-LONG-REWARD-OLDCAT,G253,1
+B04-015,B04,"Ki tji te5ou Rex jib m3ak el carnet mta3ou w carte d'identité mte3ek, bech nchoufhom b 3inaya. Ma tab3athli 7ata chay, nchoufhom ki net9ablou.",message,darija_latin,0,legit,hard_negative,T4-HN-ID-IN-PERSON,G251,0
+B04-016,B04,"Ab3athtlek 150 dinar 3al D17 kima wa3adtek, y3aychek 3al chay elli 3maltou m3a Lucky. Rje3 l dar w ma7lahech.",message,darija_latin,0,legit,hard_negative,T4-HN-PAID-AFTER-THANKS,G254,1
+B04-017,B04,"El refuge t3abba w ma 3adch famma blasa. Brabi kol 7ad ynajem yadopti ija lel local, frais el adoption 30 dt tetkhallas fel blasa. Ma n7ebbouch nraj3ouhom lel chere3.",listing,darija_latin,0,legit,hard_negative,T4-HN-SHELTER-FULL-APPEAL,G258,0
+B04-018,B04,"Ena lgit el kalb ama moul el dar ma y5allinich nkhallih el lila. Brabi ija fissa3 lyoum 9bal el 10 mta3 el lil, ma n7ebch nsaybou fel chere3.",message,darija_latin,0,legit,hard_negative,T4-HN-LANDLORD-URGENT,G252,2
+B04-019,B04,"Bech na3mlou ba7th m3a ba3dna fel 7ouma: kol wa7ed yjib 5 dt lel affiches, nkhallsou el imprimerie direct. El rendez-vous ghodwa 9oddem el jem3a.",listing,darija_latin,0,legit,hard_negative,T4-HN-SEARCH-PARTY-POSTERS,G257,2
+B04-020,B04,"Lucky rje3 l dar, a3tini RIB mte3ek wala noumrou D17 bech nab3athlek el récompense elli wa3adt biha.",message,darija_latin,0,legit,hard_negative,T4-HN-ASK-RIB-TO-PAY-REWARD,G250,1
+B04-021,B04,"Khallast el frais fel refuge el bareh w 3tawni el recu, wa9tech najem nji ne5ou Kahwa?",message,darija_latin,0,legit,hard_negative,T4-HN-PAID-AT-SHELTER,G255,3
+B04-022,B04,"El kalba 7amla w 9rib tewled hal ayem, brabi ken chfetouha kellmouni fissa3, 5ayef 3liha barcha.",message,darija_latin,0,legit,hard_negative,T4-HN-PREGNANT-URGENT,G256,3
+B04-023,B04,"L9itou y9a99ef ta7t karhba fel chta, 3titou makla w taw ra9ed fi frachi. Bech yewa77achni ama ija 5oudhou, howa mte3ek.",message,darija_latin,0,legit,easy,T4-L-FOUND-RAIN-LONG,G267,2
+B04-024,B04,Rex mat el bareh. Y3aychkom lkol elli 3awnouna fel ba7th. Ma nensech fadhelkom.,listing,darija_latin,0,legit,easy,T4-L-PET-PASSED,G273,4
+B04-025,B04,"Sme7li 3al kelma elli 9oltelek el bareh, kont m9allag. Enti 3malt m3aya el khir.",message,darija_latin,0,legit,easy,T4-L-APOLOGY,G265,0
+B04-026,B04,Fel 3am elli fet mat kalbi elli 3ach m3aya 14 sna. Taw n7es elli ena 7adher n7ebb wa7ed jdid. Ena n5dem mel dar w 3andi wa9t barcha.,message,darija_latin,0,legit,easy,T4-L-ADOPT-AFTER-LOSS,G263,0
+B04-027,B04,Adoptit 9atta men 3andkom ama wildi tal3etlou allergie. Kifech nraj3ha bel 3a9el?,message,darija_latin,0,legit,easy,T4-L-RETURN-ALLERGY,G275,3
+B04-028,B04,"Ena nemchi kol lila nlawej fel 7ouma b torch, mazelt ma fadditch.",message,darija_latin,0,legit,easy,T4-L-NIGHT-SEARCH,G271,0
+B04-029,B04,"Kalbi ma yjich ken ki t3ayetlou b esmou 'Bobby' b chwaya, ken chfetouh 3ayetoulou bla ma tjriw.",listing,darija_latin,0,legit,easy,T4-L-CALL-NAME-TIP,G266,1
+B04-030,B04,"Najem nji m3ak nlawej nhar el a7ad, 3andi wa9t.",message,darija_latin,0,legit,easy,T4-L-JOIN-SEARCH,G269,4
+B04-031,B04,"El 9atta elli adoptitha men 3andkom tetla3eb m3a wildi, mersi 3liha 😍",message,darija_latin,0,legit,easy,T4-L-ADOPT-UPDATE,G264,4
+B04-032,B04,"Ken 3andek tsawer mta3ha w hiya sghira, ab3athhom, bech na3mel affiche jdida.",message,darija_latin,0,legit,easy,T4-L-OLD-PHOTOS-REQ,G272,4
+B04-033,B04,"L9it 3 9tates sghar fi carton 9oddem el jem3a fi Ariana, chkoun ynajem ykhallihom 3andou chwaya?",listing,darija_latin,0,legit,easy,T4-L-KITTENS-BOX,G270,4
+B04-034,B04,"Barcha nes 9alouli kalbek mcha lel jiha mta3 el 7ammem, ama ena ma chfetouch b 3inaya.",message,darija_latin,0,legit,easy,T4-L-HEARSAY-SIGHTING,G268,4
+B04-035,B04,"Ma tfadda3ch, el klab yrawa7ou barcha marrat wa7adhom. Nchallah yrawa7.",message,darija_latin,0,legit,easy,T4-L-REASSURE,G274,1
+B04-036,B04,"Madame, je vous écris le cœur lourd. J'ai trouvé votre chienne blessée sur la route de Bizerte et je l'ai soignée avec mes propres moyens. Je suis au chômage depuis des mois et je ne peux plus la nourrir. Si vous pouviez m'envoyer 80 DT par D17 avant que je vous la ramène, cela m'aiderait énormément. Je vous en supplie, ne me jugez pas.",message,french,1,upfront_payment,easy,T4-UP-UNEMPLOYED-PLEA,G291,4
+B04-037,B04,"Bonjour, je suis la responsable d'un refuge qui va fermer à la fin du mois. Si personne ne paie les 60 DT de frais d'adoption avant vendredi, nos chiens seront euthanasiés. Paiement uniquement par virement, je vous envoie la photo du chien ensuite.",message,french,1,fake_fee|impersonation|pressure,easy,T4-IMP-SHELTER-CLOSING,G261,2
+B04-038,B04,"Je suis éleveuse à Sousse, je pars vivre au Canada et je dois laisser mes chiots. Je ne les vends pas, je cherche juste des familles. Il faut seulement régler 110 DT à l'agence de transport animalier à l'avance, ils vous livrent chez vous.",listing,french,1,fake_fee,easy,T4-FEE-EMIGRATING-BREEDER,G247,1
+B04-039,B04,Votre chat a été retrouvé grâce à notre service de recherche par drone. Les frais d'intervention (75 DT) doivent être réglés avant la restitution.,message,french,1,upfront_payment|fake_fee|impersonation,easy,T4-IMP-DRONE-SERVICE,G259,2
+B04-040,B04,"Vous avez été sélectionné pour un bon d'achat de 200 DT en animalerie. Pour l'activer, saisissez vos informations bancaires ici : [URL]",message,french,1,phishing_link,easy,T4-PH-VOUCHER,G287,3
+B04-041,B04,Je sais très bien où vous habitez. Payez 150 DT aujourd'hui ou oubliez votre chat.,message,french,1,upfront_payment|pressure,easy,T4-PR-KNOW-ADDRESS,G288,4
+B04-042,B04,ça me brise le cœur 💔 mais sans les 9O dt de fr@is vétérin@ires d'@bord je ne peux pas vous le rendre...,message,french,1,upfront_payment,obfuscated,T4-OBF-HEARTBREAK,G279,0
+B04-043,B04,"U R G E N T 🚨 refuge plein, adoptez avant d e m a i n, payez la p a r t i c i p a t i o n de 5O dt par virement avant de venir",listing,french,1,fake_fee|impersonation|pressure,obfuscated,T4-OBF-SPACED-SHELTER,G282,0
+B04-044,B04,"Cela fait un mois que Minou a disparu de notre jardin au Kram. Mes enfants demandent chaque soir s'il va rentrer. Il est vieux, il a besoin de ses croquettes spéciales. Nous offrons 250 DT de récompense, remis en main propre à son retour. Merci de tout cœur à ceux qui partagent.",listing,french,0,legit,hard_negative,T4-HN-LONG-REWARD-OLDCAT,G253,1
+B04-045,B04,"Je vous ai envoyé les 100 DT promis par Flouci. Merci infiniment de m'avoir ramené Bobby, vous êtes une personne en or.",message,french,0,legit,hard_negative,T4-HN-PAID-AFTER-THANKS,G254,1
+B04-046,B04,"Je ne peux pas le garder cette nuit, mon propriétaire refuse les animaux. Pouvez-vous venir avant 21h ? Sinon je l'amènerai au refuge d'Ariana demain matin.",message,french,0,legit,hard_negative,T4-HN-LANDLORD-URGENT,G252,2
+B04-047,B04,"Notre refuge déborde : plus de 80 chiens pour 40 places. Si vous pensiez adopter, c'est le moment. Frais de 30 DT payés sur place, après rencontre avec l'animal.",listing,french,0,legit,hard_negative,T4-HN-SHELTER-FULL-APPEAL,G258,0
+B04-048,B04,Bobby est bien rentré. Pouvez-vous m'envoyer votre RIB ou votre numéro D17 pour que je vous verse la récompense promise ?,message,french,0,legit,hard_negative,T4-HN-ASK-RIB-TO-PAY-REWARD,G250,1
+B04-049,B04,Rex nous a quittés hier. Merci à toutes celles et ceux qui ont cherché avec nous pendant ces trois semaines.,listing,french,0,legit,easy,T4-L-PET-PASSED,G273,4
+B04-050,B04,"Je l'ai trouvé tremblant sous une voiture, sous la pluie. Il a mangé et dort maintenant au chaud. Il va me manquer mais il est à vous, venez quand vous voulez.",message,french,0,legit,easy,T4-L-FOUND-RAIN-LONG,G267,2
+B04-051,B04,"Pardon pour mon message sec d'hier, j'étais à bout. Merci pour votre patience.",message,french,0,legit,easy,T4-L-APOLOGY,G265,0
+B04-052,B04,"Nous avons perdu notre chienne l'an dernier après 13 ans. Nous sommes prêts à ouvrir notre maison à nouveau, j'aimerais rencontrer Luna.",message,french,0,legit,easy,T4-L-ADOPT-AFTER-LOSS,G263,0
+B04-053,B04,"Ma fille a développé une allergie, comment se passe le retour au refuge ? Je veux que ça se fasse bien pour la chatte.",message,french,0,legit,easy,T4-L-RETURN-ALLERGY,G275,3
+B04-054,B04,"Elle répond seulement à son nom, Kahwa, dit doucement. Si vous criez elle s'enfuit.",listing,french,0,legit,easy,T4-L-CALL-NAME-TIP,G266,1
+B04-055,B04,"Je peux venir chercher avec vous dimanche matin, j'ai une lampe torche.",message,french,0,legit,easy,T4-L-JOIN-SEARCH,G269,4
+B04-056,B04,خويا سامحني، أنا في حالة صعيبة برشا. لقيت كلبك وعندي ثلاثة أيام نوكل فيه من فلوس دوا أمي. كان تحب يرجع، ابعثلي 90 دينار على D17 قبل ونجيبهولك غدوة.,message,darija_arabic,1,upfront_payment,easy,T4-UP-SICK-MOTHER,G290,2
+B04-057,B04,أنا الفرملية في الكلينيك، كلبك ضربتو كرهبة وتوا في البلوك. الطبيب ما يعملش العملية كان ما تخلصش 250 دينار توا.,message,darija_arabic,1,upfront_payment|impersonation|pressure,easy,T4-IMP-SURGERY-NURSE,G262,3
+B04-058,B04,صغاري تعلقو بالقطوس ويبكيو. كان تحب ترجعو، رجعلنا فلوس الماكلة 120 دينار وبعد نشوفو.,message,darija_arabic,1,upfront_payment,easy,T4-UP-KIDS-ATTACHED,G289,2
+B04-059,B04,مبروك، ربحت سلة ماكلة للحيوانات. خلص كان 15 دينار مصاريف التوصيل من اللينك هذا: [URL],message,darija_arabic,1,fake_fee|phishing_link,easy,T4-PH-PRIZE-BASKET,G286,0
+B04-060,B04,الجرو يبكي كل ليلة يستنى فيك 😢 بقى كان 100 دينار متاع التلقيح، ابعثهم اليوم.,message,darija_arabic,1,fake_fee|pressure,easy,T4-FEE-PUPPY-CRYING,G249,2
+B04-061,B04,و ا ل ل ه ما عندي شي 💔 ابعث خمسين ألف قبل باش نشري ماكلة للكلب ويروح غدوة,message,darija_arabic,1,upfront_payment,obfuscated,T4-OBF-SOB-SPACED,G280,0
+B04-062,B04,ثلاث جمعات وأنا ما نرقدش. مشمش قطوستي كبيرة وما تعرفش تدبر راسها. نعطي 200 دينار للي يجيبهالي، نخلصو بيدي كي نشوفها.,listing,darija_arabic,0,legit,hard_negative,T4-HN-LONG-REWARD-OLDCAT,G253,1
+B04-063,B04,بعثتلك 150 دينار على D17 كيف وعدتك، يعيشك على الخير اللي عملتو.,message,darija_arabic,0,legit,hard_negative,T4-HN-PAID-AFTER-THANKS,G254,1
+B04-064,B04,لقيت الكلب أما مول الدار ما يخلينيش نخليه الليلة. جي فيسع قبل العشرة متاع الليل.,message,darija_arabic,0,legit,hard_negative,T4-HN-LANDLORD-URGENT,G252,2
+B04-065,B04,الكلبة حاملة وقريب تولد، كان شفتوها كلموني فيسع، خايف عليها برشا.,message,darija_arabic,0,legit,hard_negative,T4-HN-PREGNANT-URGENT,G256,3
+B04-066,B04,ركس مات البارح. يعيشكم الكل اللي عاونتونا.,listing,darija_arabic,0,legit,easy,T4-L-PET-PASSED,G273,4
+B04-067,B04,سامحني على الكلمة اللي قلتهالك البارح، كنت مقلق.,message,darija_arabic,0,legit,easy,T4-L-APOLOGY,G265,0
+B04-068,B04,القطوسة اللي تبنيتها من عندكم تتلاعب مع صغاري، مرسي 😍,message,darija_arabic,0,legit,easy,T4-L-ADOPT-UPDATE,G264,4
+B04-069,B04,نجم نجي معاك نلوجو نهار الأحد.,message,darija_arabic,0,legit,easy,T4-L-JOIN-SEARCH,G269,4
+B04-070,B04,ما تفجعش، الكلاب برشا مرات يروحو وحدهم.,message,darija_arabic,0,legit,easy,T4-L-REASSURE,G274,1
+B04-071,B04,سيدتي، أكتب إليك بقلب مثقل. وجدت كلبتك مصابة على الطريق واعتنيت بها على حسابي، وأنا عاطل عن العمل منذ أشهر. أرجو أن ترسلي 80 دينارا قبل أن أعيدها إليك.,message,msa_arabic,1,upfront_payment,easy,T4-UP-UNEMPLOYED-PLEA,G291,4
+B04-072,B04,أنا مسؤولة ملجأ سيغلق نهاية الشهر. إن لم تدفع رسوم التبني 60 دينارا قبل الجمعة سيتم القتل الرحيم للكلاب. الدفع بتحويل بنكي فقط.,message,msa_arabic,1,fake_fee|impersonation|pressure,easy,T4-IMP-SHELTER-CLOSING,G261,2
+B04-073,B04,تم اختيارك للفوز بقسيمة شراء بقيمة 200 دينار. لتفعيلها أدخل بياناتك البنكية هنا: [URL],message,msa_arabic,1,phishing_link,easy,T4-PH-VOUCHER,G287,3
+B04-074,B04,قـلـبـي يـتـقـطـع 💔 لـكـن بـدون تـسـعـيـن ديـنـارا مـسـبـقـا لا أسـتـطـيـع إعـادتـه,message,msa_arabic,1,upfront_payment,obfuscated,T4-OBF-TATWEEL-HEART,G283,0
+B04-075,B04,مضى شهر على اختفاء مينو من حديقتنا. أطفالي يسألون عنه كل مساء. نقدم مكافأة 250 دينارا تسلم يدا بيد عند عودته.,listing,msa_arabic,0,legit,hard_negative,T4-HN-LONG-REWARD-OLDCAT,G253,1
+B04-076,B04,الملجأ ممتلئ: أكثر من ثمانين كلبا لأربعين مكانا. إن كنت تفكر في التبني فهذا هو الوقت. الرسوم 30 دينارا تدفع في الملجأ بعد لقاء الحيوان.,listing,msa_arabic,0,legit,hard_negative,T4-HN-SHELTER-FULL-APPEAL,G258,0
+B04-077,B04,وجدته يرتجف تحت سيارة تحت المطر، أطعمته وهو نائم الآن في الدفء. تعال متى شئت.,message,msa_arabic,0,legit,easy,T4-L-FOUND-RAIN-LONG,G267,2
+B04-078,B04,فقدنا كلبتنا العام الماضي بعد ثلاث عشرة سنة، ونحن مستعدون لتبني كلب جديد.,message,msa_arabic,0,legit,easy,T4-L-ADOPT-AFTER-LOSS,G263,0
+B04-079,B04,ابنتي أصيبت بالحساسية، كيف تتم إعادة القطة إلى الملجأ؟,message,msa_arabic,0,legit,easy,T4-L-RETURN-ALLERGY,G275,3
+B04-080,B04,لا تقلق، كثير من الكلاب تعود وحدها إلى البيت.,message,msa_arabic,0,legit,easy,T4-L-REASSURE,G274,1
+B04-081,B04,"Wallah ena fi 7ala sa3ba, ma3andich khedma depuis 3 mois. J'ai trouvé votre chienne w nwakel fiha men jibi. Ab3athli 80 dt 9bal stp, w ghodwa nramenehalek. Ma t7kemch 3liya.",message,mixed,1,upfront_payment,easy,T4-UP-UNEMPLOYED-PLEA,G291,4
+B04-082,B04,"Ena infirmière à la clinique, votre chien est au bloc. Le docteur ma ya3melch l'opération sans 250 dt taw b Flouci.",message,mixed,1,upfront_payment|impersonation|pressure,easy,T4-IMP-SURGERY-NURSE,G262,3
+B04-083,B04,"Le refuge bech ysakker fin du mois, ken ma tkhallsouch 60 dt frais d'adoption avant vendredi, les chiens vont être euthanasiés.",message,mixed,1,fake_fee|impersonation|pressure,easy,T4-IMP-SHELTER-CLOSING,G261,2
+B04-084,B04,"félicit@tions 🎉 rba7t un bon d'achat, d5el tes infos b@nc@ires ici 👉 [URL]",message,mixed,1,phishing_link,obfuscated,T4-OBF-VOUCHER,G284,2
+B04-085,B04,"le chiot yebki kol lil 😭 ba9i ken c e n t dt pour les vaccins, envoie-les lyoum",message,mixed,1,fake_fee|pressure,obfuscated,T4-OBF-SPACED-PUPPY,G281,0
+B04-086,B04,"Un mois que Minou a disparu men jneinetna. Wildi ysa2lou 3lih kol lila. Récompense 250 DT, nkhallsou en main propre ki yrja3.",listing,mixed,0,legit,hard_negative,T4-HN-LONG-REWARD-OLDCAT,G253,1
+B04-087,B04,"Je t'ai envoyé les 100 dt 3al Flouci kima wa3adtek, merci infiniment 3la Bobby.",message,mixed,0,legit,hard_negative,T4-HN-PAID-AFTER-THANKS,G254,1
+B04-088,B04,"Moul el dar ma y7ebch el klab, je ne peux pas le garder cette nuit. Ija avant 21h stp.",message,mixed,0,legit,hard_negative,T4-HN-LANDLORD-URGENT,G252,2
+B04-089,B04,"Le refuge déborde, 80 klab pour 40 places. Frais d'adoption 30 dt tetkhallas sur place ba3d ma tchouf el kalb.",listing,mixed,0,legit,hard_negative,T4-HN-SHELTER-FULL-APPEAL,G258,0
+B04-090,B04,Rex nous a quittés el bareh. Merci lkol elli 3awnouna.,listing,mixed,0,legit,easy,T4-L-PET-PASSED,G273,4
+B04-091,B04,"Sme7li pour mon message d'hier, kont m9allag barcha.",message,mixed,0,legit,easy,T4-L-APOLOGY,G265,0
+B04-092,B04,"On a perdu notre chienne l'an dernier ba3d 13 ans, w taw n7ebbou nadoptiw Luna.",message,mixed,0,legit,easy,T4-L-ADOPT-AFTER-LOSS,G263,0
+B04-093,B04,"Elle répond ken l esmha, Kahwa, b chwaya. Ken t3ayet barcha thrab.",listing,mixed,0,legit,easy,T4-L-CALL-NAME-TIP,G266,1
+B04-094,B04,"Najem nji nlawej m3ak dimanche, 3andi torche.",message,mixed,0,legit,easy,T4-L-JOIN-SEARCH,G269,4
+B04-095,B04,El 9atta elli adoptitha s'entend super bien m3a wildi 😍,message,mixed,0,legit,easy,T4-L-ADOPT-UPDATE,G264,4
+B04-096,B04,"I'm so sorry to ask, but I've been feeding your dog with the money for my mother's medicine. Please send 90 DT on D17 before I bring him, I have nothing left.",message,english,1,upfront_payment,easy,T4-UP-SICK-MOTHER,G290,2
+B04-097,B04,"I'm the nurse at the clinic. Your dog was hit by a car and is in surgery, the doctor won't operate unless you send 250 DT right now.",message,english,1,upfront_payment|impersonation|pressure,easy,T4-IMP-SURGERY-NURSE,G262,3
+B04-098,B04,"Sent you the 100 DT on Flouci as promised. Thank you for bringing Bobby home, truly.",message,english,0,legit,hard_negative,T4-HN-PAID-AFTER-THANKS,G254,1
+B04-099,B04,Rex passed away yesterday. Thank you to everyone who searched with us.,listing,english,0,legit,easy,T4-L-PET-PASSED,G273,4
+B04-100,B04,"Don't panic, lots of dogs find their own way home.",message,english,0,legit,easy,T4-L-REASSURE,G274,1

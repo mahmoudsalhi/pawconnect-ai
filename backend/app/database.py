@@ -5,7 +5,11 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from .config import get_settings
 
-engine = create_engine(get_settings().database_url, pool_pre_ping=True)
+_url = get_settings().database_url
+# SQLite needs check_same_thread off: FastAPI runs sync endpoints on a threadpool, so a
+# pooled connection can be handed to a different thread than the one that opened it.
+_connect_args = {"check_same_thread": False} if _url.startswith("sqlite") else {}
+engine = create_engine(_url, pool_pre_ping=True, connect_args=_connect_args)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 
 

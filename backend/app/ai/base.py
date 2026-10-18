@@ -14,6 +14,8 @@ Model map (matches the labels shown in the UI):
     M5  score_photo         photo engagement score (CNN, PetFinder Pawpularity)
     M6  remove_background   background removal (U-Net, Oxford-IIIT Pet)
     M9  compatibility       pet-owner compatibility from a questionnaire (sentence embeddings + scoring)
+        detect_scam         scam warnings on messages (TF-IDF + logistic regression, ml/m6);
+                            "M6" in the team's new numbering. Real model, not a placeholder.
 """
 
 from __future__ import annotations
@@ -145,6 +147,17 @@ class CompatMatch:
     reasons: list[CompatReason] = field(default_factory=list)
 
 
+@dataclass(frozen=True)
+class ScamAssessment:
+    """How likely a message is a scam. The app only ever warns; it never blocks a message."""
+
+    score: float  # 0-1
+    level: str  # "none", "caution" (soft "be careful" banner) or "high" (likely scam)
+    labels: list[str] = field(default_factory=list)  # e.g. ["upfront_payment"], most likely first
+    reasons: list[str] = field(default_factory=list)  # one plain sentence per label, for the UI
+    model: str = ""
+
+
 class AIProvider(ABC):
     #: Short identifier stored next to cached results, e.g. "demo" or "siamese-v2".
     name: str = "custom"
@@ -186,3 +199,6 @@ class AIProvider(ABC):
         """Age group from a report's photos. Not abstract, so existing providers keep working;
         None means the provider has no age model (the API then returns no suggestion)."""
         return None
+
+    def detect_scam(self, text: str) -> ScamAssessment:
+        """Scam warning level and reasons for a message or listing text."""

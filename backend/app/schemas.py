@@ -197,6 +197,43 @@ class LocationOut(BaseModel):
     recovery: RecoveryOut | None = None
 
 
+class ReportFactsOut(BaseModel):
+    goes_outside: str
+    temperament: str
+    circumstance: str
+    collar_or_tag: str
+    understood: str
+
+
+class PlanStepOut(BaseModel):
+    when: str
+    where: str
+    what: str
+
+
+class PosterOut(BaseModel):
+    headline: str
+    text: str
+
+
+class SearchPlanOut(BaseModel):
+    summary: str
+    steps: list[PlanStepOut]
+    poster_fr: PosterOut
+    poster_ar: PosterOut
+    share_text: str
+
+
+class AssistantOut(BaseModel):
+    # ok: facts + plan; unavailable: no API key (location only); error: the AI call failed (location only)
+    status: str
+    message: str | None = None
+    model: str | None = None
+    facts: ReportFactsOut | None = None
+    location: LocationOut
+    plan: SearchPlanOut | None = None
+
+
 class PetDetailOut(PetOut):
     sightings: list[SightingOut]
     contact_note: str

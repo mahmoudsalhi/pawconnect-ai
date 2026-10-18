@@ -12,3 +12,5 @@ python-multipart>=0.0.18
 pillow>=11.3
 pytest>=8.3
 httpx>=0.28
+anthropic>=1.0
+groq>=1.0

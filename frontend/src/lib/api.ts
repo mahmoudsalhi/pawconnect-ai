@@ -222,6 +222,33 @@ export interface LocationPrediction {
   recovery: RecoveryOutlook | null
 }
 
+// AI search assistant (GET /api/ai/assistant/:id): Claude reads the description, M7 runs with what
+// it found, Claude writes the plan. status "unavailable" (no API key) / "error" = M7 only.
+export interface ReportFacts {
+  goes_outside: 'yes' | 'no' | 'unknown'
+  temperament: string
+  circumstance: string
+  collar_or_tag: 'yes' | 'no' | 'unknown'
+  understood: string
+}
+
+export interface SearchPlan {
+  summary: string
+  steps: { when: string; where: string; what: string }[]
+  poster_fr: { headline: string; text: string }
+  poster_ar: { headline: string; text: string }
+  share_text: string
+}
+
+export interface AssistantAnswer {
+  status: 'ok' | 'unavailable' | 'error'
+  message: string | null
+  model: string | null
+  facts: ReportFacts | null
+  location: LocationPrediction
+  plan: SearchPlan | null
+}
+
 export class ApiError extends Error {
   status: number
   errors: Record<string, string>

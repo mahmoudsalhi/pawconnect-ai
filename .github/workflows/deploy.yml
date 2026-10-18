@@ -27,7 +27,7 @@ jobs:
           printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key && chmod 600 ~/.ssh/deploy_key
           printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
           # Keepalives: package installs can run silently for minutes, and idle SSH connections get dropped.
-          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes \n              -o ServerAliveInterval=30 -o ServerAliveCountMax=20 "$TARGET"
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=20 "$TARGET"
 
       - name: Check the live site
         run: curl -fsS --retry 5 --retry-delay 5 https://pawconnect.minolingo.online/api/health

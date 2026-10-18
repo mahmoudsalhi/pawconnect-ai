@@ -18,3 +18,13 @@ frontend/node_modules/
 frontend/dist/
 *.tsbuildinfo
 backend/ml/*/data/
+
+# ML: virtualenv and data (rebuilt by ml/adoption_speed/build_dataset.py)
+ml/.venv/
+ml/adoption_speed/data/
+
+# ML: M2 photo matching (trained model, local venv and datasets stay out of git)
+ml/photo_matching/.venv/
+ml/photo_matching/checkpoints/*.pt
+ml/photo_matching/data*/
+ml/photo_matching/mes_chiens/

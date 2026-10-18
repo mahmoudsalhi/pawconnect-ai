@@ -5,18 +5,24 @@ from sqlalchemy import select, update
 from sqlalchemy.orm import selectinload
 
 from ..ai import get_provider
-from ..ai.base import CompatPet, Questionnaire
+from ..ai.base import CompatPet, ModelUnavailable, Questionnaire
 from ..ai.breed import META_PATH as BREED_META
 from ..ai.compatibility import pet_text
 from ..deps import DB, CurrentUser, OptionalUser
 from ..geo import AREAS, km
 from ..models import MatchResult, Pet, PetStatus
-from ..schemas import (AgeOut, AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut, CompatHit,
-                       CompatIn, CompatOut, CompatReasonOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
+from ..schemas import (AgeOut, AIInfoOut, AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut,
+                       CompatHit, CompatIn, CompatOut, CompatReasonOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
 from ..services.matching import image_input, open_reports, scores_for_pet, scores_for_photo
 from ..services.serialize import favorite_ids, pet_out
 
 router = APIRouter(prefix="/api/ai", tags=["ai"])
+
+
+@router.get("/info", response_model=AIInfoOut)
+def ai_info():
+    """Which AI provider is active, so the UI only labels results as demo outputs when they are."""
+    return AIInfoOut(provider=get_provider().name)
 
 
 @router.post("/analyze", response_model=AnalyzeOut)
@@ -98,6 +104,14 @@ def run_match(data: MatchIn, db: DB, user: OptionalUser):
     statuses = [PetStatus.found, PetStatus.lost] if data.status == "both" else [PetStatus(data.status)]
     provider = get_provider()
 
+    try:
+        return _run_match(data, db, user, area, statuses, provider)
+    except ModelUnavailable:
+        db.rollback()
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "The photo-matching model is not available right now.")
+
+
+def _run_match(data, db, user, area, statuses, provider):
     if data.pet_id:
         query = db.get(Pet, data.pet_id)
         if not query:
@@ -125,8 +139,9 @@ def run_match(data: MatchIn, db: DB, user: OptionalUser):
         if d <= data.radius:
             hits.append(MatchHit(pet=pet_out(p, user, favs), score=s, distance_from_area=round(d, 2)))
     hits.sort(key=lambda h: -h.score)
+    signature = provider.embed(image_input(signature_src))
     return MatchRunOut(model=provider.name, pool=len(pool), area_label=area["label"], area_lat=area["lat"],
-                       area_lng=area["lng"], signature=provider.embed(image_input(signature_src))[:48], results=hits)
+                       area_lng=area["lng"], signature=signature[:48], signature_dim=len(signature), results=hits)
 
 
 @router.post("/match/{query_id}/dismiss/{candidate_id}", status_code=status.HTTP_204_NO_CONTENT)

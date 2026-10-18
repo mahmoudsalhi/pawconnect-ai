@@ -1,11 +1,15 @@
+import logging
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
 from ..ai import get_provider
-from ..ai.base import ImageInput, MatchSubject
+from ..ai.base import ImageInput, MatchSubject, ModelUnavailable
 from ..database import SessionLocal
 from ..models import MatchResult, Pet, PetStatus, Upload
 from .notify import log_activity, notify
+
+log = logging.getLogger(__name__)
 
 
 def image_input(url: str) -> ImageInput:
@@ -82,7 +86,12 @@ def match_new_report(db: Session, pet: Pet) -> tuple[int, int]:
     """
     other = PetStatus.found if pet.status == PetStatus.lost else PetStatus.lost
     pool = open_reports(db, pet.species, [other], exclude_id=pet.id)
-    scores = scores_for_pet(db, pet, pool)
+    try:
+        with db.begin_nested():  # rolls back partial scores if the model drops out half way
+            scores = scores_for_pet(db, pet, pool)
+    except ModelUnavailable as exc:
+        log.warning("Skipping auto-matching for report %s: %s", pet.id, exc)
+        return len(pool), 0
     by_id = {p.id: p for p in pool}
     strong = 0
     for cand_id, score in sorted(scores.items(), key=lambda kv: -kv[1]):

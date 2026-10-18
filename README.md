@@ -132,6 +132,29 @@ cd backend
 
 Without these libraries the endpoint answers 503 and the page simply hides the map. M7 covers Grand Tunis, Sousse, Sfax and Nabeul–Hammamet, for cats and dogs. It is **experimental**: it was trained on simulated cases and should be retrained on real reunions. It loads about 400 MB of map grids into memory on first use.
 
+## AI search assistant (LLM API: Groq or Claude)
+
+On a lost pet's page, the "Where to search" panel can also use an LLM API wrapped around M7 (`GET /api/ai/assistant/{id}`, code in `backend/app/ai/assistant.py`):
+
+1. **Reads the description.** The owner may write in Darija, French, Arabic or English. The LLM extracts what the form doesn't ask: whether a cat goes outside, temperament, how the pet got lost, and collar or tag. These go into M7, so the zones and the chances get sharper. The page shows what was read as chips.
+2. **Writes a search plan** from M7's zones and outlook and the real named places inside the zones (from OpenStreetMap, `ml/m7_location/data/grids/*_places.json`): when and where to search, what to do, a poster in French and Arabic, and a post to share.
+
+The LLM only explains and organises. Every number and place comes from M7 and the map data. Phone numbers and emails are stripped from the description before it's sent, and only the approximate public area is shared. Answers are validated against a schema; invalid values become "unknown".
+
+Pick a provider in `backend/.env` (the first key found is used):
+
+```
+# Free, no credit card: create a key at https://console.groq.com
+GROQ_API_KEY=gsk_...
+GROQ_MODEL=openai/gpt-oss-120b
+
+# Or the Claude API (paid, about $0.002 per lost pet with Haiku 5.5)
+ANTHROPIC_API_KEY=sk-ant-...
+CLAUDE_MODEL=claude-haiku-5-5
+```
+
+Without a key the panel shows M7 alone. Groq's free tier is rate-limited (per minute and per day), which is plenty for development and demos. Results are cached per description, and plans per pet per day.
+
 ## Notes for production
 
 - **Map tiles**: the app uses OpenStreetMap's public tile servers, which are fine for development but not for production traffic. Set `VITE_MAP_TILES` (and `VITE_MAP_ATTRIBUTION`) in `frontend/.env.local` to a provider you have an agreement with. (The design's CARTO URL now requires an API key.)

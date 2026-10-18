@@ -5,6 +5,7 @@ import {
   api,
   type AIInfo,
   type Application,
+  type AssistantAnswer,
   type Dashboard,
   type InboxMessage,
   type InsightRow,
@@ -38,6 +39,16 @@ export const useLocationPrediction = (id: number, enabled: boolean) =>
     enabled: enabled && Number.isFinite(id),
     retry: false,
     staleTime: 30 * 60_000,
+  })
+
+// AI search assistant: slower (two Claude calls), so the page shows the plain M7 answer first.
+export const useAssistant = (id: number, enabled: boolean) =>
+  useQuery({
+    queryKey: ['assistant', id],
+    queryFn: () => api.get<AssistantAnswer>(`/api/ai/assistant/${id}`),
+    enabled: enabled && Number.isFinite(id),
+    retry: false,
+    staleTime: 60 * 60_000,
   })
 
 export const useShelters = () => useQuery({ queryKey: ['shelters'], queryFn: () => api.get<Shelter[]>('/api/shelters'), staleTime: 300_000 })

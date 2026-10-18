@@ -1,0 +1,101 @@
+﻿id,text,channel,language,is_scam,labels,difficulty,template_id
+B05-001,"Ma nchoufch les messages hna, DM 3al Instagram mte3i barka, hna ma narodch 3la 7ad.",message,darija_latin,1,off_platform,easy,T5-OFF-IG-DM
+B05-002,"7attit video mta3 el kalb elli lgitou 3al TikTok mte3i, net3arfou ghadi, ma tektebch hna khater ma nod5olch l'app.",message,darija_latin,1,off_platform,easy,T5-OFF-TIKTOK
+B05-003,"El livreur yjibhoulek lel dar. Ab3ath nos el flous taw, 50 dt 3al D17, w el nos el e5er cash lel livreur.",message,darija_latin,1,upfront_payment,easy,T5-UP-COURIER-HALF
+B05-004,"3tit 30 dt lel sghir elli lga el kalb bech ma ykhallihch yemchi, raja3hom li 9bal w njiblek el kalb.",message,darija_latin,1,upfront_payment,easy,T5-UP-REIMBURSE-KID
+B05-005,3melt concours bech el nes t3awenni nlawej 3al kalbek asra3. Sawwet w d5el b compte mte3ek hna: [URL],message,darija_latin,1,phishing_link,easy,T5-PH-CONTEST-VOTE
+B05-006,"9bal ma njiblek el 9attous 7emmamtou w 3meltlou toilettage 3and el 7alle9. El frais 35 dt, ab3athhom 3al Flouci.",message,darija_latin,1,fake_fee,easy,T5-FEE-GROOMING
+B05-007,"Ena mel clinique vétérinaire, el kalb mte3ek msajjel 3andna bel puce. Bech nraj3oulek el propriété lazem tkhalles 45 dt frais dossier.",message,darija_latin,1,fake_fee|impersonation,easy,T5-IMP-VETDB-RECORDS
+B05-008,"El app hedhi te5ou commission 3al kol transaction. A7na n3amlou el deal direct 3al WhatsApp, ab3athli numrou w nkemlou ghadi.",message,darija_latin,1,off_platform,easy,T5-OFF-COMMISSION
+B05-009,k e l l e m n i 3 a l w@tsapp [PHONE] b@rk@ 🚫 hna ma n7ebch nkteb w ma narodch,message,darija_latin,1,off_platform,obfuscated,T5-OBF-OFF-SPACED
+B05-010,EL LIVREUR WOSEL EL 7OUMA 📦 AB3ATH 4O DT TAW 3AL D-1-7 WALA YRAJA3 EL KALB ⏰⏰‼️,message,darija_latin,1,upfront_payment|pressure,obfuscated,T5-OBF-COURIER-CAPS
+B05-011,frais puç€ 3O dt 9bal ma n3tik el 9att0us 🐱💸 ab3ath 3al fl0uci w taw njibhoulek,message,darija_latin,1,fake_fee,obfuscated,T5-OBF-CHIP-LEET
+B05-012,"Ken t7eb tchouf el 7ayawenet el me9diin lkol, odkhol lel groupe Telegram mte3na, el app hedhi ma tnajjemch tchouf el kol.",listing,darija_latin,1,off_platform,easy,T5-OFF-TGGROUP
+B05-013,"A3tini numrou 3al WhatsApp n7eb nab3athlek tsawer, ama tnajem tjaweb hna zeda, kifek t7eb.",message,darija_latin,0,legit,hard_negative,T5-HN-WHATSAPP-PHOTOS
+B05-014,"Na3ti 200 dt récompense. Ken t7eb n7ottha 3and wa7ed ne3rfouh lkoull bech tetrasa7, w nkhallsek ki nchouf el kalb.",listing,darija_latin,0,legit,hard_negative,T5-HN-REWARD-TRUSTEE
+B05-015,"Nejjem nkabbou 3andi chwaya 7atta tahez barnamej mte3ek w tji te5ou, 3andi blasa. Ma n7ebch 7aja.",message,darija_latin,0,legit,hard_negative,T5-HN-FOSTER-DL
+B05-016,"9ATTOUS TROUVÉ!!! 9RIB EL MARKET MTA3 ENNASR, 3ANDOU COLLIER A7MAR 🐱🐱 MOULAH YKALLEMNI FISSA3 📞",listing,darija_latin,0,legit,hard_negative,T5-HN-FOUND-CAPS-DL
+B05-017,"Ena tbib bitri, lel nes elli lgaw 7ayawen dhaye3: nejjem nchoufou b la fulus w na3mlou check-up 9bal el remise, jibouh lel clinique mta3 Ariana.",listing,darija_latin,0,legit,hard_negative,T5-HN-VET-FREE-DL
+B05-018,"URGENT!!! kalbi 3andou diabète w lazmou piqûre kol nhar, ken chaftouh BRABI 3ayytouli 📞📞📞",message,darija_latin,0,legit,hard_negative,T5-HN-MEDS-CAPS-DL
+B05-019,"Net9ablou 9oddem el délégation mta3 Ariana, famma caméras w nes, khir lina ezzouz.",message,darija_latin,0,legit,hard_negative,T5-HN-MEET-DELEG-DL
+B05-020,"m3rc! 3la l'aide, na3ti r3compense 15O dt ki yrja3 Bobby l dar, n5allsek f idek ki nchoufou 🙏",message,darija_latin,0,legit,hard_negative,T5-HN-REWARD-LEET-DL
+B05-021,"9bal ma n3tik el kalb lazem tjibli taswira 9dima m3ah wala el carnet, bech net2aked, sme7li barcha nes tkadheb.",message,darija_latin,0,legit,hard_negative,T5-HN-VERIFY-PHOTO-DL
+B05-022,3andek chkoun yheb ykabbi 9tout sghar? lgithom w ma nejjemch nkabbihom lkol wa7di.,listing,darija_latin,0,legit,easy,T5-L-KITTENS-FOSTER-DL
+B05-023,YE3AYCHEK BARCHA!!! KAHWA RJA3 LEL DAR 😭❤️🙏 MA NENSECH FADHLEK ABADAN,message,darija_latin,0,legit,easy,T5-L-THANKS-CAPS-DL
+B05-024,El 9attous m3allem 3al litière? 3andi 9tout o5rin fel dar w n7eb nchouf ken yetfahmou.,message,darija_latin,0,legit,easy,T5-L-LITTER-DL
+B05-025,chftou lbare7 fi ennasr 9rib el 7anout yjri barcha ma 9dertech nal7a9ou kan mte3ek lawej ghadi,message,darija_latin,0,legit,easy,T5-L-SIGHTING-NOPUNCT-DL
+B05-026,"Bech njib cage m3aya ki nji ne5ou el 9attous nhar el sebt, 3andi karhba.",message,darija_latin,0,legit,easy,T5-L-CARRIER-DL
+B05-027,"a d o p t i o n 🐶 kalb sghir mrigel y7eb el 3a2ila, vacciné w m3allem, fi La Marsa, chkoun y7ebou",listing,darija_latin,0,legit,easy,T5-L-ADOPT-SPACED-DL
+B05-028,"ma nejjemch nji lyoum, t7assalt fel 5edma. ghodwa el 3chiya yabbehi lik?",message,darija_latin,0,legit,easy,T5-L-RESCHED-DL
+B05-029,kelb tah fi sousse 🐕🐕 lgitou 9rib el plage 3andou poil asmar w collier zra9 moulah brabi yrod 3liya 🙏🙏🙏,listing,darija_latin,0,legit,easy,T5-L-FOUND-EMOJI-DL
+B05-030,"Ena jarek, chouft l'affiche mta3 kalbek 3al 7it, bech n3awnek nlawej fel 7ouma w n9ollek ken chfet 7aja.",message,darija_latin,0,legit,easy,T5-L-NEIGHBOR-DL
+B05-031,"Ce site prend une commission sur chaque échange. Réglons ça directement entre nous sur WhatsApp, donnez-moi votre numéro.",message,french,1,off_platform,easy,T5-OFF-COMMISSION
+B05-032,Chatons British shorthair à réserver. Des frais de réservation de 70 DT (garde à la chatterie) sont à régler d'avance par virement pour bloquer le chaton à votre nom.,listing,french,1,fake_fee,easy,T5-FEE-BOOKING-CATTERY
+B05-033,Votre animal est couvert par notre assurance partenaire. Remplissez le formulaire de restitution avec votre RIB et vos identifiants bancaires : [URL],message,french,1,phishing_link|impersonation,easy,T5-PH-INSURANCE
+B05-034,"J'ai donné 30 DT à l'enfant qui a trouvé votre chien pour qu'il ne parte pas, remboursez-moi d'abord et je vous l'amène.",message,french,1,upfront_payment,easy,T5-UP-REIMBURSE-KID
+B05-035,Mon avion décolle dans 3 heures et je dois placer le chiot avant. Versez l'acompte de 60 DT maintenant par e-Dinar ou je le confie à quelqu'un d'autre.,message,french,1,fake_fee|pressure,easy,T5-FEE-FLIGHT-DEPOSIT
+B05-036,Société First Delivery : un colis vivant à votre nom est en attente au dépôt. Frais de stockage 50 DT à régler avant la livraison.,message,french,1,fake_fee|impersonation,easy,T5-IMP-DELIVERY-CO
+B05-037,"répondez PAS ici 🚫 j€ ne v0is rien, écrivez-moi SEULEMENT sur t€l€gram 👉 [URL] et pr3parez l'@rgent",message,french,1,off_platform,obfuscated,T5-OBF-OFF-MSG-FR
+B05-038,"CLINIQUE VÉTO 🚨 votre chat est en qu@r@ntaine, fr@is de 8O dt à régler AVANT de le récupérer ‼️‼️",message,french,1,fake_fee|impersonation,obfuscated,T5-FEE-QUARANTINE
+B05-039,"Perdu Mishmish, chat gris, El Menzah. Récompense 200 DT remise en mains propres après le retour uniquement. Je ne verse rien à l'avance, méfiez-vous des arnaques.",listing,french,0,legit,hard_negative,T5-HN-REWARD-WARN-FR
+B05-040,"Je peux l'héberger quelques jours le temps que vous rentriez de voyage, sans frais, j'ai de la place chez moi.",message,french,0,legit,hard_negative,T5-HN-FOSTER-FR
+B05-041,"CHIEN TROUVÉ 🐶🐶 près de la fac à MANOUBA, mâle beige, très gentil, APPELEZ VITE, son maître doit le chercher 🙏",listing,french,0,legit,hard_negative,T5-HN-FOUND-CAPS-FR
+B05-042,"Vétérinaire à Ariana : pour toute personne ayant trouvé un animal égaré, je propose un examen gratuit avant la remise, aucun frais. Amenez-le à la clinique.",listing,french,0,legit,hard_negative,T5-HN-VET-FREE-FR
+B05-043,"URGENT il prend un traitement pour le cœur, SANS ça il peut mourir, si vous le voyez APPELEZ-MOI tout de suite 📞📞📞",message,french,0,legit,hard_negative,T5-HN-MEDS-CAPS-FR
+B05-044,"MERCI MERCI MERCI 😭❤️ Bobby est rentré grâce à vous, vous êtes quelqu'un de formidable 🙏🙏",message,french,0,legit,easy,T5-L-THANKS-CAPS-FR
+B05-045,"Je viendrai avec une caisse de transport samedi matin, vers 10h ça vous va ?",message,french,0,legit,easy,T5-L-CARRIER-FR
+B05-046,chienne a adopter 2 ans sterilisee tres calme cherche famille avec jardin a sousse appelez si interesse,listing,french,0,legit,easy,T5-L-ADOPT-NOPUNCT-FR
+B05-047,"Avant d'adopter, pourriez-vous me dire s'il a des antécédents médicaux ou un traitement en cours ?",message,french,0,legit,easy,T5-L-MEDHIST-FR
+B05-048,je crois l'avoir vu hier soir vers le lac 🐕 il courait vers la station il avait l'air en forme 🙏,message,french,0,legit,easy,T5-L-SIGHTING-EMOJI-FR
+B05-049,باش تشوف الحيوانات الكل اللي تلقاو، أدخل للڤروب فيسبوك متاعنا وسجّل دخولك من هنا: [URL]. ما تعتمدش على التطبيق.,listing,darija_arabic,1,off_platform|phishing_link,easy,T5-OFF-FBGROUP
+B05-050,شركة التوصيل: عندنا طرد حي باسمك في الدبو، مصاريف التخزين 50 دينار تتخلص قبل التوصيل.,message,darija_arabic,1,fake_fee|impersonation,easy,T5-IMP-DELIVERY-CO
+B05-051,الليفرور يجيبهولك للدار. ابعث نص الفلوس توا، 50 دينار على D17، والنص الآخر كاش للليفرور.,message,darija_arabic,1,upfront_payment,easy,T5-UP-COURIER-HALF
+B05-052,عملت مسابقة باش الناس تعاوني نلوج على كلبك أسرع. صوّت وأدخل بالكونط متاعك هنا: [URL],message,darija_arabic,1,phishing_link,easy,T5-PH-CONTEST-VOTE
+B05-053,كـلـمـنـي كـان عـلـى الـتـيـلـيـڤـرام 👉 [URL] الـتـطـبـيـق هـذا مـا نـردش فـيـه 🚫,message,darija_arabic,1,off_platform,obfuscated,T5-OBF-OFF-TATWEEL-DA
+B05-054,نجم نكبيه عندي أيام حتى ترجع من السفر وتجي تاخذو، بلاش، عندي بلاصة.,message,darija_arabic,0,legit,hard_negative,T5-HN-FOSTER-DA
+B05-055,كلب ضاع!! 🐕🐕 لقيتو قريب المحطة في صفاقس، ذكر أسمر، صاحبو يكلمني بسرعة 🙏🙏,listing,darija_arabic,0,legit,hard_negative,T5-HN-FOUND-CAPS-DA
+B05-056,قبل ما نعطيك القطوسة لازم تثبتلي إنها متاعك، ابعثلي تصويرة قديمة معاها، سامحني برشا ناس تكذب.,message,darija_arabic,0,legit,hard_negative,T5-HN-VERIFY-PHOTO-DA
+B05-057,عاجل!! القطوسة عندها دوا كل يوم، كان شفتوها كلموني فيسع برجوك 📞📞,message,darija_arabic,0,legit,hard_negative,T5-HN-MEDS-CAPS-DA
+B05-058,نجيب قفص معايا كي نجي ناخذ القطوس نهار السبت.,message,darija_arabic,0,legit,easy,T5-L-CARRIER-DA
+B05-059,يعيشكم 😭❤️ رجع مشمش للدار، شكرا برشا 🙏🙏🙏,message,darija_arabic,0,legit,easy,T5-L-THANKS-EMOJI-DA
+B05-060,قبل التبني، عندو أمراض ولا دوا يلزمو ياخذو؟,message,darija_arabic,0,legit,easy,T5-L-MEDHIST-DA
+B05-061,عيادة بيطرية: حيوانك في الحجر الصحي، يجب دفع 80 دينارا رسوم الحجر قبل استلامه.,message,msa_arabic,1,fake_fee|impersonation,easy,T5-FEE-QUARANTINE
+B05-062,لرؤية الحيوانات المفقودة قربك، حمّل تطبيقنا من هذا الرابط وسجّل دخولك ببياناتك المصرفية: [URL],message,msa_arabic,1,phishing_link,easy,T5-PH-DOWNLOAD-APP
+B05-063,لإثبات جديتك، حوّل 50 دينارا كعربون عبر حوالة بريدية، يُسترجع عند التسليم.,message,msa_arabic,1,upfront_payment,easy,T5-UP-ESCROW-DEPOSIT
+B05-064,جـمـعـيـة الـرفـق بـالـحـيـوان 🐾 تـبـرّع بـ1O ديـنـار لإطـعـام الـكـلاب وأدخـل بـطـاقـتـك هـنـا [URL] ‼️,message,msa_arabic,1,phishing_link|impersonation,obfuscated,T5-OBF-DONATION-MSA
+B05-065,مكافأة 200 دينار تسلّم يدا بيد بعد عودة القط فقط، لا أدفع شيئا مقدما.,listing,msa_arabic,0,legit,hard_negative,T5-HN-REWARD-AFTER-MSA
+B05-066,كلب مفقود!! 🐕 عُثر عليه قرب الجامعة في أريانة، ذكر بني، صاحبه يتصل بسرعة 🙏🙏,listing,msa_arabic,0,legit,hard_negative,T5-HN-FOUND-CAPS-MSA
+B05-067,طبيب بيطري في أريانة: لكل من وجد حيوانا ضالا، أقدّم فحصا مجانيا قبل التسليم دون أي رسوم. أحضروه إلى العيادة.,listing,msa_arabic,0,legit,hard_negative,T5-HN-VET-FREE-MSA
+B05-068,قبل التبني، هل لديه أمراض أو علاجات حالية ينبغي أن أعرفها؟,message,msa_arabic,0,legit,easy,T5-L-MEDHIST-MSA
+B05-069,شكرا جزيلا 😭❤️ عاد القط إلى البيت بفضلكم 🙏🙏🙏,message,msa_arabic,0,legit,easy,T5-L-THANKS-EMOJI-MSA
+B05-070,سأحضر قفصا معي عندما آتي لأخذ القطة يوم السبت 🐱🙏,message,msa_arabic,0,legit,easy,T5-L-CARRIER-MSA
+B05-071,"Mon compte ici est nouveau w limité, kellemni 3al Signal bech nkamlou, hna ma najjamch nab3ath barcha.",message,mixed,1,off_platform,easy,T5-OFF-SIGNAL-NEWACC
+B05-072,"Société de livraison: bech nsallmou el 9attous lazem tconfirmi b el code OTP elli bech yjik fi sms, 3tihouli.",message,mixed,1,phishing_link|impersonation,easy,T5-PH-DELIVERY-OTP
+B05-073,"Je t'envoie la localisation ken 3al WhatsApp, ici ça marche pas, donne-moi ton numéro.",message,mixed,1,off_platform,easy,T5-OFF-LOCATION-PIN
+B05-074,"9bal el remise 7emmemt el kalb 3and el toiletteur, les frais 35 dt ab3athhom 3al Flouci avant.",message,mixed,1,fake_fee,easy,T5-FEE-GROOMING
+B05-075,répond PAS ici 🚫 @joute-moi 3al insta [URL] w n3tik localis@tion ghadi 📍📍,message,mixed,1,off_platform,obfuscated,T5-OBF-OFF-MIX
+B05-076,KALBEK 3ANDI 🐶 envoie 8O dt 3AL D17 AVANT sinon nsaybou fel chere3 ⏰‼️,message,mixed,1,upfront_payment|pressure,obfuscated,T5-OBF-UP-MIX
+B05-077,"Donne-moi ton numéro WhatsApp bech nab3athlek les photos, mais tu peux répondre ici aussi, kifek t7eb.",message,mixed,0,legit,hard_negative,T5-HN-WHATSAPP-PHOTOS
+B05-078,"CHAT TROUVÉ 🐱🐱 9rib el Carrefour à La Marsa, collier rouge, APPELEZ, son maître doit le chercher 🙏",listing,mixed,0,legit,hard_negative,T5-HN-FOUND-CAPS-MIX
+B05-079,"Nejjem nkabbou 3andi quelques jours le temps que tu rentres de voyage, sans frais, 3andi place.",message,mixed,0,legit,hard_negative,T5-HN-FOSTER-MIX
+B05-080,"URGENT!! 3andou un traitement pour le cœur, SANS ça il peut mourir, ken chaftouh APPELEZ 📞📞",message,mixed,0,legit,hard_negative,T5-HN-MEDS-CAPS-MIX
+B05-081,"MERCI 😭❤️ Kahwa rja3 lel dar grâce à vous, y3aychkom 🙏🙏",message,mixed,0,legit,easy,T5-L-THANKS-MIX
+B05-082,"Nji b une cage samedi matin, vers 10h 3andek ça va?",message,mixed,0,legit,easy,T5-L-CARRIER-MIX
+B05-083,a d o p t i o n 🐶 kalb mrigel 2 ans stérilisé cherche famille avec jardin fi Sousse,listing,mixed,0,legit,easy,T5-L-ADOPT-SPACED-MIX
+B05-084,"Avant d'adopter, 3andou des antécédents médicaux wala un traitement en cours?",message,mixed,0,legit,easy,T5-L-MEDHIST-MIX
+B05-085,"je crois l'avoir vu lbare7 vers le lac 🐕 yjri lel station, il avait l'air bien 🙏",message,mixed,0,legit,easy,T5-L-SIGHTING-MIX
+B05-086,"My account here is new and limited. Message me on Signal to finish this, I can't send much on this app.",message,english,1,off_platform,easy,T5-OFF-SIGNAL-NEWACC
+B05-087,I'm from the vet clinic; your dog is microchipped to us. To release the ownership records you need to pay a 45 DT file fee.,message,english,1,fake_fee|impersonation,easy,T5-IMP-VETDB-RECORDS
+B05-088,SEE l0st pets near y0u 🐾 d0wnl0ad 0ur @pp here 👉 [URL] & l0gin with y0ur b@nk det@ils ‼️,message,english,1,phishing_link,obfuscated,T5-PH-DOWNLOAD-APP
+B05-089,"LOST: Simba, grey cat, El Menzah. 200 DT reward paid in person on return only. I won't send anything upfront, beware of scammers.",listing,english,0,legit,hard_negative,T5-HN-REWARD-WARN-EN
+B05-090,"DOG FOUND 🐶🐶 near the university in Manouba, beige male, very sweet, CALL the owner asap 🙏",listing,english,0,legit,hard_negative,T5-HN-FOUND-CAPS-EN
+B05-091,"I can foster him for a few days until you're back from your trip, no charge, I have room.",message,english,0,legit,hard_negative,T5-HN-FOSTER-EN
+B05-092,"URGENT he's on heart medication, WITHOUT it he could die, if you see him CALL ME right away 📞📞📞",message,english,0,legit,hard_negative,T5-HN-MEDS-CAPS-EN
+B05-093,"Vet in Ariana: for anyone who has found a stray, I offer a free check-up before handover, no fees at all. Bring it to the clinic.",listing,english,0,legit,hard_negative,T5-HN-VET-FREE-EN
+B05-094,"THANK YOU SO MUCH 😭❤️ Bobby is home thanks to you, you're amazing 🙏🙏",message,english,0,legit,easy,T5-L-THANKS-CAPS-EN
+B05-095,I'll bring a carrier when I come to get the cat on Saturday morning.,message,english,0,legit,easy,T5-L-CARRIER-EN
+B05-096,dog for adoption 2 years old neutered very calm looking for a family with a garden in sousse call if interested,listing,english,0,legit,easy,T5-L-ADOPT-NOPUNCT-EN
+B05-097,"Before adopting, could you tell me if he has any medical history or current treatment?",message,english,0,legit,easy,T5-L-MEDHIST-EN
+B05-098,think i saw him last night near the lake 🐕 running toward the station he looked ok 🙏,message,english,0,legit,easy,T5-L-SIGHTING-EMOJI-EN
+B05-099,"We're a quiet family with a big garden and no other pets, we'd love to meet her.",message,english,0,legit,easy,T5-L-FAMILY-INTRO-EN
+B05-100,"CAT FOUND 🐱🐱🐱 near the pharmacy in Ennasr, blue collar, very friendly, owner please reach out 🙏🙏",listing,english,0,legit,easy,T5-L-FOUND-EMOJI-EN

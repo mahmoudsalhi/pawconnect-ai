@@ -1,0 +1,4 @@
+# M6 scam detection: training and evaluation (separate from backend/requirements.txt)
+numpy>=2.1
+pandas>=2.2
+scikit-learn>=1.5

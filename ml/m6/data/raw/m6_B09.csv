@@ -1,0 +1,101 @@
+﻿id,text,channel,language,is_scam,labels,difficulty,template_id
+B09-001,"7attit el kalb fi pension 3 lyeli, el facture 60 dt, 5allasni 9bal w njiblek iyah.",message,darija_latin,1,upfront_payment,easy,T9-UP-PENSION
+B09-002,"L'adoption lazem wra9et engagement m3a timbre 3and l'huissier, 25 dt, 5allas 9bal ma net9ablou.",message,darija_latin,1,fake_fee,easy,T9-FEE-HUISSIER
+B09-003,Confirmi el trouveur mta3 kalbek 3al page confiance mta3na w a3mel login hna: [URL],message,darija_latin,1,phishing_link,easy,T9-PH-TRUST-PAGE
+B09-004,"Ena syndic mta3 l'immeuble, 9attousek 3mel dégât fel 7it, 5allas 40 dt wala n3abbi 3lik plainte.",message,darija_latin,1,fake_fee|impersonation|pressure,easy,T9-IMP-SYNDIC
+B09-005,"Hthi maslaht el cargo mta3 el matar, el cage mta3 el kalb lazmha 70 dt frais 9bal ma ytsallem.",message,darija_latin,1,fake_fee|impersonation,easy,T9-IMP-CARGO
+B09-006,"Taw famma 3 3a2ilat 3al bab yestannew, 9arrar fi 5 d9aye9 wala el kalb mcha.",message,darija_latin,1,pressure,easy,T9-PR-AT-DOOR
+B09-007,"Nji nchoufek ama ab3athli 20 dt taxi taw 3al D17, rani mfalles w ma3andich bech nji.",message,darija_latin,1,upfront_payment,easy,T9-UP-TAXI-BROKE
+B09-008,"Bech tadopti lazem t9ayed fel club mta3na mta3 in9adh, 30 dt cotisation 9bal.",message,darija_latin,1,fake_fee|impersonation,easy,T9-FEE-CLUB
+B09-009,Télécharger carnet el vaccination mta3 el kalb ba3d ma ta3mel login hna: [URL],message,darija_latin,1,phishing_link,easy,T9-PH-CERT-DOWNLOAD
+B09-010,EL CAMION YEMCHI 3AL 12:00 🚐 AB3ATH 5O DT 3ARBOUN 3AL D17 TAW WALA MA YRKEBCH EL KALB ⏰,message,darija_latin,1,upfront_payment|pressure,obfuscated,T9-OBF-VAN
+B09-011,ena l'@dmin jdid 🛠️ confirmi compte mte3ek b 1O dt v€rification sinon yetsaker ⛔ [URL],message,darija_latin,1,phishing_link|impersonation,obfuscated,T9-OBF-ADMIN
+B09-012,l0kit el kalb 🐶 location lecteur puce 15 dt 9bal ma nscanni w n2akdou mte3ek 🐾💸,message,darija_latin,1,fake_fee,obfuscated,T9-OBF-READER
+B09-013,"Taw 3abbitlek les photos mta3 el kalb 3al WhatsApp, chouf w 9olli ken howa.",message,darija_latin,0,legit,hard_negative,T9-HN-SENT-WA
+B09-014,"L'app t9ila 3andi barcha, hatha numrou [PHONE], a3mel appel manqué w nrajja3lek.",message,darija_latin,0,legit,hard_negative,T9-HN-APP-SLOW
+B09-015,"Nab3athlek el 150 dt récompense 3al D17 ki yousel 3andek, 3al rawa7a ma famma 7atta 3jla.",message,darija_latin,0,legit,hard_negative,T9-HN-REWARD-D17-AFTER
+B09-016,"El tbib 7at carnet el vaccinations mta3ou hna [URL], tnajjem tchoufou 9bal ma net9ablou.",message,darija_latin,0,legit,hard_negative,T9-HN-VET-PAGE
+B09-017,"7fadht numrou mte3ek, ki nkoun 9rib el blasa nsonnilek 3al WhatsApp w nji.",message,darija_latin,0,legit,hard_negative,T9-HN-SAVED-NUMBER
+B09-018,"3abbitlek recharge 50 dt 3al telifoun 3la el ta3b elli 3malt m3aya, barakallah fik.",message,darija_latin,0,legit,hard_negative,T9-HN-RECHARGE-THANKS
+B09-019,"Hatha el pin mta3 Google Maps win chceftou [URL], 9rib el 7ad9a mta3 Bardo.",message,darija_latin,0,legit,hard_negative,T9-HN-MAPS-PIN
+B09-020,"Ab3athtlek vocal 3al WhatsApp fih el détails lkol 3al blasa, asma3ou w 9olli.",message,darija_latin,0,legit,hard_negative,T9-HN-VOICENOTE-SENT
+B09-021,"El 3arboun elli 3titni nrajja3houlek 3al e-Dinar taw 3la 5ater ma jitech, sme7li.",message,darija_latin,0,legit,hard_negative,T9-HN-EDINAR-REFUND
+B09-022,El kalb yetfahem m3a 9tout? 3andi 9attous kbir hadi fel dar.,message,darija_latin,0,legit,easy,T9-L-WITHCATS
+B09-023,"Lgit 9attous abyadh 3inih khodhr fi Bardo 9rib el station, taw 3andi fel dar.",listing,darija_latin,0,legit,easy,T9-L-FOUND-BARDO
+B09-024,"N7eb nji nchouf el kalb 9bal ma nqarrar 3al adoption, waqtech tnajjem?",message,darija_latin,0,legit,easy,T9-L-VISIT
+B09-025,"Y3aychek barcha, el kalb rja3 lel dar, nsaker l'annonce taw.",message,darija_latin,0,legit,easy,T9-L-THANKS-CLOSE
+B09-026,"Daya3 kalbi Simba, berger asmar, fi Menzah 6, ken chceftouh brabi kalmouni.",listing,darija_latin,0,legit,easy,T9-L-LOST-SIMBA
+B09-027,Chnowa yekel el kalb? w 9addech fel nhar? bech nhadher 9bal ma yji 3andi.,message,darija_latin,0,legit,easy,T9-L-FOOD-Q
+B09-028,"Chceft kalb yechbehlou yjri 9rib el stade el bare7, ma 9dertch nal7a9ou.",message,darija_latin,0,legit,easy,T9-L-SIGHTING-STADE
+B09-029,"Ma tfadda3ch, barcha klab yrawhou wa7adhom ba3d chwaya ayem, nchallah.",message,darija_latin,0,legit,easy,T9-L-REASSURE
+B09-030,"Ena sakn fel 7ouma, ken t7eb n3awnek nlawej 3lih ba3d el 5edma fel 3chiya.",message,darija_latin,0,legit,easy,T9-L-HELP-SEARCH
+B09-031,"J'ai dû le mettre en pension trois nuits, 60 DT ; réglez d'abord et je vous le ramène.",message,french,1,upfront_payment,easy,T9-UP-PENSION
+B09-032,L'adoption exige un bon de stérilisation prépayé de 45 DT avant que je vous confie le chien.,message,french,1,fake_fee,easy,T9-FEE-STERIL-VOUCHER
+B09-033,Vous avez droit à un remboursement d'assurance ; saisissez vos coordonnées pour le percevoir : [URL],message,french,1,phishing_link,easy,T9-PH-INSUR-REIMB
+B09-034,"Je suis le comportementaliste mandaté par le refuge ; l'évaluation, 35 DT, est à régler avant la remise.",message,french,1,fake_fee|impersonation,easy,T9-IMP-BEHAVIORIST
+B09-035,"Je dois embarquer, c'est le tout dernier appel, faites le virement maintenant ou je donne le chiot.",message,french,1,fake_fee|pressure,easy,T9-PR-FLIGHT-BOARDING
+B09-036,SERVICES VÉTO MUNICIPAUX 🚨 re-test rage OBLIGATOIRE 3O dt AVANT la remise ‼️ réglez par e-Din@r,message,french,1,fake_fee|impersonation,obfuscated,T9-IMP-MUNIVET
+B09-037,votre @lerte perdu doit être V€RIFIÉE 📧 cliquez et confirmez votre em@il 👉 [URL],message,french,1,phishing_link,obfuscated,T9-PH-ALERT-VERIFY
+B09-038,"Je viens de déposer les photos sur votre WhatsApp, regardez si c'est bien le vôtre.",message,french,0,legit,hard_negative,T9-HN-SENT-WA
+B09-039,"L'appli rame beaucoup chez moi, voici mon numéro [PHONE], un bip et je vous rappelle.",message,french,0,legit,hard_negative,T9-HN-APP-SLOW
+B09-040,"Je vous réglerai la récompense par e-Dinar dès son retour, sans aucun empressement.",message,french,0,legit,hard_negative,T9-HN-REWARD-EDINAR
+B09-041,"Le vétérinaire a mis son carnet de santé en ligne ici [URL], vous pouvez le consulter.",message,french,0,legit,hard_negative,T9-HN-VET-PAGE
+B09-042,"Donnez-moi le WhatsApp de la clinique, je réglerai la facture directement avec eux.",message,french,0,legit,hard_negative,T9-HN-CLINIC-WA
+B09-043,Convient-il à un appartement ? Je n'ai pas de jardin mais je le promène matin et soir.,message,french,0,legit,easy,T9-L-APARTMENT-Q
+B09-044,"Trouvé un chaton roux près de la gare de Sousse, je le garde au chaud en attendant son maître.",listing,french,0,legit,easy,T9-L-FOUND-SOUSSE
+B09-045,"Je vois que l'annonce est marquée résolue, quelle joie, bravo à vous !",message,french,0,legit,easy,T9-L-CONGRATS
+B09-046,A-t-il été vermifugé récemment ? Je veux préparer sa litière et sa gamelle avant.,message,french,0,legit,easy,T9-L-HEALTH-Q
+B09-047,"Je crois avoir aperçu votre chienne ce matin vers le lac, elle filait très vite.",message,french,0,legit,easy,T9-L-SIGHTING-LAC
+B09-048,"Désolé, finalement ce n'est pas le mien, les pattes blanches ne correspondent pas.",message,french,0,legit,easy,T9-L-NOTMINE-PAWS
+B09-049,هاذي مصلحة الكارڤو متاع المطار، قفص الكلب يلزمو 70 دينار مصاريف قبل ما يتسلم.,message,darija_arabic,1,fake_fee|impersonation,easy,T9-IMP-CARGO
+B09-050,التبني يلزمو بون تعقيم مدفوع مسبقا 45 دينار قبل ما نسلمولك الكلب.,message,darija_arabic,1,fake_fee,easy,T9-FEE-STERIL-VOUCHER
+B09-051,نجي نشوفك أما ابعثلي 20 دينار تاكسي توا على D17، راني مفلس وما عنديش باش نجي.,message,darija_arabic,1,upfront_payment,easy,T9-UP-TAXI-BROKE
+B09-052,باش نأكد إنك المالك، اقرالي الكود اللي باش يوصلك في رسالة في الساعة.,message,darija_arabic,1,phishing_link,easy,T9-PH-READ-CODE
+B09-053,تـوا فـمـا 3 عـائـلات عـ الـبـاب 🔥 قـرر فـي 5 دقـايـق وإلا مـشـى الـكـلـب ⏰‼️,message,darija_arabic,1,pressure,obfuscated,T9-PR-AT-DOOR
+B09-054,بعثتلك فيديو قصير للكلب على الواتساب، شوفو وطمني كان هو كلبك.,message,darija_arabic,0,legit,hard_negative,T9-HN-VIDEO-WA
+B09-055,عطيتك نومروي باش نبقاو على تواصل، كي نلقى جديد على الكلب نكلمك.,message,darija_arabic,0,legit,hard_negative,T9-HN-GAVE-NUMBER
+B09-056,نبعثلك المكافأة بمانداه منيت كي يرجع الكلب لداره، ما فماش عجلة.,message,darija_arabic,0,legit,hard_negative,T9-HN-REWARD-MANDAT
+B09-057,جمعية الحي عندها صفحة فيها تصاور الكلاب الملقية [URL]، شوف غادي كان فيه كلبك.,listing,darija_arabic,0,legit,hard_negative,T9-HN-ASSOC-PAGE
+B09-058,لقينا قطوسة صغيرة قرب الجامع في المرسى، نظيفة وجائعة، صاحبها يكلمنا.,listing,darija_arabic,0,legit,easy,T9-L-FOUND-MARSA
+B09-059,الكلب يتفاهم مع الصغار؟ عندي زوز صغار في الدار ونحب نطمئن.,message,darija_arabic,0,legit,easy,T9-L-KIDS-Q
+B09-060,راني نلوج عليه كل نهار في الحومة، ما نقطعش الأمل، إن شاء الله نلقاه.,message,darija_arabic,0,legit,easy,T9-L-SEARCH
+B09-061,خدمات البيطرة البلدية: إعادة فحص السعار إلزامية بـ30 دينارا قبل تسليم الكلب.,message,msa_arabic,1,fake_fee|impersonation,easy,T9-IMP-MUNIVET
+B09-062,يتطلب التبني ورقة التزام موثقة برسم طابع 25 دينارا لدى العدل، تُدفع أولا.,message,msa_arabic,1,fake_fee,easy,T9-FEE-HUISSIER
+B09-063,لك حق في تعويض تأميني، أدخل بياناتك لاستلامه عبر هذا الرابط: [URL],message,msa_arabic,1,phishing_link,easy,T9-PH-INSUR-REIMB
+B09-064,الـمـحـجـز يـغـلـق بـعـد سـاعـة ⏰ ادفـع رسـم الإفـراج الآن وإلا ضـاع الـكـلـب ‼️,message,msa_arabic,1,fake_fee|pressure,obfuscated,T9-OBF-POUND
+B09-065,سأسوّي لك المكافأة عبر e-Dinar فور عودته إلى البيت، دون أي استعجال.,message,msa_arabic,0,legit,hard_negative,T9-HN-REWARD-EDINAR
+B09-066,سجّلت لك رسالة صوتية على واتساب فيها كل تفاصيل المكان، استمع إليها.,message,msa_arabic,0,legit,hard_negative,T9-HN-VOICE-WA
+B09-067,موقع جمعية الحي يعرض صور الكلاب التي عُثر عليها هنا [URL]، تصفّحه.,listing,msa_arabic,0,legit,hard_negative,T9-HN-ASSOC-PAGE
+B09-068,هل القط معقم؟ وهل تلقى تطعيماته؟ أريد استكمال ملف التبني.,message,msa_arabic,0,legit,easy,T9-L-NEUTER-Q
+B09-069,عُثر على كلب أبيض قرب الحديقة في صفاقس، بصحة جيدة، صاحبه يتواصل معي.,listing,msa_arabic,0,legit,easy,T9-L-FOUND-SFAX
+B09-070,شكرا لكم، عاد الكلب إلى البيت سالما، يمكن إغلاق الإعلان الآن.,message,msa_arabic,0,legit,easy,T9-L-THANKS-RETURNED
+B09-071,"Ena comportementaliste mandaté par el refuge, l'évaluation 35 dt lazem 9bal ma na3tiwek el kalb.",message,mixed,1,fake_fee|impersonation,easy,T9-IMP-BEHAVIORIST
+B09-072,"Lazem nkhallas el gardien mta3 el parking elli l9ah, 25 dt, ab3athhom 3al D17 9bal.",message,mixed,1,upfront_payment,easy,T9-UP-PARKING-GUARD
+B09-073,"Bech tadopti lazem t'inscrire fel club mta3na, 30 dt cotisation 9bal b Flouci.",message,mixed,1,fake_fee|impersonation,easy,T9-FEE-CLUB
+B09-074,"Confirmi el trouveur 3al page confiance, connecte-toi hna bech tchouf: [URL]",message,mixed,1,phishing_link,easy,T9-PH-TRUST-PAGE
+B09-075,BATTERIE 2% 🔋 ab3ath el virement FISSA3 9bal ma yet9ta3 el signal ⏰‼️,message,mixed,1,pressure,obfuscated,T9-OBF-BATTERY
+B09-076,r€clame ton rembours€ment 💸 entre carte + code hna 👉 [URL] ‼️ el3ajel,message,mixed,1,phishing_link,obfuscated,T9-OBF-REIMB
+B09-077,"Je t'ai envoyé une capture 3al WhatsApp avec sa marque distinctive, regarde-la.",message,mixed,0,legit,hard_negative,T9-HN-SCREENSHOT-WA
+B09-078,"3tittek numrou fel message privé, 7fdhou, nsonnilek direct ki nousel lel blasa.",message,mixed,0,legit,hard_negative,T9-HN-PRIVATE-NUMBER
+B09-079,"Nab3athlek el récompense 3al Flouci ki yousel el kalb lel dar, 3al rawa7a.",message,mixed,0,legit,hard_negative,T9-HN-REWARD-FLOUCI
+B09-080,Voici le lien de la page Facebook du refuge avec toutes ses photos [URL].,message,mixed,0,legit,hard_negative,T9-HN-FB-PHOTOS
+B09-081,"7attitlek la localisation 3al WhatsApp, c'est juste à côté du café mta3 La Marsa.",message,mixed,0,legit,hard_negative,T9-HN-LOC-SENT
+B09-082,3andkom besoin de jardin lel adoption? n7eb nadopti ama 3andi appartement kbir.,message,mixed,0,legit,easy,T9-L-GARDEN-Q
+B09-083,"Trouvé kalb sghir noir fi l'Ariana, collier rouge, moulah ykallemni, rani nraddou.",listing,mixed,0,legit,easy,T9-L-FOUND-ARIANA
+B09-084,"Chceftou yjri 9rib el Carrefour el bare7, il avait l'air en forme.",message,mixed,0,legit,easy,T9-L-SIGHTING-CARREFOUR
+B09-085,"Sorry ma njemtech nji lyoum, demain soir ça marche pour venir le voir?",message,mixed,0,legit,easy,T9-L-RESCHED
+B09-086,"I'm the building syndic; your cat caused damage to a door, pay 40 DT or I'll file a complaint.",message,english,1,fake_fee|impersonation|pressure,easy,T9-IMP-SYNDIC
+B09-087,Adoption requires a prepaid microchip-registration voucher of 45 DT before I hand him over.,message,english,1,fake_fee,easy,T9-FEE-CHIP-VOUCHER
+B09-088,"I had to pay the parking guard who caught him, 25 DT, send it first on D17 and I'll bring him.",message,english,1,upfront_payment,easy,T9-UP-PARKING-GUARD
+B09-089,verify y0ur l0st-pet @lert 📧 click and confirm your em@il here 👉 [URL] ‼️,message,english,1,phishing_link,obfuscated,T9-PH-ALERT-VERIFY
+B09-090,I dropped a short clip of her on your WhatsApp so you can be sure it's Nala.,message,english,0,legit,hard_negative,T9-HN-CLIP-WA
+B09-091,Saved your number; I'll text you the second I spot him near the market.,message,english,0,legit,hard_negative,T9-HN-WILL-TEXT
+B09-092,"I'll send the 150 DT reward on D17 as soon as he's back with you, no rush at all.",message,english,0,legit,hard_negative,T9-HN-REWARD-D17-AFTER
+B09-093,"Here's the rescue's page with all the found animals [URL], he might be listed on it.",listing,english,0,legit,hard_negative,T9-HN-RESCUE-PAGE
+B09-094,Is he okay with cats? We have a senior cat who's pretty mellow.,message,english,0,legit,easy,T9-L-CATS-SENIOR
+B09-095,"Found a small white dog near the Monastir marina, he's with me and well fed.",listing,english,0,legit,easy,T9-L-FOUND-MONASTIR
+B09-096,How is she with strangers? We get a lot of visitors at home.,message,english,0,legit,easy,T9-L-STRANGERS-Q
+B09-097,"I walk by the park every night, I'll keep an eye out and shout if I see her.",message,english,0,legit,easy,T9-L-WATCH
+B09-098,Could we come to meet him Saturday afternoon? We'd bring the kids along.,message,english,0,legit,easy,T9-L-VISIT-SAT
+B09-099,"Sorry, false alarm, the tail is a different colour from the one in your photo.",message,english,0,legit,easy,T9-L-NOTMINE-TAIL
+B09-100,"So relieved, Rex is back home safe, you can take the listing down. Thank you!",message,english,0,legit,easy,T9-L-THANKS-RELIEVED

@@ -10,6 +10,7 @@ backend/uploads/*
 !backend/uploads/.gitkeep
 frontend/.env.local
 backend/models/*.onnx
+!backend/models/m4_age.onnx
 backend/models/*.onnx.data
 
 # Node

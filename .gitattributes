@@ -1,0 +1,5 @@
+# Model weights are binary: never convert line endings or diff them as text.
+*.onnx binary
+*.onnx.data binary
+*.pt binary
+*.pth binary

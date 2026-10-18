@@ -2,7 +2,7 @@
 
 Usage: python export_onnx.py --ckpt models/m4_age.pt --out models
 Writes models/m4_age.onnx and models/m4_age.json (preprocessing + threshold).
-Both files go to the backend; the .onnx is NOT committed to git.
+Both files go to backend/models/ and are committed with the code (the .onnx is ~16 MB).
 """
 from __future__ import annotations
 

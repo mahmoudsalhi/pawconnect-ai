@@ -342,3 +342,6 @@ p { margin: 0; }
 @media (max-width: 880px) {
   .dash-aside { height: auto; position: static; border-right: 0; border-bottom: 1px solid var(--line); }
 }
+
+/* M7 search zones: one pixel per cell, smoothed by the browser when scaled up */
+.zone-overlay { image-rendering: auto; }

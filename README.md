@@ -83,6 +83,7 @@ Every AI call goes through one interface: `backend/app/ai/base.py` → `AIProvid
 | M4 text tagger | `suggest_tags(text)` | report wizard tags |
 | M5 photo score | `score_photo(image)` | report wizard, stored per photo |
 | M6 segmentation | `remove_background(image)` | report wizard preview (return a cut-out image or `None`) |
+| M7 location | `predict_location(query)` | "Where to search" map on lost pets' pages (`/api/ai/location/{id}`) |
 
 The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic placeholder results. To swap in real models:
 
@@ -119,6 +120,17 @@ The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic pla
 4. If the M2 service is down, publishing a report still works (auto-matching is skipped) and `/api/ai/match` answers `503`.
 
 The seed data includes the design's hand-picked match scores (Mishmish ↔ Ginger 87%, Rex ↔ Kahwa 64%, …) so the demo looks like the design until real models produce their own.
+
+## M7: where to search for a lost pet
+
+Lost pets' pages show the chance of being found alive and how long it may take, and search zones (50 / 80 / 95% likely), from the M7 models in `ml/m7_location/` (see its README for the dataset, training and test results). Unlike M1–M6, `AIProvider.predict_location` has a working default: the bundled model.
+
+```powershell
+cd backend
+.\.venv\Scripts\python -m pip install -r requirements-ml.txt   # numpy, scipy, pandas, lightgbm
+```
+
+Without these libraries the endpoint answers 503 and the page simply hides the map. M7 covers Grand Tunis, Sousse, Sfax and Nabeul–Hammamet, for cats and dogs. It is **experimental**: it was trained on simulated cases and should be retrained on real reunions. It loads about 400 MB of map grids into memory on first use.
 
 ## Notes for production
 

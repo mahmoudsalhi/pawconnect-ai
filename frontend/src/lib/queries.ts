@@ -8,6 +8,7 @@ import {
   type Dashboard,
   type InboxMessage,
   type InsightRow,
+  type LocationPrediction,
   type Notification,
   type Pet,
   type PetDetail,
@@ -28,6 +29,16 @@ export const usePet = (id: number) =>
 
 export const useSimilar = (id: number) =>
   useQuery({ queryKey: ['similar', id], queryFn: () => api.get<Pet[]>(`/api/pets/${id}/similar`), enabled: Number.isFinite(id) })
+
+// M7 search zones. Only asked for open lost reports; 4xx/503 answers mean "not available", so no retries.
+export const useLocationPrediction = (id: number, enabled: boolean) =>
+  useQuery({
+    queryKey: ['location', id],
+    queryFn: () => api.get<LocationPrediction>(`/api/ai/location/${id}`),
+    enabled: enabled && Number.isFinite(id),
+    retry: false,
+    staleTime: 30 * 60_000,
+  })
 
 export const useShelters = () => useQuery({ queryKey: ['shelters'], queryFn: () => api.get<Shelter[]>('/api/shelters'), staleTime: 300_000 })
 

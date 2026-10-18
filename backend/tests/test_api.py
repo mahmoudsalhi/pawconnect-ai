@@ -1,3 +1,5 @@
+import pytest
+
 from io import BytesIO
 
 from PIL import Image
@@ -279,3 +281,27 @@ def test_owner_can_dismiss_match(client, demo, newbie):
     assert "Choco" not in [h["pet"]["name"] for h in r["results"]]
     dash = client.get("/api/me/dashboard", headers=demo).json()
     assert all(not m["is_new"] for m in dash["matches"])  # running the match marks results as seen
+
+
+def _pet_id(client, name, status):
+    items = client.get("/api/pets", params={"status": status, "page_size": 100}).json()["items"]
+    return next(p["id"] for p in items if p["name"] == name)
+
+
+def test_location_zones_for_open_lost_reports(client):
+    r = client.get(f"/api/ai/location/{_pet_id(client, 'Rex', 'lost')}")
+    if r.status_code == 503:
+        pytest.skip("M7 model or libraries not installed (backend/requirements-ml.txt)")
+    assert r.status_code == 200, r.text
+    d = r.json()
+    assert [z["share"] for z in d["zones"]] == [50, 80, 95]
+    assert all(z["cells"] for z in d["zones"])
+    # Zones stay around La Marsa, where Rex was last seen.
+    lat, lng = d["zones"][0]["cells"][0]
+    assert abs(lat - 36.878) < 0.05 and abs(lng - 10.325) < 0.05
+    assert "how it got lost" in d["missing_inputs"]
+    rec = d["recovery"]
+    assert rec is not None and 0 <= rec["within_24h"] <= rec["within_7d"] <= rec["found_alive"] <= 1
+
+    assert client.get(f"/api/ai/location/{_pet_id(client, 'Kahwa', 'found')}").status_code == 409
+    assert client.get("/api/ai/location/999999").status_code == 404

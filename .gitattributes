@@ -3,3 +3,5 @@
 *.onnx.data binary
 *.pt binary
 *.pth binary
+# LightGBM models are saved as text but must be byte-exact: CRLF conversion makes them unloadable.
+*_lgbm.txt -text -diff

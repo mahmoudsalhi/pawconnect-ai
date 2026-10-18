@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     m2_url: str = "http://127.0.0.1:8002"
     m2_timeout: float = 20.0
 
+    # M7 (lost-pet location): folder with the trained model and map grids, relative to backend/.
+    m7_dir: str = "../ml/m7_location"
+
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782
     home_lng: float = 10.3247

@@ -1,7 +1,9 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { useState, type ChangeEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { BreedBars, Icon, Seg, Spinner } from '../components/ui'
-import { api, type BreedInfo, type BreedResult } from '../lib/api'
+import { api, type BreedInfo, type BreedResult, type LookalikeResult } from '../lib/api'
+import { img } from '../lib/format'
 import { useToast } from '../lib/toast'
 
 type Species = 'Any' | 'Dog' | 'Cat'
@@ -19,8 +21,12 @@ export default function BreedId() {
   const [uploading, setUploading] = useState(false)
   const info = useQuery({ queryKey: ['breed-info'], queryFn: () => api.get<BreedInfo>('/api/ai/breed/info'), staleTime: Infinity })
   const run = useMutation({ mutationFn: (body: { photos: string[]; species: Species }) => api.post<BreedResult>('/api/ai/breed', body) })
+  const looks = useMutation({ mutationFn: (body: { photos: string[]; species: Species }) => api.post<LookalikeResult>('/api/ai/breed/lookalikes', body) })
 
-  const identify = (url: string, s: Species) => run.mutate({ photos: [url], species: s })
+  const identify = (url: string, s: Species) => {
+    run.mutate({ photos: [url], species: s })
+    looks.mutate({ photos: [url], species: s })
+  }
 
   async function onFile(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
@@ -96,6 +102,32 @@ export default function BreedId() {
               </>
             )}
           </div>
+
+          {(looks.isPending || (looks.data?.results.length ?? 0) > 0) && (
+            <div className="card" style={{ padding: 'clamp(18px,2.4vw,26px)', borderRadius: 22 }}>
+              <div className="wrap-row" style={{ gap: 8, alignItems: 'center', marginBottom: 4 }}>
+                <Icon name="pets" size={20} style={{ color: 'var(--rust)' }} />
+                <span style={{ fontSize: 16, fontWeight: 800 }}>Look-alikes up for adoption</span>
+                <span className="demo-tag">M1 · IMAGE FEATURES</span>
+              </div>
+              <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.5, margin: '0 0 14px' }}>Shelter pets whose photos look most like yours: coat, colour and face shape, compared by the same image model.</p>
+              {looks.isPending && <div className="row" style={{ gap: 10, color: 'var(--muted)', fontSize: 14 }}><Spinner variant="teal" />Looking through the adoption listings…</div>}
+              {!looks.isPending && looks.data && (
+                <div className="col" style={{ gap: 10 }}>
+                  {looks.data.results.map(({ pet, similarity }) => (
+                    <Link key={pet.id} to={`/pets/${pet.id}`} className="row" style={{ gap: 12, padding: 8, borderRadius: 14, border: '1px solid var(--line)', background: '#fff', alignItems: 'center' }}>
+                      <img src={img(pet.photos[0], 128, 128)} alt={pet.name} loading="lazy" style={{ width: 64, height: 64, borderRadius: 10, objectFit: 'cover', flex: 'none' }} />
+                      <div style={{ minWidth: 0, flex: 1 }}>
+                        <div style={{ fontSize: 15, fontWeight: 800 }}>{pet.name}</div>
+                        <div style={{ fontSize: 13, color: 'var(--muted)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{pet.breed || pet.species} · {pet.age_label} · {pet.city}</div>
+                      </div>
+                      <span className="mono nowrap" style={{ padding: '4px 9px', borderRadius: 999, background: 'var(--teal-soft)', color: 'var(--teal-dd)', fontSize: 12, fontWeight: 700 }}>{similarity}% alike</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
           <div className="card" style={{ padding: 'clamp(18px,2.4vw,26px)', borderRadius: 22 }}>
             <div style={{ fontSize: 15, fontWeight: 800, marginBottom: 6 }}>Breeds the model knows ({info.data?.breeds.length ?? 37})</div>

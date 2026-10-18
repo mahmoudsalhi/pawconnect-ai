@@ -427,6 +427,16 @@ class BreedOut(BaseModel):
     predictions: list[BreedGuess]
 
 
+class LookalikeHit(BaseModel):
+    pet: PetOut
+    similarity: int  # cosine similarity of the M1 image features, as a percentage
+
+
+class LookalikeOut(BaseModel):
+    model: str
+    results: list[LookalikeHit]
+
+
 class BreedInfoOut(BaseModel):
     model: str
     dataset: str

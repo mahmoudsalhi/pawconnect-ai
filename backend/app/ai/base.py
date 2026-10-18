@@ -261,6 +261,11 @@ class AIProvider(ABC):
         None means the provider has no age model (the API then returns no suggestion)."""
         return None
 
+    def look_signature(self, images: list[ImageInput]) -> list[float] | None:
+        """How the animal looks, as an L2-normalised vector averaged over its photos (M1 look-alikes).
+        Not abstract; None means the provider has no image model (the API then returns no look-alikes)."""
+        return None
+
     def detect_scam(self, text: str) -> ScamAssessment:
         """Scam warning level and reasons for a message or listing text."""
 

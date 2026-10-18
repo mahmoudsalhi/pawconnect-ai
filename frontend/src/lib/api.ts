@@ -181,7 +181,12 @@ export interface MatchRun {
   area_lat: number
   area_lng: number
   signature: number[]
+  signature_dim: number
   results: { pet: Pet; score: number; distance_from_area: number }[]
+}
+
+export interface AIInfo {
+  provider: string
 }
 
 export interface Stats {

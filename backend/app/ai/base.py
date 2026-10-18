@@ -8,7 +8,7 @@ your own models, subclass ``AIProvider``, implement the methods you have models 
 
 Model map (matches the labels shown in the UI):
     M1  predict_breed       breed identification (CNN, Oxford-IIIT Pet)
-    M2  embed / similarity  lost & found photo matching (Siamese CNN, PetFinder pairs)
+    M2  embed / similarity  lost & found photo matching (ArcFace embedding CNN, DogFaceNet)
     M3  adoption_speed      adoption speed class 0-4 (XGBoost, PetFinder adoption)
     M4  suggest_tags        listing text tagging (TF-IDF + SVM, PetFinder text)
     M5  score_photo         photo engagement score (CNN, PetFinder Pawpularity)
@@ -20,6 +20,13 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from collections.abc import Callable
 from dataclasses import dataclass, field
+
+
+class ModelUnavailable(RuntimeError):
+    """A provider raises this when its model backend can't be reached (e.g. the M2 service is down).
+
+    Callers skip AI matching or answer 503 instead of storing a made-up score.
+    """
 
 
 @dataclass(frozen=True)

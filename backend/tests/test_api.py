@@ -201,7 +201,9 @@ def test_ai_match_by_photo_and_tags(client):
     r = client.post("/api/ai/match", json={"photo": photo, "species": "Dog", "status": "both", "area": "marsa",
                                            "radius": 300, "threshold": 0})
     assert r.status_code == 200 and all(h["pet"]["species"] == "Dog" for h in r.json()["results"])
-    tags = client.post("/api/ai/tags", json={"text": "Very friendly, neutered, wears a blue collar"}).json()
+    assert len(r.json()["signature"]) == 48 and r.json()["signature_dim"] == 128  # demo embeddings are 128-d
+    assert client.get("/api/ai/info").json() == {"provider": "demo"}
+    tags =client.post("/api/ai/tags", json={"text": "Very friendly, neutered, wears a blue collar"}).json()
     assert {t["label"] for t in tags} == {"Friendly", "Neutered / spayed", "Wears a collar"}
     a = client.post("/api/ai/analyze", json={"photos": [photo], "species": "Cat"}).json()
     assert len(a["breeds"]) == 3 and a["quality"][0]["score"] > 0

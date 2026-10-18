@@ -78,7 +78,7 @@ Every AI call goes through one interface: `backend/app/ai/base.py` → `AIProvid
 | Model | Method | Used by |
 | --- | --- | --- |
 | M1 breed CNN | `predict_breed(images, species)` | report wizard, new reports |
-| M2 Siamese matcher | `embed(image)`, `similarity(query, candidate)` | `/api/ai/match`, auto-matching on publish |
+| M2 photo matcher (ArcFace embeddings) | `embed(image)`, `similarity(query, candidate)` | `/api/ai/match`, auto-matching on publish |
 | M3 adoption speed | `adoption_speed(features)` | shelter insights |
 | M4 text tagger | `suggest_tags(text)` | report wizard tags |
 | M5 photo score | `score_photo(image)` | report wizard, stored per photo |
@@ -90,6 +90,15 @@ The built-in `DemoProvider` (`backend/app/ai/demo.py`) returns deterministic pla
 2. Images arrive as `ImageInput(url, path)`. `path` points at the file in `backend/uploads/` for user uploads; seed photos are remote URLs.
 3. Set `AI_PROVIDER=app.ai.models:PawModels` in `backend/.env` and set `name = "your-model-id"` on the class (it's stored next to cached match scores).
 4. Match scores are cached in the `match_results` table. After changing models, clear it (`TRUNCATE match_results;`) so scores are recomputed.
+
+### M2 is already wired in
+
+`backend/app/ai/models.py` (`PawModels`) replaces `embed` and `similarity` with the trained M2 photo matcher; everything else stays a placeholder. The model itself runs as a small service in `ml/photo_matching/` (see its README for training, evaluation and setup).
+
+1. Put the trained model at `ml/photo_matching/checkpoints/m2.pt` and create `ml/photo_matching/.venv` (`pip install -r requirements.txt`).
+2. In `backend/.env` set `AI_PROVIDER=app.ai.models:PawModels` (and `M2_URL` if the service isn't on `http://127.0.0.1:8002`).
+3. Start everything with `dev.ps1` (it also starts the M2 service when the model file exists), then clear the cached scores: `TRUNCATE match_results;`
+4. If the M2 service is down, publishing a report still works (auto-matching is skipped) and `/api/ai/match` answers `503`.
 
 The seed data includes the design's hand-picked match scores (Mishmish ↔ Ginger 87%, Rex ↔ Kahwa 64%, …) so the demo looks like the design until real models produce their own.
 

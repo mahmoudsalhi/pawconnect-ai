@@ -7,6 +7,9 @@ for _line in (Path(__file__).resolve().parent.parent / ".env").read_text(encodin
     if _key.strip() == "TEST_DATABASE_URL" and _value.strip():
         os.environ["DATABASE_URL"] = _value.strip()
 
+# Tests assume the placeholder models (their seeded scores), whatever AI_PROVIDER says in .env.
+os.environ["AI_PROVIDER"] = "demo"
+
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 

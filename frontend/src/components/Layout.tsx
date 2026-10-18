@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useAuth } from '../lib/auth'
 import { firstName, initials } from '../lib/format'
-import { useNotifications } from '../lib/queries'
+import { useAIInfo, useNotifications } from '../lib/queries'
 import { Icon, LogoMark } from './ui'
 
 const NAV = [
@@ -69,6 +69,7 @@ function Header() {
 }
 
 function Footer() {
+  const { data: ai } = useAIInfo()
   return (
     <footer className="site-footer">
       <div className="wrap">
@@ -95,7 +96,7 @@ function Footer() {
         </div>
         <div className="wrap-row between" style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,.1)', gap: 12, fontSize: 13, color: 'var(--muted-2)' }}>
           <span>© 2026 PawConnect AI · Tunis</span>
-          <span>AI results are demo outputs until our models are trained and evaluated.</span>
+          {ai && <span>{ai.provider === 'demo' ? 'AI results are demo outputs until our models are trained and evaluated.' : 'Photo matching (M2) uses a trained model. The other AI features are still demo outputs.'}</span>}
         </div>
       </div>
     </footer>

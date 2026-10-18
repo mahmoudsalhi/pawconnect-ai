@@ -381,8 +381,13 @@ class MatchRunOut(BaseModel):
     area_label: str
     area_lat: float
     area_lng: float
-    signature: list[float]
+    signature: list[float]  # first 48 values, for the UI bars
+    signature_dim: int  # full length of the embedding the signature was cut from
     results: list[MatchHit]
+
+
+class AIInfoOut(BaseModel):
+    provider: str  # AIProvider.name: "demo" for placeholder outputs, otherwise the trained model's id
 
 
 class StatsOut(BaseModel):

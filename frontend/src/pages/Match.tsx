@@ -7,7 +7,7 @@ import { Icon, Seg, Spinner, StatusBadge } from '../components/ui'
 import { api, type MatchRun, type Pet } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { ago, fmtKm, img } from '../lib/format'
-import { usePet, usePets, useRequireAuth } from '../lib/queries'
+import { useAIInfo, usePet, usePets, useRequireAuth } from '../lib/queries'
 import { useToast } from '../lib/toast'
 
 const AREAS = [['ennasr', 'Ennasr, Ariana'], ['marsa', 'La Marsa, Tunis'], ['centre', 'Tunis centre'], ['sousse', 'Sousse'], ['sfax', 'Sfax']] as const
@@ -64,6 +64,7 @@ export default function Match() {
 
   const params = { pet_id: photo ? null : petId, photo, species, status, area, radius: settled.radius, threshold: settled.threshold }
   const ready = !!(photo || (petId && qp))
+  const { data: aiInfo } = useAIInfo()
   const run = useQuery({
     queryKey: ['match', params],
     queryFn: () => api.post<MatchRun>('/api/ai/match', params),
@@ -130,6 +131,8 @@ export default function Match() {
 
   const qImg = photo ?? (qp ? img(qp.photos[0], 1100, 1000) : '')
   const sig = run.data?.signature ?? []
+  const model = run.data?.model ?? aiInfo?.provider
+  const isDemo = !model || model === 'demo'
   const areaInfo = run.data ?? { area_lat: 36.8625, area_lng: 10.1647, area_label: AREAS.find((a) => a[0] === area)?.[1] ?? '' }
 
   return (
@@ -138,7 +141,7 @@ export default function Match() {
         <div className="wrap" style={{ paddingTop: 44, paddingBottom: 48 }}>
           <div className="wrap-row between" style={{ alignItems: 'flex-end', gap: 20, marginBottom: 28 }}>
             <div style={{ maxWidth: 680 }}>
-              <div className="row mono" style={{ gap: 8, fontSize: 12, color: 'var(--mint)', marginBottom: 12 }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--mint)' }} />M2 · SIAMESE CNN · {run.data?.model === 'demo' || !run.data ? 'DEMO MODE' : run.data.model.toUpperCase()}</div>
+              <div className="row mono" style={{ gap: 8, fontSize: 12, color: 'var(--mint)', marginBottom: 12 }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--mint)' }} />M2 · SIAMESE CNN · {isDemo ? 'DEMO MODE' : model.toUpperCase()}</div>
               <h1 style={{ margin: '0 0 10px', fontSize: 'clamp(34px,4vw,56px)', fontWeight: 800, letterSpacing: '-.04em', lineHeight: 1 }}>AI Lost Pet Matching</h1>
               <p style={{ fontSize: 16, lineHeight: 1.55, color: '#AEBBB8' }}>Upload a photo or pick a report, and we compare it with open reports nearby. Results are ranked by visual similarity.</p>
             </div>
@@ -174,7 +177,7 @@ export default function Match() {
                     <span key={i} style={{ flex: 1, height: `${18 + v * 82}%`, background: v > 0.7 ? '#7FF0DE' : v > 0.4 ? '#4FB3A5' : '#2E6E67', borderRadius: 1, opacity: sig.length ? 1 : 0.3 }} />
                   ))}
                 </div>
-                <div className="mono nowrap" style={{ fontSize: 11, color: '#AEBBB8' }}>128-d</div>
+                <div className="mono nowrap" style={{ fontSize: 11, color: '#AEBBB8' }}>{run.data ? `${run.data.signature_dim}-d` : '—'}</div>
               </div>
             </div>
 
@@ -226,7 +229,7 @@ export default function Match() {
       <section className="wrap" style={{ paddingTop: 32, paddingBottom: 88 }}>
         <div className="note" style={{ marginBottom: 28, alignItems: 'flex-start' }}>
           <Icon name="verified_user" size={22} />
-          <div><strong>These are possible matches, not confirmed identities.</strong> Similarity is calculated from the photo alone. Before arranging a handover, compare collars, markings and size, and ask for vet records or a microchip scan. All scores shown are demo outputs while the model is being trained.</div>
+          <div><strong>These are possible matches, not confirmed identities.</strong> Similarity is calculated from the photo alone. Before arranging a handover, compare collars, markings and size, and ask for vet records or a microchip scan. {isDemo ? 'All scores shown are demo outputs while the model is being trained.' : `Scores are computed by the M2 model (${model}), which was trained on dog photos only, so scores for cats are less reliable.`}</div>
         </div>
         <div className="wrap-row" style={{ gap: 24, alignItems: 'flex-start' }}>
           <div className="col" style={{ flex: '1.3 1 480px', minWidth: 0, gap: 14 }}>

@@ -3,6 +3,7 @@ import { useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {
   api,
+  type AIInfo,
   type Application,
   type Dashboard,
   type InsightRow,
@@ -33,6 +34,7 @@ export const useInsights = (slug: string) =>
   useQuery({ queryKey: ['insights', slug], queryFn: () => api.get<InsightRow[]>(`/api/shelters/${slug}/insights`) })
 
 export const useStats = () => useQuery({ queryKey: ['stats'], queryFn: () => api.get<Stats>('/api/stats'), staleTime: 60_000 })
+export const useAIInfo = () => useQuery({ queryKey: ['ai-info'], queryFn: () => api.get<AIInfo>('/api/ai/info'), staleTime: 5 * 60_000 })
 
 export function useDashboard() {
   const { user } = useAuth()

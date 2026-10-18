@@ -10,7 +10,7 @@ from functools import lru_cache
 
 import numpy as np
 
-from .face_engine import MODEL_DIR, FaceEngine, FaceError, FaceResult, cosine, decode_image
+from .face_engine import MODEL_DIR, MODELS, FaceEngine, FaceError, FaceResult, cosine, decode_image, download_models
 
 log = logging.getLogger(__name__)
 
@@ -26,6 +26,10 @@ class FaceUnavailable(Exception):
 @lru_cache
 def get_engine() -> FaceEngine | None:
     try:
+        # The ONNX files are gitignored: fetch them (checksum-verified) the first time they're needed.
+        if not all((MODEL_DIR / name).exists() for name in MODELS):
+            log.info("Face models missing, downloading them to %s", MODEL_DIR)
+            download_models()
         engine = FaceEngine()
         log.info("Face engine loaded (%s)", MODEL_VERSION)
         return engine

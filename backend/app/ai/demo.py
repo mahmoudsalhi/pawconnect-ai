@@ -8,6 +8,7 @@ import re
 from . import compatibility
 from .base import (
     AdoptionSpeed,
+    AgePrediction,
     AIProvider,
     BreedPrediction,
     CompatMatch,
@@ -149,3 +150,7 @@ class DemoProvider(AIProvider):
         wish = _words(answers.ideal)
         ideal = [(min(1.0, len(wish & _words(p.text)) / 3), "") for p in pets] if wish else None
         return compatibility.score(answers, pets, traits, ideal)
+
+    def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
+        # No real guess: "not sure" with 0% so the report form never pre-selects a made-up age.
+        return AgePrediction(group=None, confidence=0)

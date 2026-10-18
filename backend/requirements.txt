@@ -15,3 +15,4 @@ httpx>=0.28
 numpy>=2.2
 xgboost>=3.0
 sentence-transformers>=5.0  # M9: pulls in torch (CPU build on Windows)
+onnxruntime>=1.20  # M4 age model

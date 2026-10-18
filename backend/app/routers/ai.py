@@ -11,8 +11,8 @@ from ..ai.compatibility import pet_text
 from ..deps import DB, CurrentUser, OptionalUser
 from ..geo import AREAS, km
 from ..models import MatchResult, Pet, PetStatus
-from ..schemas import (AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut, CompatHit, CompatIn,
-                       CompatOut, CompatReasonOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
+from ..schemas import (AgeOut, AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut, CompatHit,
+                       CompatIn, CompatOut, CompatReasonOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
 from ..services.matching import image_input, open_reports, scores_for_pet, scores_for_photo
 from ..services.serialize import favorite_ids, pet_out
 
@@ -21,14 +21,16 @@ router = APIRouter(prefix="/api/ai", tags=["ai"])
 
 @router.post("/analyze", response_model=AnalyzeOut)
 def analyze_photos(data: AnalyzeIn):
-    """Breed suggestion (M1), photo quality (M5) and background removal (M6) for report photos."""
+    """Breed suggestion (M1), photo quality (M5), background removal (M6) and age group for report photos."""
     provider = get_provider()
     images = [image_input(u) for u in data.photos]
     breeds = provider.predict_breed(images, data.species)
     quality = [{"url": i.url, **provider.score_photo(i).__dict__} for i in images]
     cutout = provider.remove_background(images[0])
+    age = provider.predict_age(images, data.species)
     return AnalyzeOut(model=provider.name, breeds=[[b.label, b.confidence] for b in breeds], quality=quality,
-                      cutout=cutout.url if cutout else None)
+                      cutout=cutout.url if cutout else None,
+                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None)
 
 
 @router.post("/breed", response_model=BreedOut)

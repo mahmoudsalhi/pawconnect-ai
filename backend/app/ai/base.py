@@ -61,6 +61,12 @@ class AdoptionSpeed:
 
 
 @dataclass(frozen=True)
+class AgePrediction:
+    group: str | None  # "young" | "adult" | "senior", or None when the model is not sure
+    confidence: int  # percent, 0-100 (0 = no real prediction)
+
+
+@dataclass(frozen=True)
 class MatchSubject:
     """What the matcher knows about one side of a comparison."""
 
@@ -168,3 +174,8 @@ class AIProvider(ABC):
     def compatibility(self, answers: Questionnaire, pets: list[CompatPet]) -> list[CompatMatch]:
         """M9: compatibility of each pet with an adopter's questionnaire, best first. Pets of an excluded
         species are left out."""
+
+    def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
+        """Age group from a report's photos. Not abstract, so existing providers keep working;
+        None means the provider has no age model (the API then returns no suggestion)."""
+        return None

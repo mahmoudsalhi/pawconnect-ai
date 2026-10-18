@@ -214,6 +214,7 @@ export interface AnalyzeResult {
   breeds: [string, number][]
   quality: { url: string; score: number; tip: string }[]
   cutout: string | null
+  age?: { group: 'young' | 'adult' | 'senior' | null; confidence: number } | null
 }
 
 export interface MatchRun {

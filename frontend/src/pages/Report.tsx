@@ -21,6 +21,7 @@ interface Draft {
   breedUsed: boolean
   sex: 'Male' | 'Female' | 'Unknown'
   age: string
+  ageTouched: boolean
   size: 'Small' | 'Medium' | 'Large'
   color: string
   chip: 'Yes' | 'No' | 'Unknown'
@@ -43,10 +44,13 @@ const DRAFT_KEY = 'pc_report_draft'
 const today = () => new Date().toISOString().slice(0, 10)
 const blank = (): Draft => ({
   step: 1, kind: 'lost', photos: [], sample: false, bg: false, name: '', species: 'Dog', breed: '', breedUsed: false, sex: 'Male',
-  age: 'Adult (1–7 years)', size: 'Medium', color: '', chip: 'Unknown', desc: '', accepted: [], dismissed: [], pin: null, address: '',
+  age: 'Adult (1–7 years)', ageTouched: false, size: 'Medium', color: '', chip: 'Unknown', desc: '', accepted: [], dismissed: [], pin: null, address: '',
   date: today(), time: '19:30', cname: '', phone: '', email: '', contact: 'Phone call', showPhone: false, consent: false,
 })
 const LABELS = ['Type', 'Photos', 'Details', 'Location', 'Contact', 'Review']
+type AgeGroup = 'young' | 'adult' | 'senior'
+const AGE_LABEL: Record<AgeGroup, string> = { young: 'Puppy / kitten (under 1 year)', adult: 'Adult (1–7 years)', senior: 'Senior (8+ years)' }
+const AGE_SHORT: Record<AgeGroup, string> = { young: 'Puppy / kitten', adult: 'Adult', senior: 'Senior' }
 const SAMPLES: Record<Kind, string> = { lost: '1543466835-00a7907e9de1', found: '1561037404-61cd46aa615b' }
 const CROPS = ['', '?crop=focalpoint&fp-x=.5&fp-y=.4&fp-z=1.7', '?crop=focalpoint&fp-x=.32&fp-y=.55&fp-z=1.4']
 const MAP_CENTER: [number, number] = [36.845, 10.24]
@@ -149,7 +153,13 @@ export default function Report() {
     let alive = true
     setAnalyzing(true)
     api.post<AnalyzeResult>('/api/ai/analyze', { photos: r.photos, species: r.species === 'Other' ? 'Dog' : r.species })
-      .then((a) => alive && setAi(a))
+      .then((a) => {
+        if (!alive) return
+        setAi(a)
+        // Pre-select the predicted age group, but never over an age the user picked themselves.
+        const group = a.age?.group
+        if (group && r.species !== 'Other') setR((s) => (s.ageTouched ? s : { ...s, age: AGE_LABEL[group] }))
+      })
       .catch(() => alive && setAi(null))
       .finally(() => alive && setAnalyzing(false))
     return () => {
@@ -251,6 +261,7 @@ export default function Report() {
 
   const breeds = ai?.breeds ?? []
   const topBreed = breeds[0]?.[0]
+  const aiAge = r.species !== 'Other' && !analyzing ? ai?.age : null
   const breedUsed = r.breedUsed && r.breed === topBreed
   const quality = ai?.quality ?? []
   const avg = quality.length ? Math.round(quality.reduce((s, q) => s + q.score, 0) / quality.length) : 0
@@ -405,9 +416,15 @@ export default function Report() {
                   <div><span className="field-label">Sex</span><Seg value={r.sex} onChange={(v) => set({ sex: v })} options={opt<Draft['sex']>(['Male', 'Male'], ['Female', 'Female'], ['Unknown', 'Not sure'])} /></div>
                   <div><span className="field-label">Size</span><Seg value={r.size} onChange={(v) => set({ size: v })} options={opt<Draft['size']>(['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'])} /></div>
                   <label className="field"><span className="field-label">Age</span>
-                    <select className="select" value={r.age} onChange={(e) => set({ age: e.target.value })}>
+                    <select className="select" value={r.age} onChange={(e) => set({ age: e.target.value, ageTouched: true })}>
                       {['Puppy / kitten (under 1 year)', 'Adult (1–7 years)', 'Senior (8+ years)', 'Not sure'].map((a) => <option key={a}>{a}</option>)}
-                    </select></label>
+                    </select>
+                    {aiAge && (
+                      <span className="row" style={{ gap: 6, marginTop: 8, fontSize: 13, color: 'var(--muted)' }}>
+                        <Icon name="auto_awesome" size={16} style={{ color: 'var(--teal)' }} />
+                        {aiAge.group ? `AI suggests: ${AGE_SHORT[aiAge.group]} (${aiAge.confidence}%)` : 'AI isn’t sure about the age. Please choose.'}
+                      </span>
+                    )}</label>
                   <label className="field"><span className="field-label">Main colour</span>
                     <input className={`input${errors.color ? ' invalid' : ''}`} value={r.color} onChange={(e) => set({ color: e.target.value })} placeholder="e.g. Tricolour, orange tabby" />
                     <FieldError msg={errors.color} /></label>

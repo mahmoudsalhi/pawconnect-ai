@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { FaceLoginModal } from '../components/FaceLogin'
 import { Logo } from '../components/Layout'
 import { FieldError, Icon, Seg, Spinner } from '../components/ui'
 import { ApiError } from '../lib/api'
 import { useAuth } from '../lib/auth'
+import { cameraSupported } from '../lib/face'
 import { img } from '../lib/format'
 import { useToast } from '../lib/toast'
 
@@ -27,7 +29,7 @@ function strength(pw: string) {
 }
 
 export default function Auth({ mode: initial }: { mode: Mode }) {
-  const { login, register } = useAuth()
+  const { login, signInWithToken, register } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
   const toast = useToast()
@@ -37,6 +39,7 @@ export default function Auth({ mode: initial }: { mode: Mode }) {
   const [showPw, setShowPw] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [loading, setLoading] = useState(false)
+  const [faceOpen, setFaceOpen] = useState(false)
   const reg = mode === 'register'
 
   const set = <K extends keyof typeof f>(k: K, v: (typeof f)[K]) => {
@@ -75,6 +78,12 @@ export default function Auth({ mode: initial }: { mode: Mode }) {
     } finally {
       setLoading(false)
     }
+  }
+
+  const openFaceLogin = () => {
+    if (!EMAIL_RX.test(f.email)) return setErrors({ email: 'Enter your email first, then sign in with your face.' })
+    setErrors({})
+    setFaceOpen(true)
   }
 
   const st = strength(f.password)
@@ -178,6 +187,20 @@ export default function Auth({ mode: initial }: { mode: Mode }) {
               {loading ? <Spinner /> : reg ? 'Create account' : 'Sign in'}
             </button>
           </form>
+          {!reg && cameraSupported() && (
+            <button type="button" className="btn btn-outline btn-lg" disabled={loading} onClick={openFaceLogin}>
+              <Icon name="face" />Sign in with your face (AI)
+            </button>
+          )}
+          {faceOpen && (
+            <FaceLoginModal email={f.email.trim()} remember={f.remember} onClose={() => setFaceOpen(false)}
+              onSignedIn={(r) => {
+                signInWithToken(r, f.remember)
+                setFaceOpen(false)
+                toast('Welcome back')
+                navigate(state.from ?? '/dashboard', { replace: true })
+              }} />
+          )}
 
           <div className="row" style={{ gap: 12, fontSize: 13, color: 'var(--muted)' }}>
             <div style={{ flex: 1, height: 1, background: '#EADCCD' }} />or<div style={{ flex: 1, height: 1, background: '#EADCCD' }} />

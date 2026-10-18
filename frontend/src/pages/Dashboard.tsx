@@ -1,11 +1,14 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { CameraView } from '../components/FaceCamera'
+import { useCamera } from '../components/useCamera'
 import { PetGrid } from '../components/PetCard'
 import { FieldError, Icon, LogoMark, Seg, Skeleton, Spinner, Toggle } from '../components/ui'
 import { api, ApiError, type Application, type Dashboard as DashData, type InboxMessage, type User } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { fmtDate, fmtKm, GOVERNORATES, img, initials, relTime } from '../lib/format'
+import { cameraSupported, deleteFace, enrollFace, faceStatus, sleep } from '../lib/face'
 import { useDashboard, useMessages } from '../lib/queries'
 import { useToast } from '../lib/toast'
 
@@ -253,6 +256,100 @@ function ReportsPanel({ d }: { d: DashData }) {
   )
 }
 
+function FaceLoginPanel() {
+  const qc = useQueryClient()
+  const toast = useToast()
+  const cam = useCamera()
+  const { data: status } = useQuery({ queryKey: ['face'], queryFn: faceStatus })
+  const [consent, setConsent] = useState(false)
+  const [setup, setSetup] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState('')
+  const refresh = () => qc.invalidateQueries({ queryKey: ['face'] })
+
+  const open = async () => {
+    setError('')
+    setSetup(true)
+    await cam.start()
+  }
+  const cancel = () => {
+    cam.stop()
+    setSetup(false)
+  }
+  const save = async () => {
+    setBusy(true)
+    setError('')
+    try {
+      const images: string[] = []
+      for (let i = 0; i < 3; i++) {
+        images.push(cam.capture())
+        await sleep(400)
+      }
+      await enrollFace(images)
+      cam.stop()
+      setSetup(false)
+      toast('Face login is on. Use “Sign in with your face” next time.')
+      refresh()
+    } catch (e) {
+      setError(e instanceof ApiError ? e.message : 'Something went wrong. Please try again.')
+    } finally {
+      setBusy(false)
+    }
+  }
+  const remove = useMutation({
+    mutationFn: deleteFace,
+    onSuccess: () => { toast('Your face data was deleted'); refresh() },
+    onError: (e: Error) => setError(e.message),
+  })
+
+  return (
+    <div className="panel" style={{ padding: 24 }}>
+      <div className="wrap-row between" style={{ alignItems: 'center', gap: 8, marginBottom: 6 }}>
+        <span className="panel-title">Face login</span>
+        <span className="demo-tag">AI · YUNET + SFACE</span>
+      </div>
+      <div style={{ fontSize: 13.5, color: 'var(--muted)', lineHeight: 1.5, marginBottom: 14, maxWidth: 640 }}>
+        Sign in by looking at your webcam. PawConnect’s face model turns your face into 128 numbers and keeps only those numbers, never a photo. You can delete them at any time. Your password always keeps working.
+      </div>
+      {error && <div className="alert" style={{ marginBottom: 12 }}><Icon name="error" />{error}</div>}
+      {status && !status.available && <div style={{ fontSize: 14, color: 'var(--muted)' }}>Face login isn’t available on this server right now.</div>}
+      {status?.available && status.enrolled && !setup && (
+        <div className="row between" style={{ gap: 12, padding: '12px 0', borderTop: '1px solid var(--line-3)', borderBottom: '1px solid var(--line-3)', marginBottom: 14 }}>
+          <div className="row" style={{ gap: 10 }}>
+            <span style={{ width: 34, height: 34, borderRadius: 10, background: 'var(--teal-soft)', color: 'var(--teal)', display: 'grid', placeItems: 'center' }}><Icon name="face" size={19} /></span>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 700 }}>Face login is on</div>
+              <div style={{ fontSize: 12.5, color: 'var(--muted)' }}>Set up {status.created_at ? fmtDate(status.created_at) : ''} · {status.last_used_at ? `last used ${relTime(status.last_used_at)}` : 'not used yet'}</div>
+            </div>
+          </div>
+          <button className="btn-link" style={{ fontSize: 13, color: 'var(--rust)' }} disabled={remove.isPending} onClick={() => remove.mutate()}>Delete my face data</button>
+        </div>
+      )}
+      {status?.available && !setup && (cameraSupported()
+        ? (
+          <div className="col" style={{ gap: 12, alignItems: 'flex-start' }}>
+            <label className="check" style={{ maxWidth: 640 }}>
+              <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+              I agree that PawConnect saves a numeric model of my face (not a photo) to let me sign in, and I know I can delete it at any time.
+            </label>
+            <button className="btn btn-teal btn-md" disabled={!consent} onClick={open}><Icon name="photo_camera" size={18} />{status.enrolled ? 'Update my face' : 'Set up face login'}</button>
+          </div>
+        )
+        : <div style={{ fontSize: 14, color: 'var(--muted)' }}>This browser can’t use a camera.</div>)}
+      {setup && (
+        <div className="col" style={{ gap: 12, maxWidth: 420 }}>
+          <CameraView videoRef={cam.videoRef} on={cam.on} busy={busy} prompt={busy ? 'Hold still…' : cam.on ? 'Put your face in the oval and look straight at the camera' : undefined} />
+          {cam.error && <div className="alert"><Icon name="error" />{cam.error}</div>}
+          <div className="row" style={{ gap: 10 }}>
+            <button className="btn btn-primary btn-md" disabled={!cam.on || busy} onClick={save}>{busy ? <Spinner /> : 'Save my face'}</button>
+            <button className="btn btn-outline btn-md" disabled={busy} onClick={cancel}>Cancel</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function SettingsPanel({ user }: { user: User }) {
   const { setUser, logout } = useAuth()
   const toast = useToast()
@@ -310,6 +407,7 @@ function SettingsPanel({ user }: { user: User }) {
           <input type="range" min={30} max={95} step={5} value={s.min_match_score} onChange={(e) => set('min_match_score', +e.target.value)} aria-label="Match alert threshold" style={{ width: '100%', maxWidth: 420 }} />
         </div>
       </div>
+      <FaceLoginPanel />
       <div className="wrap-row" style={{ gap: 10 }}>
         <button className="btn btn-primary" style={{ height: 48, padding: '0 22px', fontSize: 15 }} disabled={save.isPending} onClick={() => save.mutate()}>{save.isPending ? <Spinner /> : 'Save changes'}</button>
         <button className="btn btn-outline" style={{ height: 48, padding: '0 20px', fontSize: 15 }} onClick={logout}>Sign out</button>

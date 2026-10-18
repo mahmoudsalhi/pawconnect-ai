@@ -18,3 +18,9 @@ frontend/dist/
 
 # Local SQLite databases (dev and tests)
 backend/*.db
+
+# Face login: public benchmark data (LFW) downloaded by ml/face scripts
+ml/face/data/
+
+# Face login models (39 MB): download with  python backend/app/ai/face_engine.py --download
+backend/app/ai/models/face/*.onnx

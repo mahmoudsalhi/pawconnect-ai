@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import date, datetime
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
@@ -58,6 +58,40 @@ class TokenOut(BaseModel):
     access_token: str
     token_type: str = "bearer"
     user: UserOut
+
+
+# ---------- AI face login ----------
+
+FaceImage = Annotated[str, Field(min_length=100, max_length=4_500_000)]  # one base64 JPEG from the webcam
+
+
+class FaceStatusOut(BaseModel):
+    available: bool  # models loaded on this server
+    enrolled: bool
+    created_at: datetime | None = None
+    last_used_at: datetime | None = None
+
+
+class FaceEnrollIn(BaseModel):
+    images: list[FaceImage] = Field(min_length=3, max_length=5)
+    consent: bool
+
+
+class FaceChallengeIn(BaseModel):
+    email: str = Field(max_length=254)
+
+
+class FaceChallengeOut(BaseModel):
+    direction: Literal["left", "right"]  # which way to turn: the person's own left or right
+    state: str
+
+
+class FaceLoginIn(BaseModel):
+    email: str = Field(max_length=254)
+    state: str
+    front: FaceImage
+    turned: list[FaceImage] = Field(min_length=1, max_length=4)
+    remember: bool = True
 
 
 class SettingsIn(BaseModel):

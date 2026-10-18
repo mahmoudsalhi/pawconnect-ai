@@ -264,6 +264,22 @@ class Activity(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
 
+class FaceProfile(Base):
+    """AI face login: the user's face embedding (128 numbers from the SFace model), never a photo.
+
+    Created only with the user's explicit consent; deleted with "Delete my face data" or with the account.
+    """
+
+    __tablename__ = "face_profiles"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), primary_key=True)
+    embedding: Mapped[bytes] = mapped_column(LargeBinary)  # 128 float32, L2-normalised
+    model: Mapped[str] = mapped_column(String(80))  # embedding model, so a model change can force re-enrolment
+    consented_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    last_used_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
 class Upload(Base):
     """An uploaded photo, stored in the database so every machine sharing it can serve the file."""
 

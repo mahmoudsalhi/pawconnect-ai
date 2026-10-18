@@ -333,3 +333,70 @@ def test_location_zones_for_open_lost_reports(client):
 
     assert client.get(f"/api/ai/location/{_pet_id(client, 'Kahwa', 'found')}").status_code == 409
     assert client.get("/api/ai/location/999999").status_code == 404
+
+
+def test_assistant_without_api_key_falls_back_to_m7(client, monkeypatch):
+    from app.ai import assistant
+    monkeypatch.setattr(assistant, "_backend", lambda: (_ for _ in ()).throw(assistant.AssistantUnavailable("no key")))
+    r = client.get(f"/api/ai/assistant/{_pet_id(client, 'Rex', 'lost')}")
+    if r.status_code == 503:
+        pytest.skip("M7 model or libraries not installed (backend/requirements-ml.txt)")
+    assert r.status_code == 200, r.text
+    d = r.json()
+    assert d["status"] == "unavailable" and d["plan"] is None and d["facts"] is None
+    assert [z["share"] for z in d["location"]["zones"]] == [50, 80, 95]
+
+
+def test_assistant_reads_description_and_writes_plan(client, monkeypatch):
+    """Claude replaced by a fake: checks the pipeline, not the model."""
+    from app.ai import assistant
+    sent = []
+
+    def fake_call(system, user, schema, effort, max_tokens):
+        sent.append(user)
+        if schema is assistant.ReportFacts:
+            return assistant.ReportFacts(goes_outside="unknown", temperament="gregarious", circumstance="slipped_leash_walk",
+                                         collar_or_tag="yes", understood="Friendly beagle that slipped its lead.")
+        poster = assistant.Poster(headline="Chien perdu", text="...")
+        return assistant.SearchPlan(summary="s", steps=[assistant.PlanStep(when="now", where="here", what="look")],
+                                    poster_fr=poster, poster_ar=poster, share_text="t")
+
+    monkeypatch.setattr(assistant, "_call", fake_call)
+    monkeypatch.setattr(assistant, "_backend", lambda: ("groq", None, None))
+    assistant._read_cached.cache_clear()
+    assistant._plans.clear()
+    r = client.get(f"/api/ai/assistant/{_pet_id(client, 'Rex', 'lost')}")
+    if r.status_code == 503:
+        pytest.skip("M7 model or libraries not installed (backend/requirements-ml.txt)")
+    assert r.status_code == 200, r.text
+    d = r.json()
+    assert d["status"] == "ok" and d["facts"]["temperament"] == "gregarious" and d["plan"]["poster_fr"]["headline"]
+    # What the description supplied is no longer listed as missing.
+    missing = d["location"]["missing_inputs"]
+    assert "how it got lost" not in missing and "collar or tag" not in missing
+    # The plan prompt carries real places from the zones and no contact details.
+    assert len(sent) == 2 and '"places"' in sent[1] and '"zone": "search first"' in sent[1]
+    assert "@" not in sent[1]
+
+
+def test_groq_backend_retries_until_json_matches_schema():
+    """Groq JSON mode guarantees JSON, not our schema: one corrective retry, then validated output."""
+    from types import SimpleNamespace as NS
+
+    import groq
+
+    from app.ai import assistant
+    answers = iter(["not json at all",
+                    '{"goes_outside": "no", "temperament": "friendly", "circumstance": "fireworks_noise", '
+                    '"collar_or_tag": "yes", "understood": "Indoor cat scared by fireworks."}'])
+    calls = []
+
+    def create(**kw):
+        calls.append(kw)
+        return NS(choices=[NS(finish_reason="stop", message=NS(content=next(answers)))])
+
+    client = NS(chat=NS(completions=NS(create=create)))
+    facts = assistant._call_groq(groq, client, "sys", "user", assistant.ReportFacts, 500)
+    assert len(calls) == 2 and calls[0]["response_format"] == {"type": "json_object"}
+    assert facts.goes_outside == "no" and facts.circumstance == "fireworks_noise"
+    assert facts.temperament == "unknown"  # out-of-list value coerced, not crashed

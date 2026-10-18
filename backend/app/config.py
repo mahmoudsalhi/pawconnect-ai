@@ -35,6 +35,12 @@ class Settings(BaseSettings):
 
     # M7 (lost-pet location): folder with the trained model and map grids, relative to backend/.
     m7_dir: str = "../ml/m7_location"
+    # AI search assistant. "auto" uses the first key found (Groq, then Anthropic); no key = M7 only.
+    ai_assistant: str = "auto"
+    groq_api_key: str = ""                       # free tier, no credit card: console.groq.com
+    groq_model: str = "openai/gpt-oss-120b"
+    anthropic_api_key: str = ""
+    claude_model: str = "claude-haiku-5-5"
 
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782

@@ -61,6 +61,27 @@ def _runtime() -> SimpleNamespace:
                            model=m7_model.M7(model_dir), recovery=recovery, recovery_model=rec)
 
 
+def supported(species: str, lat: float, lng: float) -> bool:
+    """Whether M7 can answer for this species and place (cheap; loads the model on first use)."""
+    return species.lower() in ("cat", "dog") and _region_for(_runtime(), lat, lng) is not None
+
+
+@lru_cache
+def _places(region: str) -> list[dict]:
+    import json
+
+    path = _m7_dir() / "data" / "grids" / f"{region}_places.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+
+
+def places_near(lat: float, lng: float) -> list[dict]:
+    """Named OSM places of the region around a point (for the search assistant)."""
+    region = _region_for(_runtime(), lat, lng)
+    if region is None:
+        return []
+    return [p for p in _places(region) if abs(p["lat"] - lat) < 0.15 and abs(p["lng"] - lng) < 0.18]
+
+
 def _region_for(rt, lat: float, lng: float) -> str | None:
     for name, cfg in rt.cfg.REGIONS.items():
         s, w, n, e = cfg["bbox"]

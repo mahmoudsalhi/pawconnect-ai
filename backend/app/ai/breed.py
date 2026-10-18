@@ -72,13 +72,27 @@ class BreedModel:
         e = np.exp(logits - logits.max(axis=1, keepdims=True))
         return e / e.sum(axis=1, keepdims=True)
 
-    def predict(self, images: list[ImageInput], species: str, top: int = 3) -> list[BreedPrediction]:
+    @staticmethod
+    def _load(images: list[ImageInput]) -> list:
         loaded = []
         for image in images:
             try:
                 loaded.append(load_image(image))
             except Exception:  # unreadable upload or unreachable URL: skip that photo
                 continue
+        return loaded
+
+    def signature(self, images: list[ImageInput]) -> list[float] | None:
+        """The 768 backbone features the classifier reads, averaged over the photos: a description of how the
+        animal looks (coat, colour, face shape) that can be compared with cosine similarity."""
+        loaded = self._load(images)
+        if not loaded:
+            return None
+        f = image_features(loaded).mean(axis=0)
+        return (f / np.linalg.norm(f)).tolist()
+
+    def predict(self, images: list[ImageInput], species: str, top: int = 3) -> list[BreedPrediction]:
+        loaded = self._load(images)
         if not loaded:
             return []
         p = self.probabilities(image_features(loaded)).mean(axis=0)

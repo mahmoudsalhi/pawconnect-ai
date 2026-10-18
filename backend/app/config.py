@@ -26,6 +26,8 @@ class Settings(BaseSettings):
 
     # Age model (ONNX, with its .json config next to it). Relative paths start at the project root.
     m4_age_model_path: str = "backend/models/m4_age.onnx"
+    # Dog skin model (M5), same rules as above.
+    m5_skin_model_path: str = "backend/models/m5_skin.onnx"
 
     # M2 photo-matching service (ml/photo_matching), used by app.ai.models:PawModels.
     m2_url: str = "http://127.0.0.1:8002"

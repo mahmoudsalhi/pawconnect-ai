@@ -79,6 +79,13 @@ class AgePrediction:
 
 
 @dataclass(frozen=True)
+class HealthPrediction:
+    status: str  # "healthy" | "skin_problem" | "unsure"
+    condition: str | None  # most likely skin problem when status == "skin_problem"
+    confidence: int  # percent, 0-100
+
+
+@dataclass(frozen=True)
 class MatchSubject:
     """What the matcher knows about one side of a comparison."""
 
@@ -261,6 +268,11 @@ class AIProvider(ABC):
         None means the provider has no age model (the API then returns no suggestion)."""
         return None
 
+    def look_signature(self, images: list[ImageInput]) -> list[float] | None:
+        """How the animal looks, as an L2-normalised vector averaged over its photos (M1 look-alikes).
+        Not abstract; None means the provider has no image model (the API then returns no look-alikes)."""
+        return None
+
     def detect_scam(self, text: str) -> ScamAssessment:
         """Scam warning level and reasons for a message or listing text."""
 
@@ -270,3 +282,8 @@ class AIProvider(ABC):
         from .location import predict
 
         return predict(query)
+
+    def predict_health(self, images: list[ImageInput], species: str) -> HealthPrediction | None:
+        """Visible skin problems on a dog's photos. An indication only, never a diagnosis.
+        None means not available (no model, not a dog, or no readable photo)."""
+        return None

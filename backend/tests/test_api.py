@@ -253,6 +253,34 @@ def test_ai_match_by_photo_and_tags(client):
     assert len(a["breeds"]) == 3 and a["quality"][0]["score"] > 0
 
 
+def test_breed_lookalikes(client, monkeypatch):
+    from app.ai.demo import DemoProvider
+    from app.routers import ai as ai_router
+
+    photo = upload(client)
+    # The placeholder models have no image features, so there are no look-alikes.
+    r = client.post("/api/ai/breed/lookalikes", json={"photos": [photo], "species": "Dog"})
+    assert r.status_code == 200 and r.json()["results"] == []
+
+    # A stand-in image model: the uploaded photo looks exactly like the first dog listing, a bit like the rest.
+    dogs = [p for p in client.get("/api/pets", params={"status": "adopt", "page_size": 50}).json()["items"]
+            if p["species"] == "Dog" and p["photos"]]
+    twin = dogs[0]["photos"][0]
+
+    class Looks(DemoProvider):
+        def look_signature(self, images):
+            return [1.0, 0.0] if images[0].url in (photo, twin) else [0.6, 0.8]
+
+    monkeypatch.setattr(ai_router, "get_provider", lambda: Looks())
+    ai_router._listing_look.cache_clear()
+    try:
+        res = client.post("/api/ai/breed/lookalikes", json={"photos": [photo], "species": "Dog"}).json()["results"]
+    finally:
+        ai_router._listing_look.cache_clear()
+    assert len(res) == 3 and all(h["pet"]["species"] == "Dog" and h["pet"]["status"] == "adopt" for h in res)
+    assert res[0]["pet"]["id"] == dogs[0]["id"] and res[0]["similarity"] == 100 and res[1]["similarity"] == 60
+
+
 def test_uploaded_photo_is_served_from_the_database(client):
     url = upload(client)
     r = client.get(url)

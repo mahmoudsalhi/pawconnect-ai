@@ -27,6 +27,11 @@ export interface BreedResult {
   predictions: BreedGuess[]
 }
 
+export interface LookalikeResult {
+  model: string
+  results: { pet: Pet; similarity: number }[]
+}
+
 export interface BreedInfo {
   model: string
   dataset: string
@@ -234,6 +239,7 @@ export interface AnalyzeResult {
   quality: { url: string; score: number; tip: string }[]
   cutout: string | null
   age?: { group: 'young' | 'adult' | 'senior' | null; confidence: number } | null
+  health?: { status: 'healthy' | 'skin_problem' | 'unsure'; condition: string | null; confidence: number } | null
 }
 
 export interface MatchRun {

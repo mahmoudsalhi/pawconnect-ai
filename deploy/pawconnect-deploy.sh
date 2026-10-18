@@ -26,7 +26,8 @@ TORCH_CPU=(--extra-index-url https://download.pytorch.org/whl/cpu)
 
 echo "==> Backend: dependencies and migrations"
 cd "$APP/backend"
-.venv/bin/pip install -q "${TORCH_CPU[@]}" -r requirements.txt
+# requirements-ml.txt = requirements.txt + the libraries M7 (lost-pet location) needs at runtime
+.venv/bin/pip install -q "${TORCH_CPU[@]}" -r requirements-ml.txt
 .venv/bin/alembic upgrade head
 # Switch from the placeholders to the trained models once the code has them (one-time change to .env).
 if [ -f app/ai/models.py ] && grep -q '^AI_PROVIDER=demo$' .env; then

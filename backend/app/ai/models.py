@@ -1,6 +1,6 @@
 """PawConnect's trained models. Methods not overridden here keep the DemoProvider placeholders.
 
-- M1 breed identification, M3 adoption speed, M4 age, M9 compatibility: loaded in-process.
+- M1 breed identification, M3 adoption speed, M4 age, M5 dog skin check, M9 compatibility: loaded in-process.
 - M2 lost & found photo matching: runs as a small separate service (``ml/photo_matching``) because
   PyTorch is heavy; this class talks to it over HTTP.
 
@@ -31,10 +31,11 @@ from ..config import get_settings
 from . import compatibility
 from .adoption_speed import get_model as adoption_speed_model
 from .age import get_age_model
-from .base import (AdoptionSpeed, AgePrediction, BreedPrediction, CompatMatch, CompatPet, ImageInput, ListingFeatures,
-                   MatchSubject, ModelUnavailable, Questionnaire)
+from .base import (AdoptionSpeed, AgePrediction, BreedPrediction, CompatMatch, CompatPet, HealthPrediction, ImageInput,
+                   ListingFeatures, MatchSubject, ModelUnavailable, Questionnaire)
 from .breed import get_model as breed_model
 from .demo import DemoProvider
+from .health import get_health_model
 from .pet_traits import embed, get_model as trait_model
 
 log = logging.getLogger(__name__)
@@ -146,6 +147,10 @@ class PawModels(DemoProvider):
         """M1: ConvNeXt-Tiny features + logistic regression trained on Oxford-IIIT Pet (37 breeds)."""
         return breed_model().predict(images, species, top)
 
+    def look_signature(self, images: list[ImageInput]) -> list[float] | None:
+        """M1 look-alikes: the ConvNeXt features the breed classifier reads."""
+        return breed_model().signature(images)
+
     def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
         """M4: age group from the report's photos (ONNX)."""
         model = get_age_model()
@@ -176,6 +181,21 @@ class PawModels(DemoProvider):
                   for t in raw]
         ideal = _ideal_similarity(answers.ideal, [p.text for p in pets]) if answers.ideal.strip() else None
         return compatibility.score(answers, pets, traits, ideal)
+
+    def predict_health(self, images: list[ImageInput], species: str) -> HealthPrediction | None:
+        if (species or "").lower() != "dog":  # trained on dogs only; skip before reading any photo
+            return None
+        model = get_health_model()
+        if model is None:  # model files missing or not loadable
+            return None
+        try:
+            result = model.predict([img.read() for img in images], species)
+        except Exception:
+            log.exception("M5 skin prediction failed; no health result.")
+            return None
+        if result is None:  # no readable photo
+            return None
+        return HealthPrediction(status=result.status, condition=result.condition, confidence=result.confidence)
 
 
 def _ideal_similarity(wish: str, texts: list[str]) -> list[tuple[float, str]]:

@@ -13,8 +13,11 @@ pillow>=11.3
 pytest>=8.3
 httpx>=0.28
 numpy>=2.2
-xgboost>=3.0
+# M3: on Linux use the CPU-only build; plain xgboost pulls a 290 MB NVIDIA library (nvidia-nccl)
+xgboost>=3.0; sys_platform != "linux"
+xgboost-cpu>=3.0; sys_platform == "linux"
 sentence-transformers>=5.0  # M9: pulls in torch (CPU build on Windows)
+torchvision>=0.20  # M1 breed: ConvNeXt-Tiny backbone
 onnxruntime>=1.20  # M4 age model
 # M6 scam detector: must match the version that trained app/ai/models/m6_scam.joblib (see its .json)
 scikit-learn==1.9.1

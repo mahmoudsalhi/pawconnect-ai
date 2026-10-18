@@ -1,5 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
+from functools import lru_cache
 
 from fastapi import APIRouter, HTTPException, Response, status
 from sqlalchemy import select, update
@@ -14,8 +15,8 @@ from ..deps import DB, CurrentUser, OptionalUser
 from ..geo import AREAS, km
 from ..models import MatchResult, Pet, PetStatus
 from ..schemas import (AgeOut, AIInfoOut, AnalyzeIn, AnalyzeOut, BreedGuess, BreedIn, BreedInfoOut, BreedOut,
-                       CompatHit, CompatIn, CompatOut, CompatReasonOut, LocationOut, MatchHit, MatchIn, MatchRunOut,
-                       TagOut, TagsIn)
+                       CompatHit, CompatIn, CompatOut, CompatReasonOut, HealthOut, LocationOut, LookalikeHit,
+                       LookalikeOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn)
 from ..services.matching import image_input, open_reports, scores_for_pet, scores_for_photo
 from ..services.serialize import favorite_ids, pet_out
 
@@ -30,16 +31,20 @@ def ai_info():
 
 @router.post("/analyze", response_model=AnalyzeOut)
 def analyze_photos(data: AnalyzeIn):
-    """Breed suggestion (M1), photo quality (M5), background removal (M6) and age group for report photos."""
+    """Breed suggestion (M1), photo quality (M5), background removal (M6), age group and dog skin check
+    for report photos."""
     provider = get_provider()
     images = [image_input(u) for u in data.photos]
     breeds = provider.predict_breed(images, data.species)
     quality = [{"url": i.url, **provider.score_photo(i).__dict__} for i in images]
     cutout = provider.remove_background(images[0])
     age = provider.predict_age(images, data.species)
+    health = provider.predict_health(images, data.species)
     return AnalyzeOut(model=provider.name, breeds=[[b.label, b.confidence] for b in breeds], quality=quality,
                       cutout=cutout.url if cutout else None,
-                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None)
+                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None,
+                      health=HealthOut(status=health.status, condition=health.condition,
+                                       confidence=health.confidence) if health else None)
 
 
 @router.post("/breed", response_model=BreedOut)
@@ -62,6 +67,38 @@ def breed_info():
     return BreedInfoOut(model=meta["model"], dataset=meta["dataset"], metrics=meta["metrics"],
                         most_confused=meta["most_confused"],
                         breeds=[BreedGuess(label=l, confidence=0, species=s) for l, s in zip(meta["labels"], meta["species"])])
+
+
+@router.post("/breed/lookalikes", response_model=LookalikeOut)
+def breed_lookalikes(data: BreedIn, db: DB, user: OptionalUser):
+    """Open adoption listings that look most like the photo, compared with the same image features M1 reads."""
+    provider = get_provider()
+    query = provider.look_signature([image_input(u) for u in data.photos])
+    if query is None:
+        return LookalikeOut(model=provider.name, results=[])
+    q = (select(Pet).options(selectinload(Pet.photos), selectinload(Pet.shelter))
+         .where(Pet.status == PetStatus.adopt, Pet.resolved.is_(False)))
+    if data.species in ("Dog", "Cat"):
+        q = q.where(Pet.species == data.species)
+    scored = []
+    for pet in db.scalars(q):
+        if not pet.photos:
+            continue
+        look = _listing_look(pet.photos[0].url)
+        if look is not None:
+            scored.append((sum(a * b for a, b in zip(query, look)), pet))
+    scored.sort(key=lambda t: t[0], reverse=True)
+    favs = favorite_ids(db, user)
+    return LookalikeOut(model=provider.name, results=[
+        LookalikeHit(pet=pet_out(pet, user, favs), similarity=max(0, round(cos * 100))) for cos, pet in scored[:3]
+    ])
+
+
+@lru_cache(maxsize=512)
+def _listing_look(url: str) -> tuple[float, ...] | None:
+    """Look signature of a listing photo. Cached: a photo never changes under its URL."""
+    look = get_provider().look_signature([image_input(url)])
+    return tuple(look) if look is not None else None
 
 
 def _breed_species() -> dict[str, str]:

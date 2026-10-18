@@ -192,6 +192,36 @@ export interface Stats {
   shelters: number
 }
 
+// M7 search zones for a lost pet (GET /api/ai/location/:id). Bands are exclusive:
+// the 50 band holds the most likely cells adding up to 50%, the 80 band the next ones up to 80%, then 95.
+export interface SearchZone {
+  share: 50 | 80 | 95
+  cells: [number, number][]
+}
+
+// Chances from now on, given the pet hasn't been found yet (M7 recovery outlook).
+export interface RecoveryOutlook {
+  found_alive: number
+  found_alive_at_start: number
+  within_24h: number
+  within_7d: number
+  median_hours_if_found: number | null
+  beyond_horizon: boolean
+  horizon_days: number
+  by_lifestyle: { indoor_only: number; outdoor_access: number } | null
+}
+
+export interface LocationPrediction {
+  model: string
+  hours_missing: number
+  cell_m: number
+  zones: SearchZone[]
+  peak: [number, number]
+  self_return_share: number
+  missing_inputs: string[]
+  recovery: RecoveryOutlook | null
+}
+
 export class ApiError extends Error {
   status: number
   errors: Record<string, string>

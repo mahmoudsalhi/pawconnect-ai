@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     # Which AI implementation to load. "demo" is the built-in placeholder; point this at
     # your own provider class (e.g. "app.ai.custom:MyProvider") once the models are ready.
     ai_provider: str = "demo"
+    # M7 (lost-pet location): folder with the trained model and map grids, relative to backend/.
+    m7_dir: str = "../ml/m7_location"
 
     # Reference point used for "distance from you" when the visitor has no location.
     home_lat: float = 36.8782

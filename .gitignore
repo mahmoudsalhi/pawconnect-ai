@@ -14,3 +14,12 @@ frontend/.env.local
 frontend/node_modules/
 frontend/dist/
 *.tsbuildinfo
+
+# M7 dataset generator: environment, OSM downloads and generated data (rebuild with build_dataset.py)
+ml/m7_location/.venv/
+ml/m7_location/data/osm/
+ml/m7_location/data/pbf/
+ml/m7_location/output/*.parquet
+ml/m7_location/output/*.csv
+ml/m7_location/output/build.log
+ml/m7_location/output/train.log

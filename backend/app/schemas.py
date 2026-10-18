@@ -170,6 +170,33 @@ class SightingOut(ORM):
     created_at: datetime
 
 
+class SearchZoneOut(BaseModel):
+    share: int
+    cells: list[tuple[float, float]]
+
+
+class RecoveryOut(BaseModel):
+    found_alive: float
+    found_alive_at_start: float
+    within_24h: float
+    within_7d: float
+    median_hours_if_found: float | None
+    beyond_horizon: bool
+    horizon_days: int
+    by_lifestyle: dict[str, float] | None = None
+
+
+class LocationOut(BaseModel):
+    model: str
+    hours_missing: float
+    cell_m: float
+    zones: list[SearchZoneOut]
+    peak: tuple[float, float]
+    self_return_share: float
+    missing_inputs: list[str]
+    recovery: RecoveryOut | None = None
+
+
 class PetDetailOut(PetOut):
     sightings: list[SightingOut]
     contact_note: str

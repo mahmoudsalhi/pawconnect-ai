@@ -1,0 +1,6 @@
+# Optional: libraries for M7 (lost-pet location prediction), which runs the model in ml/m7_location.
+# Without them the API answers /api/ai/location/... with 503 and the app hides the search map.
+numpy>=2.0
+scipy>=1.13
+pandas>=2.2
+lightgbm>=4.5

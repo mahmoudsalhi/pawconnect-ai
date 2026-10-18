@@ -72,7 +72,15 @@ const SCAM_STYLE = {
 } as const
 
 function ScamWarning({ m }: { m: InboxMessage }) {
-  if (!m.scam || m.scam.level === 'none') return null
+  if (!m.scam) return null
+  // Neutral on purpose: no warning signs is not a guarantee that a message is safe.
+  if (m.scam.level === 'none') {
+    return (
+      <div className="row" style={{ display: 'inline-flex', gap: 6, marginTop: 10, padding: '5px 10px', borderRadius: 999, background: 'var(--teal-soft)', border: '1px solid var(--teal-line)', color: 'var(--teal-d)', fontSize: 12.5, fontWeight: 700 }}>
+        <Icon name="shield" size={16} />Checked: no warning signs found
+      </div>
+    )
+  }
   const st = SCAM_STYLE[m.scam.level]
   return (
     <div role="alert" style={{ marginTop: 10, padding: '10px 12px', borderRadius: 12, background: st.bg, color: st.fg }}>

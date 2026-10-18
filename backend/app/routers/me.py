@@ -108,9 +108,11 @@ def inbox(user: CurrentUser, db: DB):
     out = []
     for m in msgs:
         check = provider.detect_scam(m.body)
+        # No scam field when the detector could not run, so the UI never claims a message was checked.
+        scam = None if check.model == "unavailable" else ScamOut(
+            score=check.score, level=check.level, labels=check.labels, reasons=check.reasons)
         out.append(MessageOut(id=m.id, pet_id=m.pet_id, body=m.body, created_at=m.created_at, read=m.read,
-                              sender_name=m.sender.name, pet_name=m.pet.name,
-                              scam=ScamOut(score=check.score, level=check.level, labels=check.labels, reasons=check.reasons)))
+                              sender_name=m.sender.name, pet_name=m.pet.name, scam=scam))
     return out
 
 

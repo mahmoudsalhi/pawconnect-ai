@@ -7,3 +7,5 @@
 *_lgbm.txt -text -diff
 # Shell scripts run on Linux (the VPS): always LF.
 *.sh text eol=lf
+# M2 photo-matching checkpoint is stored with Git LFS (~94 MB)
+ml/photo_matching/checkpoints/*.pt filter=lfs diff=lfs merge=lfs -text

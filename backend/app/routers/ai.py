@@ -5,7 +5,7 @@ from ..ai import get_provider
 from ..deps import DB, CurrentUser, OptionalUser
 from ..geo import AREAS, km
 from ..models import MatchResult, Pet, PetStatus
-from ..schemas import AgeOut, AnalyzeIn, AnalyzeOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn
+from ..schemas import AgeOut, AnalyzeIn, AnalyzeOut, HealthOut, MatchHit, MatchIn, MatchRunOut, TagOut, TagsIn
 from ..services.matching import image_input, open_reports, scores_for_pet, scores_for_photo
 from ..services.serialize import favorite_ids, pet_out
 
@@ -14,16 +14,20 @@ router = APIRouter(prefix="/api/ai", tags=["ai"])
 
 @router.post("/analyze", response_model=AnalyzeOut)
 def analyze_photos(data: AnalyzeIn):
-    """Breed suggestion (M1), photo quality (M5), background removal (M6) and age group for report photos."""
+    """Breed suggestion (M1), photo quality (M5), background removal (M6), age group and dog skin check
+    for report photos."""
     provider = get_provider()
     images = [image_input(u) for u in data.photos]
     breeds = provider.predict_breed(images, data.species)
     quality = [{"url": i.url, **provider.score_photo(i).__dict__} for i in images]
     cutout = provider.remove_background(images[0])
     age = provider.predict_age(images, data.species)
+    health = provider.predict_health(images, data.species)
     return AnalyzeOut(model=provider.name, breeds=[[b.label, b.confidence] for b in breeds], quality=quality,
                       cutout=cutout.url if cutout else None,
-                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None)
+                      age=AgeOut(group=age.group, confidence=age.confidence) if age else None,
+                      health=HealthOut(status=health.status, condition=health.condition,
+                                       confidence=health.confidence) if health else None)
 
 
 @router.post("/tags", response_model=list[TagOut])

@@ -10,8 +10,9 @@ from __future__ import annotations
 import logging
 
 from .age import get_age_model
-from .base import AgePrediction, ImageInput
+from .base import AgePrediction, HealthPrediction, ImageInput
 from .demo import DemoProvider
+from .health import get_health_model
 
 log = logging.getLogger(__name__)
 
@@ -29,3 +30,18 @@ class PawModels(DemoProvider):
         if result is None:  # no readable photo (remote seed photos read as None)
             return super().predict_age(images, species)
         return AgePrediction(group=result.group, confidence=result.confidence)
+
+    def predict_health(self, images: list[ImageInput], species: str) -> HealthPrediction | None:
+        if (species or "").lower() != "dog":  # trained on dogs only; skip before reading any photo
+            return None
+        model = get_health_model()
+        if model is None:  # model files missing or not loadable
+            return None
+        try:
+            result = model.predict([img.read() for img in images], species)
+        except Exception:
+            log.exception("M5 skin prediction failed; no health result.")
+            return None
+        if result is None:  # no readable photo
+            return None
+        return HealthPrediction(status=result.status, condition=result.condition, confidence=result.confidence)

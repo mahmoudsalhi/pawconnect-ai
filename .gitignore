@@ -11,6 +11,7 @@ backend/uploads/*
 frontend/.env.local
 backend/models/*.onnx
 !backend/models/m4_age.onnx
+!backend/models/m5_skin.onnx
 backend/models/*.onnx.data
 
 # Node

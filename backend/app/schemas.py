@@ -348,12 +348,19 @@ class AgeOut(BaseModel):
     confidence: int
 
 
+class HealthOut(BaseModel):
+    status: str  # "healthy" | "skin_problem" | "unsure"
+    condition: str | None
+    confidence: int
+
+
 class AnalyzeOut(BaseModel):
     model: str
     breeds: list[list]
     quality: list[dict]
     cutout: str | None
     age: AgeOut | None = None
+    health: HealthOut | None = None  # dogs only
 
 
 class TagsIn(BaseModel):

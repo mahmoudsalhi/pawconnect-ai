@@ -27,6 +27,11 @@ export interface BreedResult {
   predictions: BreedGuess[]
 }
 
+export interface LookalikeResult {
+  model: string
+  results: { pet: Pet; similarity: number }[]
+}
+
 export interface BreedInfo {
   model: string
   dataset: string

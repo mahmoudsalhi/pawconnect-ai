@@ -147,6 +147,10 @@ class PawModels(DemoProvider):
         """M1: ConvNeXt-Tiny features + logistic regression trained on Oxford-IIIT Pet (37 breeds)."""
         return breed_model().predict(images, species, top)
 
+    def look_signature(self, images: list[ImageInput]) -> list[float] | None:
+        """M1 look-alikes: the ConvNeXt features the breed classifier reads."""
+        return breed_model().signature(images)
+
     def predict_age(self, images: list[ImageInput], species: str) -> AgePrediction | None:
         """M4: age group from the report's photos (ONNX)."""
         model = get_age_model()

@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Response, status
 from sqlalchemy import func, select, update
 from sqlalchemy.orm import selectinload
 
+from ..ai import get_provider
 from ..deps import DB, CurrentUser
 from ..models import Activity, AdoptionApplication, Favorite, MatchResult, Message, Notification, Pet, Sighting, User
 from ..schemas import (
@@ -12,6 +13,7 @@ from ..schemas import (
     NotificationOut,
     PetOut,
     ReportSummary,
+    ScamOut,
     SettingsIn,
     UserOut,
 )
@@ -101,11 +103,15 @@ def inbox(user: CurrentUser, db: DB):
         select(Message).where(Message.recipient_id == user.id)
         .options(selectinload(Message.sender), selectinload(Message.pet)).order_by(Message.created_at.desc()).limit(100)
     ).all()
-    return [
-        MessageOut(id=m.id, pet_id=m.pet_id, body=m.body, created_at=m.created_at, read=m.read,
-                   sender_name=m.sender.name, pet_name=m.pet.name)
-        for m in msgs
-    ]
+    # M6: scored on the fly (a few ms each), so nothing about scam checks is stored in the database.
+    provider = get_provider()
+    out = []
+    for m in msgs:
+        check = provider.detect_scam(m.body)
+        out.append(MessageOut(id=m.id, pet_id=m.pet_id, body=m.body, created_at=m.created_at, read=m.read,
+                              sender_name=m.sender.name, pet_name=m.pet.name,
+                              scam=ScamOut(score=check.score, level=check.level, labels=check.labels, reasons=check.reasons)))
+    return out
 
 
 # ---------- dashboard ----------

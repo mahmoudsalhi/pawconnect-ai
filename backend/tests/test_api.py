@@ -113,6 +113,31 @@ def test_message_reaches_owner(client, demo, newbie):
     assert client.post(f"/api/pets/{rex}/messages", json={"body": "hi"}, headers=newbie).status_code == 422
 
 
+# ---------- M6 scam warnings ----------
+
+
+def _inbox_entry(client, headers, body):
+    return next(m for m in client.get("/api/me/messages", headers=headers).json() if m["body"] == body)
+
+
+def test_scam_message_is_delivered_with_a_warning(client, demo, newbie):
+    rex = pet_id(client, "Rex")
+    body = "Lgit kalbek fi Ennasr. Ab3ath 80 dt 3al D17 9bal w njiblek iyah lyoum."
+    assert client.post(f"/api/pets/{rex}/messages", json={"body": body}, headers=newbie).status_code == 201
+
+    scam = _inbox_entry(client, demo, body)["scam"]  # delivered: warn, never block
+    assert scam["level"] == "high" and "upfront_payment" in scam["labels"] and scam["reasons"]
+    notif = next(n for n in client.get("/api/me/notifications", headers=demo).json() if n["title"].startswith("Likely scam"))
+    assert notif["icon"] == "warning" and notif["link"] == "/dashboard/messages"
+
+
+def test_honest_message_with_reward_and_phone_is_not_flagged(client, demo, newbie):
+    rex = pet_id(client, "Rex")
+    body = "I think I found Rex near the port! Call me on 22 345 678. No need for any reward, just glad to help."
+    assert client.post(f"/api/pets/{rex}/messages", json={"body": body}, headers=newbie).status_code == 201
+    assert _inbox_entry(client, demo, body)["scam"]["level"] == "none"
+
+
 # ---------- reports & matching ----------
 
 

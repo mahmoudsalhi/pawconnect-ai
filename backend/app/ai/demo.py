@@ -13,8 +13,10 @@ from .base import (
     ListingFeatures,
     MatchSubject,
     PhotoQuality,
+    ScamAssessment,
     TagSuggestion,
 )
+from .scam import assess as assess_scam
 
 TAG_RULES: list[tuple[re.Pattern[str], str, float]] = [
     (re.compile(r"collar", re.I), "Wears a collar", 0.91),
@@ -125,3 +127,7 @@ class DemoProvider(AIProvider):
             tips.append("Add photos with people")
         cls = max(0, min(4, cls - (1 if f.age_group == "young" else 0)))
         return AdoptionSpeed(cls, tips or ["Listing is in good shape"])
+
+    def detect_scam(self, text: str) -> ScamAssessment:
+        # Not a placeholder: the real M6 model (ml/m6). Providers that subclass DemoProvider inherit it.
+        return assess_scam(text)

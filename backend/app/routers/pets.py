@@ -227,9 +227,17 @@ def send_message(pet_id: int, data: MessageIn, user: CurrentUser, db: DB):
     pet = _get_pet(db, pet_id)
     if pet.owner_id == user.id:
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "This is your own listing.")
-    db.add(Message(pet_id=pet.id, sender_id=user.id, recipient_id=pet.owner_id, body=data.body.strip()))
+    body = data.body.strip()
+    db.add(Message(pet_id=pet.id, sender_id=user.id, recipient_id=pet.owner_id, body=body))
     first = user.name.split()[0]
-    notify(db, pet.owner_id, "chat", f"Message from {first} about {pet.name}", f"“{data.body.strip()[:140]}”", f"/pets/{pet.id}")
+    # M6: the message is always delivered; a suspicious one only changes how the owner is notified.
+    check = get_provider().detect_scam(body)
+    if check.level == "none":
+        icon, title, note = "chat", f"Message from {first} about {pet.name}", f"“{body[:140]}”"
+    else:
+        prefix = "Likely scam" if check.level == "high" else "Be careful"
+        icon, title, note = "warning", f"{prefix}: message from {first} about {pet.name}", check.reasons[0]
+    notify(db, pet.owner_id, icon, title, note, "/dashboard/messages")
     log_activity(db, user.id, "chat", f"You messaged {pet.contact_name} about {pet.name}")
     db.commit()
     return {"ok": True, "recipient": pet.contact_name}

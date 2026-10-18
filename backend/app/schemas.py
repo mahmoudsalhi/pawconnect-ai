@@ -235,6 +235,13 @@ class MessageIn(BaseModel):
     body: str = Field(min_length=5, max_length=2000)
 
 
+class ScamOut(BaseModel):
+    score: float
+    level: Literal["none", "caution", "high"]
+    labels: list[str] = []
+    reasons: list[str] = []
+
+
 class MessageOut(ORM):
     id: int
     pet_id: int
@@ -243,6 +250,7 @@ class MessageOut(ORM):
     read: bool
     sender_name: str
     pet_name: str
+    scam: ScamOut | None = None
 
 
 # ---------- adoption ----------

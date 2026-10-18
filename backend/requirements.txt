@@ -12,3 +12,6 @@ python-multipart>=0.0.18
 pillow>=11.3
 pytest>=8.3
 httpx>=0.28
+# M6 scam detector: must match the version that trained app/ai/models/m6_scam.joblib (see its .json)
+scikit-learn==1.9.1
+joblib>=1.4

@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { PetGrid } from '../components/PetCard'
 import { FieldError, Icon, LogoMark, Seg, Skeleton, Spinner, Toggle } from '../components/ui'
-import { api, ApiError, type Application, type Dashboard as DashData, type User } from '../lib/api'
+import { api, ApiError, type Application, type Dashboard as DashData, type InboxMessage, type User } from '../lib/api'
 import { useAuth } from '../lib/auth'
 import { fmtDate, fmtKm, GOVERNORATES, img, initials, relTime } from '../lib/format'
-import { useDashboard } from '../lib/queries'
+import { useDashboard, useMessages } from '../lib/queries'
 import { useToast } from '../lib/toast'
 
 const TABS = [
   ['overview', 'space_dashboard', 'Overview'],
+  ['messages', 'forum', 'Messages'],
   ['listings', 'list_alt', 'My reports'],
   ['matches', 'auto_awesome', 'Possible matches'],
   ['applications', 'assignment', 'Applications'],
@@ -19,7 +20,7 @@ const TABS = [
   ['settings', 'settings', 'Account settings'],
 ] as const
 type Tab = (typeof TABS)[number][0]
-const TITLES: Record<Tab, string> = { overview: 'Overview', listings: 'My lost & found reports', matches: 'Possible matches', applications: 'Adoption applications', saved: 'Saved pets', notifications: 'Notifications', settings: 'Account settings' }
+const TITLES: Record<Tab, string> = { overview: 'Overview', messages: 'Messages', listings: 'My lost & found reports', matches: 'Possible matches', applications: 'Adoption applications', saved: 'Saved pets', notifications: 'Notifications', settings: 'Account settings' }
 const STAGES = ['Submitted', 'Under review', 'Home visit', 'Decision']
 
 function greeting() {
@@ -65,6 +66,55 @@ function MatchesPanel({ d }: { d: DashData }) {
   )
 }
 
+const SCAM_STYLE = {
+  high: { title: 'Likely scam', icon: 'gpp_maybe', bg: '#FBE1D5', fg: 'var(--rust-dd)' },
+  caution: { title: 'Be careful', icon: 'warning', bg: '#F4E8CC', fg: '#6B500D' },
+} as const
+
+function ScamWarning({ m }: { m: InboxMessage }) {
+  if (!m.scam || m.scam.level === 'none') return null
+  const st = SCAM_STYLE[m.scam.level]
+  return (
+    <div role="alert" style={{ marginTop: 10, padding: '10px 12px', borderRadius: 12, background: st.bg, color: st.fg }}>
+      <div className="row" style={{ gap: 8, fontSize: 13.5, fontWeight: 800 }}><Icon name={st.icon} size={18} />{st.title}</div>
+      <ul style={{ margin: '6px 0 0', paddingLeft: 22, fontSize: 13, lineHeight: 1.45 }}>
+        {m.scam.reasons.map((r) => <li key={r}>{r}</li>)}
+      </ul>
+      <div style={{ fontSize: 12.5, lineHeight: 1.45, marginTop: 6 }}>
+        PawConnect never asks you to pay to get your pet back. Don’t send money, codes or bank details before you meet in a public place.
+      </div>
+    </div>
+  )
+}
+
+function MessagesPanel() {
+  const { data: messages, isLoading, isError } = useMessages()
+  const flagged = messages?.filter((m) => m.scam && m.scam.level !== 'none').length ?? 0
+  return (
+    <Panel title={<>Messages <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--muted)' }}>· {flagged ? `${flagged} with a warning` : 'about your listings'}</span></>} tag="M6 · SCAM CHECK">
+      {isLoading && <Skeleton height={120} />}
+      {isError && <div className="alert"><Icon name="error" />Couldn’t load your messages. Try again in a moment.</div>}
+      {messages && (messages.length ? (
+        <div className="col" style={{ gap: 10 }}>
+          {messages.map((m) => (
+            <div key={m.id} style={{ padding: 14, borderRadius: 14, border: `1px solid ${m.scam && m.scam.level !== 'none' ? SCAM_STYLE[m.scam.level].bg : 'var(--line-3)'}`, background: '#fff' }}>
+              <div className="row" style={{ gap: 10 }}>
+                <span className="avatar" style={{ width: 34, height: 34, fontSize: 12, flexShrink: 0 }}>{initials(m.sender_name)}</span>
+                <span className="grow" style={{ minWidth: 0 }}>
+                  <span style={{ display: 'block', fontSize: 14, fontWeight: 800 }}>{m.sender_name}</span>
+                  <span style={{ display: 'block', fontSize: 12.5, color: 'var(--muted)' }}>about <Link to={`/pets/${m.pet_id}`}>{m.pet_name}</Link> · {relTime(m.created_at)}</span>
+                </span>
+              </div>
+              <div style={{ fontSize: 14, lineHeight: 1.5, marginTop: 10, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{m.body}</div>
+              <ScamWarning m={m} />
+            </div>
+          ))}
+        </div>
+      ) : <div style={{ fontSize: 14, color: 'var(--muted)' }}>No messages yet. People who contact you about your listings will appear here.</div>)}
+    </Panel>
+  )
+}
+
 function NotificationsPanel({ d }: { d: DashData }) {
   const qc = useQueryClient()
   const navigate = useNavigate()
@@ -84,7 +134,7 @@ function NotificationsPanel({ d }: { d: DashData }) {
         <div className="col">
           {d.notifications.map((n) => (
             <button key={n.id} onClick={() => open(n.id, n.link, n.unread)} className="row" style={{ gap: 12, alignItems: 'flex-start', padding: '12px 8px', border: 0, borderBottom: '1px solid var(--line-3)', background: n.unread ? '#FFFBF7' : '#fff', textAlign: 'left', borderRadius: 8 }}>
-              <span style={{ width: 36, height: 36, borderRadius: 10, background: 'var(--peach-2)', color: 'var(--rust)', display: 'grid', placeItems: 'center', flexShrink: 0 }}><Icon name={n.icon} size={19} /></span>
+              <span style={{ width: 36, height: 36, borderRadius: 10, background: n.icon === 'warning' ? '#F4E8CC' : 'var(--peach-2)', color: n.icon === 'warning' ? '#6B500D' : 'var(--rust)', display: 'grid', placeItems: 'center', flexShrink: 0 }}><Icon name={n.icon} size={19} /></span>
               <span className="grow">
                 <span style={{ display: 'block', fontSize: 14, fontWeight: n.unread ? 800 : 600 }}>{n.title}</span>
                 {n.body && <span style={{ display: 'block', fontSize: 13, color: 'var(--muted)', lineHeight: 1.4, marginTop: 2 }}>{n.body}</span>}
@@ -266,15 +316,17 @@ export default function Dashboard() {
   const navigate = useNavigate()
   const tab = (useParams().tab ?? 'overview') as Tab
   const { data: d, isError } = useDashboard()
+  const { data: messages } = useMessages()
 
   if (!ready) return <div className="row" style={{ minHeight: '100vh', justifyContent: 'center' }}><Spinner variant="teal" /></div>
   if (!user) return <Navigate to="/login" replace state={{ from: location.pathname, note: 'Sign in to open your dashboard.' }} />
   if (!TITLES[tab]) return <Navigate to="/dashboard" replace />
 
   const active = d?.reports.find((r) => !r.pet.resolved && r.pet.status === 'lost')
+  const flaggedMessages = messages?.filter((m) => m.scam && m.scam.level !== 'none').length ?? 0
   const newMatches = active ? d!.matches.filter((m) => m.query.id === active.pet.id && m.is_new).length : 0
   const badges: Partial<Record<Tab, number>> = d ? {
-    listings: d.reports.length, matches: d.matches.length, applications: d.applications.length, saved: d.saved.length, notifications: d.unread,
+    messages: messages?.length, listings: d.reports.length, matches: d.matches.length, applications: d.applications.length, saved: d.saved.length, notifications: d.unread,
   } : {}
   const show = (k: Tab) => tab === 'overview' || tab === k
   const signOut = () => {
@@ -328,6 +380,13 @@ export default function Dashboard() {
 
           {d && tab === 'overview' && (
             <>
+              {flaggedMessages > 0 && (
+                <Link to="/dashboard/messages" className="alert" style={{ background: '#F4E8CC', color: '#6B500D' }}>
+                  <Icon name="gpp_maybe" />
+                  <span className="grow">{flaggedMessages} message{flaggedMessages === 1 ? '' : 's'} may be a scam. Read the warning before you reply.</span>
+                  <Icon name="arrow_forward" size={18} />
+                </Link>
+              )}
               <div className="wrap-row" style={{ gap: 20, alignItems: 'stretch' }}>
                 <div className="card wrap-row" style={{ flex: '2 1 460px', minWidth: 0, gap: 20, alignItems: 'center', padding: 22, borderRadius: 24 }}>
                   {active && <img src={img(active.pet.photos[0], 300, 300)} alt={active.pet.name} style={{ width: 108, height: 108, borderRadius: 20, objectFit: 'cover' }} />}
@@ -378,6 +437,7 @@ export default function Dashboard() {
 
           {d && tab !== 'saved' && tab !== 'settings' && (
             <div style={{ display: 'grid', gridTemplateColumns: tab === 'overview' ? 'repeat(auto-fit,minmax(min(100%,400px),1fr))' : 'minmax(0,1fr)', gap: 20, alignItems: 'start' }}>
+              {tab === 'messages' && <MessagesPanel />}
               {show('matches') && <MatchesPanel d={d} />}
               {show('notifications') && <NotificationsPanel d={d} />}
               {show('applications') && (

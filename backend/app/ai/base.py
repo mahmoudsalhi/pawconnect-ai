@@ -13,6 +13,8 @@ Model map (matches the labels shown in the UI):
     M4  suggest_tags        listing text tagging (TF-IDF + SVM, PetFinder text)
     M5  score_photo         photo engagement score (CNN, PetFinder Pawpularity)
     M6  remove_background   background removal (U-Net, Oxford-IIIT Pet)
+        detect_scam         scam warnings on messages (TF-IDF + logistic regression, ml/m6);
+                            "M6" in the team's new numbering. Real model, not a placeholder.
 """
 
 from __future__ import annotations
@@ -83,6 +85,17 @@ class ListingFeatures:
     size: str
 
 
+@dataclass(frozen=True)
+class ScamAssessment:
+    """How likely a message is a scam. The app only ever warns; it never blocks a message."""
+
+    score: float  # 0-1
+    level: str  # "none", "caution" (soft "be careful" banner) or "high" (likely scam)
+    labels: list[str] = field(default_factory=list)  # e.g. ["upfront_payment"], most likely first
+    reasons: list[str] = field(default_factory=list)  # one plain sentence per label, for the UI
+    model: str = ""
+
+
 class AIProvider(ABC):
     #: Short identifier stored next to cached results, e.g. "demo" or "siamese-v2".
     name: str = "custom"
@@ -114,3 +127,7 @@ class AIProvider(ABC):
     @abstractmethod
     def adoption_speed(self, features: ListingFeatures) -> AdoptionSpeed:
         """Predicted adoption speed class and the listing improvements most likely to help."""
+
+    @abstractmethod
+    def detect_scam(self, text: str) -> ScamAssessment:
+        """Scam warning level and reasons for a message or listing text."""

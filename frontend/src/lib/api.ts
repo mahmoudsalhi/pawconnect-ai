@@ -148,6 +148,25 @@ export interface ActivityItem {
   created_at: string
 }
 
+// M6: scam check on a received message. The message is always delivered; this only adds a warning.
+export interface ScamCheck {
+  score: number
+  level: 'none' | 'caution' | 'high'
+  labels: string[]
+  reasons: string[]
+}
+
+export interface InboxMessage {
+  id: number
+  pet_id: number
+  pet_name: string
+  sender_name: string
+  body: string
+  read: boolean
+  created_at: string
+  scam: ScamCheck | null
+}
+
 export interface MatchItem {
   id: number
   query: Pet
